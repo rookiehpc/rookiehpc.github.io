@@ -1,4 +1,4 @@
-# Welcome Rookie! :D #
+# Welcome to the RookieHPC website v2 #
 
 This repository contains the source code of the Github Page website meant to replace the [RookieHPC website](https://www.rookiehpc.com) eventually for reasons that will be given in minute. Although this is a work in progress, in due time the switch will be made and the url www.rookiehpc.com will point to this [Github Page version](https://rookiehpc.github.io) ;)
 
@@ -13,6 +13,8 @@ There is already a RookieHPC website online and working, so you may wonder why m
 Since its creation in 2017, the RookieHPC website gathered over 1,300,000 pages views at the time of writing (May 2022). As of April 2022, it passed the 100,000 page views per month. Based on the feedback received by email, it seems to have helped a non-negligible number of students, teachers, researchers and industrials ranging from pure rookies to HPC experts.
 
 That is the good news; it has become popular. The consequence of the good news is that there is an increasing demand for additional content such as missing documentation entries or additional technologies to cover. The problem is that this website always had a fundamental weakness: it has been written from scratch, and maintained ever since, by a single person. Needless to say that the progress made on the website turned out to become fluctuant. By opening its source code through Github, it also opens it to contribution, which hopefully will help keep new content flowing in :)
+
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
 
 ## 2 - Contribution ##
 Regularly, someone would kindly offer their help by email. Unfortunately, contribution was close to impossible to accommodate as it required access to an SQL database as well as the server machine via SSH access. This architecture was initially designed for solo development, it did its job but now it needs to adapt to welcome contributions and collaboration. By migrating to Github, contribution comes out of the box :D
@@ -30,6 +32,8 @@ Github Pages websites cannot rely on server-side technologies (PhP and so on). T
 
 Updating this `data.json` file therefore updates the corresponding `MPI_Comm_rank` webpage on the Github Page website! :D This is how suggesting edits to the RookieHPC website will now become convenient.
 
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
+
 ### 2.2 - Previewing edits ###
 <img src="https://github.com/rookiehpc/rookiehpc.github.io/blob/main/images/EditThisPageLink.png" width="300">
 
@@ -39,22 +43,36 @@ Modifying this JSON record on the left handside instantly updates the preview on
 
 If you modify say the documentation entry `MPI_Comm_rank` for instance, you will find the corresponding JSON record in `mpi/docs/mpi_comm_rank/data.json`. 
 
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
+
 ## 3 - Open sourcing ###
 It was stated on the RookieHPC website that it is exclusively about HPC (that is, no collection of personal data etc...). You will now be able to see it by yourself :)
+
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
 
 ## 4 - Free hosting ###
 The hosting plan is costing a couple of hundred US dollars every two years. The challenge is that this is for a single shared server, and scaling to more (& non-shared) servers to support the increasing traffic would logically come at greater expenses. Getting free hosting on Github Pages is always a nice bonus.
 
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
+
 # Bad news #
 The main drawback of this migration to Github is the fact that you are no longer able to *anonymously* fill a contact form from the website directly since the technique that was used to achieve it is not compatible with the static-only pages hosted on Github Pages. If anonymity does matter to you, you are welcome to pick a disposable email address easily findable online :)
+
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
 
 # Questions #
 ## How to contact now? ##
 * To raise any concern, bug or ask for new entries: you can now easily do it by creating an "issue" :) (You will also be able to get comments, see the progress made and even contribute to issues raised by others! :D)
 * To send a private message: you can either send a message to the [RookieHPC Twitter account](https://twitter.com/rookiehpc) or send an email to the email address available on the [RookieHPC Github profile](https://github.com/rookiehpc).
 
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
+
 ## How do I contribute? ##
 Contribution can be a delicate topic; how to handle copyright, how to properly recognise contributions, acknowledge contributors etc... All of which I need to learn more as this is new to me. At the time of writing, a few points remain to be clarified, one of which being which license pick. No license is indicated so far, meaning that all copyright is retained by default. However, it is likely the AGPLv3 license is selected, which seens to be the open source license by nature.
 
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
+
 # Bonus #
 While I was at it, a dark theme was also integrated with an automatic detection to match your OS theme. I regret not having implemented that years ago...
+
+[Go back to top](#welcome-to-the-rookiehpc-website-v2)
