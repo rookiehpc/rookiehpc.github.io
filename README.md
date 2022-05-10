@@ -36,6 +36,8 @@ Updating this `data.json` file therefore updates the corresponding `MPI_Comm_ran
 
 During this redesign, a new feature was implemented; you will see at the bottom of any page a link to edit the page (excluding the homepage). This will open the page editor, a minimalist JSON editor showing the content of the `data.json` file of the webpage you are viewing.
 
+<img src="https://github.com/rookiehpc/rookiehpc.github.io/blob/main/images/LivePreview.png" width="700">
+
 Modifying this JSON record on the left handside instantly updates the preview on the right handside. This allows to quickly modify the content of a page and see what it looks like. Once you are happy with the edits, you can submit a pull request for the corresponding `data.json` file with the new JSON record you have just written! :)
 
 If you modify say the documentation entry `MPI_Comm_rank` for instance, you will find the corresponding JSON record in `mpi/docs/mpi_comm_rank/data.json`. 
