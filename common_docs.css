@@ -1,0 +1,196 @@
+/****************
+ * MAIN SECTION * 
+ ****************/
+#MainSection h2, #MainSection h3
+{
+    text-align: left;
+}
+
+#VersionTabs
+{
+ 	padding-top: 30px;
+}
+
+/********************************
+ * DOCUMENTATION CATEGORY GROUP *
+ ********************************/
+#MainSection .DocumentationCategoryGroup
+{
+	float: right;
+	color: var(--Colour);
+}
+
+#MainSection .DocumentationCategoryGroup .DocumentationEntryCategory
+{
+	display: inline-block;
+	padding: 10px;
+	padding-bottom: 5px;
+}
+
+#MainSection .DocumentationCategoryGroup .DocumentationEntryCategory:hover
+{
+	background-color: var(--WeakBackgroundColour);
+}
+
+#MainSection .DocumentationCategoryGroup .DocumentationEntryCategory .DocumentationEntryCategoryImage
+{
+	display: block;
+	background-color: var(--Colour);
+	width: 20px;
+	height: 20px;
+	margin: 0px auto;
+}
+
+#MainSection .DocumentationCategoryGroup .DocumentationEntryCategory p
+{
+	font-size: 12px;
+	margin-bottom: 0px;
+}
+
+/**************************
+ * DOCUMENTATION CATEGORY *
+ **************************/
+#MainSection .DocumentationCategory
+{
+	flex-grow: 1;
+	white-space: nowrap;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	padding-bottom: 0px;
+	vertical-align: top;
+	background-color: var(--StrongBackgroundColour);
+	border: 1px solid rgb(183, 183, 183);
+	border-radius: 2px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px;
+}
+
+@media only screen and (max-width: 768px)
+{
+	#MainSection .DocumentationCategory
+	{
+		width: 100%;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+}
+
+#MainSection .DocumentationCategory:last-child
+{
+	margin-right: 0px;
+}
+
+#MainSection .DocumentationCategoryHeader
+{
+	padding-top: 20px;
+	background-color: var(--WeakBackgroundColour);
+	border-bottom: 1px solid rgb(183, 183, 183);
+}
+
+#MainSection .DocumentationCategoryHeader .DocumentationCategoryLogo
+{
+	display: block;
+	width: 25px;
+	height: 25px;
+	margin: 0 auto;
+	background-color: rgb(150, 150, 150);
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: 100%;
+}
+
+#MainSection .DocumentationCategoryHeader .DocumentationCategoryLogo img
+{
+	max-width: 25px;
+	max-height: 25px;
+	margin: auto;
+	vertical-align: middle;
+}
+
+#MainSection .DocumentationCategoryHeader h1
+{
+	margin: 0px;
+	margin-top: 10px;
+	padding: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	color: rgb(150, 150, 150);
+	font-size: 15px;
+}
+
+@media only screen and (max-width: 768px)
+{
+	#MainSection .DocumentationCategoryHeader h1
+	{
+		padding: 10px;
+	}
+}
+
+#MainSection .DocumentationCategoryBody
+{
+	padding: 5px;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+@media only screen and (max-width: 768px)
+{
+	#MainSection .DocumentationCategoryBody
+	{
+		padding: 10px;
+	}
+}
+
+#MainSection .DocumentationCategory ul
+{
+	padding-left: 0px;
+	margin-top: 0px;
+	list-style-type: none;
+	text-align: left;
+}
+
+#MainSection .DocumentationCategory li a
+{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	color: var(--Colour);
+	text-decoration: none;
+	border-bottom: none;
+	font-size: 16px;
+}
+
+#MainSection .DocumentationCategory li a:hover
+{
+	background-color: var(--BackgroundColour);
+}
+
+/*************
+ * PROTOTYPE *
+ *************/
+.prototype
+{
+	border-left: 5px solid rgb(83, 103, 123);
+	background-color: rgb(245, 245, 245);
+	padding-left: 10px;
+	display: block;
+	font-size: 16px;
+	text-align: left;
+}
+
+.prototype a
+{
+	color: inherit;
+}
+
+.OptionalFlag
+{
+	color: grey;
+	font-family: "Open Sans";
+	font-style: italic;
+	font-weight: lighter;
+}

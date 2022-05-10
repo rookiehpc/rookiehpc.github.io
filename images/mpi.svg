@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="27.739 -148.508 640.278 641.066" xmlns="http://www.w3.org/2000/svg">
+  <circle style="" cx="185.837" cy="259.059" r="56.88" transform="matrix(1, 0, 0, 1, 27.977288, -148.323865)"/>
+  <circle style="" cx="401.34" cy="150.481" r="63.816" transform="matrix(1, 0, 0, 1, 27.977288, -148.323865)"/>
+  <circle style="" cx="497.518" cy="359.631" r="56.88" transform="matrix(1, 0, 0, 1, 27.977288, -148.323865)"/>
+  <circle style="" cx="283.916" cy="486.412" r="51.159" transform="matrix(1, 0, 0, 1, 27.977288, -148.323865)"/>
+  <circle style="fill: none; stroke-width: 28px; stroke: rgb(0, 0, 0);" cx="320.081" cy="320.108" r="305.586" transform="matrix(1, 0, 0, 1, 27.977288, -148.323865)"/>
+  <path style="fill: none; stroke-width: 28px; stroke: rgb(0, 0, 0);" d="M 216.93 31.878 C 346.018 90.443 420.618 169.906 459.765 256.598 C 508.022 363.464 502.403 481.316 478.565 584.548" transform="matrix(1, 0, 0, 1, 27.977288, -148.323865)"/>
+  <path style="fill: none; stroke-width: 28px; stroke: rgb(0, 0, 0);" d="M 420.012 27.676 C 386.95 246.264 309.509 421.286 234.261 616.103" transform="matrix(1, 0, 0, 1, 27.977288, -148.323865)"/>
+  <path style="fill: none; stroke-width: 28px; stroke: rgb(0, 0, 0);" d="M 201.551 139.078 C 342.174 284.91 400.395 498.668 345.723 704.02" transform="matrix(-0.529734, 0.848164, -0.848164, -0.529734, 820.316582, 259.371051)"/>
+  <path style="fill: none; stroke-width: 28px; stroke: rgb(0, 0, 0);" d="M 260.391 -24.443 C 410.912 197.172 426.684 366.308 405.361 559.371" transform="matrix(-0.529734, 0.848164, -0.848164, -0.529734, 769.892083, -24.752034)"/>
+  <path style="fill: none; stroke-width: 28px; stroke: rgb(0, 0, 0);" d="M 40.291 149.551 C 157.613 351.597 287.374 461.67 575.901 443.078" transform="matrix(-0.529734, 0.848164, -0.848164, -0.529734, 751.465874, 45.194385)"/>
+</svg>

@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    /* font-family: 'Ubuntu', sans-serif; */
+    /* font-size: 100%; */
+}
+
+/* body, textarea {
+    background-color: rgb(50, 50, 50);
+    color: white;
+} */
+
+body {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+body > * {
+    height: 100%;
+}
+
+#LeftColumn {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#Controls {
+    display: flex;
+    flex-direction: row;
+}
+
+#Controls button {
+    flex-grow: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#Controls button:hover:enabled {
+    cursor: pointer;
+}
+
+#Input {
+    background: var(--BackgroundColour);
+    color:var(--Colour);
+    height: 100%;
+    overflow-y: scroll;
+    font-family: "PT Mono";
+    font-size: 15px;
+}
+
+#RightColumn {
+    flex-grow: 1;
+    width: 50%;
+    overflow-y: scroll;
+}
+
+#Output {
+    display: none;
+}
+
+#Loader {
+    margin: auto;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.Message {
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.GoodMessage {
+    background-color: green;
+}
+
+.WarningMessage {
+    background-color: orange;
+}
+
+.ErrorMessage {
+    background-color: red;
+}

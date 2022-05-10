@@ -1,0 +1,23 @@
+!> @brief Illustrates how to obtain the group of processes of a communicator.
+PROGRAM main
+    USE mpi
+
+    IMPLICIT NONE
+
+    INTEGER :: ierror
+    INTEGER :: group
+    INTEGER :: size
+
+    CALL MPI_Init(ierror)
+
+    ! Get the group from the default communicator
+    CALL MPI_Comm_group(MPI_COMM_WORLD, group, ierror)
+
+    ! Get the size of the group
+    CALL MPI_Group_size(group, size, ierror)
+
+    ! Each process prints the number of processes in that group
+    WRITE(*,'(A,I0,A)') 'We are ', size, ' MPI processes in the group of the default communicator MPI_COMM_WORLD.'
+
+    CALL MPI_Finalize(ierror)
+END PROGRAM main

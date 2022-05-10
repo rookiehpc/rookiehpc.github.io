@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="load_fonts.js"></script>
+        <!-- Highlight JS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script> -->
+        <script src="highlight/highlight.min.js"></script>
+        <!-- Highlight JS line number plugin -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+        <script>
+            hljs.initLineNumbersOnLoad({singleLine: true});
+        </script>
+        <link rel="stylesheet" href="editor.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="common_docs.css">
+        <link rel="stylesheet" href="common_tools.css">
+    </head>
+    <body>
+        <div id="LeftColumn">
+            <div id="Controls">
+                <button id="GenerateMPITemplate">Generate MPI template</button>
+                <button id="Revert" disabled>Revert to last functional</button>
+                <button id="IndentButton">Indent</button>
+                <button id="CompactButton">Compact</button>
+            </div>
+            <textarea id="Input"></textarea>
+        </div>
+        <div id="RightColumn">
+            <div id="Loader"></div>
+            <div id="Output"></div>
+        </div>
+
+        <script src="rk.min.js"></script>
+        <script>
+            RK.SetEditorMode(true);
+            const IndentationWidth = 4;
+            const Input = document.getElementById('Input');
+            const Output = document.getElementById('Output');
+            const Loader = document.getElementById('Loader');
+
+            let LastValidEntry = {};
+            const GenerateMPITemplate = document.getElementById('GenerateMPITemplate');
+            GenerateMPITemplate.onclick = (event) => {
+                const Template = {"Type":"Documentation","Technology":"MPI","Name":"MPI_Comm_rank","DirectoryName":"mpi_comm_rank","SharedDescription":true,"Description":"Gets the rank of the calling MPI process in the communicator specified. If the calling MPI process does not belong to the communicator passed, MPI_PROC_NULL is returned.","Categories":["Topology"],"Languages":[{"Language":"C","Parameters":[{"Name":"comm","Description":"The communicator to query.","Type":"MPI_Comm"},{"Name":"rank","Description":"The variable in which store the rank found.","Type":"int*"}],"Return":{"Type":"int","Description":"The error code returned from the rank retrieval."}},{"Language":"FORTRAN-90","Parameters":[{"Name":"comm","Description":"The communicator to query.","Type":"INTEGER"},{"Name":"rank","Description":"The variable in which store the rank found.","Type":"INTEGER"},{"Name":"ierror","Description":"The error code of the rank retrieval.","Type":"INTEGER"}]},{"Language":"FORTRAN-2008","Parameters":[{"Name":"comm","Description":"The communicator to query.","Type":"TYPE(MPI_Comm)","Optional":false,"Intent":"IN"},{"Name":"rank","Description":"The variable in which store the rank found.","Type":"INTEGER","Optional":false,"Intent":"OUT"},{"Name":"ierror","Description":"The error code of the rank retrieval.","Type":"INTEGER","Optional":true,"Intent":"OUT"}]}]};
+                const InputTextArea = document.getElementById('Input');
+                InputTextArea.value = JSON.stringify(Template, null, IndentationWidth);
+                InputTextArea.dispatchEvent(new Event('input'));
+            };
+
+            const RevertButton = document.getElementById('Revert');
+            RevertButton.onclick = (event) => {
+                Input.value = JSON.stringify(LastValidEntry, null, IndentationWidth);
+                Input.dispatchEvent(new Event('input'));
+            };
+
+            const IndentButton = document.getElementById('IndentButton');
+            IndentButton.onclick = (event) => {
+                try {
+                    let Entry = JSON.parse(Input.value);
+                    Input.value = JSON.stringify(Entry, null, IndentationWidth);
+                }
+                catch(e) {
+
+                }
+            };
+
+            const CompactButton = document.getElementById('CompactButton');
+            CompactButton.onclick = (event) => {
+                try {
+                    let Entry = JSON.parse(Input.value);
+                    Input.value = JSON.stringify(Entry);
+                }
+                catch(e) {
+
+                }
+            };
+
+            Input.oninput = function () {
+                try {
+                    ShowLoader(false);
+                    RK.SetLocation("Root");
+                    Output.innerText =  "";
+                    RevertButton.disabled = false;
+                    let Entry;
+                    try {
+                        Entry = JSON.parse(Input.value);
+                    }
+                    catch(e) {
+                        throw 'The input is not a valid JSON.';
+                    }
+                    RK.Verify(Entry);
+                    RK.Generate(Entry, Output);
+                    LastValidEntry = Entry;
+                    RevertButton.disabled = true;
+                }
+                catch(e) {
+                    RK.ShowError(e);
+                }
+            };
+
+            function ShowLoader(state) {
+                Loader.style.display = state == true ? "block" : "none";
+                Output.style.display = state == true ? "none" : "block";
+            }
+
+            window.onload = () => {
+                ShowLoader(false);
+            };
+
+            // If a page was passed via GET parameter, fetch the corresponding data.json
+            const UrlParams = new URLSearchParams(window.location.search);
+            const RefereeDirectory = UrlParams.get('src');
+            if(RefereeDirectory.length > 0) {
+                const XHR = new XMLHttpRequest();
+                XHR.open("GET", RefereeDirectory + "/data.json", true);
+                XHR.onload = () => {
+                    switch(XHR.status) {
+                        case 0:
+                        case 200:
+                            Input.innerHTML = XHR.responseText;
+                            const IndentButton = document.getElementById('IndentButton');
+                            IndentButton.dispatchEvent(new Event('click'));
+                            Input.dispatchEvent(new Event('input'));
+                            break;
+                        default:
+                            break;
+                    }
+                };
+                XHR.send(null);
+            }
+        </script>
+    </body>
+</html>

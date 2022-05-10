@@ -1,0 +1,90 @@
+/****************
+ * MAIN SECTION * 
+ ****************/
+#MainSection .ToolCard
+{
+	display: inline-block;
+	width: 290px;
+	height: 380px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: var(--StrongBackgroundColour);
+	box-shadow: 0px 2px 3px var(--ShadowColour);
+	border: 1px solid rgb(180, 180, 180);
+	border-radius: 2px;
+	vertical-align: top;
+}
+
+#MainSection .ToolCard:last-child
+{
+	margin-right: 0px;
+}
+
+#MainSection .ToolCard .logo
+{
+	margin: 0px auto;
+	margin-bottom: 20px;
+	width: 90px;
+	height: 90px;
+	padding: 15px;
+	border: 5px solid var(--WeakBackgroundColour);
+	border-radius: 100%;
+	transition: border 200ms;
+}
+
+#MainSection .ToolCard:hover .logo
+{
+	border: 5px solid var(--Colour);
+}
+
+#MainSection .ToolCard .logo .LogoImage
+{
+	width: 50px;
+	height: 50px;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: 100%;	
+	background-color: var(--Colour);
+	transition: background-color 200ms;
+}
+
+#MainSection .ToolCard:hover .logo .LogoImage
+{
+	background-color: var(--SpecialColour);
+}
+
+#MainSection .ToolCard .name
+{
+	height: 30px;
+	margin: 0px;
+	margin-bottom: 20px;
+	color: var(--WeakColour);
+	text-transform: uppercase;
+	text-align: center;
+	font-family: "Arial";
+}
+
+#MainSection .ToolCard .name span
+{
+	padding-bottom: 5px;
+	transition: border 200ms;
+	border: 0px solid rgb(80, 80, 80);
+}
+
+#MainSection .ToolCard:hover .name span
+{
+	border-bottom: 2px solid var(--SpecialColour);
+}
+
+#MainSection .ToolCard .description
+{
+	margin: 0px;
+	height: 180px;
+	line-height: 25px;
+	overflow-y: auto;
+	color: var(--Colour);
+}
