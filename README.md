@@ -1,6 +1,10 @@
 # Welcome to the RookieHPC website v2 #
 
-This repository contains the source code of the Github Page website meant to replace the [RookieHPC website](https://www.rookiehpc.com) eventually for reasons that will be given in minute. Although this is a work in progress, in due time the switch will be made and the url www.rookiehpc.com will point to this [Github Page version](https://rookiehpc.github.io) ;)
+This repository contains the source code of the [Github Page website](https://rookiehpc.github.io) meant to replace the [RookieHPC website](https://www.rookiehpc.com) eventually for reasons that will be given in minute.
+
+So far, you will see that only a handful of MPI entries are covered, this is normal; it is a work in progress. For now, the focus is on porting the different components and features of the original website as it must be entirely rewritten and redesigned from PhP / SQL / JavaScript to JavaScript-only. Once the support will be complete, a second phase consisting in moving all the content from the original website to the Github Pages version will begin. Until then, the original website will remain as the online source so absolutely no disruption to the users.
+
+Only when the Github Pages version will be complete will the switch be made and the URL www.rookiehpc.com point to the [Github Page version](https://rookiehpc.github.io).
 
 ## 1) Migration to Github Pages ##
 
@@ -17,7 +21,7 @@ That is the good news; it has become popular. The consequence of the good news i
 Regularly, someone would kindly offer their help by email. Unfortunately, contribution was close to impossible to accommodate as it required access to an SQL database as well as the server machine via SSH access. This architecture was initially designed for solo development, it did its job but now it needs to adapt to welcome contributions and collaboration. By migrating to Github, contribution comes out of the box :D
 
 #### 1.2.1) How ####
-The first step was to remove the dependencies on external sources of data such as the SQL database from which the MPI and OpenMP contents were drawn. TO that end, the RookieHPC website has been entirely rewritten so that all the website data is now within this repository, encompassing exercises, examples, documentation, indexes etc...
+The first step was to remove the dependencies on external sources of data such as the SQL database from which the MPI and OpenMP contents were drawn. To that end, the RookieHPC website has been entirely rewritten so that all the website data is now within this repository, encompassing exercises, examples, documentation, indexes etc...
 
 Github Pages websites cannot rely on server-side technologies (PhP and so on). Therefore, webpages have been redesigned to be built dynamically using the following structure. Let's consider the MPI documentation entry `MPI_Comm_rank`, you will find a directory `MPI_Comm_rank` inside `/mpi/docs/` with:
 
