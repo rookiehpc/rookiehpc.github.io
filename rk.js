@@ -8,9 +8,9 @@ const RK = {
         DOCUMENTATION: "Documentation",
         EXERCISE: "Exercise",
         TOOL: "Tool",
-        DOCUMENTATION_INDEX: "DocumentationIndex",
-        TOOL_INDEX: "ToolIndex",
-        EXERCISE_INDEX: "ExerciseIndex",
+        DOCUMENTATION_HOMEPAGE: "DocumentationHomepage",
+        TOOL_HOMEPAGE: "ToolHomepage",
+        EXERCISE_HOMEPAGE: "ExerciseHomepage",
         HOMEPAGE: "Homepage"
     },
     TECHNOLOGIES: {
@@ -345,7 +345,7 @@ const RK = {
         });
     },
 
-    VerifyToolIndex: (Entry) => {
+    VerifyToolHomepage: (Entry) => {
         // Check technology
         RK.AssertMustHave(Entry, RK.TechnologyPN);
         RK.AssertType(Entry, RK.TechnologyPN, "string");
@@ -376,7 +376,7 @@ const RK = {
         });
     },
 
-    VerifyDocumentationIndex: (Entry) => {
+    VerifyDocumentationHomepage: (Entry) => {
         // Check technology
         RK.AssertMustHave(Entry, RK.TechnologyPN);
         RK.AssertType(Entry, RK.TechnologyPN, "string");
@@ -476,14 +476,14 @@ const RK = {
                 case RK.ENTRY_TYPES.TOOL:
                     throw "Tool entry found; however it has not been implemented just yet."
                     break;
-                case RK.ENTRY_TYPES.TOOL_INDEX:
-                    RK.VerifyToolIndex(Entry);
+                case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
+                    RK.VerifyToolHomepage(Entry);
                     break;
                 case RK.ENTRY_TYPES.EXERCISE:
                     throw "Exercise entry found; however it has not been implemented just yet."
                     break;
-                case RK.ENTRY_TYPES.DOCUMENTATION_INDEX:
-                    RK.VerifyDocumentationIndex(Entry);
+                case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
+                    RK.VerifyDocumentationHomepage(Entry);
                     break;
                 case RK.ENTRY_TYPES.HOMEPAGE:
                     RK.VerifyHomepage(Entry);
@@ -987,7 +987,7 @@ const RK = {
         });
     },
 
-    GenerateDocumentationIndex: (Entry) => {
+    GenerateDocumentationHomepage: (Entry) => {
         RK.BuildTechnologyNav(Entry);
         var IndexHTML = '<section id="MainSection"><div><header><h1>' + Entry[RK.TechnologyPN] + ' Documentation</h1></header></div><div style="display:flex; flex-wrap: wrap; align-items: stretch; column-gap:20px;">';
         Object.keys(Entry[RK.CategoriesPN]).forEach((Category) => {
@@ -1105,7 +1105,7 @@ const RK = {
         RK.GetOutput().innerHTML += InnerHTML;
     },
 
-    GenerateToolIndex: (Entry) => {
+    GenerateToolHomepage: (Entry) => {
         RK.BuildTechnologyNav(Entry);
 
         const MainSection = document.createElement('section');
@@ -1118,13 +1118,13 @@ const RK = {
         const MainSectionDivHeader = document.createElement('header');
         MainSectionDiv.appendChild(MainSectionDivHeader);
 
-        const ToolIndexTitle = document.createElement('h1');
-        ToolIndexTitle.innerText = Entry[RK.TechnologyPN] + ' Tools';
+        const ToolHomepageTitle = document.createElement('h1');
+        ToolHomepageTitle.innerText = Entry[RK.TechnologyPN] + ' Tools';
 
         const ToolsDiv = document.createElement('div');
         MainSection.appendChild(ToolsDiv);
 
-        MainSectionDivHeader.appendChild(ToolIndexTitle);
+        MainSectionDivHeader.appendChild(ToolHomepageTitle);
         Entry[RK.ToolsPN].forEach((Tool) => {
             const ToolDiv = document.createElement('div');
             ToolDiv.classList.add("ToolCard");
@@ -1213,8 +1213,8 @@ const RK = {
                 case RK.ENTRY_TYPES.DOCUMENTATION:
                     RK.GenerateDocumentation(Entry);
                     break;
-                case RK.ENTRY_TYPES.TOOL_INDEX:
-                    RK.GenerateToolIndex(Entry);
+                case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
+                    RK.GenerateToolHomepage(Entry);
                     break;
                 case RK.ENTRY_TYPES.TOOL:
                     throw 'Unimplemented yet';
@@ -1222,8 +1222,8 @@ const RK = {
                 case RK.ENTRY_TYPES.EXERCISE:
                     throw 'Unimplemented yet';
                     break;
-                case RK.ENTRY_TYPES.DOCUMENTATION_INDEX:
-                    RK.GenerateDocumentationIndex(Entry);
+                case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
+                    RK.GenerateDocumentationHomepage(Entry);
                     break;
                 case RK.ENTRY_TYPES.HOMEPAGE:
                     RK.GenerateHomepage(Entry);
@@ -1386,15 +1386,15 @@ const RK = {
             InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/index.html">` + Entry[RK.TechnologyPN] + `</a>`;
             let TypeString = "";
             switch(Entry[RK.TypePN]) {
-                case RK.ENTRY_TYPES.DOCUMENTATION_INDEX:
+                case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
                 case RK.ENTRY_TYPES.DOCUMENTATION:
                     TypeString = "Docs";
                     break;
-                case RK.ENTRY_TYPES.TOOL_INDEX:
+                case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
                 case RK.ENTRY_TYPES.TOOL:
                     TypeString = "Tools";
                     break;
-                case RK.ENTRY_TYPES.EXERCISE_INDEX:
+                case RK.ENTRY_TYPES.EXERCISE_HOMEPAGE:
                 case RK.ENTRY_TYPES.EXERCISE:
                     TypeString = "Exercises";
                     break;                        

@@ -13,7 +13,7 @@ for Technology in Technologies:
     else:
         FirstTechnologyEntry = False
     TechnologyCategories = dict()
-    TechnologyCategories["Type"] = "DocumentationIndex"
+    TechnologyCategories["Type"] = "DocumentationHomepage"
     TechnologyCategories["Technology"] = Technology
     TechnologyCategories["Categories"] = dict()
     TechnologyDocsDirectory = Technology.lower() + "/docs"
