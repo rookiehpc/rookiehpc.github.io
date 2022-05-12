@@ -1,8 +1,14 @@
 # Welcome to the RookieHPC website v2 #
 
-If you are here, you certainly already know the [RookieHPC website](https://rookiehpc.com). Its design and architectures raise certain challenges so a different version of the website is being developed as a GitHub Pages website and you are currently in its repository :) The source code you see in this repository produces the website accessible at https://rookiehpc.github.io. When complete, there will be a seamless transition from the URL https://www.rookiehpc.com to point to the GitHub Pages version.
+If you are here, you certainly already know the [RookieHPC website](https://rookiehpc.com)! :) Although sufficient for years, its design and architecture has raised certain challenges so a different version of the website, a GitHub Pages, is being developed to address those challenges which will be explained in further details below.
 
-This is clearly a work in progress; you will see that only a handful of MPI entries are covered so far. This is normal as the focus is currently on porting and rewriting the different components and features of the original website onto this version. Among other things, it must be entirely rewritten and redesigned from PhP / SQL / JavaScript to JavaScript-only for instance. Once the support will be complete, a second phase will begin; consisting in moving all the content from the original website to the Github Pages version will begin. Until the GitHub Pages version is fully functional, the original website will remain in place as the online source so that there is absolutely no disruption to the users :)
+The source code you see in this repository produces the website accessible at https://rookiehpc.github.io. When this version will be complete, there will be a seamless transition from the URL https://www.rookiehpc.com to point to the GitHub Pages version.
+
+As you can see, it is a work in progress; only a handful of MPI entries are covered so far. This is normal as the focus is currently on porting and rewriting the different components and features of the original website onto this version. Among other things, it must be entirely rewritten and redesigned from PhP / SQL / JavaScript to JavaScript-only for instance. Those MPI entries are therefore used to verify the support of section generation, category mapping, function prototype display and check that the final results is identical to that of the current RookieHPC website online.
+
+Once the support will be complete, a second phase will begin; consisting in importing all the content from the original website to the Github Pages version. This is where the coverage of MPI and OpenMP documentation should rapidly catch up.
+
+Until the GitHub Pages version is fully functional however, the original website will remain in place as the online source so that there is absolutely no disruption to the users :)
 
 ## 1) Migration to Github Pages ##
 
