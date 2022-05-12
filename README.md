@@ -1,10 +1,8 @@
 # Welcome to the RookieHPC website v2 #
 
-This repository contains the source code of the [Github Page website](https://rookiehpc.github.io) meant to replace the [RookieHPC website](https://www.rookiehpc.com) eventually for reasons that will be given in minute.
+If you are here, you certainly already know the [RookieHPC website](https://rookiehpc.com). Its design and architectures raise certain challenges so a different version of the website is being developed as a GitHub Pages website and you are currently in its repository :) The source code you see in this repository produces the website accessible at https://rookiehpc.github.io. When complete, there will be a seamless transition from the URL https://www.rookiehpc.com to point to the GitHub Pages version.
 
-So far, you will see that only a handful of MPI entries are covered, this is normal; it is a work in progress. For now, the focus is on porting the different components and features of the original website as it must be entirely rewritten and redesigned from PhP / SQL / JavaScript to JavaScript-only. Once the support will be complete, a second phase consisting in moving all the content from the original website to the Github Pages version will begin. Until then, the original website will remain as the online source so absolutely no disruption to the users.
-
-Only when the Github Pages version will be complete will the switch be made and the URL www.rookiehpc.com point to the [Github Page version](https://rookiehpc.github.io).
+This is clearly a work in progress; you will see that only a handful of MPI entries are covered so far. This is normal as the focus is currently on porting and rewriting the different components and features of the original website onto this version. Among other things, it must be entirely rewritten and redesigned from PhP / SQL / JavaScript to JavaScript-only for instance. Once the support will be complete, a second phase will begin; consisting in moving all the content from the original website to the Github Pages version will begin. Until the GitHub Pages version is fully functional, the original website will remain in place as the online source so that there is absolutely no disruption to the users :)
 
 ## 1) Migration to Github Pages ##
 
