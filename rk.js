@@ -1377,9 +1377,13 @@ const RK = {
                 var ArticleLinksElement = document.getElementById('ArticleLinks');
                 ArticleLinksElement.style.width = SearchBarElement.clientWidth + "px";
             </script>
-            <p id="NavigationPath"><a href = "` + RK.BASE_URL + `/">Homepage</a>`;
-        if(Entry[RK.TypePN] != RK.ENTRY_TYPES.HOMEPAGE) {
-            InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/index.html">MPI</a>`;
+            <p id="NavigationPath"><a href = "` + RK.BASE_URL + `/index.html">Homepage</a>`;
+        if(Entry[RK.TypePN] == RK.ENTRY_TYPES.HOMEPAGE || Entry[RK.TypePN] == RK.ENTRY_TYPES.TEXT) {
+            InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.DirectoryNamePN].toLowerCase() + `/index.html">` + Entry[RK.NamePN] + `</a>`;
+        }
+        else
+        {
+            InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/index.html">` + Entry[RK.TechnologyPN] + `</a>`;
             let TypeString = "";
             switch(Entry[RK.TypePN]) {
                 case RK.ENTRY_TYPES.DOCUMENTATION_INDEX:
