@@ -115,11 +115,11 @@
             // If a page was passed via GET parameter, fetch the corresponding data.json
             const UrlParams = new URLSearchParams(window.location.search);
             const RefereeDirectory = UrlParams.get('src');
-            if(RefereeDirectory.length > 0) {
-                const DataJsonLocationString = RefereeDirectory + "/data.json";
+            const DataJsonLocationString = RefereeDirectory + "/data.json";
                 const DataJsonLocationURL = "https://github.com/rookiehpc/rookiehpc.github.io/blob/main" + DataJsonLocationString;
                 const DataJsonLocationElement = document.getElementById('DataJsonLocation');
                 DataJsonLocationElement.innerHTML = "<p>Path leading to the corresponding <code>data.json</code> file: <code>\"" + DataJsonLocationString + "\"</code><p>";
+            if(RefereeDirectory.length > 0) {
                 const XHR = new XMLHttpRequest();
                 XHR.open("GET", DataJsonLocationString, true);
                 XHR.onload = () => {
