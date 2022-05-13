@@ -21,11 +21,27 @@ body > * {
     height: 100%;
 }
 
+a, a:visited
+{
+    color: var(--Colour);
+}
+
 #LeftColumn {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     width: 50%;
+}
+
+#DataJsonLocation {
+    background-color: var(--SpecialColour);
+    color: var(--Colour);
+    border-bottom: 1px solid var(--Colour);
+    padding: 10px;
+}
+
+#DataJsonLocation p {
+    margin: 0px;
 }
 
 #Controls {
