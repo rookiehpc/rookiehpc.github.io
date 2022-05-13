@@ -116,27 +116,24 @@
             const UrlParams = new URLSearchParams(window.location.search);
             const RefereeDirectory = UrlParams.get('src');
             const DataJsonLocationString = RefereeDirectory + "/data.json";
-                const DataJsonLocationURL = "https://github.com/rookiehpc/rookiehpc.github.io/blob/main" + DataJsonLocationString;
-                const DataJsonLocationElement = document.getElementById('DataJsonLocation');
-                DataJsonLocationElement.innerHTML = "<p>Path leading to the corresponding <code>data.json</code> file: <code>\"" + DataJsonLocationString + "\"</code><p>";
-            if(RefereeDirectory.length > 0) {
-                const XHR = new XMLHttpRequest();
-                XHR.open("GET", DataJsonLocationString, true);
-                XHR.onload = () => {
-                    switch(XHR.status) {
-                        case 0:
-                        case 200:
-                            Input.innerHTML = XHR.responseText;
-                            const IndentButton = document.getElementById('IndentButton');
-                            IndentButton.dispatchEvent(new Event('click'));
-                            Input.dispatchEvent(new Event('input'));
-                            break;
-                        default:
-                            break;
-                    }
-                };
-                XHR.send(null);
-            }
+            const DataJsonLocationElement = document.getElementById('DataJsonLocation');
+            DataJsonLocationElement.innerHTML = "<p>Path leading to the corresponding <code>data.json</code> file: <code>\"" + DataJsonLocationString + "\"</code><p>";
+            const XHR = new XMLHttpRequest();
+            XHR.open("GET", DataJsonLocationString, true);
+            XHR.onload = () => {
+                switch(XHR.status) {
+                    case 0:
+                    case 200:
+                        Input.innerHTML = XHR.responseText;
+                        const IndentButton = document.getElementById('IndentButton');
+                        IndentButton.dispatchEvent(new Event('click'));
+                        Input.dispatchEvent(new Event('input'));
+                        break;
+                    default:
+                        break;
+                }
+            };
+            XHR.send(null);
         </script>
     </body>
 </html>
