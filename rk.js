@@ -1378,7 +1378,11 @@ const RK = {
                 ArticleLinksElement.style.width = SearchBarElement.clientWidth + "px";
             </script>
             <p id="NavigationPath"><a href = "` + RK.BASE_URL + `/index.html">Homepage</a>`;
-        if(Entry[RK.TypePN] == RK.ENTRY_TYPES.HOMEPAGE || Entry[RK.TypePN] == RK.ENTRY_TYPES.TEXT) {
+        if(Entry[RK.TypePN] == RK.ENTRY_TYPES.HOMEPAGE)
+        {
+            // Nothing else to add to the navigation path
+        }
+        else if(Entry[RK.TypePN] == RK.ENTRY_TYPES.TEXT) {
             InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.DirectoryNamePN].toLowerCase() + `/index.html">` + Entry[RK.NamePN] + `</a>`;
         }
         else
