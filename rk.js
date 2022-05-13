@@ -409,7 +409,7 @@ const RK = {
         RK.AssertMustHave(Entry, RK.TechnologiesPN);
         RK.AssertType(Entry, RK.TechnologiesPN, "array");
     
-        Entry[TechnologiesPN].forEach((Technology) => {
+        Entry[RK.TechnologiesPN].forEach((Technology) => {
             // Check that the array entry is an object
             RK.AssertTypeSelf(Technology, "technology", "object");
 
