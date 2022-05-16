@@ -35,7 +35,7 @@ a, a:visited
 
 #DataJsonLocation {
     background-color: var(--SpecialColour);
-    color: var(--Colour);
+    color: rgb(245, 245, 245);
     border-bottom: 1px solid var(--Colour);
     padding: 10px;
 }
