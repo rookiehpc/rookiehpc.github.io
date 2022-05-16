@@ -29,7 +29,11 @@ Modifying the JSON record on the left handside instantly updates the preview on 
 
 ### C.2) How do I know the location of the corresponding original data.json file? ###
 
-Although not all categories below are implemented yet, this is the structure that will likely be followed:
+If you are using the page editor on an existing page, the location of the corresponding `data.json` file is displayed in the blue ruban at the bottom.
+
+### C.3) What if I want to create a new page, such as a new documentation entry for instance? ###
+
+Although not all categories below are implemented yet, this is the structure that will likely be followed for when you create a new `data.json` file:
 
 Page | Repository location | Example
 -|-|-
@@ -41,7 +45,7 @@ Technology "T" documentation entry "E" | `/T/docs/E/data.json` | `/mpi/docs/mpi_
 Technology "T" tool entry "E" | `/T/tools/E/data.json` | `/mpi/tools/my_super_tool/data.json`
 Technology "T" exercise entry "E" | `/T/exercises/E/data.json` | `/mpi/tools/my_super_exercise/data.json`
 
-The only exception to this JSON formatting is the example codes, which are stored in their corresponding programming language file format. For instance, the example in `C` for `MPI_Comm_size` is located at `/mpi/docs/mpi_comm_size/example_1.c`. The `FORTRAN-90` have the extension `.f90` while their `FORTRAN-2008` counterpart have `.f08`.
+The example codes are stored verbatim in their corresponding programming language file format. For instance, the example in `C` for `MPI_Comm_size` is located at `/mpi/docs/mpi_comm_size/example_1.c`. The `FORTRAN-90` have the extension `.f90` while their `FORTRAN-2008` counterpart have `.f08`.
 
 ## D) How do I notify of a missing documentation entry, a bug and so on? ##
 
