@@ -1363,7 +1363,7 @@ const RK = {
         RK.GetOutput().appendChild(MainHeader);
 
         InnerHTML = `
-            <img id="MainLogo" src="` + RK.BASE_URL + `/images/logoWhite.svg" width="40" onclick="window.location='` + RK.BASE_URL + `/'" alt="Logo of RookieHPC">
+            <img id="MainLogo" src="` + RK.BASE_URL + `/images/logoWhite.svg" width="40" onclick="window.location='` + RK.BASE_URL + `/index.html'" alt="Logo of RookieHPC">
             <div id="SearchArea">
                 <div id="SearchForm">
                     <input type="text" id="SearchBar" name="SearchBar" autocomplete="off"><span id="SearchIcon" class="FakeButton" style="background-image: url('` + RK.BASE_URL + `/images/magnifyingGlass.svg')";></span>
