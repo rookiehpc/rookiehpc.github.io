@@ -1705,7 +1705,7 @@ const RK = {
         document.documentElement.style.setProperty('--StrongColour', "white");
         document.documentElement.style.setProperty('--Colour', "rgb(245, 245, 245)");
         document.documentElement.style.setProperty('--WeakColour', "rgb(235, 235, 235)");
-        document.documentElement.style.setProperty('--SpecialColour', "rgb(35, 93, 150)");
+        document.documentElement.style.setProperty('--SpecialColour', "rgb(30, 171, 249)");
         document.documentElement.style.setProperty('--ShadowColour', "rgb(100, 100, 100)");
     },
     
