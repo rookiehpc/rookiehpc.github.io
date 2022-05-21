@@ -1227,7 +1227,7 @@ const RK = {
 
             RK.SetOutput(SelectedOutput);
             RK.GetOutput().innerText = "";
-            // Will automa
+            // Will automatically call for generation of body, then footer etc...
             RK.BuildHeader(Entry)
             .then(() =>
             {
