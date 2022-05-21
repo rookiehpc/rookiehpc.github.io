@@ -1521,7 +1521,7 @@ const RK = {
         		<li><a href = "https://github.com/rookiehpc">Contact</a></li>
         		<li><a href = "https://www.twitter.com/RookieHPC"><img class="SocialNetworks" src="` + RK.BASE_URL + `/images/twitter.svg" alt="Logo of the Twitter account for Rookie HPC."></a></li>
         	</ul>
-        	<p id='Copyright'>&copy;2019-` + new Date().getFullYear() + ` RookieHPC.</p>`;
+        	<p id='Copyright'>2019-` + new Date().getFullYear() + ` RookieHPC</p>`;
     },
 
     Build: () => {
