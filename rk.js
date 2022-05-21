@@ -566,7 +566,6 @@ const RK = {
         else {
             const Entries = Technology[RK.EntriesPN];
             return Text.replace(/\b\w+\b/g, (Word) => {
-                console.log("Word extracted from regex: " + Word);
                 for(let I = 0; I < Entries.length; I++) {
                     const Entry = Entries[I];
                     if(Entry[RK.NamePN] === Word) {
@@ -1452,8 +1451,6 @@ const RK = {
                     case 200:
                         const ArticleLinks = document.getElementById("ArticleLinks");
                         window.Manifest = JSON.parse(XHR.responseText);
-                        console.log("Manifest now declared");
-                        console.log(window.Manifest);
                         window.Manifest.forEach((TechnologyEntry) => {
                             TechnologyEntry[RK.EntriesPN].forEach((DocumentationEntry) => {
                                 ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `"/index.html><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
