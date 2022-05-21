@@ -551,6 +551,32 @@ const RK = {
                 break;
         }
     },
+
+    InsertCrossReferencesFromTechnology: (Text) => {
+        const TechnologyName = window.location.pathname.split("/")[1];
+        let Technology = null;
+        for(let I = 0; I < window.Manifest.length; I++) {
+            if(Manifest[I][RK.TechnologyPN].toLowerCase() === TechnologyName) {
+                Technology = window.Manifest[I];
+            }
+        }
+        if(Technology == null) {
+            return Text;
+        }
+        else {
+            const Entries = Technology[RK.EntriesPN];
+            return Text.replace(/\b\w+\b/g, (Word) => {
+                console.log("Word extracted from regex: " + Word);
+                for(let I = 0; I < Entries.length; I++) {
+                    const Entry = Entries[I];
+                    if(Entry[RK.NamePN] === Word) {
+                        return '<a href="' + Technology['PathRoot'] + '/' + Entry[RK.DirectoryNamePN] + '/index.html">' + Word + '</a>';
+                    }
+                }
+                return Word;
+            });
+        }
+    },
     
     GenerateDocumentation: (Entry) => {
         // Build the technology header containing the about / docs / tools / exercises tabs
@@ -651,10 +677,10 @@ const RK = {
     
             const DefinitionPageBodyContent = document.createElement('p');
             if(Entry[RK.SharedDescriptionPN] == false) {
-                DefinitionPageBodyContent.innerHTML = LanguageEntry[RK.DescriptionPN];
+                DefinitionPageBodyContent.innerHTML = RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.DescriptionPN]);
             }
             else {
-                DefinitionPageBodyContent.innerHTML = Entry[RK.DescriptionPN];
+                DefinitionPageBodyContent.innerHTML = RK.InsertCrossReferencesFromTechnology(Entry[RK.DescriptionPN]);
             }
             DefinitionPageBody.appendChild(DefinitionPageBodyContent);
     
@@ -1202,37 +1228,41 @@ const RK = {
 
             RK.SetOutput(SelectedOutput);
             RK.GetOutput().innerText = "";
-            RK.BuildHeader(Entry);
-            switch(Entry[RK.TypePN]) {
-                case RK.ENTRY_TYPES.TEXT:
-                    RK.GenerateText(Entry);
-                    break;
-                case RK.ENTRY_TYPES.ABOUT:
-                    RK.GenerateAbout(Entry);
-                    break;
-                case RK.ENTRY_TYPES.DOCUMENTATION:
-                    RK.GenerateDocumentation(Entry);
-                    break;
-                case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
-                    RK.GenerateToolHomepage(Entry);
-                    break;
-                case RK.ENTRY_TYPES.TOOL:
-                    throw 'Unimplemented yet';
-                    break;
-                case RK.ENTRY_TYPES.EXERCISE:
-                    throw 'Unimplemented yet';
-                    break;
-                case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
-                    RK.GenerateDocumentationHomepage(Entry);
-                    break;
-                case RK.ENTRY_TYPES.HOMEPAGE:
-                    RK.GenerateHomepage(Entry);
-                    break;
-                default:
-                    throw 'Unsupported entry type: "' + Entry[RK.TypePN] + '".';
-                    break;
-            }
-            RK.BuildFooter(Entry);
+            // Will automa
+            RK.BuildHeader(Entry)
+            .then(() =>
+            {
+                switch(Entry[RK.TypePN]) {
+                    case RK.ENTRY_TYPES.TEXT:
+                        RK.GenerateText(Entry);
+                        break;
+                    case RK.ENTRY_TYPES.ABOUT:
+                        RK.GenerateAbout(Entry);
+                        break;
+                    case RK.ENTRY_TYPES.DOCUMENTATION:
+                        RK.GenerateDocumentation(Entry);
+                        break;
+                    case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
+                        RK.GenerateToolHomepage(Entry);
+                        break;
+                    case RK.ENTRY_TYPES.TOOL:
+                        throw 'Unimplemented yet';
+                        break;
+                    case RK.ENTRY_TYPES.EXERCISE:
+                        throw 'Unimplemented yet';
+                        break;
+                    case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
+                        RK.GenerateDocumentationHomepage(Entry);
+                        break;
+                    case RK.ENTRY_TYPES.HOMEPAGE:
+                        RK.GenerateHomepage(Entry);
+                        break;
+                    default:
+                        throw 'Unsupported entry type: "' + Entry[RK.TypePN] + '".';
+                        break;
+                }
+                RK.BuildFooter(Entry);
+            });
         }
         catch(e) {
             throw RK.LocationOpener + "Error at " + RK.GetLocation() + RK.LocationCloser + e;
@@ -1249,7 +1279,7 @@ const RK = {
                     <p class="SourceCodeToolbarButtonText">Feedback</p>
                 </div>
             </div>
-            <pre class="SourceCode"><code>` + hljs.lineNumbersValue(hljs.highlight(SourceCode, {language: LanguageClass}).value) + `</code>
+            <pre class="SourceCode"><code>` + hljs.lineNumbersValue(RK.InsertCrossReferencesFromTechnology(hljs.highlight(SourceCode, {language: LanguageClass}).value)) + `</code>
             </pre>
         </div>`;
     },
@@ -1358,90 +1388,95 @@ const RK = {
     },
 
     BuildHeader: (Entry) => {
-        const MainHeader = document.createElement("div");
-        MainHeader.id = "MainHeader";
-        RK.GetOutput().appendChild(MainHeader);
+        return new Promise((Resolve, Reject) => {
+            const MainHeader = document.createElement("div");
+            MainHeader.id = "MainHeader";
+            RK.GetOutput().appendChild(MainHeader);
 
-        InnerHTML = `
-            <img id="MainLogo" src="` + RK.BASE_URL + `/images/logoWhite.svg" width="40" onclick="window.location='` + RK.BASE_URL + `/index.html'" alt="Logo of RookieHPC">
-            <div id="SearchArea">
-                <div id="SearchForm">
-                    <input type="text" id="SearchBar" name="SearchBar" autocomplete="off"><span id="SearchIcon" class="FakeButton" style="background-image: url('` + RK.BASE_URL + `/images/magnifyingGlass.svg')";></span>
+            InnerHTML = `
+                <img id="MainLogo" src="` + RK.BASE_URL + `/images/logoWhite.svg" width="40" onclick="window.location='` + RK.BASE_URL + `/index.html'" alt="Logo of RookieHPC">
+                <div id="SearchArea">
+                    <div id="SearchForm">
+                        <input type="text" id="SearchBar" name="SearchBar" autocomplete="off"><span id="SearchIcon" class="FakeButton" style="background-image: url('` + RK.BASE_URL + `/images/magnifyingGlass.svg')";></span>
+                    </div>
+                    <ul id="ArticleLinks" style="width: 909px;">
+                        <li id="NoResultFound" class="NonUserSelectable FakeButton"></li>
+                    </ul>
                 </div>
-                <ul id="ArticleLinks" style="width: 909px;">
-                    <li id="NoResultFound" class="NonUserSelectable FakeButton"></li>
-                </ul>
-            </div>
-            <script>
-                var SearchBarElement = document.getElementById('SearchBar');
-                var ArticleLinksElement = document.getElementById('ArticleLinks');
-                ArticleLinksElement.style.width = SearchBarElement.clientWidth + "px";
-            </script>
-            <p id="NavigationPath"><a href = "` + RK.BASE_URL + `/index.html">Homepage</a>`;
-        if(Entry[RK.TypePN] == RK.ENTRY_TYPES.HOMEPAGE)
-        {
-            // Nothing else to add to the navigation path
-        }
-        else if(Entry[RK.TypePN] == RK.ENTRY_TYPES.TEXT) {
-            InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.DirectoryNamePN].toLowerCase() + `/index.html">` + Entry[RK.NamePN] + `</a>`;
-        }
-        else
-        {
-            InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/index.html">` + Entry[RK.TechnologyPN] + `</a>`;
-            let TypeString = "";
-            switch(Entry[RK.TypePN]) {
-                case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
-                case RK.ENTRY_TYPES.DOCUMENTATION:
-                    TypeString = "Docs";
-                    break;
-                case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
-                case RK.ENTRY_TYPES.TOOL:
-                    TypeString = "Tools";
-                    break;
-                case RK.ENTRY_TYPES.EXERCISE_HOMEPAGE:
-                case RK.ENTRY_TYPES.EXERCISE:
-                    TypeString = "Exercises";
-                    break;                        
+                <script>
+                    var SearchBarElement = document.getElementById('SearchBar');
+                    var ArticleLinksElement = document.getElementById('ArticleLinks');
+                    ArticleLinksElement.style.width = SearchBarElement.clientWidth + "px";
+                </script>
+                <p id="NavigationPath"><a href = "` + RK.BASE_URL + `/index.html">Homepage</a>`;
+            if(Entry[RK.TypePN] == RK.ENTRY_TYPES.HOMEPAGE)
+            {
+                // Nothing else to add to the navigation path
             }
-            InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/` + TypeString.toLowerCase() + `/index.html">` + TypeString + `</a>`;
-            if(Entry[RK.TypePN] == RK.ENTRY_TYPES.DOCUMENTATION || 
-               Entry[RK.TypePN] == RK.ENTRY_TYPES.EXERCISE || 
-               Entry[RK.TypePN] == RK.ENTRY_TYPES.TOOL) {
-                InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/` + TypeString.toLowerCase() + `/` + Entry[RK.DirectoryNamePN] + `/index.html">` + Entry[RK.NamePN] + `</a>`;
+            else if(Entry[RK.TypePN] == RK.ENTRY_TYPES.TEXT) {
+                InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.DirectoryNamePN].toLowerCase() + `/index.html">` + Entry[RK.NamePN] + `</a>`;
             }
-        }
-        InnerHTML += `</p>`;
-        MainHeader.innerHTML = InnerHTML;
-        const XHR = new XMLHttpRequest();
-        const ManifestPath = RK.BASE_URL + "/" + RK.LOOKUP_NAME;
-        XHR.open("GET", ManifestPath);
-        XHR.onload = () => {
-            switch(XHR.status) {
-                case 0:
-                case 200:
-                    const ArticleLinks = document.getElementById("ArticleLinks");
-                    const Manifest = JSON.parse(XHR.responseText);
-                    Manifest.forEach((TechnologyEntry) => {
-                        TechnologyEntry[RK.EntriesPN].forEach((DocumentationEntry) => {
-                            ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `"/index.html><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
-                        })
-                    });
-                    document.getElementById('SearchIcon').addEventListener('click', RK.ChangeSearchState);
-                    document.getElementById('SearchBar').addEventListener('focus', function () {
-                        if(!document.getElementById('SearchIcon').hasAttribute('data-searchlaunched')) {
-                            RK.ChangeSearchState();
-                        }
-                    });
-                    document.getElementById('SearchBar').addEventListener('keyup', RK.LaunchSearch);
-                    break;
-                case 404:
-                    alert("Manifest not found at \"" + ManifestPath + "\"");
-                    break;
-                default:
-                    alert("Manifest loading: unexpected XHR code " + XHR.status);
+            else
+            {
+                InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/index.html">` + Entry[RK.TechnologyPN] + `</a>`;
+                let TypeString = "";
+                switch(Entry[RK.TypePN]) {
+                    case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
+                    case RK.ENTRY_TYPES.DOCUMENTATION:
+                        TypeString = "Docs";
+                        break;
+                    case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
+                    case RK.ENTRY_TYPES.TOOL:
+                        TypeString = "Tools";
+                        break;
+                    case RK.ENTRY_TYPES.EXERCISE_HOMEPAGE:
+                    case RK.ENTRY_TYPES.EXERCISE:
+                        TypeString = "Exercises";
+                        break;                        
+                }
+                InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/` + TypeString.toLowerCase() + `/index.html">` + TypeString + `</a>`;
+                if(Entry[RK.TypePN] == RK.ENTRY_TYPES.DOCUMENTATION || 
+                Entry[RK.TypePN] == RK.ENTRY_TYPES.EXERCISE || 
+                Entry[RK.TypePN] == RK.ENTRY_TYPES.TOOL) {
+                    InnerHTML += `&nbsp; ▸ &nbsp;<a href = "` + RK.BASE_URL + `/` + Entry[RK.TechnologyPN].toLowerCase() + `/` + TypeString.toLowerCase() + `/` + Entry[RK.DirectoryNamePN] + `/index.html">` + Entry[RK.NamePN] + `</a>`;
+                }
             }
-        };
-        XHR.send(null);
+            InnerHTML += `</p>`;
+            MainHeader.innerHTML = InnerHTML;
+            const XHR = new XMLHttpRequest();
+            const ManifestPath = RK.BASE_URL + "/" + RK.LOOKUP_NAME;
+            XHR.open("GET", ManifestPath);
+            XHR.onload = () => {
+                switch(XHR.status) {
+                    case 0:
+                    case 200:
+                        const ArticleLinks = document.getElementById("ArticleLinks");
+                        window.Manifest = JSON.parse(XHR.responseText);
+                        console.log("Manifest now declared");
+                        console.log(window.Manifest);
+                        window.Manifest.forEach((TechnologyEntry) => {
+                            TechnologyEntry[RK.EntriesPN].forEach((DocumentationEntry) => {
+                                ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `"/index.html><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
+                            })
+                        });
+                        document.getElementById('SearchIcon').addEventListener('click', RK.ChangeSearchState);
+                        document.getElementById('SearchBar').addEventListener('focus', function () {
+                            if(!document.getElementById('SearchIcon').hasAttribute('data-searchlaunched')) {
+                                RK.ChangeSearchState();
+                            }
+                        });
+                        document.getElementById('SearchBar').addEventListener('keyup', RK.LaunchSearch);
+                        Resolve();
+                        break;
+                    case 404:
+                        alert("Manifest not found at \"" + ManifestPath + "\"");
+                        break;
+                    default:
+                        alert("Manifest loading: unexpected XHR code " + XHR.status);
+                }
+            };
+            XHR.send(null);
+        });
     },
 
     /**
