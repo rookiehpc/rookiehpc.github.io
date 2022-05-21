@@ -334,11 +334,11 @@
 		margin: 0px auto;
 		padding-top: 30px;
 		padding-bottom: 30px;
-		padding-left: 10vw;
-		padding-right: 10vw;
-		color: var(--Colour);;
+		padding-left: 50px;
+		padding-right: 50px;
+		color: var(--Colour);
 		text-align: justify;
-	    text-justify: inter-word;
+		text-justify: inter-word;
 		text-align: justify;
 	}
 
@@ -348,6 +348,24 @@
 		{
 			min-height: 100%;
 			margin-top: 10px;
+		}
+	}
+
+	@media only screen and (min-width: 1440px)
+	{
+		#MainSection
+		{
+			padding-left: calc(50 - (100% - 1440px));
+			padding-right: calc(50 - (100% - 1440px));
+		}
+	}
+
+	@media only screen and (min-width: 1490px)
+	{
+		#MainSection
+		{
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 
