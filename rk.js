@@ -1261,6 +1261,7 @@ const RK = {
                         break;
                 }
                 RK.BuildFooter(Entry);
+                RK.LoadingFinished();
             });
         }
         catch(e) {
@@ -1701,7 +1702,6 @@ const RK = {
         switch(XHR.status) {
             case 200:
                 RK.Generate(JSON.parse(XHR.responseText), document.body);
-                RK.LoadingFinished();
                 break;
             case 404:
                 alert("Data.json file not found.");
