@@ -1325,8 +1325,8 @@ const RK = {
 
     ResizeSearchResultList: () => {
         const SearchBar = document.getElementById('SearchBar');
-        const compStyles = window.getComputedStyle(SearchBar);
-        const SearchBarWidth = parseInt(compStyles.getPropertyValue('width').split("px")[0]);
+        const CompStyles = window.getComputedStyle(SearchBar);
+        const SearchBarWidth = parseInt(CompStyles.getPropertyValue('width').split("px")[0]);
 
         const ArticleLinks = document.getElementById('ArticleLinks');
         ArticleLinks.style.width = SearchBarWidth + "px";
@@ -1728,16 +1728,12 @@ const RK = {
         // Hide the loader
         const Loader = document.getElementById('Loader');
         // Loader.parentElement.removeChild(Loader);
-        RK.ResizeSearchResultList();
+        RK.WhenThePageIsResized();
+        window.addEventListener('resize', RK.WhenThePageIsResized);
     },
 
-    ResizeSearchResultList: () => {
-        const SearchBar = document.getElementById('SearchBar');
-        const CompStyles = window.getComputedStyle(SearchBar);
-        const SearchBarWidth = parseInt(CompStyles.getPropertyValue('width').split("px")[0]);
-
-        let ArticleLinks = document.getElementById('ArticleLinks');
-        ArticleLinks.style.width = SearchBarWidth + "px";
+    WhenThePageIsResized: () => {
+        RK.ResizeSearchResultList();
     },
 
     EnableDarkMode: () => {
