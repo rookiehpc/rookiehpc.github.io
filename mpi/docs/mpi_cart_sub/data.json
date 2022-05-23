@@ -1,0 +1,96 @@
+{
+    "Type": "Documentation",
+    "Technology": "MPI",
+    "Name": "MPI_Cart_sub",
+    "DirectoryName": "mpi_cart_sub",
+    "SharedDescription": true,
+    "Description": "MPI_Cart_sub allows to partition a cartesian topology created with MPI_Cart_create. It works by selecting dimensions along which the subgrids created will be arranged. For each subgrid, it creates a group and a communicator.",
+    "Categories": [
+        "Cartesian",
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters": [
+                {
+                    "Name": "comm",
+                    "Description": "The cartesian communicator, created with MPI_Cart_create, to partition.",
+                    "Type": "MPI_Comm"
+                },
+                {
+                    "Name": "remain_dims",
+                    "Description": "Indicates along which dimensions arrange subgrids. If all entries in remain_dims are set to false, then new_comm will be associated with a zero-dimensional cartesian topology.",
+                    "Type": "const int*"
+                },
+                {
+                    "Name": "new_comm",
+                    "Description": "The communicator containing the subgrid that includes the calling MPI process.",
+                    "Type": "MPI_Comm*"
+                }
+            ],
+            "Return": {
+                "Type": "int",
+                "Description": "The error code returned from the coordinates partitioning.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul><p>"
+            }
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name": "comm",
+                    "Description": "The cartesian communicator, created with MPI_Cart_create, to partition.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "remain_dims",
+                    "Description": "Indicates along which dimensions arrange subgrids. If all entries in remain_dims are set to false, then new_comm will be associated with a zero-dimensional cartesian topology.",
+                    "Type": "LOGICAL"
+                },
+                {
+                    "Name": "new_comm",
+                    "Description": "The communicator containing the subgrid that includes the calling MPI process.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "ierror",
+                    "Description": "The error code returned from the coordinates partitioning.",
+                    "Type": "INTEGER"
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name": "comm",
+                    "Description": "The cartesian communicator, created with MPI_Cart_create, to partition.",
+                    "Type": "TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name": "remain_dims",
+                    "Description": "Indicates along which dimensions arrange subgrids. If all entries in remain_dims are set to false, then new_comm will be associated with a zero-dimensional cartesian topology.",
+                    "Type": "LOGICAL",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name": "new_comm",
+                    "Description": "The communicator containing the subgrid that includes the calling MPI process.",
+                    "Type": "TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name": "ierror",
+                    "Description": "The error code returned from the coordinates partitioning.",
+                    "Type": "INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        }
+    ]
+}
