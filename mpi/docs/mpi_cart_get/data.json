@@ -41,7 +41,7 @@
             ],
             "Return": {
                 "Type": "int",
-                "Description": "The error code returned from the coordinates creation.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul><p>"
+                "Description": "The error code returned from the coordinates retrieval.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul><p>"
             }
         },
         {
@@ -74,7 +74,7 @@
                 },
                 {
                     "Name": "ierror",
-                    "Description": "The error code returned from the coordinates get.",
+                    "Description": "The error code returned from the coordinates retrieval.",
                     "Type": "INTEGER"
                 }
             ]
@@ -119,7 +119,7 @@
                 },
                 {
                     "Name": "ierror",
-                    "Description": "The error code returned from the coordinates get.",
+                    "Description": "The error code returned from the coordinates retrieval.",
                     "Type": "INTEGER",
                     "Optional":true,
                     "Intent":"OUT"
