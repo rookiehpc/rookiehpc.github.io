@@ -36,7 +36,7 @@
             ],
             "Return": {
                 "Type": "int",
-                "Description": "The error code returned from the coordinates fetch.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul>"
+                "Description": "The error code returned from the coordinates fetch.\n- MPI_SUCCESS: the routine successfully completed."
             }
         },
         {

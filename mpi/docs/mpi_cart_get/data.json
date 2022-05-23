@@ -41,7 +41,7 @@
             ],
             "Return": {
                 "Type": "int",
-                "Description": "The error code returned from the coordinates retrieval.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul><p>"
+                "Description": "The error code returned from the coordinates retrieval.\n- MPI_SUCCESS: the routine successfully completed."
             }
         },
         {

@@ -25,7 +25,7 @@
             ],
             "Return": {
                 "Type": "int",
-                "Description": "The error code returned from the memory address retrieval.</p><ul><li>MPI_SUCCESS: The routine successfully completed.</li></ul><p>"
+                "Description": "The error code returned from the memory address retrieval.\n- MPI_SUCCESS: The routine successfully completed."
             }
         },
         {
