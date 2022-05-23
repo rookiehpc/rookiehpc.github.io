@@ -1,0 +1,130 @@
+{
+    "Type": "Documentation",
+    "Technology": "MPI",
+    "Name": "MPI_Cart_get",
+    "DirectoryName": "mpi_cart_get",
+    "SharedDescription": true,
+    "Description": "MPI_Cart_get retrieves the information about the cartesian topology of a communicator.",
+    "Categories": [
+        "Cartesian",
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters": [
+                {
+                    "Name": "communicator",
+                    "Description": "The communicator concerned.",
+                    "Type": "MPI_Comm"
+                },
+                {
+                    "Name": "dimension_number",
+                    "Description": "The number of dimensions in the cartesian grid.",
+                    "Type": "int"
+                },
+                {
+                    "Name": "dimensions",
+                    "Description": "The array in which store the number of processes in each dimension of the cartesian topology of the communicator passed.",
+                    "Type": "int*"
+                },
+                {
+                    "Name": "periods",
+                    "Description": "The array in which store the periodicity for each dimension. It indicates, for each dimension, if it is periodic (true) or non-periodic (false).",
+                    "Type": "int*"
+                },
+                {
+                    "Name": "coords",
+                    "Description": "The array in which store the coordinates of the calling MPI process in the cartesian topology of the communicator specified.",
+                    "Type": "int*"
+                }
+            ],
+            "Return": {
+                "Type": "int",
+                "Description": "The error code returned from the coordinates creation.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul><p>"
+            }
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name": "communicator",
+                    "Description": "The communicator concerned.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "dimension_number",
+                    "Description": "The number of dimensions in the cartesian grid.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "dimensions",
+                    "Description": "The array in which store the number of processes in each dimension of the cartesian topology of the communicator passed.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "periods",
+                    "Description": "The array in which store the periodicity for each dimension. It indicates, for each dimension, if it is periodic (true) or non-periodic (false).",
+                    "Type": "LOGICAL"
+                },
+                {
+                    "Name": "coords",
+                    "Description": "The array in which store the coordinates of the calling MPI process in the cartesian topology of the communicator specified.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "ierror",
+                    "Description": "The error code returned from the coordinates get.",
+                    "Type": "INTEGER"
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name": "communicator",
+                    "Description": "The communicator concerned.",
+                    "Type": "TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name": "dimension_number",
+                    "Description": "The number of dimensions in the cartesian grid.",
+                    "Type": "INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name": "dimensions",
+                    "Description": "The array in which store the number of processes in each dimension of the cartesian topology of the communicator passed.",
+                    "Type": "INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name": "periods",
+                    "Description": "The array in which store the periodicity for each dimension. It indicates, for each dimension, if it is periodic (true) or non-periodic (false).",
+                    "Type": "LOGICAL",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name": "coords",
+                    "Description": "The array in which store the coordinates of the calling MPI process in the cartesian topology of the communicator specified.",
+                    "Type": "INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name": "ierror",
+                    "Description": "The error code returned from the coordinates get.",
+                    "Type": "INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        }
+    ]
+}
