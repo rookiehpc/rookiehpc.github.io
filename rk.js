@@ -1221,6 +1221,7 @@ const RK = {
 
     Generate: (Entry, SelectedOutput) => {
         try {
+            RK.Verify(Entry);
             const Root = document.documentElement;
             Root.style.setProperty('--FeedbackImagePath', "url(" + RK.BASE_URL + "/images/bubbleBlack.svg)");
             Root.style.setProperty('--CopyImagePath', "url(" + RK.BASE_URL + "/images/copyBlack.svg)");
