@@ -1,1 +1,25 @@
-{"Type":"Documentation","Technology":"MPI","Name":"MPI_Aint","DirectoryName":"mpi_aint","SharedDescription":false,"Categories":["Addressing","Datatypes"],"Languages":[{"Language":"C","Description":"In C, MPI_Aint and MPI_AINT are distinct:</p><ul><li>MPI_Aint is the type of a variable able to contain a memory address. It is used in heterogeneous datatype creation routines for instance, such as MPI_Type_create_hindexed, MPI_Type_create_hindexed_block, MPI_Type_create_hvector and MPI_Type_create_struct. Please see MPI_ADDRESS_KIND for the FORTRAN counterpart.</li><li>MPI_AINT is an MPI_Datatype used to inform MPI about the type of a variable passed to a routine. Similar to MPI_INT being the MPI_Datatype corresponding to an int, MPI_AINT is the MPI_Datatype corresponding to an MPI_Aint.</li></ul>"},{"Language":"FORTRAN-90","Description":"MPI_AINT is an MPI_Datatype that represents an address type in MPI, it corresponds to an MPI_ADDRESS_KIND in FORTRAN.<br>(The distinction between MPI_Aint and MPI_AINT is only relevant in C.)"},{"Language":"FORTRAN-2008","Description":"MPI_AINT is an MPI_Datatype that represents an address type in MPI, it corresponds to an MPI_ADDRESS_KIND in FORTRAN.<br>(The distinction between MPI_Aint and MPI_AINT is only relevant in C.)"}]}
+{
+    "Type": "Documentation",
+    "Technology": "MPI",
+    "Name": "MPI_Aint",
+    "DirectoryName": "mpi_aint",
+    "SharedDescription": false,
+    "Categories": [
+        "Addressing",
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Description": "In C, MPI_Aint and MPI_AINT are distinct:</p><ul><li>MPI_Aint is the type of a variable able to contain a memory address. It is used in heterogeneous datatype creation routines for instance, such as MPI_Type_create_hindexed, MPI_Type_create_hindexed_block, MPI_Type_create_hvector and MPI_Type_create_struct. Please see MPI_ADDRESS_KIND for the FORTRAN counterpart.</li><li>MPI_AINT is an MPI_Datatype used to inform MPI about the type of a variable passed to a routine. Similar to MPI_INT being the MPI_Datatype corresponding to an int, MPI_AINT is the MPI_Datatype corresponding to an MPI_Aint.</li></ul>"
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Description": "MPI_AINT is an MPI_Datatype that represents an address type in MPI, it corresponds to an MPI_ADDRESS_KIND in FORTRAN.<br>(The distinction between MPI_Aint and MPI_AINT is only relevant in C.)"
+        },
+        {
+            "Language": "FORTRAN-2008",
+            "Description": "MPI_AINT is an MPI_Datatype that represents an address type in MPI, it corresponds to an MPI_ADDRESS_KIND in FORTRAN.<br>(The distinction between MPI_Aint and MPI_AINT is only relevant in C.)"
+        }
+    ]
+}

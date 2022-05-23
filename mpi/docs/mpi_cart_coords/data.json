@@ -1,1 +1,113 @@
-{"Type":"Documentation","Technology":"MPI","Name":"MPI_Cart_coords","DirectoryName":"mpi_cart_coords","SharedDescription":true,"Description":"MPI_Cart_coords gets the coordinate of a process in a communicator that has a cartesian topology.","Categories":["Cartesian","Topology"],"Languages":[{"Language":"C","Parameters":[{"Name":"communicator","Description":"The communicator concerned.","Type":"MPI_Comm"},{"Name":"rank","Description":"The rank of the process to locate in that communicator.","Type":"int"},{"Name":"dimension_number","Description":"The number of dimensions of the cartesian topology.","Type":"int"},{"Name":"coords","Description":"An array in which store the coordinates of the process in the cartesian topology of the communicator passed.","Type":"int*"}],"Return":{"Type":"int","Description":"The error code returned from the coordinates fetch.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul>"}},{"Language":"FORTRAN-90","Parameters":[{"Name":"communicator","Description":"The communicator concerned.","Type":"INTEGER"},{"Name":"rank","Description":"The rank of the process to locate in that communicator.","Type":"INTEGER"},{"Name":"dimension_number","Description":"The number of dimensions of the cartesian topology.","Type":"INTEGER"},{"Name":"coords","Description":"An array in which store the coordinates of the process in the cartesian topology of the communicator passed.","Type":"INTEGER"},{"Name":"ierror","Description":"The error code returned from the coordinates fetch.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul>","Type":"INTEGER"}]},{"Language":"FORTRAN-2008","Parameters":[{"Name":"communicator","Description":"The communicator concerned.","Type":"Type(MPI_Comm)","Optional":false,"Intent":"IN"},{"Name":"rank","Description":"The rank of the process to locate in that communicator.","Type":"INTEGER","Optional":false,"Intent":"IN"},{"Name":"dimension_number","Description":"The number of dimensions of the cartesian topology.","Type":"INTEGER","Optional":false,"Intent":"IN"},{"Name":"coords","Description":"An array in which store the coordinates of the process in the cartesian topology of the communicator passed.","Type":"INTEGER","Optional":false,"Intent":"OUT"},{"Name":"ierror","Description":"An array in which store the coordinates of the process in the cartesian topology of the communicator passed.","Type":"INTEGER","Optional":true,"Intent":"OUT"}]}]}
+{
+    "Type": "Documentation",
+    "Technology": "MPI",
+    "Name": "MPI_Cart_coords",
+    "DirectoryName": "mpi_cart_coords",
+    "SharedDescription": true,
+    "Description": "MPI_Cart_coords gets the coordinate of a process in a communicator that has a cartesian topology.",
+    "Categories": [
+        "Cartesian",
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters": [
+                {
+                    "Name": "communicator",
+                    "Description": "The communicator concerned.",
+                    "Type": "MPI_Comm"
+                },
+                {
+                    "Name": "rank",
+                    "Description": "The rank of the process to locate in that communicator.",
+                    "Type": "int"
+                },
+                {
+                    "Name": "dimension_number",
+                    "Description": "The number of dimensions of the cartesian topology.",
+                    "Type": "int"
+                },
+                {
+                    "Name": "coords",
+                    "Description": "An array in which store the coordinates of the process in the cartesian topology of the communicator passed.",
+                    "Type": "int*"
+                }
+            ],
+            "Return": {
+                "Type": "int",
+                "Description": "The error code returned from the coordinates fetch.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul>"
+            }
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name": "communicator",
+                    "Description": "The communicator concerned.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "rank",
+                    "Description": "The rank of the process to locate in that communicator.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "dimension_number",
+                    "Description": "The number of dimensions of the cartesian topology.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "coords",
+                    "Description": "An array in which store the coordinates of the process in the cartesian topology of the communicator passed.",
+                    "Type": "INTEGER"
+                },
+                {
+                    "Name": "ierror",
+                    "Description": "The error code returned from the coordinates fetch.</p><ul><li>MPI_SUCCESS: the routine successfully completed.</li></ul>",
+                    "Type": "INTEGER"
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name": "communicator",
+                    "Description": "The communicator concerned.",
+                    "Type": "Type(MPI_Comm)",
+                    "Optional": false,
+                    "Intent": "IN"
+                },
+                {
+                    "Name": "rank",
+                    "Description": "The rank of the process to locate in that communicator.",
+                    "Type": "INTEGER",
+                    "Optional": false,
+                    "Intent": "IN"
+                },
+                {
+                    "Name": "dimension_number",
+                    "Description": "The number of dimensions of the cartesian topology.",
+                    "Type": "INTEGER",
+                    "Optional": false,
+                    "Intent": "IN"
+                },
+                {
+                    "Name": "coords",
+                    "Description": "An array in which store the coordinates of the process in the cartesian topology of the communicator passed.",
+                    "Type": "INTEGER",
+                    "Optional": false,
+                    "Intent": "OUT"
+                },
+                {
+                    "Name": "ierror",
+                    "Description": "An array in which store the coordinates of the process in the cartesian topology of the communicator passed.",
+                    "Type": "INTEGER",
+                    "Optional": true,
+                    "Intent": "OUT"
+                }
+            ]
+        }
+    ]
+}
