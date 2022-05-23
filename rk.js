@@ -576,6 +576,48 @@ const RK = {
             });
         }
     },
+
+    InterpretMarkdown: (Text) => {
+        let TextGenerated = "";
+        let AllLines = Text.split(/\r?\n/)
+        let InListMode = false;
+        let FirstLine = true;
+        for(let I = 0; I < AllLines.length; I++)
+        {
+            if(FirstLine === true)
+            {
+                FirstLine = false;
+            }
+            else
+            {
+                TextGenerated += "\n";
+            }
+            if(AllLines[I].startsWith('-'))
+            {
+                if(InListMode === false)
+                {
+                    InListMode = true;
+                    TextGenerated += "<ul>";
+                }
+                TextGenerated += "<li>" + AllLines[I].substring(1) + "</li>";
+            }
+            else
+            {
+                if(InListMode === true)
+                {
+                    TextGenerated += "</ul>";
+                    InListMode = false;
+                }
+                TextGenerated += AllLines[I];
+            }
+        }
+        if(InListMode === true)
+        {
+            TextGenerated += "</ul>";
+            InListMode = false;
+        }
+        return TextGenerated;
+    },
     
     GenerateDocumentation: (Entry) => {
         // Build the technology header containing the about / docs / tools / exercises tabs
@@ -773,7 +815,7 @@ const RK = {
                         ReturnPage.appendChild(ParametersPageBody);
     
                         let ReturnDescription = document.createElement('p');
-                        ReturnDescription.innerHTML = LanguageEntry[RK.ReturnPN][RK.DescriptionPN];
+                        ReturnDescription.innerHTML = RK.InterpretMarkdown(LanguageEntry[RK.ReturnPN][RK.DescriptionPN]);
                         ParametersPageBody.appendChild(ReturnDescription);
                     }
                     break;
