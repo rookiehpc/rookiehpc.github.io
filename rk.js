@@ -65,6 +65,7 @@ const RK = {
     UrlPN: "Url",
     ImageUrlPN: "ImageUrl",
 
+    ParameterTypeSplitter: '\t',
     LocationRoot: "Root",
     LocationSeparator: " > ",
     LocationOpener: "[",
@@ -771,7 +772,7 @@ const RK = {
                                         PrototypeString += " ";
                                     }
                                 }
-                                PrototypeString += ParameterEntry[RK.TypePN] + " " + ParameterEntry[RK.NamePN];
+                                PrototypeString += ParameterEntry[RK.TypePN].split(RK.ParameterTypeSplitter)[0] + " " + ParameterEntry[RK.NamePN] + (ParameterEntry[RK.TypePN].split(RK.ParameterTypeSplitter)[1] || '');
                                 if(ParameterEntry.hasOwnProperty(RK.DimensionNumberPN) == true) {
                                     PrototypeString += "[" + ParameterEntry[RK.DimensionNumberPN] + "]";
                                 }
@@ -879,7 +880,7 @@ const RK = {
     
                         PrototypeString += ")";
                         LanguageEntry[RK.ParametersPN].forEach((ParameterEntry) => {
-                            PrototypeString += "\n    " + ParameterEntry[RK.TypePN] + " :: " + ParameterEntry[RK.NamePN];
+                            PrototypeString += "\n    " + ParameterEntry[RK.TypePN].split(RK.ParameterTypeSplitter)[0] + " :: " + ParameterEntry[RK.NamePN] + (ParameterEntry[RK.TypePN].split(RK.ParameterTypeSplitter)[1] || '');
                             if(ParameterEntry.hasOwnProperty(RK.DimensionNumberPN) == true) {
                                 PrototypeString += "(" + ParameterEntry[RK.DimensionNumberPN] + ")";
                             }
@@ -982,13 +983,13 @@ const RK = {
     
                         PrototypeString += ")";
                         LanguageEntry[RK.ParametersPN].forEach((ParameterEntry) => {
-                            PrototypeString += "\n    " + ParameterEntry[RK.TypePN];
+                            PrototypeString += "\n    " + ParameterEntry[RK.TypePN].split(RK.ParameterTypeSplitter)[0];
                             if(RK.CanParameterBeOptional(LanguageEntry[RK.LanguagePN]) == true) {
                                 if(ParameterEntry[RK.OptionalPN] === true) {
                                     PrototypeString += ", OPTIONAL";
                                 }
                             }
-                            PrototypeString += ", INTENT(" + ParameterEntry[RK.IntentPN] + ") :: " + ParameterEntry[RK.NamePN];
+                            PrototypeString += ", INTENT(" + ParameterEntry[RK.IntentPN] + ") :: " + ParameterEntry[RK.NamePN] + (ParameterEntry[RK.TypePN].split(RK.ParameterTypeSplitter)[1] || '');
                             if(ParameterEntry.hasOwnProperty(RK.DimensionNumberPN) == true) {
                                 PrototypeString += "(" + ParameterEntry[RK.DimensionNumberPN] + ")";
                             }
