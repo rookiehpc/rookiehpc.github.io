@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Buffer_detach",
+    "DirectoryName":"mpi_buffer_detach",
+    "SharedDescription":true,
+    "Description":"MPI_Buffer_detach removes the buffer currently attached to the MPI buffer space, which has been attached with MPI_Buffer_attach. MPI_Buffer_detach will block until all the messages contained in the attached buffer are sent. Note that detaching a buffer does not free the corresponding memory; it is the responsibility of the user to do so.",
+    "Categories":[
+        "Sending"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"A pointer on the pointer in which write the address of the buffer detached. The fact that the argument type is \"void*\" and not \"void**\" is not a mistake. It is explained in the MPI standard as being a convenience to avoid type castings.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"A pointer on the variable in which write the size of the buffer detached, in bytes.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the buffer detachment.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The variable in which store the buffer that was attached to MPI until then.",
+                    "Type":"TYPE(C_PTR)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the buffer detached, in bytes.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the buffer detachment.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The variable in which store the buffer that was attached to MPI until then.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the buffer detached, in bytes.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the buffer detachment.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
