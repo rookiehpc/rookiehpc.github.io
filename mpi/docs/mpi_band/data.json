@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_BAND",
+    "DirectoryName":"mpi_band",
+    "SharedDescription":true,
+    "Description":"MPI_BAND is a predefined reduction operation that will calculate the bit-wise and of the values reduced.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
