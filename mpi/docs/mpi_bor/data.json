@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_BOR",
+    "DirectoryName":"mpi_bor",
+    "SharedDescription":true,
+    "Description":"MPI_BOR is a predefined reduction operation that will calculate the bit-wise or of the values reduced.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
