@@ -80,6 +80,10 @@
                 "DirectoryName":"mpi_bsend"
             },
             {
+                "Name":"MPI_Bsend_init",
+                "DirectoryName":"mpi_bsend_init"
+            },
+            {
                 "Name":"MPI_Cart_coords",
                 "DirectoryName":"mpi_cart_coords"
             },
