@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_BSEND_OVERHEAD",
+    "DirectoryName":"mpi_bsend_overhead",
+    "SharedDescription":true,
+    "Description":"MPI_BSEND_OVERHEAD represents the size, in bytes, of the memory overhead generated everytime an MPI_Bsend or MPI_Ibsend is issued. The buffer currently attached to MPI, via MPI_Buffer_attach, must contain enough space for both the message to send and the memory overhead generated.",
+    "Categories":[
+        "Sending"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
