@@ -65,13 +65,13 @@
                 {
                     "Name": "dimensions",
                     "Description": "The array containing the number of processes to assign to each dimension.",
-                    "Type": "INTEGER",
+                    "Type": "INTEGER\t(*)",
                     "DimensionNumber": "*"
                 },
                 {
                     "Name": "periods",
                     "Description": "The array containing the periodicity for each dimension. It indicates, for each dimension, if it is periodic (true) or non-periodic (false).",
-                    "Type": "INTEGER",
+                    "Type": "INTEGER\t(*)",
                     "DimensionNumber": "*"
                 },
                 {
@@ -111,7 +111,7 @@
                 {
                     "Name": "dimensions",
                     "Description": "The array containing the number of processes to assign to each dimension.",
-                    "Type": "INTEGER",
+                    "Type": "INTEGER\t(dimension_number)",
                     "DimensionNumber": "dimension_number",
                     "Optional": false,
                     "Intent": "IN"
@@ -119,7 +119,7 @@
                 {
                     "Name": "periods",
                     "Description": "The array containing the periodicity for each dimension. It indicates, for each dimension, if it is periodic (true) or non-periodic (false).",
-                    "Type": "LOGICAL",
+                    "Type": "LOGICAL\t(dimension_number)",
                     "DimensionNumber": "dimension_number",
                     "Optional": false,
                     "Intent": "IN"

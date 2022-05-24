@@ -154,7 +154,7 @@
                 {
                     "Name":"origin_address",
                     "Description":"The address of the origin buffer; the one containing the data to send.",
-                    "Type":"INTEGER",
+                    "Type":"INTEGER\t(*)",
                     "Optional":false
                 },
                 {

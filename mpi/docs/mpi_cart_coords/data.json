@@ -60,7 +60,7 @@
                 {
                     "Name": "coords",
                     "Description": "An array in which store the coordinates of the process in the cartesian topology of the communicator passed.",
-                    "Type": "INTEGER"
+                    "Type": "INTEGER\t(*)"
                 },
                 {
                     "Name": "ierror",
@@ -96,7 +96,7 @@
                 {
                     "Name": "coords",
                     "Description": "An array in which store the coordinates of the process in the cartesian topology of the communicator passed.",
-                    "Type": "INTEGER",
+                    "Type": "INTEGER\t(dimension_number)",
                     "Optional": false,
                     "Intent": "OUT"
                 },

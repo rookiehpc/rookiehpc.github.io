@@ -60,17 +60,17 @@
                 {
                     "Name": "dimensions",
                     "Description": "The array in which store the number of processes in each dimension of the cartesian topology of the communicator passed.",
-                    "Type": "INTEGER"
+                    "Type": "INTEGER\t(*)"
                 },
                 {
                     "Name": "periods",
                     "Description": "The array in which store the periodicity for each dimension. It indicates, for each dimension, if it is periodic (true) or non-periodic (false).",
-                    "Type": "LOGICAL"
+                    "Type": "LOGICAL\t(*)"
                 },
                 {
                     "Name": "coords",
                     "Description": "The array in which store the coordinates of the calling MPI process in the cartesian topology of the communicator specified.",
-                    "Type": "INTEGER"
+                    "Type": "INTEGER\t(*)"
                 },
                 {
                     "Name": "ierror",
@@ -99,21 +99,21 @@
                 {
                     "Name": "dimensions",
                     "Description": "The array in which store the number of processes in each dimension of the cartesian topology of the communicator passed.",
-                    "Type": "INTEGER",
+                    "Type": "INTEGER\t(dimension_number)",
                     "Optional":false,
                     "Intent":"OUT"
                 },
                 {
                     "Name": "periods",
                     "Description": "The array in which store the periodicity for each dimension. It indicates, for each dimension, if it is periodic (true) or non-periodic (false).",
-                    "Type": "LOGICAL",
+                    "Type": "LOGICAL\t(dimension_number)",
                     "Optional":false,
                     "Intent":"OUT"
                 },
                 {
                     "Name": "coords",
                     "Description": "The array in which store the coordinates of the calling MPI process in the cartesian topology of the communicator specified.",
-                    "Type": "INTEGER",
+                    "Type": "INTEGER\t(dimension_number)",
                     "Optional":false,
                     "Intent":"OUT"
                 },

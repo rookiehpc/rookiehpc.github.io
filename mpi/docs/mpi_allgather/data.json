@@ -59,7 +59,7 @@
                 {
                     "Name": "buffer_send",
                     "Description": "The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
-                    "Type": "<type>"
+                    "Type": "<type>\t(*)"
                 },
                 {
                     "Name": "count_send",
@@ -74,7 +74,7 @@
                 {
                     "Name": "buffer_recv",
                     "Description": "The buffer in which store the gathered data.",
-                    "Type": "<type>"
+                    "Type": "<type>\t(*)"
                 },
                 {
                     "Name": "count_recv",

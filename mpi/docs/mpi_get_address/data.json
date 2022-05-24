@@ -34,7 +34,7 @@
                 {
                     "Name": "location",
                     "Description": "The element to obtain the address of.",
-                    "Type": "<type>"
+                    "Type": "<type>\t(*)"
                 },
                 {
                     "Name": "address",
