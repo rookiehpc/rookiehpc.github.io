@@ -1,0 +1,217 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Alltoallw",
+    "DirectoryName":"mpi_alltoallw",
+    "SharedDescription":true,
+    "Description":"MPI_Alltoallw is a variant of MPI_Alltoall: a combination of MPI_Scatter and MPI_Gather. That is, every process has a buffer containing elements that will be scattered across all processes, as well as a buffer in which store elements that will be gathered from all other processes. MPI_Alltoallw (like MPI_Alltoallv) allows the messages scattered to have different lengths and be stored at arbitrary locations in the send buffer, similarly for the messages gathered. MPI_Alltoallw pushes this generalisation further by also allowing buffer elements to have different types and all displacements being expressed in bytes. MPI_Alltoallw is a collective operation; all processes in the communicator must invoke this routine. Other variants of MPI_Alltoallw are MPI_Alltoall and MPI_Alltoallv. Refer to MPI_Ialltoallw to see the non-blocking counterpart of MPI_Alltoallw.",
+    "Categories":[
+        "Collectives"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data that will be scattered to other processes.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_send",
+                    "Description":"The array containing the number of elements that will be sent to each process.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements_send",
+                    "Description":"The array containing the displacement to apply to the message to send to each process. Displacements are expressed in bytes, not number of elements.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatypes_send",
+                    "Description":"The array containing the type of the elements to send to each process.",
+                    "Type":"const MPI_Datatype\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"The array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements_recv",
+                    "Description":"An array containing the displacement to apply to the message received by each process. Displacements are expressed in bytes, not in number of elements.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatypes_recv",
+                    "Description":"The array containing the type of the elements to receive from each process.",
+                    "Type":"const MPI_Datatype\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the extended variable all to all takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the extended variable all to all.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data that will be scattered to other processes.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"counts_send",
+                    "Description":"The array containing the number of elements that will be sent to each process.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"displacements_send",
+                    "Description":"The array containing the displacement to apply to the message to send to each process. Displacements are expressed in bytes, not in number of elements.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatypes_send",
+                    "Description":"The array containing the type of the elements to send to each process.",
+                    "Type":"TYPE(MPI_Datatype)\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"The array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"displacements_recv",
+                    "Description":"The array containing the displacement to apply to the message received by each process. Displacements are expressed in bytes, not in number of elements.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatypes_recv",
+                    "Description":"The array containing the type of the elements to receive from each process.",
+                    "Type":"TYPE(MPI_Datatype)\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all to all takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the extended variable all to all.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data that will be scattered to other processes.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_send",
+                    "Description":"The array containing the number of elements that will be sent to each process.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements_send",
+                    "Description":"The array containing the displacement to apply to the message to send to each process. Displacements are expressed in bytes, not in number of elements.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatypes_send",
+                    "Description":"The array containing the type of the elements to send to each process.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"The array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements_recv",
+                    "Description":"The array containing the displacement to apply to the message received by each process. Displacements are expressed in bytes, not in number of elements.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatypes_recv",
+                    "Description":"The array containing the type of the elements to receive from each process.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all to all takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the extended variable all to all.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
