@@ -4,12 +4,12 @@ import json
 
 # Open the lookup file
 LookupFile = open("lookup.json", "w")
-LookupFileString = "["
+LookupFileString = "[\n"
 Technologies = ["MPI"]
 FirstTechnologyEntry = True
 for Technology in Technologies:
     if(not FirstTechnologyEntry):
-        LookupFileString += ","
+        LookupFileString += ",\n    "
     else:
         FirstTechnologyEntry = False
     TechnologyCategories = dict()
@@ -17,7 +17,10 @@ for Technology in Technologies:
     TechnologyCategories["Technology"] = Technology
     TechnologyCategories["Categories"] = dict()
     TechnologyDocsDirectory = Technology.lower() + "/docs"
-    LookupFileString += '{"Technology":"' + Technology + '","PathRoot":"/' + TechnologyDocsDirectory + '","Entries":['
+    LookupFileString += '    {\n'
+    LookupFileString += '        "Technology":"' + Technology + '",\n'
+    LookupFileString += '        "PathRoot":"/' + TechnologyDocsDirectory + '",\n'
+    LookupFileString += '        "Entries":[\n'
     DocumentationEntryDirectories = sorted(os.listdir(TechnologyDocsDirectory))
     FirstDocumentationEntry = True
     # This would print all the files and directories
@@ -32,10 +35,13 @@ for Technology in Technologies:
                 try:
                     JsonEntry = json.load(DocumentationEntryJsonFile)
                     if(not FirstDocumentationEntry):
-                        LookupFileString += ","
+                        LookupFileString += ",\n"
                     else:
                         FirstDocumentationEntry = False
-                    LookupFileString += '{"Name":"' + JsonEntry["Name"] + '","DirectoryName":"' + DocumentationEntryDirectory + '"}'
+                    LookupFileString += '            {\n'
+                    LookupFileString += '                "Name":"' + JsonEntry["Name"] + '",\n'
+                    LookupFileString += '                "DirectoryName":"' + DocumentationEntryDirectory + '"\n'
+                    LookupFileString += '            }'
                     FirstCategory = True
                     for Category in JsonEntry["Categories"]:
                         if Category not in TechnologyCategories["Categories"]:
@@ -47,11 +53,12 @@ for Technology in Technologies:
                     print('The json file "' + DocumentationEntryJsonFilePath + '" is invalid.')
             else:
                 print(DocumentationEntryJsonFilePath + " does not exist")
-    LookupFileString += ']}'
+    LookupFileString += '\n        ]\n'
+    LookupFileString += '    }'
     TechnologyLookupFile = open(TechnologyDocsDirectory + "/data.json", "w")
     TechnologyLookupFile.write(json.dumps(TechnologyCategories, sort_keys=True))
     TechnologyLookupFile.close()
 
-LookupFileString += "]"
+LookupFileString += "\n]"
 LookupFile.write(LookupFileString)
 LookupFile.close()
