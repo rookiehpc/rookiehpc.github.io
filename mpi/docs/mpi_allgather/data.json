@@ -6,8 +6,7 @@
     "SharedDescription": true,
     "Description": "MPI_Allgather collects data from all processes in a given communicator and stores the data collected in the receive buffer of each process. MPI_Allgather is a collective operation; all processes in the communicator must invoke this routine. Other variants of MPI_Allgather are MPI_Gather, MPI_Gatherv and MPI_Allgatherv. Refer to MPI_Iallgather to see the non-blocking counterpart of MPI_Allgather.",
     "Categories": [
-        "Collectives",
-        "Receiving"
+        "Collectives"
     ],
     "Languages": [
         {
