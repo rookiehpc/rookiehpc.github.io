@@ -1,0 +1,163 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Allreduce",
+    "DirectoryName":"mpi_allreduce",
+    "SharedDescription":true,
+
+    "Description":"MPI_Allreduce is the means by which MPI process can apply a reduction calculation and make the reduction result available to all MPI processes involved. It can be seen as a combination of an MPI_Reduce and MPI_Broadcast. MPI_Allreduce is a collective operation; it must be called by every MPI process in the communicator given. Predefined operations are: MPI_MIN, MPI_MAX, MPI_BOR, MPI_BXOR, MPI_LOR, MPI_LXOR, MPI_BAND, MPI_LAND, MPI_SUM and MPI_PROD. Other variants of MPI_Allreduce are MPI_Iallreduce, MPI_Reduce, MPI_Ireduce. Refer to MPI_Iallreduce to see the blocking counterpart of MPI_Allreduce.",
+    "Categories":[
+        "Collectives",
+        "Reduction"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"A pointer on the buffer to send for reduction.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"A pointer on the buffer in which store the result of the reduction.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the send buffer, which is identical to that in the receive buffer as well.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of a buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the reduction. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"MPI_Op",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the reduction takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the reduction.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"The buffer to send for reduction.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"The buffer in which store the result of the reduction.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the send buffer, which is identical to that in the receive buffer as well.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of a buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the reduction. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"TYPE(MPI_Op)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the reduction takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the reduction.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"The buffer to send for reduction.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"The buffer in which store the result of the reduction.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the send buffer, which is identical to that in the receive buffer as well.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of a buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the reduction. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the reduction takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the reduction.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
