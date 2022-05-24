@@ -1,0 +1,198 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Allgatherv",
+    "DirectoryName":"mpi_allgatherv",
+    "SharedDescription":true,
+    "Description":"MPI_Allgatherv is a variant of MPI_Allgather; it collects data from all processes in a given communicator and stores the data collected in the receive buffer of each process. Unlike MPI_Allgather however, MPI_Allgatherv allows the messages received to have different lengths and be stored at arbitrary locations in the receive buffer. MPI_Allgatherv is a collective operation; all processes in the communicator must invoke this routine. Other variants of MPI_Allgatherv are MPI_Gather, MPI_Gatherv and MPI_Allgather. Refer to MPI_Iallgatherv to see the non-blocking counterpart of MPI_Allgatherv.",
+    "Categories":[
+        "Collectives"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"An array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"const int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message received by each process. Displacements are expressed in number of elements, not bytes.",
+                    "Type":"const int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all gather takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the variable all gather.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"An array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"The array containing the displacement to apply to the message received by each process. Displacements are expressed in number of elements, not bytes.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all gather takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the variable allgather.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"An array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message received by each process. Displacements are expressed in number of elements, not bytes.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all gather takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the variable allgather.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

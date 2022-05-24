@@ -32,6 +32,10 @@
                 "DirectoryName":"mpi_allgather"
             },
             {
+                "Name":"MPI_Allgatherv",
+                "DirectoryName":"mpi_allgatherv"
+            },
+            {
                 "Name":"MPI_Cart_coords",
                 "DirectoryName":"mpi_cart_coords"
             },
