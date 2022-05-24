@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_C_DOUBLE_COMPLEX",
+    "DirectoryName":"mpi_c_double_complex",
+    "SharedDescription":false,
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"MPI_C_DOUBLE_COMPLEX is an MPI_Datatype that represents a double precision floating complex type in MPI, it corresponds to a double _Complex in C."
+        }
+    ]
+}
