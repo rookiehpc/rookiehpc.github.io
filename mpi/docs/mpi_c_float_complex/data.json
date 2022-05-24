@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_C_FLOAT_COMPLEX",
+    "DirectoryName":"mpi_c_float_complex",
+    "SharedDescription":false,
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"MPI_C_FLOAT_COMPLEX is an MPI_Datatype that represents a floating complex type in MPI, it corresponds to a float _Complex in C."
+        }
+    ]
+}
