@@ -50,7 +50,8 @@ for Technology in Technologies:
                     # Close the file
                     DocumentationEntryJsonFile.close()
                 except ValueError as e:
-                    print('The json file "' + DocumentationEntryJsonFilePath + '" is invalid.')
+                    print('The json file "' + DocumentationEntryJsonFilePath + '" is invalid: ' + str(e))
+                    quit()
             else:
                 print(DocumentationEntryJsonFilePath + " does not exist")
     LookupFileString += '\n        ]\n'
