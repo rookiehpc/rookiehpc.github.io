@@ -104,6 +104,10 @@
                 "DirectoryName":"mpi_c_bool"
             },
             {
+                "Name":"MPI_C_COMPLEX",
+                "DirectoryName":"mpi_c_complex"
+            },
+            {
                 "Name":"MPI_Cart_coords",
                 "DirectoryName":"mpi_cart_coords"
             },
