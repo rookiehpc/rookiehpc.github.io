@@ -100,6 +100,10 @@
                 "DirectoryName":"mpi_bxor"
             },
             {
+                "Name":"MPI_C_BOOL",
+                "DirectoryName":"mpi_c_bool"
+            },
+            {
                 "Name":"MPI_Cart_coords",
                 "DirectoryName":"mpi_cart_coords"
             },

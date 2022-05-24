@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_C_BOOL",
+    "DirectoryName":"mpi_c_bool",
+    "SharedDescription":false,
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"MPI_C_BOOL is an MPI_Datatype that represents a boolean type in MPI, it corresponds to a bool in C. For the FORTRAN counterpart, please see MPI_LOGICAL."
+        }
+    ]
+}
