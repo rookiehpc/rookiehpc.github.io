@@ -21,7 +21,7 @@
                 {
                     "Name": "remain_dims",
                     "Description": "Indicates along which dimensions arrange subgrids. If all entries in remain_dims are set to false, then new_comm will be associated with a zero-dimensional cartesian topology.",
-                    "Type": "const int*"
+                    "Type": "const int\t[]"
                 },
                 {
                     "Name": "new_comm",
