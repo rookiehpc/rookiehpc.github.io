@@ -1500,13 +1500,6 @@ const RK = {
                                 ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `"/index.html><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
                             })
                         });
-                        document.getElementById('SearchIcon').addEventListener('click', RK.ChangeSearchState);
-                        document.getElementById('SearchBar').addEventListener('focus', function () {
-                            if(!document.getElementById('SearchIcon').hasAttribute('data-searchlaunched')) {
-                                RK.ChangeSearchState();
-                            }
-                        });
-                        document.getElementById('SearchBar').addEventListener('keyup', RK.LaunchSearch);
                         Resolve();
                         break;
                     case 404:
@@ -1773,6 +1766,13 @@ const RK = {
         // Loader.parentElement.removeChild(Loader);
         RK.WhenThePageIsResized();
         window.addEventListener('resize', RK.WhenThePageIsResized);
+        document.getElementById('SearchIcon').addEventListener('click', RK.ChangeSearchState);
+        document.getElementById('SearchBar').addEventListener('focus', function () {
+            if(!document.getElementById('SearchIcon').hasAttribute('data-searchlaunched')) {
+                RK.ChangeSearchState();
+            }
+        });
+        document.getElementById('SearchBar').addEventListener('keyup', RK.LaunchSearch);
     },
 
     WhenThePageIsResized: () => {
