@@ -8,6 +8,10 @@
                 "DirectoryName":"mpi_abort"
             },
             {
+                "Name":"MPI_Accumulate",
+                "DirectoryName":"mpi_accumulate"
+            },
+            {
                 "Name":"MPI_ADDRESS_KIND",
                 "DirectoryName":"mpi_address_kind"
             },
