@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_BXOR",
+    "DirectoryName":"mpi_bxor",
+    "SharedDescription":true,
+    "Description":"MPI_BXOR is a predefined reduction operation that will calculate the bit-wise exclusive or of the values reduced.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
