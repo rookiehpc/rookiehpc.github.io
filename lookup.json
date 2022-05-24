@@ -120,6 +120,10 @@
                 "DirectoryName":"mpi_c_long_double_complex"
             },
             {
+                "Name":"MPI_Cancel",
+                "DirectoryName":"mpi_cancel"
+            },
+            {
                 "Name":"MPI_Cart_coords",
                 "DirectoryName":"mpi_cart_coords"
             },

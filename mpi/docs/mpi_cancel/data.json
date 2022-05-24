@@ -1,0 +1,65 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Cancel",
+    "DirectoryName":"mpi_cancel",
+    "SharedDescription":true,
+    "Description":"MPI_Cancel marks a pending non-blocking operation (send or receive) for cancellation and immediately returns. The underlying communication may or may not have already taken place by the time MPI_Cancel was issued. If the call to MPI_Cancel took place before the underlying communication actually happened; the communication is successfully cancelled and no message is sent or received. In the case of a buffered send such as MPI_Ibsend, the corresponding send buffer is automatically freed, and in the case of a receive such as MPI_Irecv, the reception buffer is not altered. However, if the call to MPI_Cancel happened after the underlying communication already took place, the message was already sent or received. Either way, the call to MPI_Cancel is local therefore the non-blocking operation must still be passed to MPI_Wait (or its derivatives), MPI_Test (or its derivatives) or MPI_Request_free. Refer to MPI_Test_cancelled to determine whether a non-blocking operation effectively completed or was cancelled by MPI_Cancel.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request to mark for cancellation.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the cancellation.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request to mark for cancellation.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the cancellation.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request to mark for cancellation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the cancellation.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
