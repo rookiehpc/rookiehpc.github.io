@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_ANY_TAG",
+    "DirectoryName":"mpi_any_tag",
+    "SharedDescription":true,
+    "Description":"MPI_ANY_TAG is used in reception operations (MPI_Recv, MPI_Irecv). It tells MPI to receive the message without restricting the tag.",
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
