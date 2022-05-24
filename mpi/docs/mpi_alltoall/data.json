@@ -1,0 +1,179 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Alltoall",
+    "DirectoryName":"mpi_alltoall",
+    "SharedDescription":true,
+    "Description":"MPI_Alltoall is a combination of MPI_Scatter and MPI_Gather. That is, every process has a buffer containing elements that will be scattered across all processes, as well as a buffer in which store elements that will be gathered from all other processes. MPI_Alltoall is a collective operation; all processes in the communicator must invoke this routine. Other variants of MPI_Alltoall are MPI_Alltoallv and MPI_Alltoallw. Refer to MPI_Ialltoall to see the non-blocking counterpart of MPI_Alltoall.",
+    "Categories":[
+        "Collectives"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data that will be scattered to other processes.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements that will be sent to each process.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the all to all takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the all to all.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data that will be scattered to other processes.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements that will be sent to each process.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the all to all takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the all to all.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data that will be scattered to other processes.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements that will be sent to each process.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements in the message to receive per process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the all to all takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the all to all.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
