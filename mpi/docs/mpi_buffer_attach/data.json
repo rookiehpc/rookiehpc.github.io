@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Buffer_attach",
+    "DirectoryName":"mpi_buffer_attach",
+    "SharedDescription":true,
+    "Description":"MPI_Buffer_attach sets the given buffer as the MPI buffer space. This buffer will then be used when sending messages in an asynchronous mode (MPI_Bsend and MPI_Ibsend). The buffer attached must contain enough space for the messages to send plus the memory overhead generated when issuing each MPI_Bsend or MPI_Ibsend, which is represented by the constant MPI_BSEND_OVERHEAD. The buffer attached to MPI must be detached after-use by calling MPI_Buffer_detach. Also, only one buffer can be attached at any given time.",
+    "Categories":[
+        "Sending"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The address of the buffer (already allocated by the user) that is provided to MPI.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the buffer, in bytes.",
+                    "Type":"int",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the buffer attachment.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The address of the buffer (already allocated by the user) that is provided to MPI.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the buffer, in bytes.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the buffer detachment.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The address of the buffer (already allocated by the user) that is provided to MPI.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the buffer, in bytes.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the buffer detachment.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
