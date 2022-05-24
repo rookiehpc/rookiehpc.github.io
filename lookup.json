@@ -4,6 +4,10 @@
         "PathRoot":"/mpi/docs",
         "Entries":[
             {
+                "Name":"MPI_Abort",
+                "DirectoryName":"mpi_abort"
+            },
+            {
                 "Name":"MPI_ADDRESS_KIND",
                 "DirectoryName":"mpi_address_kind"
             },

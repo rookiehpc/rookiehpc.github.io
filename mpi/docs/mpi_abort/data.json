@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Abort",
+    "DirectoryName":"mpi_abort",
+    "SharedDescription":true,
+    "Description":"MPI_Abort terminates the processes that belong to the communicator passed. When the communicator passed is MPI_COMM_WORLD, it is equivalent to shutting down the entire MPI application. (If the communicator passed is a subset of MPI_COMM_WORLD, it may not be possible for an MPI implementation to terminate only the processes belonging to this communicator. In which case, all processes are terminated instead.) The MPI standard stipulates no directive with regard to how the error code passed should be handled. In a UNIX or POSIX environment however, the error code given \"should\" become the value returned by the main program.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"error_code",
+                    "Description":"The error value to give other MPI processes when informing them of abortion.",
+                    "Type":"int",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned during the abortion. Do not confuse the returned error code, which indicates if calling the routine was successful, and the error code that is passed to other MPI process during abortion.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"error_code",
+                    "Description":"The error value to give other MPI processes when informing them of abortion.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The variable in which store the error code returned when calling the abortion routine. Do not confuse this returned error code, which indicates if calling the routine was successful, and the error code that is passed to other MPI process during abortion.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"error_code",
+                    "Description":"The error value to give other MPI processes when informing them of abortion.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The variable in which store the error code returned when calling the abortion routine. Do not confuse this returned error code, which indicates if calling the routine was successful, and the error code that is passed to other MPI process during abortion.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
