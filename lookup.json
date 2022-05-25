@@ -212,6 +212,10 @@
                 "DirectoryName":"mpi_comm_world"
             },
             {
+                "Name":"MPI_Count",
+                "DirectoryName":"mpi_count"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },

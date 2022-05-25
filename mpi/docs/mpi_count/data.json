@@ -1,0 +1,24 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Count",
+    "DirectoryName":"mpi_count",
+    "SharedDescription":false,
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"In C, MPI_Count can be ambiguous:\n- MPI_Count is a datatype that is able to contain an address location in memory, an address offset in a file or just a count. The fact that the majority of MPI routines still rely on \"int\" count arguments is due to backward compatibility reasons.\n- MPI_COUNT is an MPI_Datatype used to inform MPI about the type of a variable passed to a routine. Similar to MPI_INT being the MPI_Datatype corresponding to an int, MPI_COUNT is the MPI_Datatype corresponding to an MPI_Count. Please refer to MPI_COUNT_KIND to see the FORTRAN equivalent."
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Description":"MPI_COUNT is an MPI_Datatype used to inform MPI about the type of a variable passed to a routine. Similar to MPI_INT being the MPI_Datatype corresponding to an int, MPI_COUNT is the MPI_Datatype corresponding to an MPI_Count.\n(The distinction between MPI_Count and MPI_COUNT is only relevant in C.)"
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Description":"MPI_COUNT is an MPI_Datatype used to inform MPI about the type of a variable passed to a routine. Similar to MPI_INT being the MPI_Datatype corresponding to an int, MPI_COUNT is the MPI_Datatype corresponding to an MPI_Count.\n(The distinction between MPI_Count and MPI_COUNT is only relevant in C.)"
+        }
+    ]
+}
