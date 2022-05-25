@@ -1,0 +1,201 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_spawn",
+    "DirectoryName":"mpi_comm_spawn",
+    "SharedDescription":true,
+
+    "Description":"MPI_Comm_spawn is the means by which MPI processes can create siblings. The spawning processes and spawned processes reside in two different communicators, nonetheless they can communicate together via the intercommunicator returned. MPI_Comm_spawn is a collective operation; all processes in the communicator must call it.",
+    "Categories":[
+        "Collectives",
+        "Topology"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"command",
+                    "Description":"The command to execute to spawn the new processes.",
+                    "Type":"const char*",
+                    "Optional":false
+                },
+                {
+                    "Name":"arguments",
+                    "Description":"The array containing the strings to pass as arguments to the command. The list must be ended with a NULL element. An empty list is represented by MPI_ARGV_NULL.",
+                    "Type":"char**",
+                    "Optional":false
+                },
+                {
+                    "Name":"max_process_number",
+                    "Description":"The maximum number of MPI processes to spawn in total; not per spawning process. By default, the MPI application will try to spawn the number of processes given and fail if it cannot. However, that default behaviour can be overriden by the info parameter; in which case, on failure the MPI application will try to spawn fewer processes if possible, hence the notion of a \"maximum number\".",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"info",
+                    "Description":"A set of key-value pairs telling the runtime system where and how to start the processes. If no information is to be passed, MPI_INFO_NULL can be used.",
+                    "Type":"MPI_Info",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"Rank of the process from which read the argument list. The argument lists of other processes are ignored.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"intracommunicator",
+                    "Description":"The communicator containing the group of processes issuing the spawn.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"intercommunicator",
+                    "Description":"The communicator containing that of spawning processes and that of spawned processes.",
+                    "Type":"MPI_Comm*",
+                    "Optional":false
+                },
+                {
+                    "Name":"error_codes",
+                    "Description":"The array in which write the error code (if any) for each process to spawn.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the communicator spawning.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"command",
+                    "Description":"The command to execute to spawn the new processes.",
+                    "Type":"CHARACTER(LEN=*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"arguments",
+                    "Description":"The array containing the strings to pass as arguments to the command. It is an empty string that indicates the last element of the list.",
+                    "Type":"CHARACTER(LEN=*)\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"max_process_number",
+                    "Description":"The maximum number of MPI processes to spawn in total; not per spawning process. By default, the MPI application will try to spawn the number of processes given and fail if it cannot. However, that default behaviour can be overriden by the info parameter; in which case, on failure the MPI application will try to spawn fewer processes if possible, hence the notion of a \"maximum number\".",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"info",
+                    "Description":"A set of key-value pairs telling the runtime system where and how to start the processes. If no information is to be passed, MPI_INFO_NULL can be used.",
+                    "Type":"TYPE(MPI_Info)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"root",
+                    "Description":"Rank of the process from which read the argument list. The argument lists of other processes are ignored.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"intracommunicator",
+                    "Description":"The communicator containing the group of processes issuing the spawn.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"intercommunicator",
+                    "Description":"The communicator containing that of spawning processes and that of spawned processes.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"error_codes",
+                    "Description":"The array in which write the error code (if any) for each process to spawn.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator spawning.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"command",
+                    "Description":"The command to execute to spawn the new processes.",
+                    "Type":"CHARACTER(LEN=*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"arguments",
+                    "Description":"The array containing the strings to pass as arguments to the command. It is an empty string that indicates the last element of the list.",
+                    "Type":"CHARACTER(LEN=*)\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"max_process_number",
+                    "Description":"The maximum number of MPI processes to spawn in total; not per spawning process. By default, the MPI application will try to spawn the number of processes given and fail if it cannot. However, that default behaviour can be overriden by the info parameter; in which case, on failure the MPI application will try to spawn fewer processes if possible, hence the notion of a \"maximum number\".",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"info",
+                    "Description":"A set of key-value pairs telling the runtime system where and how to start the processes. If no information is to be passed, MPI_INFO_NULL can be used.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"Rank of the process from which read the argument list. The argument lists of other processes are ignored.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"intracommunicator",
+                    "Description":"The communicator containing the group of processes issuing the spawn.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"intercommunicator",
+                    "Description":"The communicator containing that of spawning processes and that of spawned processes.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"error_codes",
+                    "Description":"The array in which write the error code (if any) for each process to spawn.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator spawning.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

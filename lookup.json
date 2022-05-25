@@ -200,6 +200,10 @@
                 "DirectoryName":"mpi_comm_size"
             },
             {
+                "Name":"MPI_Comm_spawn",
+                "DirectoryName":"mpi_comm_spawn"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
