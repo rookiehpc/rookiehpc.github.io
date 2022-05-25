@@ -1,0 +1,24 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_ERROR",
+    "DirectoryName":"mpi_error",
+    "SharedDescription":false,
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"MPI_ERROR is the member of the MPI_Status structure that contains the error code of the corresponding receive operation. Although in practice it has no use for a blocking receive (MPI_Recv) since the error code is returned directly by the routine, it does have uses for its non-blocking counterpart (MPI_Irecv) where the MPI_Status cannot be obtained until the MPI_Request collected is waited on (MPI_Wait, MPI_Waitall, MPI_Waitany, MPI_Waitsome) or tested (MPI_Test, MPI_Testall, MPI_Testany, MPI_Testsome)."
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Description":"MPI_ERROR is the member of the MPI_Status type that contains the error code of the corresponding receive operation. Although in practice it has no use for a blocking receive (MPI_Recv) since the error code is returned directly by the routine, it does have uses for its non-blocking counterpart (MPI_Irecv) where the MPI_Status cannot be obtained until the MPI_Request collected is waited on (MPI_Wait, MPI_Waitall, MPI_Waitany, MPI_Waitsome) or tested (MPI_Test, MPI_Testall, MPI_Testany, MPI_Testsome)."
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Description":"MPI_ERROR is the index of the error code in the MPI_Status array, it contains the error code of the corresponding receive operation. Although in practice it has no use for a blocking receive (MPI_Recv) since the error code is returned directly by the routine, it does have uses for its non-blocking counterpart (MPI_Irecv) where the MPI_Status cannot be obtained until the MPI_Request collected is waited on (MPI_Wait, MPI_Waitall, MPI_Waitany, MPI_Waitsome) or tested (MPI_Test, MPI_Testall, MPI_Testany, MPI_Testsome)."
+        }
+    ]
+}

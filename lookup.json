@@ -232,6 +232,10 @@
                 "DirectoryName":"mpi_double"
             },
             {
+                "Name":"MPI_ERROR",
+                "DirectoryName":"mpi_error"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
