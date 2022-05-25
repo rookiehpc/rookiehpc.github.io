@@ -240,6 +240,10 @@
                 "DirectoryName":"mpi_exscan"
             },
             {
+                "Name":"MPI_File",
+                "DirectoryName":"mpi_file"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },

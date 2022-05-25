@@ -1,0 +1,23 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_File",
+    "DirectoryName":"mpi_file",
+    "SharedDescription":true,
+    "Description":"MPI_File represents a file handle in MPI, it is used in MPI IO routines such as MPI_File_open for instance.",
+    "Categories":[
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
+ 
