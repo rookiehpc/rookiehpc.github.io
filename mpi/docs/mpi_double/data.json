@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_DOUBLE",
+    "DirectoryName":"mpi_double",
+    "SharedDescription":true,
+    "Description":"MPI_DOUBLE is an MPI_Datatype that represents a double-length floating point number type in MPI, it corresponds to a double in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}

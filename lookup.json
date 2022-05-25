@@ -228,6 +228,10 @@
                 "DirectoryName":"mpi_dims_create"
             },
             {
+                "Name":"MPI_DOUBLE",
+                "DirectoryName":"mpi_double"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
