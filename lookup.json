@@ -168,6 +168,10 @@
                 "DirectoryName":"mpi_comm_get_name"
             },
             {
+                "Name":"MPI_Comm_get_parent",
+                "DirectoryName":"mpi_comm_get_parent"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },

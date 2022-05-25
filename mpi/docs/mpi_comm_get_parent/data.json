@@ -1,0 +1,65 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_get_parent",
+    "DirectoryName":"mpi_comm_get_parent",
+    "SharedDescription":true,
+    "Description":"MPI_Comm_get_parent allows to obtain a handle on the parent communicator, if any. In case the calling MPI process was not spawned by another MPI process, hence having no parent communicator, MPI_Comm_get_parent will set the communicator handle passed to MPI_COMM_NULL instead. By default, the name of the parent communicator will be MPI_COMM_PARENT.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"parent",
+                    "Description":"A pointer to the MPI communicator in which store the handle on the parent communicator if any or MPI_COMM_NULL where appropriate.",
+                    "Type":"MPI_Comm*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the parent communicator retrieval:\n- MPI_SUCCESS: the routine completed successfully."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"parent",
+                    "Description":"The MPI communicator in which store the handle on the parent communicator if any or MPI_COMM_NULL where appropriate.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the parent communicator retrieval:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"parent",
+                    "Description":"The MPI communicator in which store the handle on the parent communicator if any or MPI_COMM_NULL where appropriate.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the parent communicator retrieval:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
