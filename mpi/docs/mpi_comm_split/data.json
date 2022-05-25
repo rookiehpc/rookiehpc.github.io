@@ -1,0 +1,123 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_split",
+    "DirectoryName":"mpi_comm_split",
+    "SharedDescription":true,
+    "Description":"MPI_Comm_split partitions the group of MPI processes associated with the communicator passed into disjoint subgroups. The split is determined by the colour value passed: MPI processes providing the same colour value will be put in the same subgroup. Within each subgroup, the rank of the MPI processes put in each subgroup are ordered according to the value of the key passed. When multiple MPI processes of a subgroup have provided the same key value, their rank in that subgroup will be determined according to their rank in the old group. A new communicator is created for each subgroup and returned. A process may supply the colour value MPI_UNDEFINED, in which case the new communicator returned is MPI_COMM_NULL. This is a collective call, therefore all MPI processes in the communicator must call the routine, however each process is permitted to provide different values for colour and key.",
+    "Categories":[
+        "Collectives",
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator in which the calling MPI process belongs and is the one to split.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"colour",
+                    "Description":"The value determining in which group the calling MPI process will be; MPI processes providing the same colour value will be put in the same subgroup. If MPI_UNDEFINED is passed as the colour value, the subgroup in which the calling MPI process will be placed is MPI_COMM_NULL.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"key",
+                    "Description":"The value determining the rank that the calling MPI process will be assigned in the subgroup in which it will be placed. For each subgroup, MPI processes will be assigned ranks in the order of their key value, with ties being broken according to their rank in the old communicator.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The communicator created, made of the group containing all MPI processes having provided the same colour value. If MPI_UNDEFINED was provided as the colour value, MPI_COMM_NULL is returned.",
+                    "Type":"MPI_Comm*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the communicator split.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator in which the calling MPI process belongs and is the one to split.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"colour",
+                    "Description":"The value determining in which group the calling MPI process will be; MPI processes providing the same colour value will be put in the same subgroup. If MPI_UNDEFINED is passed as the colour value, the subgroup in which the calling MPI process will be placed is MPI_COMM_NULL.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"key",
+                    "Description":"The value determining the rank that the calling MPI process will be assigned in the subgroup in which it will be placed. For each subgroup, MPI processes will be assigned ranks in the order of their key value, with ties being broken according to their rank in the old communicator.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The communicator created, made of the group containing all MPI processes having provided the same colour value. If MPI_UNDEFINED was provided as the colour value, MPI_COMM_NULL is returned.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator split.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator in which the calling MPI process belongs and is the one to split.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"colour",
+                    "Description":"The value determining in which group the calling MPI process will be; MPI processes providing the same colour value will be put in the same subgroup. If MPI_UNDEFINED is passed as the colour value, the subgroup in which the calling MPI process will be placed is MPI_COMM_NULL.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"key",
+                    "Description":"The value determining the rank that the calling MPI process will be assigned in the subgroup in which it will be placed. For each subgroup, MPI processes will be assigned ranks in the order of their key value, with ties being broken according to their rank in the old communicator.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The communicator created, made of the group containing all MPI processes having provided the same colour value. If MPI_UNDEFINED was provided as the colour value, MPI_COMM_NULL is returned.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator split.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

@@ -204,6 +204,10 @@
                 "DirectoryName":"mpi_comm_spawn"
             },
             {
+                "Name":"MPI_Comm_split",
+                "DirectoryName":"mpi_comm_split"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
