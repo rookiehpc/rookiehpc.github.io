@@ -589,7 +589,7 @@ const RK = {
             {
                 FirstLine = false;
             }
-            else
+            else if(InListMode === false)
             {
                 TextGenerated += "<br>";
             }
