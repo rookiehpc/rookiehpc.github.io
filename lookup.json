@@ -144,6 +144,10 @@
                 "DirectoryName":"mpi_cart_sub"
             },
             {
+                "Name":"MPI_CHAR",
+                "DirectoryName":"mpi_char"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },
