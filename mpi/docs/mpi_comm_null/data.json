@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_COMM_NULL",
+    "DirectoryName":"mpi_comm_null",
+    "SharedDescription":true,
+    "Description":"MPI_COMM_NULL is the value given by MPI_Comm_create or MPI_Cart_create to processes that are not part of the new communicator created.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

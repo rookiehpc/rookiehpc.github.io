@@ -176,6 +176,10 @@
                 "DirectoryName":"mpi_comm_group"
             },
             {
+                "Name":"MPI_COMM_NULL",
+                "DirectoryName":"mpi_comm_null"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },
