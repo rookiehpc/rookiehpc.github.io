@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_COUNT_KIND",
+    "DirectoryName":"mpi_count_kind",
+    "SharedDescription":true,
+    "Description":"MPI_COUNT_KIND is an MPI_Datatype that is able to contain an address location in memory, an address offset in a file or just a count. The fact that the majority of MPI routines still rely on \"INTEGER\" count arguments is due to backward compatibility reasons. Please refer to MPI_Count to see the C equivalent.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

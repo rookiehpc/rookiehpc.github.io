@@ -216,6 +216,10 @@
                 "DirectoryName":"mpi_count"
             },
             {
+                "Name":"MPI_COUNT_KIND",
+                "DirectoryName":"mpi_count_kind"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
