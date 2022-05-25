@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm",
+    "DirectoryName":"mpi_comm",
+    "SharedDescription":true,
+    "Description":"MPI_Comm represents a logical group of MPI processes. The default communicator provided by MPI is MPI_COMM_WORLD; it contains all MPI processes.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        }
+    ]
+}

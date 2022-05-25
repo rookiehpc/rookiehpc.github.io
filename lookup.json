@@ -152,6 +152,10 @@
                 "DirectoryName":"mpi_character"
             },
             {
+                "Name":"MPI_Comm",
+                "DirectoryName":"mpi_comm"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },
