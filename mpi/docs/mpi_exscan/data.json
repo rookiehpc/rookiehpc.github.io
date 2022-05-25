@@ -1,0 +1,163 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Exscan",
+    "DirectoryName":"mpi_exscan",
+    "SharedDescription":true,
+
+    "Description":"MPI_Exscan is an exclusive scan: it performs a prefix reduction across all MPI processes in the given communicator, excluding the calling MPI process. In other words, each MPI process receives the result of the reduction operation on the values passed by the MPI processes with a lower rank. It implies that the result on the first MPI process is undefined, and that the buffer passed by the last MPI process for sending is not significant. MPI_Exscan is a collective operation; it must be called by all MPI processes in the communicator concerned. The variant of MPI_Exscan is the inclusive version MPI_Scan.",
+    "Categories":[
+        "Collectives",
+        "Reduction"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"The buffer containing the value to send to scan. To use the in-place version, where the buffer in which store the result is also the buffer from which read the value to send, set the send_buffer to MPI_IN_PLACE.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"The variable in which store the result of the scan.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the scan.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The datatype of an element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the scan. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"MPI_Op",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the scan takes places. MPI_Scan is not valid on inter-communicators.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the exclusive scan.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"The buffer containing the value to send to scan. To use the in-place version, where the buffer in which store the result is also the buffer from which read the value to send, set the send_buffer to MPI_IN_PLACE.",
+                    "Type":"TYPE(*), DIMENSION(..)\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"The variable in which store the result of the scan.",
+                    "Type":"TYPE(*), DIMENSION(..)\t(*)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the scan.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The datatype of an element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the scan. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"TYPE(MPI_Op)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the scan takes places. MPI_Scan is not valid on inter-communicators.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the scan.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"The buffer containing the value to send to scan. To use the in-place version, where the buffer in which store the result is also the buffer from which read the value to send, set the send_buffer to MPI_IN_PLACE.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"The variable in which store the result of the scan.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the scan.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The datatype of an element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the scan. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the scan takes places. MPI_Scan is not valid on inter-communicators.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the scan.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

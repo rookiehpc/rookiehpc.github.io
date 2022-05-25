@@ -236,6 +236,10 @@
                 "DirectoryName":"mpi_error"
             },
             {
+                "Name":"MPI_Exscan",
+                "DirectoryName":"mpi_exscan"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
