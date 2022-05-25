@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_dup",
+    "DirectoryName":"mpi_comm_dup",
+    "SharedDescription":true,
+    "Description":"MPI_Comm_dup duplicates an MPI communicator, regardless of whether it is an intra-communicator or an inter-communicator. The new communicator created by MPI_Comm_dup has the same group (or groups), the same topology and same hint information as the original communicator. MPI_Comm_dup finds its use in MPI libraries mostly, allowing to avoid library code to be mismatched with user code for instance.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"old_comm",
+                    "Description":"The existing communicator to duplicate.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_comm",
+                    "Description":"A pointer to the variable in which store the communicator newly duplicated.",
+                    "Type":"MPI_Comm*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the communicator duplication.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"old_comm",
+                    "Description":"The existing communicator to duplicate.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_comm",
+                    "Description":"The variable in which store the communicator newly duplicated.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator duplication.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"old_comm",
+                    "Description":"The existing communicator to duplicate.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_comm",
+                    "Description":"The variable in which store the communicator newly duplicated.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator duplication.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
