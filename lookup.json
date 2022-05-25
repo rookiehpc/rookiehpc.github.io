@@ -284,6 +284,10 @@
                 "DirectoryName":"mpi_get_count"
             },
             {
+                "Name":"MPI_Graph_create",
+                "DirectoryName":"mpi_graph_create"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
