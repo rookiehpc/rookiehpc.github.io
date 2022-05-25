@@ -272,6 +272,10 @@
                 "DirectoryName":"mpi_gatherv"
             },
             {
+                "Name":"MPI_Get",
+                "DirectoryName":"mpi_get"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },

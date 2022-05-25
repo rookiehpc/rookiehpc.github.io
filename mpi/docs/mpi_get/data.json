@@ -1,0 +1,198 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Get",
+    "DirectoryName":"mpi_get",
+    "SharedDescription":true,
+    "Description":"MPI_Get permits to one-sidedly fetch data from the window of another MPI process. The write equivalent of MPI_Get is MPI_Put. A variant of MPI_Get is MPI_Rget.",
+    "Categories":[
+        "One-sided"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"origin_address",
+                    "Description":"The address of the origin buffer; the one in which store the data fetched.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_count",
+                    "Description":"The number of elements in the origin buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_datatype",
+                    "Description":"The type of an element in the origin buffer.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_rank",
+                    "Description":"The rank of the MPI process whose window is to be read for data.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_displacement",
+                    "Description":"The index position of the target buffer. This is made possible by the displacement unit specified on the target when creating the window. Incrementing the target_displacement by 1 will increment the position in the target buffer by <displacement_unit> bytes.",
+                    "Type":"MPI_Aint",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_count",
+                    "Description":"The number of elements to get from the target buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_datatype",
+                    "Description":"The type of an element in the target buffer.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"The window from which fetch the data.",
+                    "Type":"MPI_Win",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned during the data fetch:\n- MPI_SUCCESS: the routine completed successfully."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"origin_address",
+                    "Description":"The origin buffer; the one in which store the data fetched.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"origin_count",
+                    "Description":"The number of elements in the origin buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"origin_datatype",
+                    "Description":"The type of an element in the origin buffer.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_rank",
+                    "Description":"The rank of the MPI process whose window is to be read for data.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_displacement",
+                    "Description":"The index position of the target buffer. This is made possible by the displacement unit specified on the target when creating the window. Incrementing the target_displacement by 1 will increment the position in the target buffer by <displacement_unit> bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_count",
+                    "Description":"The number of elements to get from the target buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_datatype",
+                    "Description":"The type of an element in the target buffer.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"window",
+                    "Description":"The window from which fetch the data.",
+                    "Type":"TYPE(MPI_Win)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the data get:\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"origin_address",
+                    "Description":"The origin buffer; the one in which store the data fetched.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_count",
+                    "Description":"The number of elements in the origin buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_datatype",
+                    "Description":"The type of an element in the origin buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_rank",
+                    "Description":"The rank of the MPI process whose window is to be read for data.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_displacement",
+                    "Description":"The index position of the target buffer. This is made possible by the displacement unit specified on the target when creating the window. Incrementing the target_displacement by 1 will increment the position in the target buffer by <displacement_unit> bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_count",
+                    "Description":"The number of elements to get from the target buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_datatype",
+                    "Description":"The type of an element in the target buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"The window from which fetch the data.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the data get:\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
