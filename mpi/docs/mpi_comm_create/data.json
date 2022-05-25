@@ -1,0 +1,103 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_create",
+    "DirectoryName":"mpi_comm_create",
+    "SharedDescription":true,
+    "Description":"MPI_Comm_create allows MPI processes in a given communicator to create a communicator per group. In other words, for MPI processes that belong to a given communicator while residing in different groups, a call to MPI_Comm_create creates distinct communicators; one for each group. Note: the groups specified must be disjoint.\nIf an MPI process passes a group argument specifying a group it does not belong to, MPI_COMM_NULL is returned. For MPI processes that do not belong to a group, MPI_GROUP_EMPTY can be passed as the group argument.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"group",
+                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The variable in which store the communicator created. If the calling process is not part of the communicator created, MPI_COMM_NULL is stored instead.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the communicator creation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"group",
+                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The variable in which store the communicator created. If the calling process is not part of the communicator created, MPI_COMM_NULL is stored instead.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator creation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Type":"IINTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"group",
+                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup.",
+                    "Type":"IINTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The variable in which store the communicator created. If the calling process is not part of the communicator created, MPI_COMM_NULL is stored instead.",
+                    "Type":"IINTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator creation.",
+                    "Type":"IINTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

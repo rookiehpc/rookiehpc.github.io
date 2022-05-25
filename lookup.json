@@ -156,6 +156,10 @@
                 "DirectoryName":"mpi_comm"
             },
             {
+                "Name":"MPI_Comm_create",
+                "DirectoryName":"mpi_comm_create"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },
