@@ -260,6 +260,10 @@
                 "DirectoryName":"mpi_finalize"
             },
             {
+                "Name":"MPI_FLOAT",
+                "DirectoryName":"mpi_float"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },

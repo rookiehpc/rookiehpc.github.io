@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_FLOAT",
+    "DirectoryName":"mpi_float",
+    "SharedDescription":true,
+    "Description":"MPI_FLOAT is an MPI_Datatype that represents a floating point number type in MPI, it corresponds to a float in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
