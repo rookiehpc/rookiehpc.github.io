@@ -1,0 +1,24 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Datatype",
+    "DirectoryName":"mpi_datatype",
+    "SharedDescription":false,
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"In C, an MPI datatype is of type MPI_Datatype. When sending a message in MPI, the message length is expressed as a number of elements and not a number of bytes. Example: sending an array that contains 4 ints is expressed as a buffer containing 4 MPI_INT, not 8 or 16 bytes.\nList of named predefined dataypes:\n- MPI_SIGNED_CHAR / MPI_UNSIGNED_CHAR\n- MPI_SHORT / MPI_UNSIGNED_SHORT\n- MPI_INT / MPI_UNSIGNED\n- MPI_LONG / MPI_UNSIGNED_LONG\n- MPI_LONG_LONG_INT (a.k.a MPI_LONG_LONG) / MPI_UNSIGNED_LONG_LONG\n\n- MPI_CHAR\n- MPI_WCHAR\n- MPI_FLOAT\n- MPI_DOUBLE\n- MPI_LONG_DOUBLE\n\n- MPI_INT8_T / MPI_UINT8_T\n- MPI_INT16_T / MPI_UINT16_T\n- MPI_INT32_T / MPI_UINT32_T\n- MPI_INT64_T / MPI_UINT64_T\n\n- MPI_C_BOOL\n- MPI_C_COMPLEX\n- MPI_C_FLOAT_COMPLEX\n- MPI_C_DOUBLE_COMPLEX\n- MPI_C_LONG_DOUBLE_COMPLEX\n\n- MPI_AINT\n- MPI_COUNT\n- MPI_OFFSET\n\n- MPI_BYTE\n- MPI_PACKED\n\nList of datatypes for reduction functions MPI_MINLOC and MPI_MAXLOC:\n- MPI_SHORT_INT\n- MPI_LONG_INT\n- MPI_FLOAT_INT\n- MPI_DOUBLE_INT\n- MPI_LONG_DOUBLE_INT\n- MPI_2INT"
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Description":"In FORTRAN-2008, an MPI datatype is of type TYPE(MPI_Datatype). When sending a message in MPI, the message length is expressed as a number of elements and not a number of bytes. Example: sending an array that contains 4 integers is expressed as a buffer containing 4 MPI_INTEGER, not 8 or 16 bytes. Here is the list of MPI datatypes for FORTRAN:\n- MPI_INTEGER\n- MPI_REAL\n- MPI_DOUBLE_PRECISION\n- MPI_COMPLEX\n- MPI_LOGICAL\n- MPI_CHARACTER\n\n- MPI_ADDRESS_KIND\n- MPI_COUNT_KIND\n- MPI_OFFSET_KIND\n\n- MPI_AINT\n- MPI_BYTE\n- MPI_PACKED\n\nList of optional datatypes:\n- MPI_INTEGER1\n- MPI_INTEGER2\n- MPI_INTEGER4\n- MPI_INTEGER8\n- MPI_INTEGER16\n\n- MPI_REAL2\n- MPI_REAL4\n- MPI_REAL8\n- MPI_REAL16\n\n- MPI_COMPLEX4\n- MPI_COMPLEX8\n- MPI_COMPLEX16\n- MPI_COMPLEX32\n\nList of datatypes for reduction functions MPI_MINLOC and MPI_MAXLOC:\n- MPI_2REAL\n- MPI_2DOUBLE_PRECISION\n- MPI_2INTEGER"
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Description":"In FORTRAN-90, an MPI datatype is of type TYPE(MPI_Datatype). When sending a message in MPI, the message length is expressed as a number of elements and not a number of bytes. Example: sending an array that contains 4 integers is expressed as a buffer containing 4 MPI_INTEGER, not 8 or 16 bytes. Here is the list of MPI datatypes for FORTRAN:\n- MPI_INTEGER\n- MPI_REAL\n- MPI_DOUBLE_PRECISION\n- MPI_COMPLEX\n- MPI_LOGICAL\n- MPI_CHARACTER\n\n- MPI_ADDRESS_KIND\n- MPI_COUNT_KIND\n- MPI_OFFSET_KIND\n\n- MPI_AINT\n- MPI_BYTE\n- MPI_PACKED\n\nList of optional datatypes:\n- MPI_INTEGER1\n- MPI_INTEGER2\n- MPI_INTEGER4\n- MPI_INTEGER8\n- MPI_INTEGER16\n\n- MPI_REAL2\n- MPI_REAL4\n- MPI_REAL8\n- MPI_REAL16\n\n- MPI_COMPLEX4\n- MPI_COMPLEX8\n- MPI_COMPLEX16\n- MPI_COMPLEX32\n\nList of datatypes for reduction functions MPI_MINLOC and MPI_MAXLOC:\n- MPI_2REAL\n- MPI_2DOUBLE_PRECISION\n- MPI_2INTEGER"
+        }
+    ]
+}
