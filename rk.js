@@ -591,7 +591,7 @@ const RK = {
             }
             else
             {
-                TextGenerated += "\n";
+                TextGenerated += "<br>";
             }
             if(AllLines[I].startsWith('-'))
             {
