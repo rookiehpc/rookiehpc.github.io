@@ -1498,7 +1498,7 @@ const RK = {
                         window.Manifest = JSON.parse(XHR.responseText);
                         window.Manifest.forEach((TechnologyEntry) => {
                             TechnologyEntry[RK.EntriesPN].forEach((DocumentationEntry) => {
-                                ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `"/index.html><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
+                                ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `/index.html"><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
                             })
                         });
                         Resolve();
