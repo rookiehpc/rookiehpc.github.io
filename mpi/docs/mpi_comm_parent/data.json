@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_COMM_PARENT",
+    "DirectoryName":"mpi_comm_parent",
+    "SharedDescription":true,
+    "Description":"MPI_COMM_PARENT is the default name assigned to a parent communicator.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

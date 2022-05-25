@@ -180,6 +180,10 @@
                 "DirectoryName":"mpi_comm_null"
             },
             {
+                "Name":"MPI_COMM_PARENT",
+                "DirectoryName":"mpi_comm_parent"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },
