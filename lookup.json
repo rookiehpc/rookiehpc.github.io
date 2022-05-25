@@ -264,6 +264,10 @@
                 "DirectoryName":"mpi_float"
             },
             {
+                "Name":"MPI_Gather",
+                "DirectoryName":"mpi_gather"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },

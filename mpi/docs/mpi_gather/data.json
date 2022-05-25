@@ -1,0 +1,198 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Gather",
+    "DirectoryName":"mpi_gather",
+    "SharedDescription":true,
+    "Description":"MPI_Gather collects data from all processes in a given communicator and concatenates them in the given buffer on the specified process. The concatenation order follows that of the ranks. This is a collective operation; all processes in the communicator must invoke this routine. Other variants of MPI_Gather are MPI_Gatherv, MPI_Allgather and MPI_Allgatherv. Refer to MPI_Igather to see the non-blocking counterpart of MPI_Gather.",
+    "Categories":[
+        "Collectives"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data for the root process. For other processes, the receiving parameters like this one are ignored.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements per message received, not the total number of elements to receive from all processes altogether. For non-root processes, the receiving parameters like this one are ignored.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element. For non-root processes, the receiving parameters like this one are ignored.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the root process, which will collect the data gathered.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the gather takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the gathering.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data for the root process. For other processes, the receiving parameters like this one are ignored.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements per message received, not the total number of elements to receive from all processes altogether. For non-root processes, the receiving parameters like this one are ignored.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element. For non-root processes, the receiving parameters like this one are ignored.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the root process, which will collect the data gathered.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the gather takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the gathering.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data for the root process. For other processes, the receiving parameters like this one are ignored.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements per message received, not the total number of elements to receive from all processes altogether. For non-root processes, the receiving parameters like this one are ignored.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element. For non-root processes, the receiving parameters like this one are ignored.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the root process, which will collect the data gathered.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the gather takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the gathering.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
