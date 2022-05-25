@@ -1,0 +1,103 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_get_name",
+    "DirectoryName":"mpi_comm_get_name",
+    "SharedDescription":true,
+    "Description":"MPI_Comm_get_name retrieves the name of a communicator.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator to query.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"name",
+                    "Description":"The variable in which store the name assigned to the communicator given, or an empty string if no name has been assigned to this communicator yet. The exception being the three predefined communicators: MPI_COMM_WORLD, MPI_COMM_SELF and the communicator returned by MPI_Comm_get_parent (if not MPI_COMM_NULL), which are assigned the names \"MPI_COMM_WORLD\", \"MPI_COMM_SELF\" and \"MPI_COMM_PARENT\" by default (although this can be overriden at any time). The array passed must be already allocated and able to hold up to MPI_MAX_OBJECT_NAME characters.",
+                    "Type":"char*",
+                    "Optional":false
+                },
+                {
+                    "Name":"length",
+                    "Description":"The variable in which store the length of the name obtained.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the communicator name fetch.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator to query.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"name",
+                    "Description":"The variable in which store the name assigned to the communicator given, or an empty string if no name has been assigned to this communicator yet. The exception being the three predefined communicators: MPI_COMM_WORLD, MPI_COMM_SELF and the communicator returned by MPI_Comm_get_parent (if not MPI_COMM_NULL), which are assigned the names \"MPI_COMM_WORLD\", \"MPI_COMM_SELF\" and \"MPI_COMM_PARENT\" by default (although this can be overriden at any time). The array passed must be already allocated and able to hold up to MPI_MAX_OBJECT_NAME characters.",
+                    "Type":"CHARACTER(LEN=MPI_MAX_OBJECT_NAME)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"length",
+                    "Description":"The variable in which store the length of the name obtained.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator name fetch.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator to query.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"name",
+                    "Description":"The variable in which store the name assigned to the communicator given, or an empty string if no name has been assigned to this communicator yet. The exception being the three predefined communicators: MPI_COMM_WORLD, MPI_COMM_SELF and the communicator returned by MPI_Comm_get_parent (if not MPI_COMM_NULL), which are assigned the names \"MPI_COMM_WORLD\", \"MPI_COMM_SELF\" and \"MPI_COMM_PARENT\" by default (although this can be overriden at any time). The array passed must be already allocated and able to hold up to MPI_MAX_OBJECT_NAME characters.",
+                    "Type":"CHARACTER*(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"length",
+                    "Description":"The variable in which store the length of the name obtained.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator name fetch.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

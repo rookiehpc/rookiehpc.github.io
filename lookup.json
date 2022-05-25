@@ -164,6 +164,10 @@
                 "DirectoryName":"mpi_comm_dup"
             },
             {
+                "Name":"MPI_Comm_get_name",
+                "DirectoryName":"mpi_comm_get_name"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },
