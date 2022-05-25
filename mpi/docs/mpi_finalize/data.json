@@ -1,0 +1,46 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Finalize",
+    "DirectoryName":"mpi_finalize",
+    "SharedDescription":true,
+    "Description":"MPI_Finalize shuts down the MPI library. It must be called by each process at the end of the MPI program.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters":[
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the finalisation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the finalisation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the finalisation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
