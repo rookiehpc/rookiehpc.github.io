@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_CHARACTER",
+    "DirectoryName":"mpi_character",
+    "SharedDescription":true,
+    "Description":"MPI_CHARACTER is an MPI_Datatype that represents a character type in MPI, it corresponds to a CHARACTER in FORTRAN.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
