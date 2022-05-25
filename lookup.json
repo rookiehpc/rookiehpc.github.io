@@ -224,6 +224,10 @@
                 "DirectoryName":"mpi_datatype"
             },
             {
+                "Name":"MPI_Dims_create",
+                "DirectoryName":"mpi_dims_create"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },

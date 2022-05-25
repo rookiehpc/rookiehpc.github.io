@@ -1,0 +1,105 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Dims_create",
+    "DirectoryName":"mpi_dims_create",
+    "SharedDescription":true,
+
+    "Description":"MPI_Dims_create is a convenience function in the creation of cartesian topologies (MPI_Cart_create). This routine decomposes a given number of processes over a cartesian grid made of the number of dimensions specified. MPI attempts to balance the distribution by minimising the difference in the number of processes assigned to each dimension. The programmer can restrict the number of process to allocate to any dimension. If MPI is not able to find a decomposition while respecting the restrictions given, the routine returns an erroneous value. Otherwise, the decomposition found is stored in the array passed.",
+    "Categories":[
+        "Topology"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"process_number",
+                    "Description":"Number of processes to decompose.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"dimension_number",
+                    "Description":"The number of dimensions in the cartesian grid.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"dimensions",
+                    "Description":"The array in which store the number of processes assigned to each dimension. The array passed must already contain values that will be used as potential restrictions. Namely, dimensions that are initialised to 0 have no restriction and allow MPI to allocate any number of processes to it. For other dimensions, MPI must find a decomposition such that these dimensions contain exactly the number of processes indicated. However, certain decompositions may become impossible due to restrictions, in which case this routine will return an erroneous code.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the dimensions creation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"process_number",
+                    "Description":"Number of processes to decompose.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"dimension_number",
+                    "Description":"The number of dimensions in the cartesian grid.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"dimensions",
+                    "Description":"The array in which store the number of processes assigned to each dimension. The array passed must already contain values that will be used as potential restrictions. Namely, dimensions that are initialised to 0 have no restriction and allow MPI to allocate any number of processes to it. For other dimensions, MPI must find a decomposition such that these dimensions contain exactly the number of processes indicated. However, certain decompositions may become impossible due to restrictions, in which case this routine will return an erroneous code.",
+                    "Type":"INTEGER\t(dimension_number)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the dimensions creation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"process_number",
+                    "Description":"Number of processes to decompose.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"dimension_number",
+                    "Description":"The number of dimensions in the cartesian grid.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"dimensions",
+                    "Description":"The array in which store the number of processes assigned to each dimension. The array passed must already contain values that will be used as potential restrictions. Namely, dimensions that are initialised to 0 have no restriction and allow MPI to allocate any number of processes to it. For other dimensions, MPI must find a decomposition such that these dimensions contain exactly the number of processes indicated. However, certain decompositions may become impossible due to restrictions, in which case this routine will return an erroneous code.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the dimensions creation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
