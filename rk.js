@@ -656,7 +656,7 @@ const RK = {
             };
             CategoryGroup.appendChild(CategoryDiv);
     
-            const SvgImgPath = "url('" + RK.BASE_URL + "/images/" + Entry[RK.TechnologyPN].toLowerCase() + "/" + Category + ".svg')";
+            const SvgImgPath = "url('" + RK.BASE_URL + "/images/" + Entry[RK.TechnologyPN].toLowerCase() + "/" + Category.replace(' ', '_') + ".svg')";
             const CategoryImage = document.createElement('div');
             CategoryImage.classList.add("DocumentationEntryCategoryImage");
             CategoryImage.setAttribute('mask-image', SvgImgPath);
