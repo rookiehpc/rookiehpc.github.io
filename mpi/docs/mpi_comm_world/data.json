@@ -1,0 +1,24 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_COMM_WORLD",
+    "DirectoryName":"mpi_comm_world",
+    "SharedDescription":true,
+    "Description":"MPI_COMM_WORLD is the communicator provided by MPI; it contains all MPI processes.",
+    "Categories":[
+        "Datatypes",
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
+   

@@ -208,6 +208,10 @@
                 "DirectoryName":"mpi_comm_split"
             },
             {
+                "Name":"MPI_COMM_WORLD",
+                "DirectoryName":"mpi_comm_world"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
