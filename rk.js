@@ -789,7 +789,7 @@ const RK = {
                                 DefinitionTerm.innerText = ParameterEntry[RK.NamePN];
                                 DefinitionList.appendChild(DefinitionTerm);
                                 let DefinitionDescription = document.createElement('dd');
-                                DefinitionDescription.innerHTML = ParameterEntry[RK.DescriptionPN];
+                                DefinitionDescription.innerHTML = RK.InterpretMarkdown(ParameterEntry[RK.DescriptionPN]);
                                 DefinitionList.appendChild(DefinitionDescription);
                                 if(FirstParameter == true) {
                                     FirstParameter = false;
@@ -825,7 +825,7 @@ const RK = {
                         ReturnPage.appendChild(ParametersPageBody);
     
                         let ReturnDescription = document.createElement('p');
-                        ReturnDescription.innerHTML = RK.InterpretMarkdown(LanguageEntry[RK.ReturnPN][RK.DescriptionPN]);
+                        ReturnDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.ReturnPN][RK.DescriptionPN]));
                         ParametersPageBody.appendChild(ReturnDescription);
                     }
                     break;
@@ -877,7 +877,7 @@ const RK = {
                                 DefinitionTerm.innerText = ParameterEntry[RK.NamePN];
                                 DefinitionList.appendChild(DefinitionTerm);
                                 let DefinitionDescription = document.createElement('dd');
-                                DefinitionDescription.innerHTML = ParameterEntry[RK.DescriptionPN];
+                                DefinitionDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(ParameterEntry[RK.DescriptionPN]));
                                 DefinitionList.appendChild(DefinitionDescription);
                                 if(FirstParameter == true) {
                                     FirstParameter = false;
@@ -980,7 +980,7 @@ const RK = {
                                 }
                                 DefinitionList.appendChild(DefinitionTerm);
                                 let DefinitionDescription = document.createElement('dd');
-                                DefinitionDescription.innerHTML = ParameterEntry[RK.DescriptionPN];
+                                DefinitionDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(ParameterEntry[RK.DescriptionPN]));
                                 DefinitionList.appendChild(DefinitionDescription);
                                 if(FirstParameter == true) {
                                     FirstParameter = false;
