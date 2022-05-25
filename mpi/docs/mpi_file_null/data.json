@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_FILE_NULL",
+    "DirectoryName":"mpi_file_null",
+    "SharedDescription":true,
+    "Description":"MPI_FILE_NULL is the constant to which is set an MPI_File once deallocated, such as after a successful call to MPI_File_close for instance.",
+    "Categories":[
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

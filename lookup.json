@@ -248,6 +248,10 @@
                 "DirectoryName":"mpi_file_close"
             },
             {
+                "Name":"MPI_FILE_NULL",
+                "DirectoryName":"mpi_file_null"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },
