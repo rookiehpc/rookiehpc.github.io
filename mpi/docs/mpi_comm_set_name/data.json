@@ -1,0 +1,86 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_set_name",
+    "DirectoryName":"mpi_comm_set_name",
+    "SharedDescription":true,
+
+    "Description":"MPI_Comm_set_name assigns a name to a communicator. This is a local operation; the change is only visible on the MPI process calling the routine.",
+    "Categories":[
+        "Topology"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"name",
+                    "Description":"The name to assign to the communicator. A copy of the name will be made, so that if the variable given was dynamically allocated, it can be freed safely after the call. Leading spaces in the name passed are significant, but the trailing ones are not.",
+                    "Type":"const char*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the communicator name setting.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"name",
+                    "Description":"The name to assign to the communicator. A copy of the name will be made, so that if the variable given was dynamically allocated, it can be freed safely after the call. Leading spaces in the name passed are significant, but the trailing ones are not.",
+                    "Type":"CHARACTER(LEN=*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator name setting.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"name",
+                    "Description":"The name to assign to the communicator. A copy of the name will be made, so that if the variable given was dynamically allocated, it can be freed safely after the call. Leading spaces in the name passed are significant, but the trailing ones are not.",
+                    "Type":"CHARACTER*(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator name setting.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
