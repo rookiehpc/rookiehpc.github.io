@@ -1,0 +1,142 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_File_open",
+    "DirectoryName":"mpi_file_open",
+    "SharedDescription":true,
+    "Description":"MPI_File_open opens a file for MPI I/O. MPI_File_open is a collective operation and must therefore be called by every MPI process in the intra-communicator passed. In addition, all MPI processes must provide the same access mode and the same file name.",
+    "Categories":[
+        "Collectives",
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"comm",
+                    "Description":"The communicator from which the collective call is issued. It must be an intra-communicator; inter-communicators are not allowed. Being a collective operation, every MPI process in this intra-communicator must therefore invoke it. An MPI process individually can open a file by passing MPI_COMM_SELF as the communicator.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"filename",
+                    "Description":"The name of the file to open. All filenames must point to the same file. Note that the format for specifying the file name is implementation dependent and must therefore be documented by the implementation.",
+                    "Type":"const char*",
+                    "Optional":false
+                },
+                {
+                    "Name":"access_mode",
+                    "Description":"The access mode specifies how the file must be opened. Multiple access modes can be enabled simultaneously by applying the bit-wise OR operator '|' or, alternatively, by summing them. The following access modes are supported:\n- MPI_MODE_RDONLY: read only\n- MPI_MODE_RDWR: read and write\n- MPI_MODE_WRONLY: write only\n- MPI_MODE_CREATE: create the file if it does not exist\n- MPI_MODE_EXCL: raise an error if creating a file that already exists\n- MPI_MODE_DELETE_ON_CLOSE: delete the file when closed\n- MPI_MODE_UNIQUE_OPEN: the file will not be opened concurrently elsewhere\n- MPI_MODE_SEQUENTIAL: the file will be accessed exclusively sequentially\n- MPI_MODE_APPEND: set the initial position of file pointers to the end of the file\n\nRestrictions:\n- Exactly one of MPI_MODE_RDONLY, MPI_MODE_RDWR and MPI_MODE_WRONLY must be specified.\n- MPI_MODE_CREATE or MPI_MODE_EXCL cannot be specified in conjunction with MPI_MODE_RDONLY.\n- MPI_MODE_SEQUENTIAL cannot be specified in conjunction with MPI_MODE_RDWR.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"info",
+                    "Description":"The info is a means by which the user can provide information such as file access patterns and file system specifics to direct optimisations. Alternatively, MPI_INFO_NULL can be passed if no info needs to be specified.",
+                    "Type":"MPI_Info",
+                    "Optional":false
+                },
+                {
+                    "Name":"handle",
+                    "Description":"A pointer to the variable in which store the file handle on the file opened.",
+                    "Type":"MPI_File*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the file opening.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"comm",
+                    "Description":"The communicator from which the collective call is issued. It must be an intra-communicator; inter-communicators are not allowed. Being a collective operation, every MPI process in this intra-communicator must therefore invoke it. An MPI process individually can open a file by passing MPI_COMM_SELF as the communicator.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"filename",
+                    "Description":"The name of the file to open. All filenames must point to the same file. Note that the format for specifying the file name is implementation dependent and must therefore be documented by the implementation.",
+                    "Type":"CHARACTER(LEN=*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"access_mode",
+                    "Description":"The access mode specifies how the file must be opened. Multiple access modes can be enabled simultaneously by applying the bit-wise OR operator IOR or, alternatively, by summing them. The following access modes are supported:\n- MPI_MODE_RDONLY: read only\n- MPI_MODE_RDWR: read and write\n- MPI_MODE_WRONLY: write only\n- MPI_MODE_CREATE: create the file if it does not exist\n- MPI_MODE_EXCL: raise an error if creating a file that already exists\n- MPI_MODE_DELETE_ON_CLOSE: delete the file when closed\n- MPI_MODE_UNIQUE_OPEN: the file will not be opened concurrently elsewhere\n- MPI_MODE_SEQUENTIAL: the file will be accessed exclusively sequentially\n- MPI_MODE_APPEND: set the initial position of file pointers to the end of the file\n\nRestrictions:\n- Exactly one of MPI_MODE_RDONLY, MPI_MODE_RDWR and MPI_MODE_WRONLY must be specified.\n- MPI_MODE_CREATE or MPI_MODE_EXCL cannot be specified in conjunction with MPI_MODE_RDONLY.\n- MPI_MODE_SEQUENTIAL cannot be specified in conjunction with MPI_MODE_RDWR.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"info",
+                    "Description":"The info is a means by which the user can provide information such as file access patterns and file system specifics to direct optimisations. Alternatively, MPI_INFO_NULL can be passed if no info needs to be specified.",
+                    "Type":"TYPE(MPI_Info)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"handle",
+                    "Description":"The variable in which store the file handle on the file opened.",
+                    "Type":"TYPE(MPI_File)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the file opening.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"comm",
+                    "Description":"The communicator from which the collective call is issued. It must be an intra-communicator; inter-communicators are not allowed. Being a collective operation, every MPI process in this intra-communicator must therefore invoke it. An MPI process individually can open a file by passing MPI_COMM_SELF as the communicator.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"filename",
+                    "Description":"The name of the file to open. All filenames must point to the same file. Note that the format for specifying the file name is implementation dependent and must therefore be documented by the implementation.",
+                    "Type":"CHARACTER*(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"access_mode",
+                    "Description":"The access mode specifies how the file must be opened. Multiple access modes can be enabled simultaneously by applying the bit-wise OR operator IOR or, alternatively, by summing them. The following access modes are supported:\n- MPI_MODE_RDONLY: read only\n- MPI_MODE_RDWR: read and write\n- MPI_MODE_WRONLY: write only\n- MPI_MODE_CREATE: create the file if it does not exist\n- MPI_MODE_EXCL: raise an error if creating a file that already exists\n- MPI_MODE_DELETE_ON_CLOSE: delete the file when closed\n- MPI_MODE_UNIQUE_OPEN: the file will not be opened concurrently elsewhere\n- MPI_MODE_SEQUENTIAL: the file will be accessed exclusively sequentially\n- MPI_MODE_APPEND: set the initial position of file pointers to the end of the file\n\nRestrictions:\n- Exactly one of MPI_MODE_RDONLY, MPI_MODE_RDWR and MPI_MODE_WRONLY must be specified.\n- MPI_MODE_CREATE or MPI_MODE_EXCL cannot be specified in conjunction with MPI_MODE_RDONLY.\n- MPI_MODE_SEQUENTIAL cannot be specified in conjunction with MPI_MODE_RDWR.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"info",
+                    "Description":"The info is a means by which the user can provide information such as file access patterns and file system specifics to direct optimisations. Alternatively, MPI_INFO_NULL can be passed if no info needs to be specified.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"handle",
+                    "Description":"The variable in which store the file handle on the file opened.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the file opening.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
