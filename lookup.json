@@ -244,6 +244,10 @@
                 "DirectoryName":"mpi_file"
             },
             {
+                "Name":"MPI_File_close",
+                "DirectoryName":"mpi_file_close"
+            },
+            {
                 "Name":"MPI_Get_address",
                 "DirectoryName":"mpi_get_address"
             },

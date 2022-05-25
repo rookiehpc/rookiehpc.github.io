@@ -1,0 +1,66 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_File_close",
+    "DirectoryName":"mpi_file_close",
+    "SharedDescription":true,
+    "Description":"MPI_File_close closes the file associated with the file handle passed, deallocates the file handle and sets it to MPI_FILE_NULL. Before closing, MPI_File_close synchronises the file state (equivalent to performing an MPI_File_sync). Also, MPI_File_close deletes the file once closed if MPI_MODE_DELETE_ON_CLOSE was passed to the corresponding MPI_File_open. MPI_File_close is a collective operation, it must be called by all MPI processes in the communicator concerned.",
+    "Categories":[
+        "Collectives",
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"handle",
+                    "Description":"The handle on the file to close.",
+                    "Type":"MPI_File*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the file closure.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"handle",
+                    "Description":"The handle on the file to close.",
+                    "Type":"TYPE(MPI_File)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the file closure.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"handle",
+                    "Description":"The handle on the file to close.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the file closure.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
