@@ -188,6 +188,10 @@
                 "DirectoryName":"mpi_comm_rank"
             },
             {
+                "Name":"MPI_COMM_SELF",
+                "DirectoryName":"mpi_comm_self"
+            },
+            {
                 "Name":"MPI_Comm_size",
                 "DirectoryName":"mpi_comm_size"
             },

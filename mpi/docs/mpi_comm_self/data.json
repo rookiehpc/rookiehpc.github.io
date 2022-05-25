@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_COMM_SELF",
+    "DirectoryName":"mpi_comm_self",
+    "SharedDescription":true,
+    "Description":"MPI_COMM_SELF represents the communicator made only of the calling MPI process. MPI_COMM_SELF is also the name assigned by default to the self communicator.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
