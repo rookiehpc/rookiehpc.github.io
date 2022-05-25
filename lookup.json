@@ -280,6 +280,10 @@
                 "DirectoryName":"mpi_get_address"
             },
             {
+                "Name":"MPI_Get_count",
+                "DirectoryName":"mpi_get_count"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
