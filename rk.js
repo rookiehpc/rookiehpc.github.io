@@ -583,6 +583,7 @@ const RK = {
         let AllLines = Text.split(/\r?\n/)
         let InListMode = false;
         let FirstLine = true;
+        let FirstLineAfterListModeEnded = false;
         for(let I = 0; I < AllLines.length; I++)
         {
             if(FirstLine === true)
@@ -591,7 +592,14 @@ const RK = {
             }
             else if(InListMode === false)
             {
-                TextGenerated += "<br>";
+                if(FirstLineAfterListModeEnded === true)
+                {
+                    FirstLineAfterListModeEnded = false;
+                }
+                else
+                {
+                    TextGenerated += "<br>";
+                }
             }
             if(AllLines[I].startsWith('-'))
             {
@@ -608,6 +616,7 @@ const RK = {
                 {
                     TextGenerated += "</ul>";
                     InListMode = false;
+                    FirstLineAfterListModeEnded = true;
                 }
                 TextGenerated += AllLines[I];
             }
