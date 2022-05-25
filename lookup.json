@@ -172,6 +172,10 @@
                 "DirectoryName":"mpi_comm_get_parent"
             },
             {
+                "Name":"MPI_Comm_group",
+                "DirectoryName":"mpi_comm_group"
+            },
+            {
                 "Name":"MPI_Comm_rank",
                 "DirectoryName":"mpi_comm_rank"
             },
