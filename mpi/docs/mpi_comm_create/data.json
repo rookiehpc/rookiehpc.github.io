@@ -76,25 +76,25 @@
                 {
                     "Name":"old_communicator",
                     "Description":"The communicator from which the group of processes is extracted.",
-                    "Type":"IINTEGER",
+                    "Type":"INTEGER",
                     "Optional":false
                 },
                 {
                     "Name":"group",
                     "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup.",
-                    "Type":"IINTEGER",
+                    "Type":"INTEGER",
                     "Optional":false
                 },
                 {
                     "Name":"new_communicator",
                     "Description":"The variable in which store the communicator created. If the calling process is not part of the communicator created, MPI_COMM_NULL is stored instead.",
-                    "Type":"IINTEGER",
+                    "Type":"INTEGER",
                     "Optional":false
                 },
                 {
                     "Name":"ierror",
                     "Description":"The error code returned from the communicator creation.",
-                    "Type":"IINTEGER",
+                    "Type":"INTEGER",
                     "Optional":false
                 }
             ]
