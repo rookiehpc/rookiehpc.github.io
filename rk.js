@@ -719,10 +719,10 @@ const RK = {
     
             const DefinitionPageBodyContent = document.createElement('p');
             if(Entry[RK.SharedDescriptionPN] == false) {
-                DefinitionPageBodyContent.innerHTML = RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.DescriptionPN]);
+                DefinitionPageBodyContent.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.DescriptionPN]));
             }
             else {
-                DefinitionPageBodyContent.innerHTML = RK.InsertCrossReferencesFromTechnology(Entry[RK.DescriptionPN]);
+                DefinitionPageBodyContent.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(Entry[RK.DescriptionPN]));
             }
             DefinitionPageBody.appendChild(DefinitionPageBodyContent);
     
