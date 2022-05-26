@@ -320,6 +320,10 @@
                 "DirectoryName":"mpi_group_incl"
             },
             {
+                "Name":"MPI_Group_intersection",
+                "DirectoryName":"mpi_group_intersection"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }

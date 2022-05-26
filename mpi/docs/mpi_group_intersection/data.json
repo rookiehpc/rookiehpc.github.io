@@ -1,0 +1,103 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Group_intersection",
+    "DirectoryName":"mpi_group_intersection",
+    "SharedDescription":true,
+    "Description":"MPI_Group_intersection takes the intersection of two MPI groups to create a group that contains processes of both groups, without duplicates. In case no process is common to both groups, the intersection group given in MPI_GROUP_EMPTY.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"group_a",
+                    "Description":"The first of the two groups to include in the intersection.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"group_b",
+                    "Description":"The second of the two groups to include in the intersection.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"intersection_group",
+                    "Description":"The variable in which store the group representing the intersection of the two groups given. If the intersection is empty, MPI_GROUP_EMPTY is given.",
+                    "Type":"MPI_Group*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the group intersection.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"group_a",
+                    "Description":"The first of the two groups to include in the intersection.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"group_b",
+                    "Description":"The second of the two groups to include in the intersection.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"intersection_group",
+                    "Description":"The variable in which store the group representing the intersection of the two groups given. If the intersection is empty, MPI_GROUP_EMPTY is given.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group intersection.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"group_a",
+                    "Description":"The first of the two groups to include in the intersection.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"group_b",
+                    "Description":"The second of the two groups to include in the intersection.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"intersection_group",
+                    "Description":"The variable in which store the group representing the intersection of the two groups given. If the intersection is empty, MPI_GROUP_EMPTY is given.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group intersection.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
