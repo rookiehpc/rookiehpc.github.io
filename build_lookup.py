@@ -5,7 +5,7 @@ import json
 # Open the lookup file
 LookupFile = open("lookup.json", "w")
 LookupFileString = "[\n"
-Technologies = ["MPI"]
+Technologies = ["MPI", "OpenMP"]
 FirstTechnologyEntry = True
 for Technology in Technologies:
     if(not FirstTechnologyEntry):
