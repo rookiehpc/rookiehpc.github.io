@@ -332,6 +332,10 @@
                 "DirectoryName":"mpi_group_rank"
             },
             {
+                "Name":"MPI_Group_size",
+                "DirectoryName":"mpi_group_size"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }

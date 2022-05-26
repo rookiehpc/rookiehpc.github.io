@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Group_size",
+    "DirectoryName":"mpi_group_size",
+    "SharedDescription":true,
+    "Description":"MPI_Group_size gets the number of MPI processes in the group given.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The MPI group to explore.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"A pointer on the variable in which write the size of the MPI group given.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the group size retrieval.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The MPI group to explore.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"size",
+                    "Description":"The variable in which write the size of the MPI group given.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group size retrieval.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The MPI group to explore.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The variable in which write the size of the MPI group given.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group size retrieval.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
