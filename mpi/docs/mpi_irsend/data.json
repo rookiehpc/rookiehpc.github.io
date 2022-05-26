@@ -1,0 +1,180 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Irsend",
+    "DirectoryName":"mpi_irsend",
+    "SharedDescription":true,
+    "Description":"MPI_Irsend is a standard non-blocking send. The difference with MPI_Isend is the capital 'R'that stands for Ready. Indeed, MPI_Irsend requires the corresponding receive (MPI_Recv or MPI_Irecv) to have been issued first. This particularity may improve performance by saving the time normally spent hand-shaking with the receiving MPI process (since the receiver is already ready to receive the message). An MPI_Irsend has the same semantics as MPI_Isend; it will decide whether to use the synchronous or asynchronous mode using the same decision flow that MPI_Isend. As a non-blocking send, MPI_Irsend will immediately return and the buffer passed must not be seen as safe to reuse until the completion of MPI_Irsend has been checked with MPI_Wait or MPI_Test. Other non-blocking sends are MPI_Isend, MPI_Issend, MPI_Ibsend. Refer to MPI_Rsend to see the blocking counterpart of MPI_Irsend.",
+    "Categories":[
+        "Non-blocking",
+        "Sending"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the buffered send takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The request handle on the non-blocking communication taking place.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the non-blocking ready send.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the buffered send takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"request",
+                    "Description":"The request handle on the non-blocking communication taking place.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the non-blocking ready send.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the buffered send takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The request handle on the non-blocking communication taking place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the non-blocking ready send.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

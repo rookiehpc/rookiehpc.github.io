@@ -434,6 +434,10 @@
             {
                 "Name":"MPI_Ireduce_scatter_block",
                 "DirectoryName":"mpi_ireduce_scatter_block"
+            },
+            {
+                "Name":"MPI_Irsend",
+                "DirectoryName":"mpi_irsend"
             }
         ]
     },
