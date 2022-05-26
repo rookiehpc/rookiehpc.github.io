@@ -328,6 +328,10 @@
                 "DirectoryName":"mpi_group_range_incl"
             },
             {
+                "Name":"MPI_Group_rank",
+                "DirectoryName":"mpi_group_rank"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
