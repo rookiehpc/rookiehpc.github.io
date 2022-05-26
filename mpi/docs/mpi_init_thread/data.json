@@ -1,0 +1,96 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Init_thread",
+    "DirectoryName":"mpi_init_thread",
+    "SharedDescription":true,
+    "Description":"MPI_Init_thread initialises the MPI environment like MPI_Init does, except that the former also explicitly indicates the level of multithreading support needed: MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED, MPI_THREAD_SERIALIZED or MPI_THREAD_MULTIPLE. MPI_Init is equivalent to MPI_Init_thread with the MPI_THREAD_SINGLE thread support level. The routine MPI_Init_thread must be called by each MPI process, once and before any other MPI routine.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"argc",
+                    "Description":"The number of arguments passed through main, or NULL.",
+                    "Type":"int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"argv",
+                    "Description":"The argument values passed through main, or NULL.",
+                    "Type":"char***",
+                    "Optional":false
+                },
+                {
+                    "Name":"required",
+                    "Description":"The level of threading support desired. It must be either MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED, MPI_THREAD_SERIALIZED or MPI_THREAD_MULTIPLE.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"provided",
+                    "Description":"The level of threading support provided by the implementation, which may differ from the one desired. Thread support levels are monotonic, that is, MPI_THREAD_SINGLE < MPI_THREAD_FUNNELED < MPI_THREAD_SERIALIZED < MPI_THREAD_MULTIPLE. Therefore, the thread support level required is not met if it is strictly greater than the thread support level provided.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned during the thread initialisation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"required",
+                    "Description":"The level of threading support desired. It must be either MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED, MPI_THREAD_SERIALIZED or MPI_THREAD_MULTIPLE.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"provided",
+                    "Description":"The level of threading support provided by the implementation, which may differ from the one desired. Thread support levels are monotonic, that is, MPI_THREAD_SINGLE < MPI_THREAD_FUNNELED < MPI_THREAD_SERIALIZED < MPI_THREAD_MULTIPLE. Therefore, the thread support level required is not met if it is strictly greater than the thread support level provided.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the thread initialisation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"required",
+                    "Description":"The level of threading support desired. It must be either MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED, MPI_THREAD_SERIALIZED or MPI_THREAD_MULTIPLE.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"provided",
+                    "Description":"The level of threading support provided by the implementation, which may differ from the one desired. Thread support levels are monotonic, that is, MPI_THREAD_SINGLE < MPI_THREAD_FUNNELED < MPI_THREAD_SERIALIZED < MPI_THREAD_MULTIPLE. Therefore, the thread support level required is not met if it is strictly greater than the thread support level provided.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the thread initialisation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

@@ -386,6 +386,10 @@
             {
                 "Name":"MPI_Init",
                 "DirectoryName":"mpi_init"
+            },
+            {
+                "Name":"MPI_Init_thread",
+                "DirectoryName":"mpi_init_thread"
             }
         ]
     },
