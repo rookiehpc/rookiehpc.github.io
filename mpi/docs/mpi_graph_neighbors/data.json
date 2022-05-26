@@ -1,0 +1,123 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Graph_neighbors",
+    "DirectoryName":"mpi_graph_neighbors",
+    "SharedDescription":true,
+    "Description":"MPI_Graph_neighbors retrieves the list of neighbours (a.k.a adjacency list)  of a given MPI process in a communicator with graph topology, as created per MPI_Graph_create. The adjacency list retrieved is identical to the one passed during the creation; especially, the order and any duplicate are preserved.",
+    "Categories":[
+        "Graph",
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology to query.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"rank",
+                    "Description":"The rank of the MPI process to query.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"neighbours_count",
+                    "Description":"The number of neighbours of the MPI process given.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"neighbours",
+                    "Description":"The list of neighbours retrieved for that MPI process. It contains all the neighbours as passed during the creation; same order and duplicate neighbours if any.",
+                    "Type":"int\t[]",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the adjacency list retrieval.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology to query.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"rank",
+                    "Description":"The rank of the MPI process to query.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"neighbours_count",
+                    "Description":"The number of neighbours of the MPI process given.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"neighbours",
+                    "Description":"The list of neighbours retrieved for that MPI process. It contains all the neighbours as passed during the creation; same order and duplicate neighbours if any.",
+                    "Type":"INTEGER\t(neighbours_count)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the adjacency list retrieval.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"IN"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology to query.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"rank",
+                    "Description":"The rank of the MPI process to query.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"neighbours_count",
+                    "Description":"The number of neighbours of the MPI process given.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"neighbours",
+                    "Description":"The list of neighbours retrieved for that MPI process. It contains all the neighbours as passed during the creation; same order and duplicate neighbours if any.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the adjacency list retrieval.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

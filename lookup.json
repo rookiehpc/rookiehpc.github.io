@@ -292,6 +292,10 @@
                 "DirectoryName":"mpi_graph_get"
             },
             {
+                "Name":"MPI_Graph_neighbors",
+                "DirectoryName":"mpi_graph_neighbors"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
