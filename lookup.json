@@ -430,6 +430,10 @@
             {
                 "Name":"MPI_Ireduce_scatter",
                 "DirectoryName":"mpi_ireduce_scatter"
+            },
+            {
+                "Name":"MPI_Ireduce_scatter_block",
+                "DirectoryName":"mpi_ireduce_scatter_block"
             }
         ]
     },
