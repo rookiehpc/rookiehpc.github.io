@@ -442,6 +442,10 @@
             {
                 "Name":"MPI_Iscatter",
                 "DirectoryName":"mpi_iscatter"
+            },
+            {
+                "Name":"MPI_Iscatterv",
+                "DirectoryName":"mpi_iscatterv"
             }
         ]
     },
