@@ -414,6 +414,10 @@
             {
                 "Name":"MPI_INTEGER",
                 "DirectoryName":"mpi_integer"
+            },
+            {
+                "Name":"MPI_Iprobe",
+                "DirectoryName":"mpi_iprobe"
             }
         ]
     },
