@@ -520,7 +520,7 @@ const RK = {
         });
     },
 
-    FirstExampleFetched: (XHR, LanguageDocs, LanguageClass) => {
+    FirstExampleFetched: (XHR, LanguageDocs, LanguageClass, LanguageFileFormat) => {
         switch(XHR.status) {
             case 0:
             case 200:
@@ -543,6 +543,36 @@ const RK = {
                 ExamplePage.appendChild(ExamplePageBody);
 
                 RK.CreateCode(XHR.responseText, ExamplePageBody, LanguageClass);
+                const NewXHR = new XMLHttpRequest();
+                const PathToExample = RK.FolderPath + "/example_2" + "." + LanguageFileFormat;
+                NewXHR.open("GET", PathToExample, true);
+                NewXHR.onload = () => {
+                    RK.SecondExampleAndBeyondFetched(NewXHR, LanguageDocs, LanguageClass, ExamplePageBody, LanguageFileFormat, 2);
+                };
+                NewXHR.send(null);
+                break;
+            case 404:
+                // No example is provided so far.
+                break;
+            default:
+                alert("Not expected status code: " + XHR.status);
+                break;
+        }
+    },
+
+    SecondExampleAndBeyondFetched: (XHR, LanguageDocs, LanguageClass, ExamplePageBody, LanguageFileFormat, ExampleCounter) => {
+        switch(XHR.status) {
+            case 0:
+            case 200:
+                // Add the example to the already generated page
+                RK.CreateCode(XHR.responseText, ExamplePageBody, LanguageClass);
+                const NewXHR = new XMLHttpRequest();
+                const PathToExample = RK.FolderPath + "/example_" + parseInt(ExampleCounter + 1) + "." + LanguageFileFormat;
+                NewXHR.open("GET", PathToExample, true);
+                NewXHR.onload = () => {
+                    RK.SecondExampleAndBeyondFetched(NewXHR, LanguageDocs, LanguageClass, ExamplePageBody, LanguageFileFormat, ExampleCounter+1);
+                };
+                NewXHR.send(null);
                 break;
             case 404:
                 // No example is provided so far.
@@ -1051,7 +1081,7 @@ const RK = {
                 const PathToExample = RK.FolderPath + "/example_" + ExampleCounter + "." + LanguageFileFormat;
                 XHR.open("GET", PathToExample, true);
                 XHR.onload = () => {
-                    RK.FirstExampleFetched(XHR, LanguageDocs, LanguageClass);
+                    RK.FirstExampleFetched(XHR, LanguageDocs, LanguageClass, LanguageFileFormat);
                 };
                 XHR.send(null);
             }
