@@ -1,0 +1,144 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Graph_get",
+    "DirectoryName":"mpi_graph_get",
+    "SharedDescription":true,
+
+    "Description":"MPI_Graph_get allows to retrieve the indexes and edges of a communicator with graph topology, as created by MPI_Graph_create. Typically, MPI_Graphdims_get is called first to retrieve the number of indexes and edges, then allowing to call MPI_Graph_get.",
+    "Categories":[
+        "Graph",
+        "Topology"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology, as created from MPI_Graph_create, to query.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"index_length",
+                    "Description":"The number of entries in the index of that graph topology, as retrieved from MPI_Graphdims_get.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"number_of_edges",
+                    "Description":"The number of edges in that graph topology, as retrieved from MPI_Graphdims_get.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"index",
+                    "Description":"The array in which store the index retrieved.",
+                    "Type":"int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"edges",
+                    "Description":"The array in which store the edges retieved.",
+                    "Type":"int\t[]",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the graph information retrieval.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology, as created from MPI_Graph_create, to query.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"index_length",
+                    "Description":"The number of entries in the index of that graph topology, as retrieved from MPI_Graphdims_get.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"number_of_edges",
+                    "Description":"The number of edges in that graph topology, as retrieved from MPI_Graphdims_get.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"index",
+                    "Description":"The array in which store the index retrieved.",
+                    "Type":"INTEGER\t(index_length)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"edges",
+                    "Description":"The array in which store the edges retieved.",
+                    "Type":"INTEGER\t(number_of_edges)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the graph information retrieval.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology, as created from MPI_Graph_create, to query.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"index_length",
+                    "Description":"The number of entries in the index of that graph topology, as retrieved from MPI_Graphdims_get.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"number_of_edges",
+                    "Description":"The number of edges in that graph topology, as retrieved from MPI_Graphdims_get.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"index",
+                    "Description":"The array in which store the index retrieved.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"edges",
+                    "Description":"The array in which store the edges retieved.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the graph information retrieval.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

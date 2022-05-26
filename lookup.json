@@ -288,6 +288,10 @@
                 "DirectoryName":"mpi_graph_create"
             },
             {
+                "Name":"MPI_Graph_get",
+                "DirectoryName":"mpi_graph_get"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
