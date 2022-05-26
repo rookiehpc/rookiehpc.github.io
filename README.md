@@ -13,7 +13,7 @@ Although the two websites are visually identical, the v2 is much better at accom
 
 |Current RookieHPC website version | RookieHPC website v2
 |-|-
-|<ul><li>Contact form</li></ul>|<ul><li>Github issues</li><li>Wiki</li><li>Pull requests</li><li>Projects</li><li>Milestones</li></ul>
+|<ul><li>[Contact form](https://rookiehpc.com/contact.php)</li></ul>|<ul><li>[Github issues](https://github.com/rookiehpc/rookiehpc.github.io/issues)</li><li>[Wiki](https://github.com/rookiehpc/rookiehpc.github.io/wiki)</li><li>[Pull requests](https://github.com/rookiehpc/rookiehpc.github.io/pulls)</li><li>[Projects](https://github.com/rookiehpc/rookiehpc.github.io/projects?type=beta)</li><li>[Milestones](https://github.com/rookiehpc/rookiehpc.github.io/milestones)</li></ul>
 
 At the time of writing, the content is still being ported from the current RookieHPC website to its version 2. When this will be complete, the URL https://www.rookiehpc.com will point to the Github Pages version in a seamless transition. Only a single version of the website will remain, no more v1/v2 distinction :)
 
