@@ -346,6 +346,10 @@
             {
                 "Name":"MPI_Iallgatherv",
                 "DirectoryName":"mpi_iallgatherv"
+            },
+            {
+                "Name":"MPI_Iallreduce",
+                "DirectoryName":"mpi_iallreduce"
             }
         ]
     },
