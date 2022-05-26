@@ -308,6 +308,10 @@
                 "DirectoryName":"mpi_group"
             },
             {
+                "Name":"MPI_Group_difference",
+                "DirectoryName":"mpi_group_difference"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
