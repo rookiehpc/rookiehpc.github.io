@@ -120,7 +120,7 @@
                 {
                     "Name":"ierror",
                     "Description":"The error code returned from the reduction.",
-                    "Type":"",
+                    "Type":"INTEGER",
                     "Optional":true,
                     "Intent":"OUT"
                 }
