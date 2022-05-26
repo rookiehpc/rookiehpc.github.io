@@ -304,6 +304,10 @@
                 "DirectoryName":"mpi_graphdims_get"
             },
             {
+                "Name":"MPI_Group",
+                "DirectoryName":"mpi_group"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }

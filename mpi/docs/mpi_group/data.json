@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Group",
+    "DirectoryName":"mpi_group",
+    "SharedDescription":true,
+    "Description":"MPI_Group is a set of processes. Groups can be manipulated with unions (MPI_Group_union) and intersections (MPI_Group_intersection). Groups can also be used to create communicators via MPI_Comm_create.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        }
+    ]
+}
