@@ -358,6 +358,10 @@
             {
                 "Name":"MPI_Ialltoallv",
                 "DirectoryName":"mpi_ialltoallv"
+            },
+            {
+                "Name":"MPI_Ibarrier",
+                "DirectoryName":"mpi_ibarrier"
             }
         ]
     },

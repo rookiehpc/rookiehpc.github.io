@@ -1,0 +1,86 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Ibarrier",
+    "DirectoryName":"mpi_ibarrier",
+    "SharedDescription":true,
+    "Description":"MPI_Ibarrier is the non-blocking version of MPI_Barrier; it does not wait for all other processes to call MPI_Ibarrier to return. A non-blocking barrier may appear counter-productive at first, but it allows to overlap the barrier synchronisation with independent computation.",
+    "Categories":[
+        "Collectives",
+        "Non-blocking",
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the barrier takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the non-blocking operation handle.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the non-blocking barrier.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the barrier takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the non-blocking operation handle.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the non-blocking barrier.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the barrier takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the non-blocking operation handle.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the non-blocking barrier.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
