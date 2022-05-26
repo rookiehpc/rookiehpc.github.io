@@ -1,0 +1,106 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Graphdims_get",
+    "DirectoryName":"mpi_graphdims_get",
+    "SharedDescription":true,
+
+    "Description":"MPI_Graphdims_get retrieves the number of nodes and edges of a communicator with graph topology created by MPI_Graph_create.",
+    "Categories":[
+        "Graph",
+        "Topology"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology to query, which was created with MPI_Graph_create.",
+                    "Type":"MPI_Comm*",
+                    "Optional":false
+                },
+                {
+                    "Name":"number_of_indexes",
+                    "Description":"The variable in which store the number of indexes present in the graph.",
+                    "Type":"int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"number_of_edges",
+                    "Description":"The variable in which store the total number of edges in the communicator with graph topology.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the dimension retrieval.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology to query, which was created with MPI_Graph_create.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"number_of_indexes",
+                    "Description":"The variable in which store the number of indexes present in the graph.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"number_of_edges",
+                    "Description":"The variable in which store the total number of edges in the communicator with graph topology.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the dimension retrieval.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator with graph topology to query, which was created with MPI_Graph_create.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"number_of_indexes",
+                    "Description":"The variable in which store the number of indexes present in the graph.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"number_of_edges",
+                    "Description":"The variable in which store the total number of edges in the communicator with graph topology.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the dimension retrieval.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
