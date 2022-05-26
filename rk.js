@@ -1071,7 +1071,7 @@ const RK = {
             IndexHTML += `
                 <article class="DocumentationCategory" id="` + Category + `">
                     <div class="DocumentationCategoryHeader">
-                        <div class="DocumentationCategoryLogo" style="mask-image: url('` + RK.BASE_URL + `/images/mpi/` + Category + `.svg'); -webkit-mask-image: url('` + RK.BASE_URL + `/images/mpi/` + Category + `.svg');"></div>
+                        <div class="DocumentationCategoryLogo" style="mask-image: url('` + RK.BASE_URL + `/images/mpi/` + Category.replace(' ', '_') + `.svg'); -webkit-mask-image: url('` + RK.BASE_URL + `/images/mpi/` + Category.replace(' ', '_') + `.svg');"></div>
                         <h1>` + Category + `</h1>
                     </div>
                     <div class="DocumentationCategoryBody">
