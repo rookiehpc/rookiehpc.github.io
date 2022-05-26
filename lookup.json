@@ -410,6 +410,10 @@
             {
                 "Name":"MPI_INT8_T",
                 "DirectoryName":"mpi_int8_t"
+            },
+            {
+                "Name":"MPI_INTEGER",
+                "DirectoryName":"mpi_integer"
             }
         ]
     },
