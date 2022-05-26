@@ -350,6 +350,10 @@
             {
                 "Name":"MPI_Iallreduce",
                 "DirectoryName":"mpi_iallreduce"
+            },
+            {
+                "Name":"MPI_Ialltoall",
+                "DirectoryName":"mpi_ialltoall"
             }
         ]
     },
