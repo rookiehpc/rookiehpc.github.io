@@ -366,6 +366,10 @@
             {
                 "Name":"MPI_Ibcast",
                 "DirectoryName":"mpi_ibcast"
+            },
+            {
+                "Name":"MPI_Ibsend",
+                "DirectoryName":"mpi_ibsend"
             }
         ]
     },
