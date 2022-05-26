@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_INT32_T",
+    "DirectoryName":"mpi_int32_t",
+    "SharedDescription":true,
+    "Description":"MPI_INT32_T is an MPI_Datatype that represents a 4-byte integer type in MPI, it corresponds to an int32_t in C. For the FORTRAN counterpart, please see MPI_INTEGER4.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
