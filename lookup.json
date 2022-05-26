@@ -316,6 +316,10 @@
                 "DirectoryName":"mpi_group_empty"
             },
             {
+                "Name":"MPI_Group_incl",
+                "DirectoryName":"mpi_group_incl"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }

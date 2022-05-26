@@ -1,0 +1,122 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Group_incl",
+    "DirectoryName":"mpi_group_incl",
+    "SharedDescription":true,
+    "Description":"MPI_Group_incl creates a group from a list of process ranks taken from an existing group. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY. MPI_Group_incl has a variant MPI_Group_range_incl.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The group to which the process ranks listed belong.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"rank_count",
+                    "Description":"The number of process ranks contained in the list.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"ranks",
+                    "Description":"An array containing the ranks of the processes in the old group to include in the new group.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_group",
+                    "Description":"The variable in which store the group created. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY.",
+                    "Type":"MPI_Group*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the group inclusion.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The group to which the process ranks listed belong.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"rank_count",
+                    "Description":"The number of process ranks contained in the list.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ranks",
+                    "Description":"An array containing the ranks of the processes in the old group to include in the new group.",
+                    "Type":"INTEGER\t(rank_count)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_group",
+                    "Description":"The variable in which store the group created. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group inclusion.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The group to which the process ranks listed belong.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"rank_count",
+                    "Description":"The number of process ranks contained in the list.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ranks",
+                    "Description":"An array containing the ranks of the processes in the old group to include in the new group.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_group",
+                    "Description":"The variable in which store the group created. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group inclusion.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
