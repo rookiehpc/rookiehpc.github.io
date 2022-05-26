@@ -55,7 +55,3 @@ Technology "T" tool entry "E" | `/T/tools/E/data.json` | `/mpi/tools/my_super_to
 Technology "T" exercise entry "E" | `/T/exercises/E/data.json` | `/mpi/tools/my_super_exercise/data.json`
 
 The example codes are stored verbatim in their corresponding programming language file format. For instance, the example in `C` for `MPI_Comm_size` is located at `/mpi/docs/mpi_comm_size/example_1.c`. The `FORTRAN-90` have the extension `.f90` while their `FORTRAN-2008` counterpart have `.f08`.
-
-## III) How do I notify of a missing documentation entry, a bug and so on? ##
-
-Simply [submit an issue](https://github.com/rookiehpc/rookiehpc.github.io/issues) and it will be picked up when possible :) You will even be able to track its progress!
