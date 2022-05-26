@@ -438,6 +438,10 @@
             {
                 "Name":"MPI_Irsend",
                 "DirectoryName":"mpi_irsend"
+            },
+            {
+                "Name":"MPI_Iscatter",
+                "DirectoryName":"mpi_iscatter"
             }
         ]
     },
