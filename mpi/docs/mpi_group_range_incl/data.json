@@ -1,0 +1,122 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Group_range_incl",
+    "DirectoryName":"mpi_group_range_incl",
+    "SharedDescription":true,
+    "Description":"MPI_Group_incl_range creates a group by selecting ranks from an existing group based on the list of rank ranges passed. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY. MPI_Group_incl_range is a variant of MPI_Group_incl.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The group to which the process ranks listed belong.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"n",
+                    "Description":"The number of triplets in the array of rank ranges given, not the total number of integers in that array.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"ranges",
+                    "Description":"The list of n triplets containing each, in the following order:\n- the first rank\n- the last rank\n- the stride\nFor each range represented by a triplet, the corresponding ranks are computed by selecting every <stride> ranks starting at the first rank, until it is strictly beyond <last>.\nNote: the first rank may be strictly greater than the last rank and the stride may be negative. However, the stride cannot be zero.",
+                    "Type":"int\t[][3]",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_group",
+                    "Description":"The variable in which store the group created. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY.",
+                    "Type":"MPI_Group*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the group inclusion.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The group to which the process ranks listed belong.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"n",
+                    "Description":"The number of triplets in the array of rank ranges given, not the total number of integers in that array.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ranges",
+                    "Description":"The list of n triplets containing each, in the following order:\n- the first rank\n- the last rank\n- the stride\nFor each range represented by a triplet, the corresponding ranks are computed by selecting every <stride> ranks starting at the first rank, until it is strictly beyond <last>.\nNote: the first rank may be strictly greater than the last rank and the stride may be negative. However, the stride cannot be zero.",
+                    "Type":"INTEGER\t(3,n)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_group",
+                    "Description":"The variable in which store the group created. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group inclusion.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"group",
+                    "Description":"The group to which the process ranks listed belong.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"n",
+                    "Description":"The number of triplets in the array of rank ranges given, not the total number of integers in that array.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ranges",
+                    "Description":"The list of n triplets containing each, in the following order:\n- the first rank\n- the last rank\n- the stride\nFor each range represented by a triplet, the corresponding ranks are computed by selecting every <stride> ranks starting at the first rank, until it is strictly beyond <last>.\nNote: the first rank may be strictly greater than the last rank and the stride may be negative. However, the stride cannot be zero.",
+                    "Type":"INTEGER\t(3,*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_group",
+                    "Description":"The variable in which store the group created. If the number of processes to include in the group is 0, the group created is MPI_GROUP_EMPTY.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group inclusion.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

@@ -324,6 +324,10 @@
                 "DirectoryName":"mpi_group_intersection"
             },
             {
+                "Name":"MPI_Group_range_incl",
+                "DirectoryName":"mpi_group_range_incl"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
