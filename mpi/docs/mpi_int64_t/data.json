@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_INT64_T",
+    "DirectoryName":"mpi_int64_t",
+    "SharedDescription":true,
+    "Description":"MPI_INT64_T is an MPI_Datatype that represents an 8-byte integer type in MPI, it corresponds to an int64_t in C. For the FORTRAN counterpart, please see MPI_INTEGER8.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}

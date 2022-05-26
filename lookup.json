@@ -402,6 +402,10 @@
             {
                 "Name":"MPI_INT32_T",
                 "DirectoryName":"mpi_int32_t"
+            },
+            {
+                "Name":"MPI_INT64_T",
+                "DirectoryName":"mpi_int64_t"
             }
         ]
     },
