@@ -378,6 +378,10 @@
             {
                 "Name":"MPI_Igatherv",
                 "DirectoryName":"mpi_igatherv"
+            },
+            {
+                "Name":"MPI_IN_PLACE",
+                "DirectoryName":"mpi_in_place"
             }
         ]
     },

@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_IN_PLACE",
+    "DirectoryName":"mpi_in_place",
+    "SharedDescription":true,
+    "Description":"The MPI_IN_PLACE is an option used in MPI routines that involve both a send and a receive phase, such as MPI_Gather and its variants. By passing MPI_IN_PLACE as the send buffer, the MPI routine knows that the send and receive buffer are one same buffer.\nNote: the in-place variant of MPI_Sendrecv does not rely on MPI_IN_PLACE but is a distinct routine MPI_Sendrecv_replace.",
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
