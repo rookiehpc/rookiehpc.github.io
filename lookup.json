@@ -354,6 +354,10 @@
             {
                 "Name":"MPI_Ialltoall",
                 "DirectoryName":"mpi_ialltoall"
+            },
+            {
+                "Name":"MPI_Ialltoallv",
+                "DirectoryName":"mpi_ialltoallv"
             }
         ]
     },
