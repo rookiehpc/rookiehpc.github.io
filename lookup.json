@@ -422,6 +422,10 @@
             {
                 "Name":"MPI_Irecv",
                 "DirectoryName":"mpi_irecv"
+            },
+            {
+                "Name":"MPI_Ireduce",
+                "DirectoryName":"mpi_ireduce"
             }
         ]
     },
