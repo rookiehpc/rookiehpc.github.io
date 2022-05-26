@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_GROUP_EMPTY",
+    "DirectoryName":"mpi_group_empty",
+    "SharedDescription":true,
+    "Description":"MPI_GROUP_EMPTY represents a group made of 0 MPI processes.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

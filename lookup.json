@@ -312,6 +312,10 @@
                 "DirectoryName":"mpi_group_difference"
             },
             {
+                "Name":"MPI_GROUP_EMPTY",
+                "DirectoryName":"mpi_group_empty"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }
