@@ -1,0 +1,220 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Iallgatherv",
+    "DirectoryName":"mpi_iallgatherv",
+    "SharedDescription":true,
+
+    "Description":"MPI_Iallgatherv is the non-blocking version of MPI_Allgatherv; it collects data from all processes in a given communicator and stores the data collected in the receive buffer of each process, also allowing the messages received to have different lengths and be stored at arbitrary locations in the receive buffer. Unlike MPI_Allgatherv however, it will not wait for the collection to complete and will return immediately instead. The user must therefore check for completion with MPI_Wait or MPI_Test before the buffers passed can be safely reused. MPI_Iallgatherv is a collective operation; all processes in the communicator must invoke this routine. Other variants of MPI_Iallgatherv are MPI_Igather, MPI_Igatherv and MPI_Iallgather. Refer to MPI_Allgatherv to see the blocking counterpart of MPI_Iallgatherv.",
+    "Categories":[
+        "Collectives",
+        "Non-blocking"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"An array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"const int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message received by each process. Displacements are expressed in number of elements, not bytes.",
+                    "Type":"const int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all gather takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the handler on the non-blocking operation.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the variable all gather.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"An array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER, ASYNCHRONOUS\t(*)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message received by each process. Displacements are expressed in number of elements, not bytes.",
+                    "Type":"INTEGER, ASYNCHRONOUS\t(*)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all gather takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the handler on the non-blocking operation.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The variable in which store the error code returned when calling the variable all gather routine.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to send. The “in place” option for intra-communicators is specified by passing MPI_IN_PLACE as the value of buffer_send at the root. In such a case, count_send and datatype_send are ignored, and the contribution of the root to the gathered vector is assumed to be already in the correct place in the receive buffer.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements in the send buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the gathered data.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_recv",
+                    "Description":"An array containing the number of elements in the message to receive from each process, not the total number of elements to receive from all processes altogether.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message received by each process. Displacements are expressed in number of elements, not bytes.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the variable all gather takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the handler on the non-blocking operation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The variable in which store the error code returned when calling the variable all gather routine.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

@@ -342,6 +342,10 @@
             {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
+            },
+            {
+                "Name":"MPI_Iallgatherv",
+                "DirectoryName":"mpi_iallgatherv"
             }
         ]
     },
