@@ -362,6 +362,10 @@
             {
                 "Name":"MPI_Ibarrier",
                 "DirectoryName":"mpi_ibarrier"
+            },
+            {
+                "Name":"MPI_Ibcast",
+                "DirectoryName":"mpi_ibcast"
             }
         ]
     },

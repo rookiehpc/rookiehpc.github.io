@@ -1,0 +1,160 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Ibcast",
+    "DirectoryName":"mpi_ibcast",
+    "SharedDescription":true,
+    "Description":"MPI_Ibcast is the non-blocking counterpart of MPI_Bcast which broadcasts a message from a process to all other processes in the same communicator. This is a collective operation; it must be called by all processes in the communicator. To see the blocking counterpart of MPI_Ibcast, see MPI_Bcast.",
+    "Categories":[
+        "Collectives"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer from which load the data to broadcast if the calling MPI process is the emitter, or the buffer in which store the data broadcasted is the calling MPI process is a receiver.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the buffer broadcasted.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of an element in the buffer broadcasted.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"emitter_rank",
+                    "Description":"The rank of the MPI process that broadcasts the data, all other processes receive the data broadcasted.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the broadcast takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the non-blocking operation handle.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the broadcast.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer from which load the data to broadcast if the calling MPI process is the emitter, or the buffer in which store the data broadcasted is the calling MPI process is a receiver.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the buffer broadcasted.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of an element in the buffer broadcasted.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"emitter_rank",
+                    "Description":"The rank of the MPI process that broadcasts the data, all other processes receive the data broadcasted.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the broadcast takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the non-blocking operation handle.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the broadcast.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer from which load the data to broadcast if the calling MPI process is the emitter, or the buffer in which store the data broadcasted is the calling MPI process is a receiver.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the buffer broadcasted.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of an element in the buffer broadcasted.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"emitter_rank",
+                    "Description":"The rank of the MPI process that broadcasts the data, all other processes receive the data broadcasted.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the broadcast takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The variable in which store the non-blocking operation handle.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the broadcast.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
