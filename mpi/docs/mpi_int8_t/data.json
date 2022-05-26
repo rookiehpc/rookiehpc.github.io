@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_INT8_T",
+    "DirectoryName":"mpi_int8_t",
+    "SharedDescription":true,
+    "Description":"MPI_INT8_T is an MPI_Datatype that represents a 1-byte integer type in MPI, it corresponds to an int8_t in C. For the FORTRAN counterpart, please see MPI_INTEGER1.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
