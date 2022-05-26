@@ -394,6 +394,10 @@
             {
                 "Name":"MPI_INT",
                 "DirectoryName":"mpi_int"
+            },
+            {
+                "Name":"MPI_INT16_T",
+                "DirectoryName":"mpi_int16_t"
             }
         ]
     },
