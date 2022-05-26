@@ -1,0 +1,58 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Init",
+    "DirectoryName":"mpi_init",
+    "SharedDescription":true,
+    "Description":"MPI_Init initialises the MPI environment, it is equivalent to invoking MPI_Init_thread with the MPI_THREAD_SINGLE thread support level. The MPI_Init routine must be called by each MPI process, once and before any other MPI routine.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"argc",
+                    "Description":"The number of arguments passed through main, or NULL.",
+                    "Type":"int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"argv",
+                    "Description":"The argument values passed through main, or NULL.",
+                    "Type":"char***",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned during the initialisation.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the initialisation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the initialisation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

@@ -382,6 +382,10 @@
             {
                 "Name":"MPI_IN_PLACE",
                 "DirectoryName":"mpi_in_place"
+            },
+            {
+                "Name":"MPI_Init",
+                "DirectoryName":"mpi_init"
             }
         ]
     },
