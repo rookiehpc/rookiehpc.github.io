@@ -370,6 +370,10 @@
             {
                 "Name":"MPI_Ibsend",
                 "DirectoryName":"mpi_ibsend"
+            },
+            {
+                "Name":"MPI_Igather",
+                "DirectoryName":"mpi_igather"
             }
         ]
     },
