@@ -5,13 +5,17 @@ To newcomers, a quick introduction: the RookieHPC website covers major technolog
 
 ## I) Why a version 2? ##
 
-The current RookieHPC website, which is online at https://www.rookiehpc.com, has been doing its job for years. However, without getting into too much details, behind the scenes its design does not permit to accommodate any external contribution. Although not a real problem in the early days, it has now become one. This is where this website v2 comes in.
+For reference:
+- Current RookieHPC website (a.k.a v1): https://www.rookiehpc.com
+- [Github Pages](https://pages.github.com) version of RookieHPC website (a.k.a v2): https://rookiehpc.github.io (work in progress)
 
-The idea being to develop a rethought version of the website, this time designed to be contribution friendly, at last. To do so, the Github Pages service was leveraged; it produces a static website from a repository. In this case, this repository produces the website available at https://rookiehpc.github.io.
+Although the two websites are visually identical, the v2 is much better at accommodating contribution and collaboration since it has access to the full panel of tools from Github. A quick comparison:
 
-Everything that you see on that Github Pages website is a reflection of the source code in this repository. In other words, modifying the repository will update the website accordingly, and that's how we finally have contribution in the RookieHPC project! :D
+|Current RookieHPC website version | RookieHPC website v2
+|-|-
+|<ul><li>Contact form</li></ul>|<ul><li>Github issues</li><li>Wiki</li><li>Pull requests</li><li>Projects</li><li>Milestones</li></ul>
 
-At the time of writing, this is still a work in progress, although Github Pages version will eventually replace the original website. Concretely, the URL https://www.rookiehpc.com will point to the Github Pages.
+At the time of writing, the content is still being ported from the current RookieHPC website to its version 2. When this will be complete, the URL https://www.rookiehpc.com will point to the Github Pages version in a seamless transition. Only a single version of the website will remain, no more v1/v2 distinction :)
 
 ## II) Cool, how can I contribute then? ##
 
