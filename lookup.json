@@ -336,6 +336,10 @@
                 "DirectoryName":"mpi_group_size"
             },
             {
+                "Name":"MPI_Group_union",
+                "DirectoryName":"mpi_group_union"
+            },
+            {
                 "Name":"MPI_Iallgather",
                 "DirectoryName":"mpi_iallgather"
             }

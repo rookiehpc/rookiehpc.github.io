@@ -1,0 +1,103 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Group_union",
+    "DirectoryName":"mpi_group_union",
+    "SharedDescription":true,
+    "Description":"MPI_Group_union takes the union of two MPI groups to create a group that contains processes of both groups, without duplicates.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"group_a",
+                    "Description":"The first of the two groups to include in the union.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"group_b",
+                    "Description":"The second of the two groups to include in the union.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"union_group",
+                    "Description":"The variable in which store the group representing the union of the two groups given.",
+                    "Type":"MPI_Group*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the group union.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"group_a",
+                    "Description":"The first of the two groups to include in the union.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"group_b",
+                    "Description":"The second of the two groups to include in the union.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"union_group",
+                    "Description":"The variable in which store the group representing the union of the two groups given.",
+                    "Type":"TYPE(MPI_Group)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group union.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"group_a",
+                    "Description":"The first of the two groups to include in the union.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"group_b",
+                    "Description":"The second of the two groups to include in the union.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"union_group",
+                    "Description":"The variable in which store the group representing the union of the two groups given.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the group union.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
