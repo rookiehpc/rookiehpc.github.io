@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_INT",
+    "DirectoryName":"mpi_int",
+    "SharedDescription":true,
+    "Description":"MPI_INT is an MPI_Datatype that represents an integer type in MPI, it corresponds to an int in C. For the FORTRAN counterpart, please see MPI_INTEGER.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
