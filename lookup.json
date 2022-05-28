@@ -470,6 +470,10 @@
             {
                 "Name":"MPI_LONG_DOUBLE",
                 "DirectoryName":"mpi_long_double"
+            },
+            {
+                "Name":"MPI_LONG_LONG",
+                "DirectoryName":"mpi_long_long"
             }
         ]
     },
