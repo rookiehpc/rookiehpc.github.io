@@ -498,6 +498,10 @@
             {
                 "Name":"MPI_MAXLOC",
                 "DirectoryName":"mpi_maxloc"
+            },
+            {
+                "Name":"MPI_MIN",
+                "DirectoryName":"mpi_min"
             }
         ]
     },
