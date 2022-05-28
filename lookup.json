@@ -490,6 +490,10 @@
             {
                 "Name":"MPI_MAX",
                 "DirectoryName":"mpi_max"
+            },
+            {
+                "Name":"MPI_MAX_OBJECT_NAME",
+                "DirectoryName":"mpi_max_object_name"
             }
         ]
     },

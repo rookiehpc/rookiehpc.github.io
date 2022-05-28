@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MAX_OBJECT_NAME",
+    "DirectoryName":"mpi_max_object_name",
+    "SharedDescription":true,
+    "Description":"MPI_MAX_OBJECT_NAME contains the maximum name length of any MPI object. It is used to allocate buffers that are guaranteed to be large enough to contain an MPI object name.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
