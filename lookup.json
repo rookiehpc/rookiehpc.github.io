@@ -510,6 +510,10 @@
             {
                 "Name":"MPI_MODE_APPEND",
                 "DirectoryName":"mpi_mode_append"
+            },
+            {
+                "Name":"MPI_MODE_CREATE",
+                "DirectoryName":"mpi_mode_create"
             }
         ]
     },
