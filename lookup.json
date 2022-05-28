@@ -482,6 +482,10 @@
             {
                 "Name":"MPI_LOR",
                 "DirectoryName":"mpi_lor"
+            },
+            {
+                "Name":"MPI_LXOR",
+                "DirectoryName":"mpi_lxor"
             }
         ]
     },

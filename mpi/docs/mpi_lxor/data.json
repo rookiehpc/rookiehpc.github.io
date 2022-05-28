@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_LXOR",
+    "DirectoryName":"mpi_lxor",
+    "SharedDescription":true,
+    "Description":"MPI_LXOR is a predefined reduction operation that will calculate the logical exclusive or of the values reduced.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
