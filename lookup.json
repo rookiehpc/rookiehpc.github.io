@@ -478,6 +478,10 @@
             {
                 "Name":"MPI_LONG_LONG_INT",
                 "DirectoryName":"mpi_long_long_int"
+            },
+            {
+                "Name":"MPI_LOR",
+                "DirectoryName":"mpi_lor"
             }
         ]
     },
