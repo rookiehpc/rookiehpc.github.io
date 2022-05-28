@@ -450,6 +450,10 @@
             {
                 "Name":"MPI_Isend",
                 "DirectoryName":"mpi_isend"
+            },
+            {
+                "Name":"MPI_Issend",
+                "DirectoryName":"mpi_issend"
             }
         ]
     },
