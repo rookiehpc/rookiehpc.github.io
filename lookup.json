@@ -462,6 +462,10 @@
             {
                 "Name":"MPI_LOGICAL",
                 "DirectoryName":"mpi_logical"
+            },
+            {
+                "Name":"MPI_LONG",
+                "DirectoryName":"mpi_long"
             }
         ]
     },

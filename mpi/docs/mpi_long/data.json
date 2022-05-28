@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_LONG",
+    "DirectoryName":"mpi_long",
+    "SharedDescription":true,
+    "Description":"MPI_LONG is an MPI_Datatype that represents a long integer type in MPI, it corresponds to a long int in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
