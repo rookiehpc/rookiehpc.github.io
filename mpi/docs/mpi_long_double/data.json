@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_LONG_DOUBLE",
+    "DirectoryName":"mpi_long_double",
+    "SharedDescription":true,
+    "Description":"MPI_LONG_DOUBLE is an MPI_Datatype that represents a long double-length floating point number type in MPI, it corresponds to a long double in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
