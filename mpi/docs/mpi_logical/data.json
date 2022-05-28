@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_LOGICAL",
+    "DirectoryName":"mpi_logical",
+    "SharedDescription":true,
+    "Description":"MPI_LOGICAL is an MPI_Datatype that represents a boolean type in MPI, it corresponds to a LOGICAL in FORTRAN. For the C counterpart, please see MPI_C_BOOL.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

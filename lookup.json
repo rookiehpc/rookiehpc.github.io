@@ -458,6 +458,10 @@
             {
                 "Name":"MPI_LAND",
                 "DirectoryName":"mpi_land"
+            },
+            {
+                "Name":"MPI_LOGICAL",
+                "DirectoryName":"mpi_logical"
             }
         ]
     },
