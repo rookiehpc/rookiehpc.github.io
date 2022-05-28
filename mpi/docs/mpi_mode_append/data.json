@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MODE_APPEND",
+    "DirectoryName":"mpi_mode_append",
+    "SharedDescription":true,
+    "Description":"MPI_MODE_APPEND is a flag that can be passed to MPI_File_open to make sure data is added after existing content, by setting the initial position of all file pointers to the end of the file.\nOther tags are: MPI_MODE_RDONLY, MPI_MODE_RDWR, MPI_MODE_WRONLY, MPI_MODE_CREATE, MPI_MODE_EXCL, MPI_MODE_DELETE_ON_CLOSE, MPI_MODE_UNIQUE_OPEN and MPI_MODE_SEQUENTIAL.",
+    "Categories":[
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

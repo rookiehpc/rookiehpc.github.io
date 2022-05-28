@@ -506,6 +506,10 @@
             {
                 "Name":"MPI_MINLOC",
                 "DirectoryName":"mpi_minloc"
+            },
+            {
+                "Name":"MPI_MODE_APPEND",
+                "DirectoryName":"mpi_mode_append"
             }
         ]
     },
