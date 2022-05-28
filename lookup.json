@@ -454,6 +454,10 @@
             {
                 "Name":"MPI_Issend",
                 "DirectoryName":"mpi_issend"
+            },
+            {
+                "Name":"MPI_LAND",
+                "DirectoryName":"mpi_land"
             }
         ]
     },
