@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MAXLOC",
+    "DirectoryName":"mpi_maxloc",
+    "SharedDescription":true,
+    "Description":"MPI_MAXLOC is a predefined reduction operation that works on a pair of values; it finds the maximum value in the former and reports it along with the value that was paired with it. MPI_MAXLOC allows for instance to pair an MPI rank such that one can find which MPI process was holding the maximum value.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
