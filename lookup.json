@@ -486,6 +486,10 @@
             {
                 "Name":"MPI_LXOR",
                 "DirectoryName":"mpi_lxor"
+            },
+            {
+                "Name":"MPI_MAX",
+                "DirectoryName":"mpi_max"
             }
         ]
     },
