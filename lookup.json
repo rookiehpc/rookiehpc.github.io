@@ -446,6 +446,10 @@
             {
                 "Name":"MPI_Iscatterv",
                 "DirectoryName":"mpi_iscatterv"
+            },
+            {
+                "Name":"MPI_Isend",
+                "DirectoryName":"mpi_isend"
             }
         ]
     },
