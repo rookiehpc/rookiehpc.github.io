@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MINLOC",
+    "DirectoryName":"mpi_minloc",
+    "SharedDescription":true,
+    "Description":"MPI_MINLOC is a predefined reduction operation that works on a pair of values; it finds the minimum value in the former and reports it along with the value that was paired with it. MPI_MINLOC allows for instance to pair an MPI rank such that one can find which MPI process was holding the minimum value.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

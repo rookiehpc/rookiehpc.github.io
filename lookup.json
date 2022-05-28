@@ -502,6 +502,10 @@
             {
                 "Name":"MPI_MIN",
                 "DirectoryName":"mpi_min"
+            },
+            {
+                "Name":"MPI_MINLOC",
+                "DirectoryName":"mpi_minloc"
             }
         ]
     },
