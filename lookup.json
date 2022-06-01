@@ -530,6 +530,10 @@
             {
                 "Name":"MPI_MODE_RDWR",
                 "DirectoryName":"mpi_mode_rdwr"
+            },
+            {
+                "Name":"MPI_MODE_SEQUENTIAL",
+                "DirectoryName":"mpi_mode_sequential"
             }
         ]
     },

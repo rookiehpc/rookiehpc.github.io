@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MODE_SEQUENTIAL",
+    "DirectoryName":"mpi_mode_sequential",
+    "SharedDescription":true,
+    "Description":"MPI_MODE_SEQUENTIAL is a flag that can be passed to MPI_File_open to specify that the file will be accessed sequentially. The MPI implementation can leverage this information to apply access optimisations on certain sequential devices. MPI_MODE_SEQUENTIAL cannot be used in conjunction with MPI_MODE_RDWR.\nOther tags are: MPI_MODE_RDONLY, MPI_MODE_RDWR, MPI_MODE_WRONLY, MPI_MODE_CREATE, MPI_MODE_EXCL, MPI_MODE_DELETE_ON_CLOSE, MPI_MODE_UNIQUE_OPEN and MPI_MODE_APPEND.",
+    "Categories":[
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
