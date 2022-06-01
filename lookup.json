@@ -518,6 +518,10 @@
             {
                 "Name":"MPI_MODE_DELETE_ON_CLOSE",
                 "DirectoryName":"mpi_mode_delete_on_close"
+            },
+            {
+                "Name":"MPI_MODE_EXCL",
+                "DirectoryName":"mpi_mode_excl"
             }
         ]
     },
