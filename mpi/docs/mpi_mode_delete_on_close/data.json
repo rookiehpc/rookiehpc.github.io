@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MODE_DELETE_ON_CLOSE",
+    "DirectoryName":"mpi_mode_delete_on_close",
+    "SharedDescription":true,
+    "Description":"MPI_MODE_DELETE_ON_CLOSE is a flag that can be passed to MPI_File_open to specify that the file to be opened must be deleted upon closure. It is equivalent to performing MPI_File_delete.\nOther flags are MPI_MODE_RDONLY, MPI_MODE_RDWR, MPI_MODE_WRONLY, MPI_MODE_CREATE, MPI_MODE_EXCL, MPI_MODE_UNIQUE_OPEN, MPI_MODE_SEQUENTIAL and MPI_MODE_APPEND.",
+    "Categories":[
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

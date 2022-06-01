@@ -514,6 +514,10 @@
             {
                 "Name":"MPI_MODE_CREATE",
                 "DirectoryName":"mpi_mode_create"
+            },
+            {
+                "Name":"MPI_MODE_DELETE_ON_CLOSE",
+                "DirectoryName":"mpi_mode_delete_on_close"
             }
         ]
     },
