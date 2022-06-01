@@ -550,6 +550,10 @@
             {
                 "Name":"MPI_Op_create",
                 "DirectoryName":"mpi_op_create"
+            },
+            {
+                "Name":"MPI_Op_free",
+                "DirectoryName":"mpi_op_free"
             }
         ]
     },
