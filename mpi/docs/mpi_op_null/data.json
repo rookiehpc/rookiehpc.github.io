@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_OP_NULL",
+    "DirectoryName":"mpi_op_null",
+    "SharedDescription":true,
+    "Description":"MPI_OP_NULL is the constant to which MPI_Op handles are reset to when passed to MPI_Op_free.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

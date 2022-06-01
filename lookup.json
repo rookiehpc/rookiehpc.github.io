@@ -554,6 +554,10 @@
             {
                 "Name":"MPI_Op_free",
                 "DirectoryName":"mpi_op_free"
+            },
+            {
+                "Name":"MPI_OP_NULL",
+                "DirectoryName":"mpi_op_null"
             }
         ]
     },
