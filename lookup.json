@@ -522,6 +522,10 @@
             {
                 "Name":"MPI_MODE_EXCL",
                 "DirectoryName":"mpi_mode_excl"
+            },
+            {
+                "Name":"MPI_MODE_RDONLY",
+                "DirectoryName":"mpi_mode_rdonly"
             }
         ]
     },
