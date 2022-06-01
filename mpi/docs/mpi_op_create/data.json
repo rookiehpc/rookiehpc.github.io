@@ -1,0 +1,103 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Op_create",
+    "DirectoryName":"mpi_op_create",
+    "SharedDescription":true,
+    "Description":"MPI_Op_create allows to create an MPI_Op operation handle that can be used in reduction operations from a user-defined function, and specify whether that operation is commutative. The operation handle created can be deallocated with MPI_Op_free that sets the MPI_Op handle back to MPI_OP_NULL.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"user_function",
+                    "Description":"A pointer on the MPI structure containing the user function for which create an operation handle.",
+                    "Type":"MPI_User_function*",
+                    "Optional":false
+                },
+                {
+                    "Name":"commutativity",
+                    "Description":"Indicates whether the user-defined function passed is commutative.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"handle",
+                    "Description":"A pointer on the variable in which store the operation handle created.",
+                    "Type":"MPI_Op*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the operation handle creation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"user_function",
+                    "Description":"The user procedure for which create an operation handle.",
+                    "Type":"PROCEDURE(MPI_User_function)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"commutativity",
+                    "Description":"Indicates whether the user-defined function passed is commutative.",
+                    "Type":"LOGICAL",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"handle",
+                    "Description":"The variable in which store the operation handle created.",
+                    "Type":"TYPE(MPI_Op)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the operation handle creation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"user_function",
+                    "Description":"The user procedure for which create an operation handle.",
+                    "Type":"EXTERNAL",
+                    "Optional":false
+                },
+                {
+                    "Name":"commutativity",
+                    "Description":"Indicates whether the user-defined function passed is commutative.",
+                    "Type":"LOGICAL",
+                    "Optional":false
+                },
+                {
+                    "Name":"handle",
+                    "Description":"The variable in which store the operation handle created.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the operation handle creation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
