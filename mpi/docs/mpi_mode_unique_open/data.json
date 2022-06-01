@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MODE_UNIQUE_OPEN",
+    "DirectoryName":"mpi_mode_unique_open",
+    "SharedDescription":true,
+    "Description":"MPI_MODE_UNIQUE_OPEN is a flag that can be passed to MPI_File_open to specify that the file concerned will not be opened concurrently elsewhere (both inside and outside the MPI environment). MPI_MODE_UNIQUE_OPEN facilitates file access optimisation by informing MPI that it does not need locking for this file.\nOther tags are: MPI_MODE_RDONLY, MPI_MODE_RDWR, MPI_MODE_WRONLY, MPI_MODE_CREATE, MPI_MODE_EXCL, MPI_MODE_DELETE_ON_CLOSE, MPI_MODE_SEQUENTIAL and MPI_MODE_APPEND.",
+    "Categories":[
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

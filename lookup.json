@@ -534,6 +534,10 @@
             {
                 "Name":"MPI_MODE_SEQUENTIAL",
                 "DirectoryName":"mpi_mode_sequential"
+            },
+            {
+                "Name":"MPI_MODE_UNIQUE_OPEN",
+                "DirectoryName":"mpi_mode_unique_open"
             }
         ]
     },
