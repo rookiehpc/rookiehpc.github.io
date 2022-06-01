@@ -538,6 +538,10 @@
             {
                 "Name":"MPI_MODE_UNIQUE_OPEN",
                 "DirectoryName":"mpi_mode_unique_open"
+            },
+            {
+                "Name":"MPI_MODE_WRONLY",
+                "DirectoryName":"mpi_mode_wronly"
             }
         ]
     },
