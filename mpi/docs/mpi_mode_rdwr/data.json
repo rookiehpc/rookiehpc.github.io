@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_MODE_RDWR",
+    "DirectoryName":"mpi_mode_rdwr",
+    "SharedDescription":true,
+    "Description":"MPI_MODE_RDWR is a flag that can be passed to MPI_File_open to ask for read and write access to the file. MPI_MODE_RDWR cannot be used in conjunction with MPI_MODE_WRONLY or MPI_MODE_RDONLY. Also, MPI_MODE_RDWR cannot be used in conjunction with MPI_MODE_SEQUENTIAL.\nOther flags are MPI_MODE_RDONLY, MPI_MODE_WRONLY, MPI_MODE_CREATE, MPI_MODE_EXCL, MPI_MODE_DELETE_ON_CLOSE, MPI_MODE_UNIQUE_OPEN, MPI_MODE_SEQUENTIAL and MPI_MODE_APPEND.",
+    "Categories":[
+        "File IO"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

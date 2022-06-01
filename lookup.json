@@ -526,6 +526,10 @@
             {
                 "Name":"MPI_MODE_RDONLY",
                 "DirectoryName":"mpi_mode_rdonly"
+            },
+            {
+                "Name":"MPI_MODE_RDWR",
+                "DirectoryName":"mpi_mode_rdwr"
             }
         ]
     },
