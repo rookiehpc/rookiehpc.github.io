@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_ORDER_FORTRAN",
+    "DirectoryName":"mpi_order_fortran",
+    "SharedDescription":true,
+    "Description":"MPI_ORDER_FORTRAN indicates that the memory storage order to apply in that of FORTRAN; column-major order. That is, consecutive elements in memory are that of the leftmost dimension in arrays. It is used for instance in routines like MPI_Type_create_subarray and MPI_Type_create_darray. The other memory storage order is MPI_ORDER_C.",
+    "Categories":[
+        "User datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

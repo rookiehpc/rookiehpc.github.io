@@ -562,6 +562,10 @@
             {
                 "Name":"MPI_ORDER_C",
                 "DirectoryName":"mpi_order_c"
+            },
+            {
+                "Name":"MPI_ORDER_FORTRAN",
+                "DirectoryName":"mpi_order_fortran"
             }
         ]
     },
