@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Op",
+    "DirectoryName":"mpi_op",
+    "SharedDescription":true,
+    "Description":"MPI_Op is a handle representing an operation that can be used in MPI_Reduce, MPI_Allreduce, MPI_Reduce_scatter_block, MPI_Reduce_scatter, MPI_Scan, MPI_Exscan, all nonblocking variants of those, and MPI_Reduce_local. A user-defined operation can be created with MPI_Op_create, and deallocated with MPI_Op_free that sets the MPI_Op handle back to MPI_OP_NULL.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        }
+    ]
+}

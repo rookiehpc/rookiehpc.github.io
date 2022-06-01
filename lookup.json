@@ -542,6 +542,10 @@
             {
                 "Name":"MPI_MODE_WRONLY",
                 "DirectoryName":"mpi_mode_wronly"
+            },
+            {
+                "Name":"MPI_Op",
+                "DirectoryName":"mpi_op"
             }
         ]
     },
