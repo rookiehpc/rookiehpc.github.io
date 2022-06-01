@@ -558,6 +558,10 @@
             {
                 "Name":"MPI_OP_NULL",
                 "DirectoryName":"mpi_op_null"
+            },
+            {
+                "Name":"MPI_ORDER_C",
+                "DirectoryName":"mpi_order_c"
             }
         ]
     },
