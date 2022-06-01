@@ -1,12 +1,12 @@
 !> @brief Use a variable to tell what MPI_Datatype to use.
 PROGRAM main
-	USE mpi_f08
+    USE mpi_f08
 
-	IMPLICIT NONE
+    IMPLICIT NONE
 
-	TYPE(MPI_Datatype) :: msg_type
-	INTEGER :: my_rank
-	INTEGER :: msg
+    TYPE(MPI_Datatype) :: msg_type
+    INTEGER :: my_rank
+    INTEGER :: msg
 
     CALL MPI_Init()
 

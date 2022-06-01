@@ -41,51 +41,51 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Get the number of processes and check only 4 are used.
-	int size;
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
-	if(size != 4)
-	{
-		printf("This application is meant to be run with 4 processes.\n");
-		MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-	}
+    // Get the number of processes and check only 4 are used.
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    if(size != 4)
+    {
+        printf("This application is meant to be run with 4 processes.\n");
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
-	// Determine root's rank
-	int root_rank = 2;
+    // Determine root's rank
+    int root_rank = 2;
 
-	// Get my rank
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Get my rank
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	// The data pair that will be used.
-	// [0]: the value (12 / 34 / 56 / 78)
-	// [1]: the locator (the MPI rank)
-	int data_pair[2];
+    // The data pair that will be used.
+    // [0]: the value (12 / 34 / 56 / 78)
+    // [1]: the locator (the MPI rank)
+    int data_pair[2];
 
-	// Initialise the value
-	switch(my_rank)
-	{
-		case 0: data_pair[0] = 12; break;
-		case 1: data_pair[0] = 34; break;
-		case 2: data_pair[0] = 56; break;
-		case 3: data_pair[0] = 78; break;
-	}
+    // Initialise the value
+    switch(my_rank)
+    {
+        case 0: data_pair[0] = 12; break;
+        case 1: data_pair[0] = 34; break;
+        case 2: data_pair[0] = 56; break;
+        case 3: data_pair[0] = 78; break;
+    }
 
-	// Initialise the locator
-	data_pair[1] = my_rank;
+    // Initialise the locator
+    data_pair[1] = my_rank;
 
-	// Each MPI process sends its rank to reduction, root MPI process collects the result
-	int reduction_result[2];
-	MPI_Reduce(data_pair, reduction_result, 1, MPI_2INT, MPI_MAXLOC, root_rank, MPI_COMM_WORLD);
+    // Each MPI process sends its rank to reduction, root MPI process collects the result
+    int reduction_result[2];
+    MPI_Reduce(data_pair, reduction_result, 1, MPI_2INT, MPI_MAXLOC, root_rank, MPI_COMM_WORLD);
 
-	if(my_rank == root_rank)
-	{
-		printf("The maximum value is %d and is held by MPI process %d.\n", reduction_result[0], reduction_result[1]);
-	}
+    if(my_rank == root_rank)
+    {
+        printf("The maximum value is %d and is held by MPI process %d.\n", reduction_result[0], reduction_result[1]);
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

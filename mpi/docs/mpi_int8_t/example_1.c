@@ -10,42 +10,42 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Check that 2 MPI processes are used.
-	int size;
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
-	if(size != 2)
-	{
-		printf("This application is meant to be run with 2 MPI processes.\n");
-		MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-	}
+    // Check that 2 MPI processes are used.
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    if(size != 2)
+    {
+        printf("This application is meant to be run with 2 MPI processes.\n");
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
-	// Get my rank and do the corresponding job.
-	enum role_ranks { SENDER, RECEIVER };
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
-	switch(my_rank)
-	{
-		case SENDER:
-		{
-			// Send the int
-			int8_t intToSend = 123;
-			printf("[MPI process %d] I send int: %d.\n", my_rank, intToSend);
-			MPI_Ssend(&intToSend, 1, MPI_INT8_T, RECEIVER, 0, MPI_COMM_WORLD);
-			break;
-		}
-		case RECEIVER:
-		{
-			// Receive the int
-			int8_t intReceived;
-			MPI_Recv(&intReceived, 1, MPI_INT8_T, SENDER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-			printf("[MPI process %d] I received int: %d.\n", my_rank, intReceived);
-			break;
-		}
-	}
+    // Get my rank and do the corresponding job.
+    enum role_ranks { SENDER, RECEIVER };
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    switch(my_rank)
+    {
+        case SENDER:
+        {
+            // Send the int
+            int8_t intToSend = 123;
+            printf("[MPI process %d] I send int: %d.\n", my_rank, intToSend);
+            MPI_Ssend(&intToSend, 1, MPI_INT8_T, RECEIVER, 0, MPI_COMM_WORLD);
+            break;
+        }
+        case RECEIVER:
+        {
+            // Receive the int
+            int8_t intReceived;
+            MPI_Recv(&intReceived, 1, MPI_INT8_T, SENDER, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            printf("[MPI process %d] I received int: %d.\n", my_rank, intReceived);
+            break;
+        }
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

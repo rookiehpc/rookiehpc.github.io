@@ -7,10 +7,10 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Tell MPI to shut down and that we no longer need it.
-	MPI_Finalize();
+    // Tell MPI to shut down and that we no longer need it.
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

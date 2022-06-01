@@ -7,14 +7,14 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	printf("I am MPI process %d.\n", my_rank);
+    printf("I am MPI process %d.\n", my_rank);
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

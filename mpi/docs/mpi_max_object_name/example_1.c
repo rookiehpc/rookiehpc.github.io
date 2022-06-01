@@ -7,14 +7,14 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	char name[MPI_MAX_OBJECT_NAME];
-	int name_length;
-	MPI_Comm_get_name(MPI_COMM_WORLD, name, &name_length);
-	printf("The default communicator is called %s.\n", name);
+    char name[MPI_MAX_OBJECT_NAME];
+    int name_length;
+    MPI_Comm_get_name(MPI_COMM_WORLD, name, &name_length);
+    printf("The default communicator is called %s.\n", name);
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

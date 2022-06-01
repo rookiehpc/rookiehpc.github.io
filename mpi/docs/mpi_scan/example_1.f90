@@ -25,22 +25,22 @@
 !> +---------------+   +---------------+   +---------------+   +---------------+
 !>                                       
 PROGRAM main
-	USE mpi
+    USE mpi
 
-	IMPLICIT NONE
+    IMPLICIT NONE
 
-	INTEGER :: ierror
-	INTEGER :: my_rank
-	INTEGER :: total
+    INTEGER :: ierror
+    INTEGER :: my_rank
+    INTEGER :: total
 
-	CALL MPI_Init(ierror)
+    CALL MPI_Init(ierror)
 
-	! Get my rank
-	CALL MPI_Comm_rank(MPI_COMM_WORLD, my_rank, ierror)
+    ! Get my rank
+    CALL MPI_Comm_rank(MPI_COMM_WORLD, my_rank, ierror)
 
-	! Get the sum of all ranks up to mine and print it
-	CALL MPI_Scan(my_rank, total, 1, MPI_INTEGER, MPI_SUM, MPI_COMM_WORLD, ierror)
-	WRITE(*, '(A,I0,A,I0,A)') '[MPI process ', my_rank, '] Total = ', total, '.'
+    ! Get the sum of all ranks up to mine and print it
+    CALL MPI_Scan(my_rank, total, 1, MPI_INTEGER, MPI_SUM, MPI_COMM_WORLD, ierror)
+    WRITE(*, '(A,I0,A,I0,A)') '[MPI process ', my_rank, '] Total = ', total, '.'
 
-	CALL MPI_Finalize(ierror)
+    CALL MPI_Finalize(ierror)
 END PROGRAM main

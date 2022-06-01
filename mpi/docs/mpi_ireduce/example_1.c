@@ -33,32 +33,32 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Determine root's rank
-	int root_rank = 0;
+    // Determine root's rank
+    int root_rank = 0;
 
-	// Get my rank
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Get my rank
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	// Each MPI process sends its rank to reduction, root MPI process collects the result
-	int reduction_result = 0;
-	MPI_Request request;
-	MPI_Ireduce(&my_rank, &reduction_result, 1, MPI_INT, MPI_SUM, root_rank, MPI_COMM_WORLD, &request);
+    // Each MPI process sends its rank to reduction, root MPI process collects the result
+    int reduction_result = 0;
+    MPI_Request request;
+    MPI_Ireduce(&my_rank, &reduction_result, 1, MPI_INT, MPI_SUM, root_rank, MPI_COMM_WORLD, &request);
 
-	// Do some other job
+    // Do some other job
     printf("Process %d issued the MPI_Ireduce and has moved on, printing this message.\n", my_rank);
 
     // Wait for the MPI_Ireduce to complete
     MPI_Wait(&request, MPI_STATUS_IGNORE);
 
-	if(my_rank == root_rank)
-	{
-		printf("The sum of all ranks is %d.\n", reduction_result);
-	}
+    if(my_rank == root_rank)
+    {
+        printf("The sum of all ranks is %d.\n", reduction_result);
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

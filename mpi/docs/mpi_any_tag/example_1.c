@@ -13,44 +13,44 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Check that 2 MPI processes are used.
-	int size;
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
-	if(size != 2)
-	{
-		printf("This application is meant to be run with 2 MPI processes.\n");
-		MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-	}
+    // Check that 2 MPI processes are used.
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    if(size != 2)
+    {
+        printf("This application is meant to be run with 2 MPI processes.\n");
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
-	// Get my rank and do the corresponding job
-	enum role_ranks { SENDER, RECEIVER };
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
-	switch(my_rank)
-	{
-		case SENDER:
-		{
-			// The "master" MPI process sends the message.
-			int buffer_sent = 12345;
-			int tag = 67890;
-			printf("[MPI process %d] I send value %d with tag %d.\n", my_rank, buffer_sent, tag);
-			MPI_Ssend(&buffer_sent, 1, MPI_INT, RECEIVER, tag, MPI_COMM_WORLD);
-			break;
-		}
-		case RECEIVER:
-		{
-			// The "slave" MPI process receives the message.
-			int buffer_received;
-			MPI_Status status;
-			MPI_Recv(&buffer_received, 1, MPI_INT, SENDER, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-			printf("[MPI process %d] I received value %d, with tag %d.\n", my_rank, buffer_received, status.MPI_TAG);
-			break;
-		}
-	}
+    // Get my rank and do the corresponding job
+    enum role_ranks { SENDER, RECEIVER };
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    switch(my_rank)
+    {
+        case SENDER:
+        {
+            // The "master" MPI process sends the message.
+            int buffer_sent = 12345;
+            int tag = 67890;
+            printf("[MPI process %d] I send value %d with tag %d.\n", my_rank, buffer_sent, tag);
+            MPI_Ssend(&buffer_sent, 1, MPI_INT, RECEIVER, tag, MPI_COMM_WORLD);
+            break;
+        }
+        case RECEIVER:
+        {
+            // The "slave" MPI process receives the message.
+            int buffer_received;
+            MPI_Status status;
+            MPI_Recv(&buffer_received, 1, MPI_INT, SENDER, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+            printf("[MPI process %d] I received value %d, with tag %d.\n", my_rank, buffer_received, status.MPI_TAG);
+            break;
+        }
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

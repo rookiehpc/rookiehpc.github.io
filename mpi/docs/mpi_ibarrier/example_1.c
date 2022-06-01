@@ -41,22 +41,22 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Get my rank, this is task 1
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
-	MPI_Request request;
-	MPI_Ibarrier(MPI_COMM_WORLD, &request);
+    // Get my rank, this is task 1
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    MPI_Request request;
+    MPI_Ibarrier(MPI_COMM_WORLD, &request);
 
-	// Task 2
-	printf("[MPI process %d] I got my rank, it is %d, I now call MPI_Ibarrier.\n", my_rank, my_rank);
+    // Task 2
+    printf("[MPI process %d] I got my rank, it is %d, I now call MPI_Ibarrier.\n", my_rank, my_rank);
 
-	// Task 3
-	MPI_Wait(&request, MPI_STATUS_IGNORE);
-	printf("[MPI process %d] The MPI_Ibarrier is complete; all processes got their rank.\n", my_rank);
+    // Task 3
+    MPI_Wait(&request, MPI_STATUS_IGNORE);
+    printf("[MPI process %d] The MPI_Ibarrier is complete; all processes got their rank.\n", my_rank);
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

@@ -41,31 +41,31 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Get the size of the communicator
-	int size = 0;
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
-	if(size != 3)
-	{
-		printf("This application is meant to be run with 3 MPI processes.\n");
-		MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-	}
+    // Get the size of the communicator
+    int size = 0;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    if(size != 3)
+    {
+        printf("This application is meant to be run with 3 MPI processes.\n");
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
-	// Get my rank
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Get my rank
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	// Defines my values
-	int values[3] = {3 * my_rank, 3 * my_rank + 1, 3 * my_rank + 2};
+    // Defines my values
+    int values[3] = {3 * my_rank, 3 * my_rank + 1, 3 * my_rank + 2};
 
-	// Each MPI process sends its values and the buffer to receive the corresponding reduction results
-	int reduction_result = 0;
-	MPI_Reduce_scatter_block(values, &reduction_result, 1, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+    // Each MPI process sends its values and the buffer to receive the corresponding reduction results
+    int reduction_result = 0;
+    MPI_Reduce_scatter_block(values, &reduction_result, 1, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
 
-	printf("[MPI process %d] The sum I received is %d.\n", my_rank, reduction_result);
+    printf("[MPI process %d] The sum I received is %d.\n", my_rank, reduction_result);
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

@@ -32,55 +32,55 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Get my rank in the MPI_COMM_WORLD communicator
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Get my rank in the MPI_COMM_WORLD communicator
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	// Duplicate the MPI_COMM_WORLD communicator; everything is preserved, ranks included
-	MPI_Comm duplicated_communicator;
-	MPI_Comm_dup(MPI_COMM_WORLD, &duplicated_communicator);
+    // Duplicate the MPI_COMM_WORLD communicator; everything is preserved, ranks included
+    MPI_Comm duplicated_communicator;
+    MPI_Comm_dup(MPI_COMM_WORLD, &duplicated_communicator);
 
-	// The actual communicator duplication with MPI_Comm_dup is complete by now.
-	// Below is a use case illustrating the usefulness of MPI_Comm_dup.
+    // The actual communicator duplication with MPI_Comm_dup is complete by now.
+    // Below is a use case illustrating the usefulness of MPI_Comm_dup.
 
-	// An MPI_Send issued from the user code
-	if(my_rank == 0)
-	{
-		int some_message_in_user_code = 1234;
-		MPI_Send(&some_message_in_user_code, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
-		printf("[MPI process 0] Sent %d in user code.\n", some_message_in_user_code);
-	}
+    // An MPI_Send issued from the user code
+    if(my_rank == 0)
+    {
+        int some_message_in_user_code = 1234;
+        MPI_Send(&some_message_in_user_code, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+        printf("[MPI process 0] Sent %d in user code.\n", some_message_in_user_code);
+    }
 
-	// An MPI_Send issued by an MPI library running in parallel
-	if(my_rank == 0)
-	{
-		int some_message_in_library_code = 5678;
-		MPI_Send(&some_message_in_library_code, 1, MPI_INT, 1, 0, duplicated_communicator);
-		printf("[MPI process 0] Sent %d in library code.\n", some_message_in_library_code);
-	}
+    // An MPI_Send issued by an MPI library running in parallel
+    if(my_rank == 0)
+    {
+        int some_message_in_library_code = 5678;
+        MPI_Send(&some_message_in_library_code, 1, MPI_INT, 1, 0, duplicated_communicator);
+        printf("[MPI process 0] Sent %d in library code.\n", some_message_in_library_code);
+    }
 
-	// Same emitter rank, same receiver rank, same element datatype, same
-	// element count but different communicators, they cannot be mismatched.
+    // Same emitter rank, same receiver rank, same element datatype, same
+    // element count but different communicators, they cannot be mismatched.
 
-	// The user code can safely issue its MPI_Recv
-	if(my_rank == 1)
-	{
-		int buffer_for_user_message;
-		MPI_Recv(&buffer_for_user_message, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		printf("[MPI process 1] Received %d in user code.\n", buffer_for_user_message);
-	}
+    // The user code can safely issue its MPI_Recv
+    if(my_rank == 1)
+    {
+        int buffer_for_user_message;
+        MPI_Recv(&buffer_for_user_message, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        printf("[MPI process 1] Received %d in user code.\n", buffer_for_user_message);
+    }
 
-	// The MPI library can safely issue its MPI_Recv
-	if(my_rank == 1)
-	{
-		int buffer_for_library_message;
-		MPI_Recv(&buffer_for_library_message, 1, MPI_INT, 0, 0, duplicated_communicator, MPI_STATUS_IGNORE);
-		printf("[MPI process 1] Received %d in library code.\n", buffer_for_library_message);
-	}
+    // The MPI library can safely issue its MPI_Recv
+    if(my_rank == 1)
+    {
+        int buffer_for_library_message;
+        MPI_Recv(&buffer_for_library_message, 1, MPI_INT, 0, 0, duplicated_communicator, MPI_STATUS_IGNORE);
+        printf("[MPI process 1] Received %d in library code.\n", buffer_for_library_message);
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

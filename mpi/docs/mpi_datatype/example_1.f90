@@ -1,13 +1,13 @@
 !> @brief Use a variable to tell what MPI_Datatype to use.
 PROGRAM main
-	USE mpi
+    USE mpi
 
-	IMPLICIT NONE
+    IMPLICIT NONE
 
-	INTEGER :: ierror
-	INTEGER :: msg_type
-	INTEGER :: my_rank
-	INTEGER :: msg
+    INTEGER :: ierror
+    INTEGER :: msg_type
+    INTEGER :: my_rank
+    INTEGER :: msg
 
     CALL MPI_Init(ierror)
 

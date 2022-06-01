@@ -7,16 +7,16 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	int a[10];
+    int a[10];
 
-	MPI_Aint addr;
-	MPI_Get_address(&a[2], &addr);
+    MPI_Aint addr;
+    MPI_Get_address(&a[2], &addr);
 
-	printf("The address of the third element is %ld.\n", addr);
+    printf("The address of the third element is %ld.\n", addr);
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

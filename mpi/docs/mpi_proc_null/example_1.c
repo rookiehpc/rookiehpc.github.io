@@ -25,37 +25,37 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Find my rank and the communicator size
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Find my rank and the communicator size
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	int comm_size;
-	MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
+    int comm_size;
+    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
 
-	// Determine the ranks of our neighbours, or use MPI_PROC_NULL
-	int recipient_rank = (my_rank == comm_size - 1) ? MPI_PROC_NULL : my_rank + 1;
-	int sender_rank = (my_rank == 0) ? MPI_PROC_NULL : my_rank - 1;
+    // Determine the ranks of our neighbours, or use MPI_PROC_NULL
+    int recipient_rank = (my_rank == comm_size - 1) ? MPI_PROC_NULL : my_rank + 1;
+    int sender_rank = (my_rank == 0) ? MPI_PROC_NULL : my_rank - 1;
 
-	// Now, all MPI processes can safely issue sends and receive
-	// No boundary-related bugs will arise since MPI_PROC_NULL is used in these cases
+    // Now, all MPI processes can safely issue sends and receive
+    // No boundary-related bugs will arise since MPI_PROC_NULL is used in these cases
 
-	// Send my value to my right neighbour (or issue a dummy send via MPI_PROC_NULL if I don't have one)
-	int value_to_send = my_rank * 100;
-	MPI_Request request;
-	MPI_Isend(&value_to_send, 1, MPI_INT, recipient_rank, 0, MPI_COMM_WORLD, &request);
-	printf("[MPI Process %d] Sent value %d to MPI process %d\n", my_rank, value_to_send, recipient_rank);
+    // Send my value to my right neighbour (or issue a dummy send via MPI_PROC_NULL if I don't have one)
+    int value_to_send = my_rank * 100;
+    MPI_Request request;
+    MPI_Isend(&value_to_send, 1, MPI_INT, recipient_rank, 0, MPI_COMM_WORLD, &request);
+    printf("[MPI Process %d] Sent value %d to MPI process %d\n", my_rank, value_to_send, recipient_rank);
 
-	// Receive the value from my left neighbour (or issue a dummy receive via MPI_PROC_NULL if I don't have one)
-	int value_received = -1;
-	MPI_Recv(&value_received, 1, MPI_INT, sender_rank, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-	printf("[MPI process %d] Value received from MPI Process %d: %d\n", my_rank, sender_rank, value_received);
+    // Receive the value from my left neighbour (or issue a dummy receive via MPI_PROC_NULL if I don't have one)
+    int value_received = -1;
+    MPI_Recv(&value_received, 1, MPI_INT, sender_rank, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    printf("[MPI process %d] Value received from MPI Process %d: %d\n", my_rank, sender_rank, value_received);
 
-	// Wait for the completion of the MPI_Isend
-	MPI_Wait(&request, MPI_STATUS_IGNORE);
+    // Wait for the completion of the MPI_Isend
+    MPI_Wait(&request, MPI_STATUS_IGNORE);
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

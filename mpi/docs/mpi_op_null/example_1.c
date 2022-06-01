@@ -14,13 +14,13 @@
  **/
 void my_sum_function(void* inputBuffer, void* outputBuffer, int* len, MPI_Datatype* datatype)
 {
-	int* input = (int*)inputBuffer;
-	int* output = (int*)outputBuffer;
+    int* input = (int*)inputBuffer;
+    int* output = (int*)outputBuffer;
 
-	for(int i = 0; i < *len; i++)
-	{
-		output[i] += input[i];
-	}
+    for(int i = 0; i < *len; i++)
+    {
+        output[i] += input[i];
+    }
 }
 
 /**
@@ -32,51 +32,51 @@ void my_sum_function(void* inputBuffer, void* outputBuffer, int* len, MPI_Dataty
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Get the number of processes and check only 4 are used.
-	int size;
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
-	if(size != 3)
-	{
-		printf("This application is meant to be run with 3 processes.\n");
-		MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-	}
+    // Get the number of processes and check only 4 are used.
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    if(size != 3)
+    {
+        printf("This application is meant to be run with 3 processes.\n");
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
-	// Determine root's rank
-	int root_rank = 0;
+    // Determine root's rank
+    int root_rank = 0;
 
-	// Get my rank
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Get my rank
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	// Create the operation handle
-	MPI_Op operation;
-	MPI_Op_create(&my_sum_function, 1, &operation);
+    // Create the operation handle
+    MPI_Op operation;
+    MPI_Op_create(&my_sum_function, 1, &operation);
 
-	// Initialise the data to send
-	int data[2] = { my_rank, my_rank + size };
+    // Initialise the data to send
+    int data[2] = { my_rank, my_rank + size };
 
-	// Each MPI process sends its rank to reduction, root MPI process collects the result
-	int reduction_results[2] = { 0, 0 };
-	MPI_Reduce(data, reduction_results, 2, MPI_INT, operation, root_rank, MPI_COMM_WORLD);
+    // Each MPI process sends its rank to reduction, root MPI process collects the result
+    int reduction_results[2] = { 0, 0 };
+    MPI_Reduce(data, reduction_results, 2, MPI_INT, operation, root_rank, MPI_COMM_WORLD);
 
-	if(my_rank == root_rank)
-	{
-		printf("The sum of first elements of data is %d.\n", reduction_results[0]);
-		printf("The sum of second elements of data is %d.\n", reduction_results[1]);
-	}
+    if(my_rank == root_rank)
+    {
+        printf("The sum of first elements of data is %d.\n", reduction_results[0]);
+        printf("The sum of second elements of data is %d.\n", reduction_results[1]);
+    }
 
-	// Free the operation handle created
-	MPI_Op_free(&operation);
+    // Free the operation handle created
+    MPI_Op_free(&operation);
 
-	// Check the operation handle is now reset to MPI_OP_NULL
-	if(operation == MPI_OP_NULL)
-	{
-		printf("[MPI Process %d] The operation handle is now reset back to MPI_OP_NULL.\n", my_rank);
-	}
+    // Check the operation handle is now reset to MPI_OP_NULL
+    if(operation == MPI_OP_NULL)
+    {
+        printf("[MPI Process %d] The operation handle is now reset back to MPI_OP_NULL.\n", my_rank);
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

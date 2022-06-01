@@ -7,17 +7,17 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Get my rank
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Get my rank
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	printf("[MPI process %d] I start waiting on the barrier.\n", my_rank);
-	MPI_Barrier(MPI_COMM_WORLD);
-	printf("[MPI process %d] I know all MPI processes have waited on the barrier.\n", my_rank);
+    printf("[MPI process %d] I start waiting on the barrier.\n", my_rank);
+    MPI_Barrier(MPI_COMM_WORLD);
+    printf("[MPI process %d] I know all MPI processes have waited on the barrier.\n", my_rank);
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

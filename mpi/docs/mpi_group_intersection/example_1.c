@@ -24,54 +24,54 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Check that the application is run with 4 processes.
-	int size;
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
-	if(size != 4)
-	{
-		printf("Please run this application with 4 processes.\n");
-		MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-	}
+    // Check that the application is run with 4 processes.
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    if(size != 4)
+    {
+        printf("Please run this application with 4 processes.\n");
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
-	// Get the group from the default communicator
-	MPI_Group world_group;
-	MPI_Comm_group(MPI_COMM_WORLD, &world_group);
+    // Get the group from the default communicator
+    MPI_Group world_group;
+    MPI_Comm_group(MPI_COMM_WORLD, &world_group);
 
-	// Keep the processes 0 and 2 in the group A
-	MPI_Group group_a;
-	int group_a_processes[2] = {0, 2};
-	MPI_Group_incl(world_group, 2, group_a_processes, &group_a);
+    // Keep the processes 0 and 2 in the group A
+    MPI_Group group_a;
+    int group_a_processes[2] = {0, 2};
+    MPI_Group_incl(world_group, 2, group_a_processes, &group_a);
 
-	// Keep the processes 2 and 3 in the group B
-	MPI_Group group_b;
-	int group_b_processes[2] = {2, 3};
-	MPI_Group_incl(world_group, 2, group_b_processes, &group_b);
+    // Keep the processes 2 and 3 in the group B
+    MPI_Group group_b;
+    int group_b_processes[2] = {2, 3};
+    MPI_Group_incl(world_group, 2, group_b_processes, &group_b);
 
-	// Get the intersection of both groups
-	MPI_Group intersection_group;
-	MPI_Group_intersection(group_a, group_b, &intersection_group);
+    // Get the intersection of both groups
+    MPI_Group intersection_group;
+    MPI_Group_intersection(group_a, group_b, &intersection_group);
 
-	// Get my rank in the communicator
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // Get my rank in the communicator
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	// Create a communicator made of the processes in the intersection group
-	MPI_Comm new_communicator;
-	MPI_Comm_create(MPI_COMM_WORLD, intersection_group, &new_communicator);
-	if(new_communicator == MPI_COMM_NULL)
-	{
-		// I am not part of the communicator created, so I am not part of the intersection group
-		printf("Process %d is not part of the intersection group.\n", my_rank);
-	}
-	else
-	{
-		// I am part of the communicator created, so I am part of the intersection group
-		printf("Process %d is part of the intersection group.\n", my_rank);
-	}
+    // Create a communicator made of the processes in the intersection group
+    MPI_Comm new_communicator;
+    MPI_Comm_create(MPI_COMM_WORLD, intersection_group, &new_communicator);
+    if(new_communicator == MPI_COMM_NULL)
+    {
+        // I am not part of the communicator created, so I am not part of the intersection group
+        printf("Process %d is not part of the intersection group.\n", my_rank);
+    }
+    else
+    {
+        // I am part of the communicator created, so I am part of the intersection group
+        printf("Process %d is part of the intersection group.\n", my_rank);
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }

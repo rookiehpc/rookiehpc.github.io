@@ -80,51 +80,51 @@
  **/
 int main(int argc, char* argv[])
 {
-	MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv);
 
-	// Size of the default communicator
-	int size;
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
+    // Size of the default communicator
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-	if(size != 7)
-	{
-		printf("This application is meant to be run with 7 MPI processes, not %d.\n", size);
-		MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-	}
+    if(size != 7)
+    {
+        printf("This application is meant to be run with 7 MPI processes, not %d.\n", size);
+        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
+    }
 
-	// My rank in the default communicator
-	int my_rank;
-	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+    // My rank in the default communicator
+    int my_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 
-	// Number of nodes in the graph, the MPI process 4 will not be connected to
-	// anyone so it is not included in the graph.
-	const int number_of_nodes = 6;
+    // Number of nodes in the graph, the MPI process 4 will not be connected to
+    // anyone so it is not included in the graph.
+    const int number_of_nodes = 6;
 
-	// Declare the total number of neighbours until each MPI process (= the ones before + its own)
-	int indexes[number_of_nodes] = {2, 3, 4, 5, 5, 6};
+    // Declare the total number of neighbours until each MPI process (= the ones before + its own)
+    int indexes[number_of_nodes] = {2, 3, 4, 5, 5, 6};
 
-	// Declare the endpoint of each edge
-	int edges[6] = {1, 2, 3, 1, 1, 5};
+    // Declare the endpoint of each edge
+    int edges[6] = {1, 2, 3, 1, 1, 5};
 
-	// Let preserve the original MPI ranks to simplify
-	int reorder = false;
+    // Let preserve the original MPI ranks to simplify
+    int reorder = false;
 
-	// Create a communicator given the graph topology.
-	MPI_Comm new_communicator;
-	MPI_Graph_create(MPI_COMM_WORLD, number_of_nodes, indexes, edges, reorder, &new_communicator);
+    // Create a communicator given the graph topology.
+    MPI_Comm new_communicator;
+    MPI_Graph_create(MPI_COMM_WORLD, number_of_nodes, indexes, edges, reorder, &new_communicator);
 
-	if(new_communicator != MPI_COMM_NULL)
-	{
-		int my_number_of_neighbours;
-		MPI_Graph_neighbors_count(new_communicator, my_rank, &my_number_of_neighbours);
-		printf("[MPI process %d] I am part of the graph and have %d neighbours.\n", my_rank, my_number_of_neighbours);
-	}
-	else
-	{
-		printf("[MPI process %d] I am not part of the graph communicator.\n", my_rank);
-	}
+    if(new_communicator != MPI_COMM_NULL)
+    {
+        int my_number_of_neighbours;
+        MPI_Graph_neighbors_count(new_communicator, my_rank, &my_number_of_neighbours);
+        printf("[MPI process %d] I am part of the graph and have %d neighbours.\n", my_rank, my_number_of_neighbours);
+    }
+    else
+    {
+        printf("[MPI process %d] I am not part of the graph communicator.\n", my_rank);
+    }
 
-	MPI_Finalize();
+    MPI_Finalize();
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }
