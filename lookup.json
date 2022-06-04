@@ -566,6 +566,10 @@
             {
                 "Name":"MPI_ORDER_FORTRAN",
                 "DirectoryName":"mpi_order_fortran"
+            },
+            {
+                "Name":"MPI_Probe",
+                "DirectoryName":"mpi_probe"
             }
         ]
     },

@@ -1,0 +1,124 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Probe",
+    "DirectoryName":"mpi_probe",
+    "SharedDescription":true,
+
+    "Description":"MPI_Probe obtains information about a message waiting for reception, without actually receiving it. In other words, the message probed remains waiting for reception afterwards. This approach allows for instance to receive messages of unknown length by probing them to get their length first. If there is no message from the given source with the given tag waiting for reception, MPI_Probe will block until such a message arrives.",
+    "Categories":[
+        "Receiving"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"source",
+                    "Description":"The rank of the sender, which can be MPI_ANY_SOURCE to exclude the sender's rank from message filtering.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status corresponding to the message probed (if any), which can be MPI_STATUS_IGNORE if unused.",
+                    "Type":"MPI_Status*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the probe.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"source",
+                    "Description":"The rank of the sender, which can be MPI_ANY_SOURCE to exclude the sender's rank from message filtering.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status corresponding to the message probed (if any), which can be MPI_STATUS_IGNORE if unused.",
+                    "Type":"TYPE(MPI_Status)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the probe.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"source",
+                    "Description":"The rank of the sender, which can be MPI_ANY_SOURCE to exclude the sender's rank from message filtering.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator concerned.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status corresponding to the message probed (if any), which can be MPI_STATUS_IGNORE if unused.",
+                    "Type":"INTEGER\t(MPI_STATUS_SIZE)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the probe.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
