@@ -1,0 +1,180 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Recv",
+    "DirectoryName":"mpi_recv",
+    "SharedDescription":true,
+    "Description":"MPI_Recv receives a message in a blocking fashion: it will block until completion, which is reached when the incoming message is copied to the buffer given. Its non-blocking counterpart is MPI_Irecv.",
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer in which receive the message.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the buffer given. The number of elements in the message to receive must therefore be less than or equal to that value.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"sender",
+                    "Description":"The rank of the sender MPI process. If there is no restriction on the sender's rank, MPI_ANY_SOURCE can be passed.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the communication takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status of the receive operation. Pass MPI_STATUS_IGNORE if unused.",
+                    "Type":"MPI_Status*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the receive.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer in which receive the message.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the buffer given. The number of elements in the message to receive must therefore be less than or equal to that value.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"sender",
+                    "Description":"The rank of the sender MPI process. If there is no restriction on the sender's rank, MPI_ANY_SOURCE can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the communication takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status of the receive operation. Pass MPI_STATUS_IGNORE if unused.",
+                    "Type":"TYPE(MPI_Status)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the receive.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer in which receive the message.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the buffer given. The number of elements in the message to receive must therefore be less than or equal to that value.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"sender",
+                    "Description":"The rank of the sender MPI process. If there is no restriction on the sender's rank, MPI_ANY_SOURCE can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the communication takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status of the receive operation. Pass MPI_STATUS_IGNORE if unused.",
+                    "Type":"INTEGER\t(KIND=MPI_STATUS_SIZE)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the receive.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
+ 
