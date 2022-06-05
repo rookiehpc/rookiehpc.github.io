@@ -570,6 +570,10 @@
             {
                 "Name":"MPI_Probe",
                 "DirectoryName":"mpi_probe"
+            },
+            {
+                "Name":"MPI_PROC_NULL",
+                "DirectoryName":"mpi_proc_null"
             }
         ]
     },

@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_PROC_NULL",
+    "DirectoryName":"mpi_proc_null",
+    "SharedDescription":true,
+    "Description":"MPI_PROC_NULL is a constant that represents a dummy MPI process rank. When passing it to a send or receive operation for instance, it is guaranteed to succeed and return as soon as possible. MPI_PROC_NULL has, but is not limited to, two main uses;\n- acting as a placeholder in MPI routines where an argument of type out must be set to the rank of an MPI process, such as in MPI_Cart_shift for instance.\n- conveniently coping with boundaries; rather than preventing MPI processes on edges from issuing sends or receives for instance, MPI_PROC_NULL will be used instead to turn these invocations into dummy calls. Effectively, this allows all MPI processes to issue the same calls regardless of their position.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
