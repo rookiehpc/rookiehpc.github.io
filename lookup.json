@@ -574,6 +574,10 @@
             {
                 "Name":"MPI_PROC_NULL",
                 "DirectoryName":"mpi_proc_null"
+            },
+            {
+                "Name":"MPI_PROD",
+                "DirectoryName":"mpi_prod"
             }
         ]
     },

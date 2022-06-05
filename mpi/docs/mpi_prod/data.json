@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_PROD",
+    "DirectoryName":"mpi_prod",
+    "SharedDescription":true,
+    "Description":"MPI_PROD is a predefined reduction operation that will calculate the product of the values reduced.",
+    "Categories":[
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
