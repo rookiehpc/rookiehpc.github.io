@@ -1,0 +1,200 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Put",
+    "DirectoryName":"mpi_put",
+    "SharedDescription":true,
+
+    "Description":"MPI_Put permits to one-sidedly send data to the window of another MPI process. MPI_Put can be seen as executing a send by the origin process and a matching receive by the target process. The difference is that all arguments are provided by the origin process in a single routine. The read equivalent of MPI_Put is MPI_Get. A variants of MPI_Put is MPI_Rput.",
+    "Categories":[
+        "One-sided"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"origin_address",
+                    "Description":"The address of the origin buffer; the one containing the data to send.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_count",
+                    "Description":"The number of elements to send from the origin buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_datatype",
+                    "Description":"The type of an element in the origin buffer.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_rank",
+                    "Description":"The rank of the MPI process whose window is to receive the data.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_displacement",
+                    "Description":"The index position of the target buffer. This is made possible by the displacement unit specified on the target when creating the window. Incrementing the target_displacement by 1 will increment the position in the target buffer by <displacement_unit> bytes.",
+                    "Type":"MPI_Aint",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_count",
+                    "Description":"The number of elements in the target buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_datatype",
+                    "Description":"The type of an element in the target buffer.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"The window to which put the data on the target MPI process.",
+                    "Type":"MPI_Win",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the data put:\n- MPI_SUCCESS: the routine completed successfully."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"origin_address",
+                    "Description":"The origin buffer; the one containing the data to send.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"origin_count",
+                    "Description":"The number of elements to send from the origin buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"origin_datatype",
+                    "Description":"The type of an element in the origin buffer.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_rank",
+                    "Description":"The rank of the MPI process whose window is to receive the data.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_displacement",
+                    "Description":"The index position of the target buffer. This is made possible by the displacement unit specified on the target when creating the window. Incrementing the target_displacement by 1 will increment the position in the target buffer by <displacement_unit> bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_count",
+                    "Description":"The number of elements in the target buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"target_datatype",
+                    "Description":"The type of an element in the target buffer.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"window",
+                    "Description":"The window to which put the data on the target MPI process.",
+                    "Type":"TYPE(MPI_Win)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the data put:\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"origin_address",
+                    "Description":"The origin buffer; the one containing the data to send.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_count",
+                    "Description":"The number of elements to send from the origin buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"origin_datatype",
+                    "Description":"The type of an element in the origin buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_rank",
+                    "Description":"The rank of the MPI process whose window is to receive the data.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_displacement",
+                    "Description":"The index position of the target buffer. This is made possible by the displacement unit specified on the target when creating the window. Incrementing the target_displacement by 1 will increment the position in the target buffer by <displacement_unit> bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_count",
+                    "Description":"The number of elements in the target buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"target_datatype",
+                    "Description":"The type of an element in the target buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"The window to which put the data on the target MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the data put:\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

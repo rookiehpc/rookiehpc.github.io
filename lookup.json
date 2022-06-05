@@ -578,6 +578,10 @@
             {
                 "Name":"MPI_PROD",
                 "DirectoryName":"mpi_prod"
+            },
+            {
+                "Name":"MPI_Put",
+                "DirectoryName":"mpi_put"
             }
         ]
     },
