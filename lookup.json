@@ -586,6 +586,10 @@
             {
                 "Name":"MPI_Recv",
                 "DirectoryName":"mpi_recv"
+            },
+            {
+                "Name":"MPI_Recv_init",
+                "DirectoryName":"mpi_recv_init"
             }
         ]
     },
