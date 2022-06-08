@@ -1,0 +1,182 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Reduce",
+    "DirectoryName":"mpi_reduce",
+    "SharedDescription":true,
+
+    "Description":"MPI_Reduce is the means by which MPI process can apply a reduction calculation. The values sent by the MPI processes will be combined using the reduction operation given and the result will be stored on the MPI process specified as root. MPI_Reduce is a collective operation; it must be called by every MPI process in the communicator given. Predefined operations are: MPI_MIN, MPI_MAX, MPI_MINLOC, MPI_MAXLOC, MPI_BOR, MPI_BXOR, MPI_LOR, MPI_LXOR, MPI_BAND, MPI_LAND, MPI_SUM and MPI_PROD. Other variants of MPI_Reduce are MPI_Ireduce, MPI_Allreduce, MPI_Iallreduce. Refer to MPI_Ireduce to see the non-blocking counterpart of MPI_Reduce.",
+    "Categories":[
+        "Collectives",
+        "Reduction"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"A pointer on the buffer to send for reduction.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"A pointer on the buffer in which store the result of the reduction. Only the MPI process with the specified as root will receive the reduction result.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the send buffer, which is identical to that in the receive buffer as well.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of a buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the reduction. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"MPI_Op",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the MPI process that will collect the reduction result.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the reduction takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the reduction.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"The buffer to send for reduction.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"The buffer in which store the result of the reduction. Only the MPI process with the specified as root will receive the reduction result.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the send buffer, which is identical to that in the receive buffer as well.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of a buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the reduction. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"TYPE(MPI_Op)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the MPI process that will collect the reduction result.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the reduction takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the reduction.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"send_buffer",
+                    "Description":"The buffer to send for reduction.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"receive_buffer",
+                    "Description":"The buffer in which store the result of the reduction. Only the MPI process with the specified as root will receive the reduction result.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements in the send buffer, which is identical to that in the receive buffer as well.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of a buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"operation",
+                    "Description":"The operation to apply to combine messages received in the reduction. This operation must be associative, and commutative for predefined operations while user-defined operations may be non-commutative.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the MPI process that will collect the reduction result.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the reduction takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the reduction.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
