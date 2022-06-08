@@ -598,6 +598,10 @@
             {
                 "Name":"MPI_Reduce_scatter",
                 "DirectoryName":"mpi_reduce_scatter"
+            },
+            {
+                "Name":"MPI_Reduce_scatter_block",
+                "DirectoryName":"mpi_reduce_scatter_block"
             }
         ]
     },
