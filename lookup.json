@@ -602,6 +602,10 @@
             {
                 "Name":"MPI_Reduce_scatter_block",
                 "DirectoryName":"mpi_reduce_scatter_block"
+            },
+            {
+                "Name":"MPI_Request",
+                "DirectoryName":"mpi_request"
             }
         ]
     },
