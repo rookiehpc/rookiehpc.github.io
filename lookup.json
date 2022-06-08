@@ -594,6 +594,10 @@
             {
                 "Name":"MPI_Reduce",
                 "DirectoryName":"mpi_reduce"
+            },
+            {
+                "Name":"MPI_Reduce_scatter",
+                "DirectoryName":"mpi_reduce_scatter"
             }
         ]
     },
