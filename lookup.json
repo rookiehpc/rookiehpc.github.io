@@ -742,6 +742,10 @@
             {
                 "Name":"MPI_Type_commit",
                 "DirectoryName":"mpi_type_commit"
+            },
+            {
+                "Name":"MPI_Type_contiguous",
+                "DirectoryName":"mpi_type_contiguous"
             }
         ]
     },
