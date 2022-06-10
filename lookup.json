@@ -670,6 +670,10 @@
             {
                 "Name":"MPI_Start",
                 "DirectoryName":"mpi_start"
+            },
+            {
+                "Name":"MPI_Startall",
+                "DirectoryName":"mpi_startall"
             }
         ]
     },

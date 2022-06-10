@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Startall",
+    "DirectoryName":"mpi_startall",
+    "SharedDescription":true,
+    "Description":"MPI_Startall is a variation of MPI_Start; it receives an array of request handles and invokes MPI_Start on each one.",
+    "Categories":[
+        "Persistent"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"The number of request handles in the array passed.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The array of request handles representing the communications to launch.",
+                    "Type":"MPI_Request\t[]",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the launch.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"The number of request handles in the array passed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The array of request handles representing the communications to launch.",
+                    "Type":"TYPE(MPI_Request)\t(count)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the launch.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"The number of request handles in the array passed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The array of request handles representing the communications to launch.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the launch.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
