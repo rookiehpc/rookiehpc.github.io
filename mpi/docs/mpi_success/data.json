@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_SUCCESS",
+    "DirectoryName":"mpi_success",
+    "SharedDescription":true,
+    "Description":"MPI_SUCCESS is the value returned by any MPI routine in the event of a successful termination.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

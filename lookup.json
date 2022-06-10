@@ -690,6 +690,10 @@
             {
                 "Name":"MPI_STATUSES_IGNORE",
                 "DirectoryName":"mpi_statuses_ignore"
+            },
+            {
+                "Name":"MPI_SUCCESS",
+                "DirectoryName":"mpi_success"
             }
         ]
     },
