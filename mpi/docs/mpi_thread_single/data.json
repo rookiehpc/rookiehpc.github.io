@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_THREAD_SINGLE",
+    "DirectoryName":"mpi_thread_single",
+    "SharedDescription":true,
+    "Description":"MPI_THREAD_SINGLE represents a thread support level. It is used as part of the MPI_Init_thread initialisation. MPI_THREAD_SINGLE is the first level; it informs MPI that the application is single threaded. Other thread support levels are, in order, MPI_THREAD_FUNNELED, MPI_THREAD_SERIALIZED and MPI_THREAD_MULTIPLE.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

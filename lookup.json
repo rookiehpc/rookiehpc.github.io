@@ -734,6 +734,10 @@
             {
                 "Name":"MPI_THREAD_SERIALIZED",
                 "DirectoryName":"mpi_thread_serialized"
+            },
+            {
+                "Name":"MPI_THREAD_SINGLE",
+                "DirectoryName":"mpi_thread_single"
             }
         ]
     },
