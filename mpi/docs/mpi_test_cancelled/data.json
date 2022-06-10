@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Test_cancelled",
+    "DirectoryName":"mpi_test_cancelled",
+    "SharedDescription":true,
+    "Description":"MPI_Test_cancelled determines whether a non-blocking operation was cancelled.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"status",
+                    "Description":"The status to check for cancellation.",
+                    "Type":"const MPI_Status*",
+                    "Optional":false
+                },
+                {
+                    "Name":"flag",
+                    "Description":"Filled by MPI_Test_cancelled. It is set to true if the corresponding non-blocking operation was successfully cancelled, in which case all other fields of the status (such as count and tag) are undefined. It is set to false otherwise.",
+                    "Type":"int*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the cancellation test.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"status",
+                    "Description":"The status to check for cancellation.",
+                    "Type":"TYPE(MPI_Status)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"flag",
+                    "Description":"Filled by MPI_Test_cancelled. It is set to true if the corresponding non-blocking operation was successfully cancelled, in which case all other fields of the status (such as count and tag) are undefined. It is set to false otherwise.",
+                    "Type":"LOGICAL",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the cancellation test.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"status",
+                    "Description":"The status to check for cancellation.",
+                    "Type":"INTEGER\t(MPI_STATUS_SIZE)",
+                    "Optional":false
+                },
+                {
+                    "Name":"flag",
+                    "Description":"Filled by MPI_Test_cancelled. It is set to true if the corresponding non-blocking operation was successfully cancelled, in which case all other fields of the status (such as count and tag) are undefined. It is set to false otherwise.",
+                    "Type":"LOGICAL",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the cancellation test.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

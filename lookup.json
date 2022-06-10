@@ -706,6 +706,10 @@
             {
                 "Name":"MPI_Test",
                 "DirectoryName":"mpi_test"
+            },
+            {
+                "Name":"MPI_Test_cancelled",
+                "DirectoryName":"mpi_test_cancelled"
             }
         ]
     },
