@@ -758,6 +758,10 @@
             {
                 "Name":"MPI_Type_create_hvector",
                 "DirectoryName":"mpi_type_create_hvector"
+            },
+            {
+                "Name":"MPI_Type_create_indexed_block",
+                "DirectoryName":"mpi_type_create_indexed_block"
             }
         ]
     },
