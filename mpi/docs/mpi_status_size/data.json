@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_STATUS_SIZE",
+    "DirectoryName":"mpi_status_size",
+    "SharedDescription":true,
+    "Description":"MPI_STATUS_SIZE represents the size of Fortran-90 structure representing the MPI status of a reception operation, returned by receive operations (MPI_Recv), non-blocking operation wait (MPI_Wait, MPI_Waitall, MPI_Waitany and MPI_Waitsome) or test (MPI_Test, MPI_Testall, MPI_Testany and MPI_Testsome). In FORTRAN-90 the MPI_Status is a structure that contains at least 3 attributes: MPI_SOURCE, MPI_TAG and MPI_ERROR. There may be additional array elements and indices that are implementation-specific. When the user has no use of the MPI status, they can pass the constant MPI_STATUS_IGNORE (or MPI_STATUSES_IGNORE for array of statuses).\nIn C and Fortran-2008, the MPI status is represented by MPI_Status.",
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
