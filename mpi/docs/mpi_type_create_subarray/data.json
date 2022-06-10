@@ -1,0 +1,179 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Type_create_subarray",
+    "DirectoryName":"mpi_type_create_subarray",
+    "SharedDescription":true,
+    "Description":"MPI_Type_create_subarray creates an MPI datatype representing a subset of an array. Other ways to create a datatype are MPI_Type_contiguous, MPI_Type_vector, MPI_Type_create_hvector, MPI_Type_indexed, MPI_Type_create_hindexed, MPI_Type_create_indexed_block, MPI_Type_create_hindexed_block, MPI_Type_create_struct, MPI_Type_create_darray.",
+    "Categories":[
+        "User datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"dim_count",
+                    "Description":"The number of dimensions in the array / subarray.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"array_element_counts",
+                    "Description":"Number of elements in each dimension of the full array.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"subarray_element_counts",
+                    "Description":"Number of elements in each dimension of the subarray.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"subarray_coordinates",
+                    "Description":"Starting coordinates (non-negative integers) of the subarray in each dimension.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"order",
+                    "Description":"Indicates the memory storage order to apply; whether contiguous elements in memory are column cells or row cells. If the array follows a row-major order, typically in C, then MPI_ORDER_C must be passed. Else, if the array follows a column-major order, typically in Fortran, then MPI_ORDER_FORTRAN must be passed.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"old_datatype",
+                    "Description":"The type that makes an element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The variable in which store the datatype created.",
+                    "Type":"MPI_Datatype*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the MPI subarray datatype creation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"dim_count",
+                    "Description":"The number of dimensions in the array / subarray.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"array_element_counts",
+                    "Description":"Number of elements in each dimension of the full array.",
+                    "Type":"INTEGER\t(dim_count)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"subarray_element_counts",
+                    "Description":"Number of elements in each dimension of the subarray.",
+                    "Type":"INTEGER\t(dim_count)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"subarray_coordinates",
+                    "Description":"Starting coordinates (non-negative integers) of the subarray in each dimension.",
+                    "Type":"INTEGER\t(dim_count)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"order",
+                    "Description":"Indicates the memory storage order to apply; whether contiguous elements in memory are column cells or row cells. If the array follows a row-major order, typically in C, then MPI_ORDER_C must be passed. Else, if the array follows a column-major order, typically in Fortran, then MPI_ORDER_FORTRAN must be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"old_datatype",
+                    "Description":"The type that makes an element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The variable in which store the datatype created.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the MPI subarray datatype creation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"dim_count",
+                    "Description":"The number of dimensions in the array / subarray.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"array_element_counts",
+                    "Description":"Number of elements in each dimension of the full array.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"subarray_element_counts",
+                    "Description":"Number of elements in each dimension of the subarray.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"subarray_coordinates",
+                    "Description":"Starting coordinates (non-negative integers) of the subarray in each dimension.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"order",
+                    "Description":"Indicates the memory storage order to apply; whether contiguous elements in memory are column cells or row cells. If the array follows a row-major order, typically in C, then MPI_ORDER_C must be passed. Else, if the array follows a column-major order, typically in Fortran, then MPI_ORDER_FORTRAN must be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"old_datatype",
+                    "Description":"The type that makes an element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The variable in which store the datatype created.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the MPI subarray datatype creation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
