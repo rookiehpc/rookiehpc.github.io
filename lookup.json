@@ -738,6 +738,10 @@
             {
                 "Name":"MPI_THREAD_SINGLE",
                 "DirectoryName":"mpi_thread_single"
+            },
+            {
+                "Name":"MPI_Type_commit",
+                "DirectoryName":"mpi_type_commit"
             }
         ]
     },
