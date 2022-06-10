@@ -606,6 +606,10 @@
             {
                 "Name":"MPI_Request",
                 "DirectoryName":"mpi_request"
+            },
+            {
+                "Name":"MPI_REQUEST_NULL",
+                "DirectoryName":"mpi_request_null"
             }
         ]
     },

@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_REQUEST_NULL",
+    "DirectoryName":"mpi_request_null",
+    "SharedDescription":true,
+    "Description":"MPI_REQUEST_NULL is the value to which an MPI_Request is set once it has been deallocated (after a wait such as MPI_Wait, a test such as MPI_Test if the flag is set to true or an explicit deallocation with MPI_Request_free to name a few).",
+    "Categories":[
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
