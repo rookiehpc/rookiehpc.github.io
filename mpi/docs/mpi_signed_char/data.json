@@ -1,0 +1,17 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_SIGNED_CHAR",
+    "DirectoryName":"mpi_signed_char",
+    "SharedDescription":true,
+    "Description":"MPI_SIGNED_CHAR is an MPI_Datatype that represents a signed character type in MPI, it corresponds to a signed char in C. The difference with MPI_CHAR is that the latter is treated as the printable character, while MPI_SIGNED_CHAR is treated as the integral value. This is why MPI_CHAR cannot be used in reduction operations for instance while MPI_SIGNED_CHAR can.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
+   

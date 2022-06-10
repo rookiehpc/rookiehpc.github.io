@@ -650,6 +650,10 @@
             {
                 "Name":"MPI_SHORT",
                 "DirectoryName":"mpi_short"
+            },
+            {
+                "Name":"MPI_SIGNED_CHAR",
+                "DirectoryName":"mpi_signed_char"
             }
         ]
     },
