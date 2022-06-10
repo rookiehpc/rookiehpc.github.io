@@ -794,6 +794,10 @@
             {
                 "Name":"MPI_UINT16_T",
                 "DirectoryName":"mpi_uint16_t"
+            },
+            {
+                "Name":"MPI_UINT32_T",
+                "DirectoryName":"mpi_uint32_t"
             }
         ]
     },
