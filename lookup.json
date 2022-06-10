@@ -674,6 +674,10 @@
             {
                 "Name":"MPI_Startall",
                 "DirectoryName":"mpi_startall"
+            },
+            {
+                "Name":"MPI_Status",
+                "DirectoryName":"mpi_status"
             }
         ]
     },
