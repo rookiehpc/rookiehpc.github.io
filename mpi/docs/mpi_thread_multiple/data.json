@@ -1,0 +1,23 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_THREAD_MULTIPLE",
+    "DirectoryName":"mpi_thread_multiple",
+    "SharedDescription":true,
+    "Description":"MPI_THREAD_MULTIPLE represents a thread support level. It is used as part of the MPI_Init_thread initialisation. MPI_THREAD_MULTIPLE is the fourth level; it informs MPI that the application is multithreaded, that any thread may issue MPI calls and that different threads may issue MPI calls at the same time. Other thread support levels are, in order, MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED and MPI_THREAD_SERIALIZED.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
+  

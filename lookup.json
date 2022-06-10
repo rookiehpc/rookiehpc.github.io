@@ -726,6 +726,10 @@
             {
                 "Name":"MPI_THREAD_FUNNELED",
                 "DirectoryName":"mpi_thread_funneled"
+            },
+            {
+                "Name":"MPI_THREAD_MULTIPLE",
+                "DirectoryName":"mpi_thread_multiple"
             }
         ]
     },
