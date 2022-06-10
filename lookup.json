@@ -802,6 +802,10 @@
             {
                 "Name":"MPI_UINT64_T",
                 "DirectoryName":"mpi_uint64_t"
+            },
+            {
+                "Name":"MPI_UINT8_T",
+                "DirectoryName":"mpi_uint8_t"
             }
         ]
     },
