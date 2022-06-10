@@ -1,0 +1,67 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Start",
+    "DirectoryName":"mpi_start",
+    "SharedDescription":true,
+
+    "Description":"MPI_Start launches the communication represented by the request handle passed, obtained from MPI_Recv_init, MPI_Send_init, MPI_Ssend_init, MPI_Bsend_init or MPI_Rsend_init. When the request handle is passed to MPI_Start it is inactive, it becomes active after MPI_Start returns. To check for the completion of the underlying communication, a wait such as MPI_Wait or a test such as MPI_Test must be used. Once a wait, or successful test, has been done, the request handle becomes inactive and can be passed to MPI_Start to launch that same communication again. This allows MPI_Start to leverage persistent communications by launching a given communication multiple times without having to pass the arguments to the corresponding communication routine every time. This is an optimisation that allows MPI to save time by not having to process the argument list since it is already known and has been processed once for all during the preparation. For convenience, a variation of MPI_Start is MPI_Startall where an array of request handles is passed and launched.",
+    "Categories":[
+        "Persistent"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request handle representing the communication to launch.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the launch.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request handle representing the communication to launch.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the launch.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request handle representing the communication to launch.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the launch.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
