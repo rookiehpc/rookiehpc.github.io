@@ -1,0 +1,217 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Scatterv",
+    "DirectoryName":"mpi_scatterv",
+    "SharedDescription":true,
+    "Description":"MPI_Scatterv is a version of MPI_Scatter in which the data dispatched from the root process can vary in the number of elements, and the location from which load these elements in the root process buffer. Also, MPI_Scatterv is a collective operation; all processes in the communicator must invoke this routine. Other variants of MPI_Scatterv are MPI_Scatter, MPI_Iscatter and MPI_Iscatterv. Refer to MPI_Iscatterv to see the blocking counterpart of MPI_Scatterv.",
+    "Categories":[
+        "Collectives"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to disptach from the root process. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_send",
+                    "Description":"An array that contains the number of elements to send to each process, not the total number of elements in the send buffer. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message sent to each process. Displacements are expressed in number of elements, not bytes. For non-root processes, the sending parameters like this one are ignored.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the data dispatched.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements in the receive buffer.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the root process, which will dispatch the data to scatter.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the scatter takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the variable scatter.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to disptach from the root process. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"counts_send",
+                    "Description":"An array that contains the number of elements to send to each process, not the total number of elements in the send buffer. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"INTEGER, ASYNCHRONOUS\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message sent to each process. Displacements are expressed in number of elements, not bytes. For non-root processes, the sending parameters like this one are ignored.",
+                    "Type":"INTEGER, ASYNCHRONOUS\t(*)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the data dispatched.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements in the receive buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the root process, which will dispatch the data to scatter.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the scatter takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the variable scatter.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer containing the data to disptach from the root process. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"counts_send",
+                    "Description":"An array that contains the number of elements to send to each process, not the total number of elements in the send buffer. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"An array containing the displacement to apply to the message sent to each process. Displacements are expressed in number of elements, not bytes. For non-root processes, the sending parameters like this one are ignored.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element. For non-root processes, the send parameters like this one are ignored.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which store the data dispatched.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements in the receive buffer.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"root",
+                    "Description":"The rank of the root process, which will dispatch the data to scatter.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the scatter takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the variable scatter.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

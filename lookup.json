@@ -626,6 +626,10 @@
             {
                 "Name":"MPI_Scatter",
                 "DirectoryName":"mpi_scatter"
+            },
+            {
+                "Name":"MPI_Scatterv",
+                "DirectoryName":"mpi_scatterv"
             }
         ]
     },
