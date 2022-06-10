@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_UINT16_T",
+    "DirectoryName":"mpi_uint16_t",
+    "SharedDescription":true,
+    "Description":"MPI_UINT16_T is an MPI_Datatype that represents an unsigned 2-byte integer type in MPI, it corresponds to an uint16_t in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}

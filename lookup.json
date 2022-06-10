@@ -790,6 +790,10 @@
             {
                 "Name":"MPI_Type_vector",
                 "DirectoryName":"mpi_type_vector"
+            },
+            {
+                "Name":"MPI_UINT16_T",
+                "DirectoryName":"mpi_uint16_t"
             }
         ]
     },
