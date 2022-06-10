@@ -1,0 +1,65 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Type_free",
+    "DirectoryName":"mpi_type_free",
+    "SharedDescription":true,
+    "Description":"MPI_Type_free deallocates the resources assigned to an MPI_Datatype and sets it to MPI_DATATYPE_NULL. Communications that are currently using it will complete normally and MPI datatypes built on the freed one are not affected. To create an MPI datatype, see MPI_Type_commit.",
+    "Categories":[
+        "User datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"datatype",
+                    "Description":"The MPI datatype to free.",
+                    "Type":"MPI_Datatype*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the type deallocation:\n- MPI_SUCCESS: the routine completed successfully."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"datatype",
+                    "Description":"The MPI datatype to free.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the type deallocation:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"datatype",
+                    "Description":"The MPI datatype to free.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the type deallocation:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

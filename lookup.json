@@ -774,6 +774,10 @@
             {
                 "Name":"MPI_Type_create_subarray",
                 "DirectoryName":"mpi_type_create_subarray"
+            },
+            {
+                "Name":"MPI_Type_free",
+                "DirectoryName":"mpi_type_free"
             }
         ]
     },
