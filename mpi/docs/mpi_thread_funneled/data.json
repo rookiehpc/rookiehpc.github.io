@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_THREAD_FUNNELED",
+    "DirectoryName":"mpi_thread_funneled",
+    "SharedDescription":true,
+    "Description":"MPI_THREAD_FUNNELED represents a thread support level. It is used as part of the MPI_Init_thread initialisation. MPI_THREAD_FUNNELED is the second level; it informs MPI that the application is multithreaded, however all MPI calls will be issued from the master thread only. Other thread support levels are, in order, MPI_THREAD_SINGLE, MPI_THREAD_SERIALIZED and MPI_THREAD_MULTIPLE.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

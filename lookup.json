@@ -722,6 +722,10 @@
             {
                 "Name":"MPI_Testsome",
                 "DirectoryName":"mpi_testsome"
+            },
+            {
+                "Name":"MPI_THREAD_FUNNELED",
+                "DirectoryName":"mpi_thread_funneled"
             }
         ]
     },
