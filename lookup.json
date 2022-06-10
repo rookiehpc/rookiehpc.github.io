@@ -658,6 +658,10 @@
             {
                 "Name":"MPI_SOURCE",
                 "DirectoryName":"mpi_source"
+            },
+            {
+                "Name":"MPI_Ssend",
+                "DirectoryName":"mpi_ssend"
             }
         ]
     },
