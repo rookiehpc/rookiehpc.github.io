@@ -642,6 +642,10 @@
             {
                 "Name":"MPI_Sendrecv",
                 "DirectoryName":"mpi_sendrecv"
+            },
+            {
+                "Name":"MPI_Sendrecv_replace",
+                "DirectoryName":"mpi_sendrecv_replace"
             }
         ]
     },
