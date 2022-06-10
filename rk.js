@@ -819,7 +819,7 @@ const RK = {
                                 DefinitionTerm.innerText = ParameterEntry[RK.NamePN];
                                 DefinitionList.appendChild(DefinitionTerm);
                                 let DefinitionDescription = document.createElement('dd');
-                                DefinitionDescription.innerHTML = RK.InterpretMarkdown(ParameterEntry[RK.DescriptionPN]);
+                                DefinitionDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(ParameterEntry[RK.DescriptionPN]));
                                 DefinitionList.appendChild(DefinitionDescription);
                                 if(FirstParameter == true) {
                                     FirstParameter = false;
