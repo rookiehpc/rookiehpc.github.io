@@ -746,6 +746,10 @@
             {
                 "Name":"MPI_Type_contiguous",
                 "DirectoryName":"mpi_type_contiguous"
+            },
+            {
+                "Name":"MPI_Type_create_hindexed",
+                "DirectoryName":"mpi_type_create_hindexed"
             }
         ]
     },
