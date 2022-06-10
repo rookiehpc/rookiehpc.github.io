@@ -714,6 +714,10 @@
             {
                 "Name":"MPI_Testall",
                 "DirectoryName":"mpi_testall"
+            },
+            {
+                "Name":"MPI_Testany",
+                "DirectoryName":"mpi_testany"
             }
         ]
     },
