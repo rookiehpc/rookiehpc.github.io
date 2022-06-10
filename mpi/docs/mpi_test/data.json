@@ -1,0 +1,103 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Test",
+    "DirectoryName":"mpi_test",
+    "SharedDescription":true,
+    "Description":"MPI_Test checks if a non-blocking operation is complete at a given time. That is, unlike MPI_Wait, MPI_Test will not wait for the underlying non-blocking operation to complete. Since a non-blocking operation immediately returns, it does so before the underlying MPI routine completed. Checking whether that routine is complete is what MPI_Test is designed for. There are variations of MPI_Test to check multiple request handlers at once: MPI_Testall, MPI_Testany and MPI_Testsome.",
+    "Categories":[
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request handle on the non-blocking routine to wait on.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                },
+                {
+                    "Name":"flag",
+                    "Description":"The variable in which store the check result; true if the underlying non-blocking is complete, false otherwise.",
+                    "Type":"int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status returned by the non-blocking routine concerned. If the status is not needed, MPI_STATUS_IGNORE can be passed.",
+                    "Type":"MPI_Status*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the request testing.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request handle on the non-blocking routine to wait on.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"flag",
+                    "Description":"The variable in which store the check result; true if the underlying non-blocking is complete, false otherwise.",
+                    "Type":"LOGICAL",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status returned by the non-blocking routine concerned. If the status is not needed, MPI_STATUS_IGNORE can be passed.",
+                    "Type":"TYPE(MPI_Status)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the request testing.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"request",
+                    "Description":"The request handle on the non-blocking routine to wait on.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"flag",
+                    "Description":"The variable in which store the check result; true if the underlying non-blocking is complete, false otherwise.",
+                    "Type":"LOGICAL",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status returned by the non-blocking routine concerned. If the status is not needed, MPI_STATUS_IGNORE can be passed.",
+                    "Type":"INTEGER\t(MPI_STATUS_SIZE)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the request testing.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

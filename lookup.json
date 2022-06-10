@@ -702,6 +702,10 @@
             {
                 "Name":"MPI_TAG",
                 "DirectoryName":"mpi_tag"
+            },
+            {
+                "Name":"MPI_Test",
+                "DirectoryName":"mpi_test"
             }
         ]
     },
