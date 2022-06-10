@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_UINT64_T",
+    "DirectoryName":"mpi_uint64_t",
+    "SharedDescription":true,
+    "Description":"MPI_UINT64_T is an MPI_Datatype that represents an unsigned 8-byte integer type in MPI, it corresponds to an uint64_t in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
