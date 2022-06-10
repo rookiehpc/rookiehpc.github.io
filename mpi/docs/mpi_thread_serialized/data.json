@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_THREAD_SERIALIZED",
+    "DirectoryName":"mpi_thread_serialized",
+    "SharedDescription":true,
+    "Description":"MPI_THREAD_SERIALIZED represents a thread support level. It is used as part of the MPI_Init_thread initialisation. MPI_THREAD_SERIALIZED is the third level; it informs MPI that the application is multithreaded and that any thread may issue MPI calls, however different threads will never issue MPI calls at the same time. Other thread support levels are, in order, MPI_THREAD_SINGLE, MPI_THREAD_FUNNELED and MPI_THREAD_MULTIPLE.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

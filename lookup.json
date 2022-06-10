@@ -730,6 +730,10 @@
             {
                 "Name":"MPI_THREAD_MULTIPLE",
                 "DirectoryName":"mpi_thread_multiple"
+            },
+            {
+                "Name":"MPI_THREAD_SERIALIZED",
+                "DirectoryName":"mpi_thread_serialized"
             }
         ]
     },
