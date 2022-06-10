@@ -686,6 +686,10 @@
             {
                 "Name":"MPI_STATUS_SIZE",
                 "DirectoryName":"mpi_status_size"
+            },
+            {
+                "Name":"MPI_STATUSES_IGNORE",
+                "DirectoryName":"mpi_statuses_ignore"
             }
         ]
     },

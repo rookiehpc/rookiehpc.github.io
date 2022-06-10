@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_STATUSES_IGNORE",
+    "DirectoryName":"mpi_statuses_ignore",
+    "SharedDescription":true,
+    "Description":"MPI_STATUSES_IGNORE informs MPI to not fill the array of MPI_Status, which saves some time. It is used in multi-request waiting (MPI_Waitall and MPI_Waitsome) and testing (MPI_Testall and MPI_Testsome). A version of MPI_STATUSES_IGNORE exists also for a single status: MPI_STATUS_IGNORE.",
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}
