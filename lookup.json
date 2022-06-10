@@ -698,6 +698,10 @@
             {
                 "Name":"MPI_SUM",
                 "DirectoryName":"mpi_sum"
+            },
+            {
+                "Name":"MPI_TAG",
+                "DirectoryName":"mpi_tag"
             }
         ]
     },

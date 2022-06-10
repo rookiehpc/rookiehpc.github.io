@@ -1,0 +1,24 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_TAG",
+    "DirectoryName":"mpi_tag",
+    "SharedDescription":false,
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"MPI_TAG is the member of MPI_Status structure that contains the tag of the message received."
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Description":"MPI_TAG is the member of the MPI_Status type that contains the tag of the message received."
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Description":"MPI_TAG is the index of the source in the MPI_Status array, it contains the tag of the message received."
+        }
+    ]
+}
