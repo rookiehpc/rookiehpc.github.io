@@ -782,6 +782,10 @@
             {
                 "Name":"MPI_Type_get_extent",
                 "DirectoryName":"mpi_type_get_extent"
+            },
+            {
+                "Name":"MPI_Type_indexed",
+                "DirectoryName":"mpi_type_indexed"
             }
         ]
     },

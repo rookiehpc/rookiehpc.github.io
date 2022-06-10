@@ -1,0 +1,141 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Type_indexed",
+    "DirectoryName":"mpi_type_indexed",
+    "SharedDescription":true,
+    "Description":"MPI_Type_indexed creates an MPI datatype as a sequence of blocks, each made by replicating an existing MPI_Datatype a certain number of times. Also, each block is located at a certain displacement from the beginning of the MPI datatype. Other ways to create a datatype are MPI_Type_contiguous, MPI_Type_vector, MPI_Type_create_hvector, MPI_Type_create_hindexed, MPI_Type_create_indexed_block, MPI_Type_create_hindexed_block, MPI_Type_create_struct, MPI_Type_create_subarray, MPI_Type_create_darray.",
+    "Categories":[
+        "User datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"block_count",
+                    "Description":"The number of blocks to create.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"block_lengths",
+                    "Description":"Array containing the length of each block.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"Array containing the displacement for each block, expressed in elements. The displacement is the distance between the start of the MPI datatype created and the start of the block. It is different from the stride used in MPI_Type_vector for instance, where it expresses the distance between the start of a block to the next.",
+                    "Type":"const int\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"old_datatype",
+                    "Description":"The datatype making the element used as unit.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The variable in which store the datatype created.",
+                    "Type":"MPI_Datatype*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the MPI heterogeneous indexed datatype creation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"block_count",
+                    "Description":"The number of blocks to create.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"block_lengths",
+                    "Description":"Array containing the length of each block.",
+                    "Type":"INTEGER\t(block_count)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"Array containing the displacement for each block, expressed in elements. The displacement is the distance between the start of the MPI datatype created and the start of the block. It is different from the stride used in MPI_Type_vector for instance, where it expresses the distance between the start of a block to the next.",
+                    "Type":"INTEGER\t(block_count)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"old_datatype",
+                    "Description":"The datatype making the element used as unit.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The variable in which store the datatype created.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the MPI indexed block datatype creation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"block_count",
+                    "Description":"The number of blocks to create.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"block_lengths",
+                    "Description":"Array containing the length of each block.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacements",
+                    "Description":"Array containing the displacement for each block, expressed in elements. The displacement is the distance between the start of the MPI datatype created and the start of the block. It is different from the stride used in MPI_Type_vector for instance, where it expresses the distance between the start of a block to the next.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"old_datatype",
+                    "Description":"The datatype making the element used as unit.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The variable in which store the datatype created.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the MPI indexed block datatype creation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
