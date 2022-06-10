@@ -622,6 +622,10 @@
             {
                 "Name":"MPI_Scan",
                 "DirectoryName":"mpi_scan"
+            },
+            {
+                "Name":"MPI_Scatter",
+                "DirectoryName":"mpi_scatter"
             }
         ]
     },
