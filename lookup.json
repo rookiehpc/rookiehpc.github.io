@@ -766,6 +766,10 @@
             {
                 "Name":"MPI_Type_create_resized",
                 "DirectoryName":"mpi_type_create_resized"
+            },
+            {
+                "Name":"MPI_Type_create_struct",
+                "DirectoryName":"mpi_type_create_struct"
             }
         ]
     },
