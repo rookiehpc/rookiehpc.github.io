@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_SHORT",
+    "DirectoryName":"mpi_short",
+    "SharedDescription":true,
+    "Description":"MPI_SHORT is an MPI_Datatype that represents a short integer type in MPI, it corresponds to a short int in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
