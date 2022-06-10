@@ -1,0 +1,24 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_SOURCE",
+    "DirectoryName":"mpi_source",
+    "SharedDescription":false,
+    "Categories":[
+        "Receiving"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"MPI_SOURCE is the member of MPI_Status structure that contains the rank of the process that sent the message."
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Description":"MPI_SOURCE is the member of the MPI_Status type that contains the rank of the process that sent the message."
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Description":"MPI_SOURCE is the index of the source in the MPI_Status array, it contains the rank of the process that sent the message."
+        }
+    ]
+}

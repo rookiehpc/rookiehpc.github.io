@@ -654,6 +654,10 @@
             {
                 "Name":"MPI_SIGNED_CHAR",
                 "DirectoryName":"mpi_signed_char"
+            },
+            {
+                "Name":"MPI_SOURCE",
+                "DirectoryName":"mpi_source"
             }
         ]
     },
