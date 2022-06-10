@@ -662,6 +662,10 @@
             {
                 "Name":"MPI_Ssend",
                 "DirectoryName":"mpi_ssend"
+            },
+            {
+                "Name":"MPI_Ssend_init",
+                "DirectoryName":"mpi_ssend_init"
             }
         ]
     },
