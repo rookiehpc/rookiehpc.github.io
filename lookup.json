@@ -618,6 +618,10 @@
             {
                 "Name":"MPI_Rsend_init",
                 "DirectoryName":"mpi_rsend_init"
+            },
+            {
+                "Name":"MPI_Scan",
+                "DirectoryName":"mpi_scan"
             }
         ]
     },
