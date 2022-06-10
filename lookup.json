@@ -694,6 +694,10 @@
             {
                 "Name":"MPI_SUCCESS",
                 "DirectoryName":"mpi_success"
+            },
+            {
+                "Name":"MPI_SUM",
+                "DirectoryName":"mpi_sum"
             }
         ]
     },
