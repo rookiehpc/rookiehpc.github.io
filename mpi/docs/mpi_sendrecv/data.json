@@ -1,0 +1,274 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Sendrecv",
+    "DirectoryName":"mpi_sendrecv",
+    "SharedDescription":true,
+    "Description":"MPI_Sendrecv is a combination of an MPI_Send and an MPI_Recv. It can be seen as having both subroutines executed concurrently. The difference with MPI_Sendrecv_replace is that with MPI_Sendrecv the buffers used for send and receive must be different. This allows for instance MPI_Sendrecv to send and receive different amounts and types of data.",
+    "Categories":[
+        "Sending"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer to send.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements to send.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag_send",
+                    "Description":"The tag to assign to the send message.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which receive the message.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements to receive.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"sender",
+                    "Description":"The rank of the sender MPI process.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag_recv",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the send receive takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the reception status returned. If it is not needed, MPI_STATUS_IGNORE can be passed.",
+                    "Type":"MPI_Status*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the send receive.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer to send.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag_send",
+                    "Description":"The tag to assign to the send message.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which receive the message.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements to receive.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"sender",
+                    "Description":"The rank of the sender MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag_recv",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the send receive takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the reception status returned. If it is not needed, MPI_STATUS_IGNORE can be passed.",
+                    "Type":"TYPE(MPI_Status)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the send receive.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"IN"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer_send",
+                    "Description":"The buffer to send.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_send",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_send",
+                    "Description":"The type of one send buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag_send",
+                    "Description":"The tag to assign to the send message.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"buffer_recv",
+                    "Description":"The buffer in which receive the message.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count_recv",
+                    "Description":"The number of elements to receive.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype_recv",
+                    "Description":"The type of one receive buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"sender",
+                    "Description":"The rank of the sender MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag_recv",
+                    "Description":"The tag to require from the message. If no tag is required, MPI_ANY_TAG can be passed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the send receive takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the reception status returned. If it is not needed, MPI_STATUS_IGNORE can be passed.",
+                    "Type":"INTEGER\t(MPI_STATUS_SIZE)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the send receive.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
