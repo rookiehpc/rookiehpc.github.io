@@ -630,6 +630,10 @@
             {
                 "Name":"MPI_Scatterv",
                 "DirectoryName":"mpi_scatterv"
+            },
+            {
+                "Name":"MPI_Send",
+                "DirectoryName":"mpi_send"
             }
         ]
     },

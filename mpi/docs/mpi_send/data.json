@@ -1,0 +1,160 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Send",
+    "DirectoryName":"mpi_send",
+    "SharedDescription":true,
+    "Description":"MPI_Send is the standard send in MPI. Behind the scenes, it will issue a buffered send MPI_Bsend or a synchronous send MPI_Ssend. This decision will be based on whether the buffer attached for buffered sends contains enough free space for the message to send. If there is enough space, the buffered send MPI_Bsend will be issued, otherwise it will revert to a synchronous send MPI_Ssend. MPI implementations may provide a buffer by default, therefore not having explicitly assigned a buffer for buffered send does not guarantee that an MPI_Send will issue an MPI_Ssend. Tip: this specificity of MPI_Send to implicitly issue a buffered send or a synchronous send can result in deadlocks that are challenging to find out for beginners. In this case, explicitly issuing synchronous sends MPI_Ssend instead of standard sends MPI_Send may greatly help verify code correctness.\nOther variants of MPI_Send are MPI_Ssend, MPI_Bsend and MPI_Rsend. See MPI_Isend for the non-blocking counterpart of MPI_Send.",
+    "Categories":[
+        "Sending"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the standard send takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the standard send.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the standard send takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the standard send.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the standard send takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the standard send.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
