@@ -678,6 +678,10 @@
             {
                 "Name":"MPI_Status",
                 "DirectoryName":"mpi_status"
+            },
+            {
+                "Name":"MPI_STATUS_IGNORE",
+                "DirectoryName":"mpi_status_ignore"
             }
         ]
     },
