@@ -1,0 +1,180 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Send_init",
+    "DirectoryName":"mpi_send_init",
+    "SharedDescription":true,
+    "Description":"MPI_Send_init prepares a request handle for sending using persistent communications. The handle request is inactive upon creation because no actual send is issued until the request handle is passed to MPI_Start, at which point it becomes active. An MPI_Send_init followed with an MPI_Start is equivalent to MPI_Isend: the send is issued, but completion must still be explicitly checked. Therefore, a wait such as MPI_Wait or a test such as MPI_Test is required before the buffers passed to MPI_Send_init can be safely reused. Once the request handle of a persistent communication has been waited upon, or successfully tested, it becomes inactive and can be passed again to MPI_Start to issue that same send again. This is how persistent communications save time; they decrease the overhead about argument processing since the list of arguments passed is already known. Using an MPI_Send_init does not require the corresponding receive on the receiver MPI process to be done via persistent communications, and vice-versa. Other persistent communications are: MPI_Recv_init, MPI_Ssend_init, MPI_Bsend_init and MPI_Rsend_init.",
+    "Categories":[
+        "Persistent",
+        "Sending"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the standard send takes place.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The request handle representing the standard send used in persistent communications.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the standard send.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"TYPE(*), DIMENSION(..)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the standard send takes place.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"request",
+                    "Description":"The request handle representing the standard send used in persistent communications.",
+                    "Type":"TYPE(MPI_Request)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the standard send.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"buffer",
+                    "Description":"The buffer to send.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"count",
+                    "Description":"The number of elements to send.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"datatype",
+                    "Description":"The type of one buffer element.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"recipient",
+                    "Description":"The rank of the recipient MPI process.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"The tag to assign to the message.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator in which the standard send takes place.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"request",
+                    "Description":"The request handle representing the standard send used in persistent communications.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the standard send.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
