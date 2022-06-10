@@ -1,0 +1,141 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Testsome",
+    "DirectoryName":"mpi_testsome",
+    "SharedDescription":true,
+    "Description":"MPI_Testsome is a version of MPI_Test that can be applied on an array of requests handlers. It checks if one or more of the non-blocking routines pointed is complete and reports those that are. Other versions are MPI_Test, MPI_Testall and MPI_Testany.",
+    "Categories":[
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"Number of request handlers in the array of requests passed, as well as the number of statuses contained in the array passed (if MPI_STATUSES_IGNORE is not passed).",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The request handles on the non-blocking routines to test.",
+                    "Type":"MPI_Request*",
+                    "Optional":false
+                },
+                {
+                    "Name":"index_count",
+                    "Description":"The variable in which store the number of non-blocking routines that completed.",
+                    "Type":"int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"indexes",
+                    "Description":"The array in which store the indices of the request handlers corresponding to the non-blocking routines that completed. Note that in C indexes start at 0.",
+                    "Type":"int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"statuses",
+                    "Description":"The array in which write the statuses returned by the non-blocking routines concerned. It can be MPI_STATUSES_IGNORE if statuses are unused.",
+                    "Type":"MPI_Status*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the request testings.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"Number of request handlers in the array of requests passed, as well as the number of statuses contained in the array passed (if MPI_STATUSES_IGNORE is not passed).",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The request handles on the non-blocking routines to test.",
+                    "Type":"TYPE(MPI_Request)\t(count)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"index_count",
+                    "Description":"The variable in which store the number of non-blocking routines that completed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"indexes",
+                    "Description":"The array in which store the indices of the request handlers corresponding to the non-blocking routines that completed. Note that in FORTRAN indexes start at 1.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"statuses",
+                    "Description":"The array in which write the statuses returned by the non-blocking routines concerned. It can be MPI_STATUSES_IGNORE if statuses are unused.",
+                    "Type":"TYPE(MPI_Status)\t(*)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the request testings.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"Number of request handlers in the array of requests passed, as well as the number of statuses contained in the array passed (if MPI_STATUSES_IGNORE is not passed).",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The request handles on the non-blocking routines to test.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"index_count",
+                    "Description":"The variable in which store the number of non-blocking routines that completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"indexes",
+                    "Description":"The array in which store the indices of the request handlers corresponding to the non-blocking routines that completed. Note that in FORTRAN indexes start at 1.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"statuses",
+                    "Description":"The array in which write the statuses returned by the non-blocking routines concerned. It can be MPI_STATUSES_IGNORE if statuses are unused.",
+                    "Type":"INTEGER\t(MPI_STATUS_SIZE, *)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the request testings.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
