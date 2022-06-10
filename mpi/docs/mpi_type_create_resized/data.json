@@ -1,0 +1,124 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Type_create_resized",
+    "DirectoryName":"mpi_type_create_resized",
+    "SharedDescription":true,
+
+    "Description":"MPI_Type_create_resized allows to change the lower bound and extent of an MPI_Datatype. This feature finds its use when multiple elements are sent (count > 1); typically to interleave non-contiguous datatypes.",
+    "Categories":[
+        "User datatypes"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"old_datatype",
+                    "Description":"The MPI datatype to resize.",
+                    "Type":"MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"lower_bound",
+                    "Description":"The lower bound to assign to the new datatype.",
+                    "Type":"MPI_Aint",
+                    "Optional":false
+                },
+                {
+                    "Name":"extent",
+                    "Description":"The extent to assign to the new datatype. This is used to calculate the new upper bound, as the sum of the lower bound and the extent.",
+                    "Type":"MPI_Aint",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The handle on the MPI datatype in which store the newly created datatype.",
+                    "Type":"MPI_Datatype*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the type resize.\n- MPI_SUCCESS: The routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"old_datatype",
+                    "Description":"The MPI datatype to resize.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"lower_bound",
+                    "Description":"The lower bound to assign to the new datatype.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"extent",
+                    "Description":"The extent to assign to the new datatype. This is used to calculate the new upper bound, as the sum of the lower bound and the extent.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The handle on the MPI datatype in which store the newly created datatype.",
+                    "Type":"TYPE(MPI_Datatype)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the type resize.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"old_datatype",
+                    "Description":"The MPI datatype to resize.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"lower_bound",
+                    "Description":"The lower bound to assign to the new datatype.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false
+                },
+                {
+                    "Name":"extent",
+                    "Description":"The extent to assign to the new datatype. This is used to calculate the new upper bound, as the sum of the lower bound and the extent.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_datatype",
+                    "Description":"The handle on the MPI datatype in which store the newly created datatype.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the type resize.\n- MPI_SUCCESS: The routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

@@ -762,6 +762,10 @@
             {
                 "Name":"MPI_Type_create_indexed_block",
                 "DirectoryName":"mpi_type_create_indexed_block"
+            },
+            {
+                "Name":"MPI_Type_create_resized",
+                "DirectoryName":"mpi_type_create_resized"
             }
         ]
     },
