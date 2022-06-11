@@ -1023,7 +1023,7 @@ const RK = {
                         PrototypeString += ")";
                         let HasAtLeastOneCPtrArgument = false;
                         LanguageEntry[RK.ParametersPN].forEach((ParameterEntry) => {
-                            if(ParameterEntry[RK.TypePN].contains("TYPE(C_PTR)")) {
+                            if(ParameterEntry[RK.TypePN].includes("TYPE(C_PTR)")) {
                                 HasAtLeastOneCPtrArgument = true;
                             }
                         });
