@@ -1,4 +1,4 @@
-<img src="https://progress-bar.dev/75?title=MPI+docs+porting" height="25"> <img src="https://progress-bar.dev/0?title=OpenMP+docs+porting" height="25">
+<img src="https://progress-bar.dev/100?title=MPI+docs+porting" height="25"> <img src="https://progress-bar.dev/0?title=OpenMP+docs+porting" height="25">
 
 [Report a missing MPI documentation entry](https://github.com/rookiehpc/rookiehpc.github.io/issues/new?title=Missing+%3Cname+of+the+missing+MPI+documentation+entry%3E.&labels=documentation,missing,mpi&milestone=Add+missing+MPI+documentation&body=-+Please+check+that+this+is+not+a+duplicate+of+another+existing+issue+then+delete+this+message) | [Report a missing OpenMP documentation entry](https://github.com/rookiehpc/rookiehpc.github.io/issues/new?title=Missing+%3Cname+of+the+missing+OpenMP+documentation+entry%3E.&labels=documentation,missing,openmp&milestone=Add+missing+OpenMP+documentation&body=-+Please+check+that+this+is+not+a+duplicate+of+another+existing+issue+then+delete+this+message)
 
