@@ -1,0 +1,66 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Win_free",
+    "DirectoryName":"mpi_win_free",
+    "SharedDescription":true,
+    "Description":"MPI_Win_free, as it name suggests, frees the resources behind an MPI_Win. It also returns a null handle, equal to MPI_WIN_NULL. MPI_Win_free is a collective operation; it must be called by all the MPI processes involved in the corresponding group. Each MPI process must call it only after it has completed all its pending RMA communications with that window.\nFreeing a window that was created with a call to MPI_Win_create_dynamic detaches all associated memory. That is, MPI_Win_free has the same effect as if all attached memory was detached by calls to MPI_Win_detach.",
+    "Categories":[
+        "Collectives",
+        "One-sided"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window to destroy. On success, it will contain the null handle MPI_WIN_NULL.",
+                    "Type":"MPI_Win*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the window destruction:\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window to destroy. On success, it will contain the null handle MPI_WIN_NULL.",
+                    "Type":"TYPE(MPI_Win)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the window destruction.\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window to destroy. On success, it will contain the null handle MPI_WIN_NULL.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the window destruction.\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

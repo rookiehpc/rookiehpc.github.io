@@ -878,6 +878,10 @@
             {
                 "Name":"MPI_Win_detach",
                 "DirectoryName":"mpi_win_detach"
+            },
+            {
+                "Name":"MPI_Win_free",
+                "DirectoryName":"mpi_win_free"
             }
         ]
     },
