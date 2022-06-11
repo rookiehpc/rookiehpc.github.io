@@ -854,6 +854,10 @@
             {
                 "Name":"MPI_Win",
                 "DirectoryName":"mpi_win"
+            },
+            {
+                "Name":"MPI_Win_allocate",
+                "DirectoryName":"mpi_win_allocate"
             }
         ]
     },
