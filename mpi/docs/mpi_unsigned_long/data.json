@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_UNSIGNED_LONG",
+    "DirectoryName":"mpi_unsigned_long",
+    "SharedDescription":true,
+    "Description":"MPI_UNSIGNED_LONG is an MPI_Datatype that represents an unsigned long integer type in MPI, it corresponds to an unsigned long int in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
