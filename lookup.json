@@ -810,6 +810,10 @@
             {
                 "Name":"MPI_UNDEFINED",
                 "DirectoryName":"mpi_undefined"
+            },
+            {
+                "Name":"MPI_UNSIGNED",
+                "DirectoryName":"mpi_unsigned"
             }
         ]
     },

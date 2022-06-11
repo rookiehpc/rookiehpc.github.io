@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_UNSIGNED",
+    "DirectoryName":"mpi_unsigned",
+    "SharedDescription":true,
+    "Description":"MPI_UNSIGNED is an MPI_Datatype that represents an unsigned integer type in MPI, it corresponds to an unsigned int in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
