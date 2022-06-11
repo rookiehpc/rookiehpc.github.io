@@ -1,0 +1,35 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "default",
+    "DirectoryName": "default",
+    "SharedDescription": true,
+    "Description": "default is the OpenMP clause that sets the data-sharing policy to apply to variables that have not been explicitly assigned one. If this clause is not specified, variables are considered as having been passed implicity to the shared clause.",
+    "Categories": [
+        "Data sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"default(policy)",
+            "Parameters": [
+                {
+                    "Name": "policy",
+                    "Description": "The policy to apply to all variables not declared in a data-sharing policy clause.\nPossible values:\n\n- none: no policy will be applied by default; the programmer is required to explicitly declare the data-sharing policy of every variable.\n- shared: variables not explicitly assigned a policy will be considered as having been passed implicitly to a shared clause.",
+                    "Type": ""
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"default(policy)",
+            "Parameters": [
+                {
+                    "Name": "policy",
+                    "Description": "The policy to apply to all variables not declared in a data-sharing policy clause.\nPossible values:\n\n- none: no policy will be applied by default; the programmer is required to explicitly declare the data-sharing policy of every variable.\n- shared: variables not explicitly assigned a policy will be considered as having been passed implicitly to a shared clause.\n- private: variables not explicitly assigned a policy will be considered as having been passed implicitly to a private clause.\n- firstprivate: variables not explicitly assigned a policy will be considered as having been passed implicitly to a firstprivate clause.",
+                    "Type": ""
+                }
+            ]
+        }
+    ]
+}

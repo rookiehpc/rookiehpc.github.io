@@ -900,6 +900,10 @@
             {
                 "Name":"copyprivate",
                 "DirectoryName":"copyprivate"
+            },
+            {
+                "Name":"default",
+                "DirectoryName":"default"
             }
         ]
     }

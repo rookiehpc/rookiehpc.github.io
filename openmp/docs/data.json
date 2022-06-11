@@ -1,1 +1,1 @@
-{"Categories": {"Data copying": ["copyin", "copyprivate"]}, "Technology": "OpenMP", "Type": "DocumentationHomepage"}
+{"Categories": {"Data copying": ["copyin", "copyprivate"], "Data sharing": ["default"]}, "Technology": "OpenMP", "Type": "DocumentationHomepage"}
