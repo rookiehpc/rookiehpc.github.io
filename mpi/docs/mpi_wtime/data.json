@@ -1,0 +1,48 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Wtime",
+    "DirectoryName":"mpi_wtime",
+    "SharedDescription":false,
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Description":"MPI_Wtime is a function that returns the walltime elapsed since an arbitrary time in the past. In other words, what is reliable and relevant is the time elapsed between two calls to MPI_Wtime. Calculating the difference between two MPI walltimes will give you the elapsed time in seconds. It is also one of the rare functions in MPI whose returned value is not an error code.",
+            "Parameters":[
+
+            ],
+            "Return":
+                {
+                    "Type":"double",
+                    "Description":"The walltime elapsed since an arbitrary time in the past."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Description":"MPI_Wtime is a function that returns the walltime elapsed since an arbitrary time in the past. In other words, what is reliable and relevant is the time elapsed between two calls to MPI_Wtime. Calculating the difference between two MPI walltimes will give you the elapsed time in seconds. It is also one of the rare functions in MPI that does not accept an ierror argument.",
+            "Parameters":[
+
+            ],
+            "Return":
+                {
+                    "Type":"DOUBLE PRECISION",
+                    "Description":"The walltime elapsed since an arbitrary time in the past."
+                }
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Description":"MPI_Wtime is a function that returns the walltime elapsed since an arbitrary time in the past. In other words, what is reliable and relevant is the time elapsed between two calls to MPI_Wtime. Calculating the difference between two MPI walltimes will give you the elapsed time in seconds. It is also one of the rare functions in MPI that does not accept an ierror argument.",
+            "Parameters":[
+
+            ],
+            "Return":
+                {
+                    "Type":"DOUBLE PRECISION",
+                    "Description":"The walltime elapsed since an arbitrary time in the past."
+                }
+        }
+    ]
+}

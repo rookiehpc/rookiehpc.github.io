@@ -882,6 +882,10 @@
             {
                 "Name":"MPI_Win_free",
                 "DirectoryName":"mpi_win_free"
+            },
+            {
+                "Name":"MPI_Wtime",
+                "DirectoryName":"mpi_wtime"
             }
         ]
     },
