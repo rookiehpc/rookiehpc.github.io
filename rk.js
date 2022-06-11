@@ -43,6 +43,7 @@ const RK = {
 
     ParametersPN: "Parameters",
     ParameterPN: "Parameter",
+    PrototypePN: "Prototype",
     DimensionNumberPN: "DimensionNumber",
     NamePN: "Name",
     DescriptionPN: "Description",
@@ -830,6 +831,10 @@ const RK = {
                         }
     
                         PrototypeString += ");";
+                        if(LanguageEntry.hasOwnProperty(RK.PrototypePN) == true)
+                        {
+                            PrototypeString = LanguageEntry[RK.PrototypePN];
+                        }
                         RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.C);
     
                         // If there was at least one parameter, add the parameters section
@@ -929,6 +934,10 @@ const RK = {
                             PrototypeString += "\n    " + LanguageEntry[RK.ReturnPN][RK.TypePN] + " :: " + Entry[RK.NamePN];
                         }
     
+                        if(LanguageEntry.hasOwnProperty(RK.PrototypePN) == true)
+                        {
+                            PrototypeString = LanguageEntry[RK.PrototypePN];
+                        }
                         RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.F90);
     
                         // If there was at least one parameter, add the parameters section
@@ -1047,6 +1056,10 @@ const RK = {
                             PrototypeString += "\n    " + LanguageEntry[RK.ReturnPN][RK.TypePN] + " :: " + Entry[RK.NamePN];
                         }
     
+                        if(LanguageEntry.hasOwnProperty(RK.PrototypePN) == true)
+                        {
+                            PrototypeString = LanguageEntry[RK.PrototypePN];
+                        }
                         RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.F08);
     
                         // If there was at least one parameter, add the parameters section
