@@ -21,7 +21,7 @@
             ]
         },
         {
-            "Language": "C",
+            "Language": "FORTRAN-90",
             "Prototype":"firstprivate(list)",
             "Parameters": [
                 {
