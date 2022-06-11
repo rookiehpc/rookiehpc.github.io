@@ -1021,6 +1021,15 @@ const RK = {
                         }
     
                         PrototypeString += ")";
+                        let HasAtLeastOneCPtrArgument = false;
+                        LanguageEntry[RK.ParametersPN].forEach((ParameterEntry) => {
+                            if(ParameterEntry[RK.TypePN].contains("TYPE(C_PTR)")) {
+                                HasAtLeastOneCPtrArgument = true;
+                            }
+                        });
+                        if(HasAtLeastOneCPtrArgument) {
+                            PrototypeString += "\n    USE, INTRINSIC :: ISO_C_BINDING, ONLY : C_PTR";
+                        }
                         LanguageEntry[RK.ParametersPN].forEach((ParameterEntry) => {
                             PrototypeString += "\n    " + ParameterEntry[RK.TypePN].split(RK.ParameterTypeSplitter)[0];
                             if(RK.CanParameterBeOptional(LanguageEntry[RK.LanguagePN]) == true) {
