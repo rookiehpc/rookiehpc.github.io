@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_WCHAR",
+    "DirectoryName":"mpi_wchar",
+    "SharedDescription":true,
+    "Description":"MPI_WCHAR is an MPI_Datatype that represents a wide character type in MPI, it corresponds to a wchar_t in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}

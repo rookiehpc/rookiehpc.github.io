@@ -846,6 +846,10 @@
             {
                 "Name":"MPI_Waitsome",
                 "DirectoryName":"mpi_waitsome"
+            },
+            {
+                "Name":"MPI_WCHAR",
+                "DirectoryName":"mpi_wchar"
             }
         ]
     },
