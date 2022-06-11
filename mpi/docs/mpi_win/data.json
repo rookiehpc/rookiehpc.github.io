@@ -1,0 +1,19 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Win",
+    "DirectoryName":"mpi_win",
+    "SharedDescription":true,
+    "Description":"MPI_Win is the data structure representing windows that are used to expose memory regions with which MPI processes can interact one-sidedly. MPI windows are created with MPI_Win_create, MPI_Win_create_dynamic, MPI_Win_allocate or MPI_Win_allocate_shared. MPI windows are then destroyed with MPI_Win_free.",
+    "Categories":[
+        "One-sided"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        }
+    ]
+}

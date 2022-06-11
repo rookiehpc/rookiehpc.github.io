@@ -850,6 +850,10 @@
             {
                 "Name":"MPI_WCHAR",
                 "DirectoryName":"mpi_wchar"
+            },
+            {
+                "Name":"MPI_Win",
+                "DirectoryName":"mpi_win"
             }
         ]
     },
