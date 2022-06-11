@@ -904,6 +904,10 @@
             {
                 "Name":"default",
                 "DirectoryName":"default"
+            },
+            {
+                "Name":"firstprivate",
+                "DirectoryName":"firstprivate"
             }
         ]
     }
