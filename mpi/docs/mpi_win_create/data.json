@@ -1,0 +1,162 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Win_create",
+    "DirectoryName":"mpi_win_create",
+    "SharedDescription":true,
+    "Description":"MPI_Win_create is a first phase in using one-sided communications in MPI. MPI_Win_create allows each process to specify a window in its memory that can be accessed one-sidedly from remote processes. The call returns an opaque object that represents the attributes of each window (as specified by the initialisation call), and the group of processes that own and access the set of windows. A requirement of MPI_Win_create is that the memory space exposed through the window must be already allocated, unlike MPI_Win_allocate where the window is allocated automatically. MPI_Win_create is a collective operation; it must be called on all MPI processes in the communicator concerned. Windows created must be freed with MPI_Win_free once all pending RMA communications with that window are complete. Other variants of MPI_Win_create are MPI_Win_create_dynamic, MPI_Win_allocate and MPI_Win_allocate_shared.",
+    "Categories":[
+        "Collectives",
+        "One-sided"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"base",
+                    "Description":"The address of the start of the memory space making the window.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the memory area exposed through the window, in bytes.",
+                    "Type":"MPI_Aint",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacement_unit",
+                    "Description":"The displacement unit is used to provide an indexing feature during RMA operations. Indeed, the target displacement specified during RMA operations is multiplied by the displacement unit on that target. The displacement unit is expressed in bytes, so that it remains identical in an heterogeneous environment.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"info",
+                    "Description":"The info argument provides optimisation hints to the runtime about the expected usage pattern of the window.\n- no_locks: if set to true, then the implementation may assume that passive target synchronisation (that is, MPI_Win_lock, MPI_Win_lock_all) will not be used on the given window. This implies that this window is not used for 3-party communication, and RMA can be implemented with no (less) asynchronous agent activity at this process.\n- accumulate_ordering: controls the ordering of accumulate operations at the target. The default value is rar,raw,war,waw.\n- accumulate_ops: if set to same_op, the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation. If set to same_op_no_op, then the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation or MPI_NO_OP. This can eliminate the need to protect access for certain operation types where the hardware can guarantee atomicity. The default is same_op_no_op.\n- same_size: if set to true, then the implementation may assume that the argument size is identical on all processes, and that all processes have provided this info key with the same value.\n- same_disp_unit: if set to true, then the implementation may assume that the argument displacement_unit is identical on all processes, and that all processes have provided this info key with the same value.",
+                    "Type":"MPI_Info",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator containing all MPI processes involved in RMA communications. The various processes in the corresponding group may specify completely different target windows, in location, size, displacement units and info arguments. As long as all the get, put and accumulate accesses to a particular process fit their specific target window this should pose no problem. The same area in memory may appear in multiple windows, each associated with a different window object. However, concurrent communications to distinct, overlapping windows may lead to undefined results.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"A pointer to the variable in which store the window created.",
+                    "Type":"MPI_Win*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the window creation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"base",
+                    "Description":"The address of the start of the memory space making the window.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the memory area exposed through the window, in bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"displacement_unit",
+                    "Description":"The displacement unit is used to provide an indexing feature during RMA operations. Indeed, the target displacement specified during RMA operations is multiplied by the displacement unit on that target. The displacement unit is expressed in bytes, so that it remains identical in an heterogeneous environment.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"info",
+                    "Description":"The info argument provides optimisation hints to the runtime about the expected usage pattern of the window.\n- no_locks: if set to true, then the implementation may assume that passive target synchronisation (that is, MPI_Win_lock, MPI_Win_lock_all) will not be used on the given window. This implies that this window is not used for 3-party communication, and RMA can be implemented with no (less) asynchronous agent activity at this process.\n- accumulate_ordering: controls the ordering of accumulate operations at the target. The default value is rar,raw,war,waw.\n- accumulate_ops: if set to same_op, the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation. If set to same_op_no_op, then the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation or MPI_NO_OP. This can eliminate the need to protect access for certain operation types where the hardware can guarantee atomicity. The default is same_op_no_op.\n- same_size: if set to true, then the implementation may assume that the argument size is identical on all processes, and that all processes have provided this info key with the same value.\n- same_disp_unit: if set to true, then the implementation may assume that the argument displacement_unit is identical on all processes, and that all processes have provided this info key with the same value.",
+                    "Type":"TYPE(MPI_Info)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator containing all MPI processes involved in RMA communications. The various processes in the corresponding group may specify completely different target windows, in location, size, displacement units and info arguments. As long as all the get, put and accumulate accesses to a particular process fit their specific target window this should pose no problem. The same area in memory may appear in multiple windows, each associated with a different window object. However, concurrent communications to distinct, overlapping windows may lead to undefined results.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"window",
+                    "Description":"The variable in which store the window created.",
+                    "Type":"TYPE(MPI_Win)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the window creation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"base",
+                    "Description":"The address of the start of the memory space making the window.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the memory area exposed through the window, in bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false
+                },
+                {
+                    "Name":"displacement_unit",
+                    "Description":"The displacement unit is used to provide an indexing feature during RMA operations. Indeed, the target displacement specified during RMA operations is multiplied by the displacement unit on that target. The displacement unit is expressed in bytes, so that it remains identical in an heterogeneous environment.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"info",
+                    "Description":"The info argument provides optimisation hints to the runtime about the expected usage pattern of the window.\n- no_locks: if set to true, then the implementation may assume that passive target synchronisation (that is, MPI_Win_lock, MPI_Win_lock_all) will not be used on the given window. This implies that this window is not used for 3-party communication, and RMA can be implemented with no (less) asynchronous agent activity at this process.\n- accumulate_ordering: controls the ordering of accumulate operations at the target. The default value is rar,raw,war,waw.\n- accumulate_ops: if set to same_op, the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation. If set to same_op_no_op, then the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation or MPI_NO_OP. This can eliminate the need to protect access for certain operation types where the hardware can guarantee atomicity. The default is same_op_no_op.\n- same_size: if set to true, then the implementation may assume that the argument size is identical on all processes, and that all processes have provided this info key with the same value.\n- same_disp_unit: if set to true, then the implementation may assume that the argument displacement_unit is identical on all processes, and that all processes have provided this info key with the same value.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The communicator containing all MPI processes involved in RMA communications. The various processes in the corresponding group may specify completely different target windows, in location, size, displacement units and info arguments. As long as all the get, put and accumulate accesses to a particular process fit their specific target window this should pose no problem. The same area in memory may appear in multiple windows, each associated with a different window object. However, concurrent communications to distinct, overlapping windows may lead to undefined results.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"The variable in which store the window created.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned by the window creation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
+  

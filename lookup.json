@@ -866,6 +866,10 @@
             {
                 "Name":"MPI_Win_attach",
                 "DirectoryName":"mpi_win_attach"
+            },
+            {
+                "Name":"MPI_Win_create",
+                "DirectoryName":"mpi_win_create"
             }
         ]
     },
