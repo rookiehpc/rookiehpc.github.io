@@ -1,0 +1,17 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_UNSIGNED_SHORT",
+    "DirectoryName":"mpi_unsigned_short",
+    "SharedDescription":true,
+    "Description":"MPI_UNSIGNED_SHORT is an MPI_Datatype that represents an unsigned short integer type in MPI, it corresponds to an unsigned short int in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
+   

@@ -826,6 +826,10 @@
             {
                 "Name":"MPI_UNSIGNED_LONG_LONG",
                 "DirectoryName":"mpi_unsigned_long_long"
+            },
+            {
+                "Name":"MPI_UNSIGNED_SHORT",
+                "DirectoryName":"mpi_unsigned_short"
             }
         ]
     },
