@@ -1,0 +1,22 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_UNDEFINED",
+    "DirectoryName":"mpi_undefined",
+    "SharedDescription":true,
+    "Description":"MPI_UNDEFINED is a constant that is returned for instance when a process attempts to get its rank in a communicator in which it does not belong.",
+    "Categories":[
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        },
+        {
+            "Language":"FORTRAN-2008"
+        },
+        {
+            "Language":"FORTRAN-90"
+        }
+    ]
+}

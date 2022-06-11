@@ -806,6 +806,10 @@
             {
                 "Name":"MPI_UINT8_T",
                 "DirectoryName":"mpi_uint8_t"
+            },
+            {
+                "Name":"MPI_UNDEFINED",
+                "DirectoryName":"mpi_undefined"
             }
         ]
     },
