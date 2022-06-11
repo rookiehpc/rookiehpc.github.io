@@ -893,7 +893,10 @@
         "Technology":"OpenMP",
         "PathRoot":"/openmp/docs",
         "Entries":[
-
+            {
+                "Name":"copyin",
+                "DirectoryName":"copyin"
+            }
         ]
     }
 ]

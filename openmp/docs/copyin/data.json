@@ -1,0 +1,48 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "copyin",
+    "DirectoryName": "copyin",
+    "SharedDescription": true,
+    "Description": "copyin is a clause that can be used in a parallel construct; it acts as a mechanism to broadcast the value of a threadprivate variable from the master thread to the threadprivate variable of every other thread in the team executing the parallel region.",
+    "Categories": [
+        "Data copying"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"copyin(list)",
+            "Parameters": [
+                {
+                    "Name": "list",
+                    "Description": "The variables to pass as copyin, separated by commas.",
+                    "Type": ""
+                }
+            ],
+            "Return": {
+                "Type": "int",
+                "Description": "The error code returned from the memory address retrieval.\n- MPI_SUCCESS: The routine successfully completed."
+            }
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name": "location",
+                    "Description": "The element to obtain the address of.",
+                    "Type": "<type>\t(*)"
+                },
+                {
+                    "Name": "address",
+                    "Description": "The variable in which store the address of the element passed.",
+                    "Type": "INTEGER(KIND=MPI_ADDRESS_KIND)"
+                },
+                {
+                    "Name": "ierror",
+                    "Description": "The error code returned from the memory address retrieval.</p><ul><li>MPI_SUCCESS: The routine successfully completed.</li></ul><p>",
+                    "Type": "INTEGER"
+                }
+            ]
+        }
+    ]
+}
