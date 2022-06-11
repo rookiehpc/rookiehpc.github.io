@@ -1,0 +1,84 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Win_detach",
+    "DirectoryName":"mpi_win_detach",
+    "SharedDescription":true,
+    "Description":"MPI_Win_detach detaches the local memory region from the given window. The address of the local memory region and the window given must correspond to arguments passed to a previous call to MPI_Win_attach.",
+    "Categories":[
+        "One-sided"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window from which detach the memory region.",
+                    "Type":"MPI_Win",
+                    "Optional":false
+                },
+                {
+                    "Name":"base",
+                    "Description":"The address of the start of the local memory region to detach from the window.",
+                    "Type":"const void*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the window detachment:\n- MPI_SUCCESS: the routine completed successfully."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window from which detach the memory region.",
+                    "Type":"TYPE(MPI_Win)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"base",
+                    "Description":"The address of the start of the local memory region to detach from the window.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the window detachment:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window from which detach the memory region.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"base",
+                    "Description":"The address of the start of the local memory region to detach from the window.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the window detachment:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

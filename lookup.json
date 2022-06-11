@@ -874,6 +874,10 @@
             {
                 "Name":"MPI_Win_create_dynamic",
                 "DirectoryName":"mpi_win_create_dynamic"
+            },
+            {
+                "Name":"MPI_Win_detach",
+                "DirectoryName":"mpi_win_detach"
             }
         ]
     },
