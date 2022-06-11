@@ -830,6 +830,10 @@
             {
                 "Name":"MPI_UNSIGNED_SHORT",
                 "DirectoryName":"mpi_unsigned_short"
+            },
+            {
+                "Name":"MPI_Wait",
+                "DirectoryName":"mpi_wait"
             }
         ]
     },
