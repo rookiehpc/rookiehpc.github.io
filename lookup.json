@@ -908,6 +908,10 @@
             {
                 "Name":"firstprivate",
                 "DirectoryName":"firstprivate"
+            },
+            {
+                "Name":"lastprivate",
+                "DirectoryName":"lastprivate"
             }
         ]
     }

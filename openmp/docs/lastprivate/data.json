@@ -1,0 +1,45 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "lastprivate",
+    "DirectoryName": "lastprivate",
+    "SharedDescription": true,
+    "Description": "lastprivate is a clause that can be used in a parallelised loop or sections. The lastprivate clause shares some of the semantics of the private clause. That is, each thread will have an uninitialised copy of the variables passed as lastprivate. However, unlike a private variable, at the end of the parallelised loop or sections, a lastprivate variable will take the value of the copy hosted at the thread that executed the last iteration (in the case of a parallelised loop) or section. The \"last\" iteration or section is the one that would be executed last if they were executed sequentially. The other possible data-sharing policies are shared, private, firstprivate and linear.",
+    "Categories": [
+        "Data sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"lastprivate([modifier:] list)",
+            "Parameters": [
+                {
+                    "Name": "modifier",
+                    "Description": "The modifier to apply on the list of lastprivate variables passed.\nPossible values:\n\n- conditional: when a lastprivate clause without the conditional modifier appears on a directive, the value of each new list item from the sequentially last iteration of the associated loops, or the lexically last section construct, is assigned to the original list item. When the conditional modifier appears on the clause, if an assignment to a list item is encountered in the construct then the original list item is assigned the value that is assigned to the new list item in the sequentially last iteration or lexically last section in which such an assignment is encountered. In other words, without the conditional clause, it is assumed that the lastprivate variables are assigned a value at every iteration or in every section. Therefore, the last iteration or last section executed will be selected to determine the value of the lastprivate variable. However, there may be a parallelised loop with only certain iterations assigning a value to the lastprivate variable, similary for sections where not all section may assign a value to the lastprivate variable. In which case, the conditional modifier indicates this particularity and the value of the lastprivate variable will be set to the last iteration or last section that did assign a value to it.",
+                    "Type": ""
+                },
+                {
+                    "Name": "list",
+                    "Description": "The variables to pass as lastprivate, separated by commas.",
+                    "Type": ""
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"lastprivate([modifier:] list)",
+            "Parameters": [
+                {
+                    "Name": "modifier",
+                    "Description": "The modifier to apply on the list of lastprivate variables passed.\nPossible values:\n\n- conditional: when a lastprivate clause without the conditional modifier appears on a directive, the value of each new list item from the sequentially last iteration of the associated loops, or the lexically last section construct, is assigned to the original list item. When the conditional modifier appears on the clause, if an assignment to a list item is encountered in the construct then the original list item is assigned the value that is assigned to the new list item in the sequentially last iteration or lexically last section in which such an assignment is encountered. In other words, without the conditional clause, it is assumed that the lastprivate variables are assigned a value at every iteration or in every section. Therefore, the last iteration or last section executed will be selected to determine the value of the lastprivate variable. However, there may be a parallelised loop with only certain iterations assigning a value to the lastprivate variable, similary for sections where not all section may assign a value to the lastprivate variable. In which case, the conditional modifier indicates this particularity and the value of the lastprivate variable will be set to the last iteration or last section that did assign a value to it.",
+                    "Type": ""
+                },
+                {
+                    "Name": "list",
+                    "Description": "The variables to pass as lastprivate, separated by commas.",
+                    "Type": ""
+                }
+            ]
+        }
+    ]
+}
