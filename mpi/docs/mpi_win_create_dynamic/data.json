@@ -1,0 +1,104 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Win_create_dynamic",
+    "DirectoryName":"mpi_win_create_dynamic",
+    "SharedDescription":true,
+    "Description":"MPI_Win_create_dynamic creates a window through which other MPI processes will be able to interact one-sidedly. Unlike other window creation routines however, MPI_Win_create_dynamic does not assign a memory region to the window during creation. Instead, memory regions can be attached to, or detached from, the window during runtime. RMA interactions with a window created with MPI_Win_create_dynamic have one specificity; the target displacement must be the actual address of the memory region on the target. In other terms, the address must have been received from the target beforehand. MPI_Win_create_dynamic is a collective operation; it must be called by all MPI processes in the intra-communicator. Other variants of MPI_Win_create_dynamic are MPI_Win_create, MPI_Win_allocate and MPI_Win_allocate_shared.",
+    "Categories":[
+        "Collectives",
+        "One-sided"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"info",
+                    "Description":"The info argument provides optimisation hints to the runtime about the expected usage pattern of the window.\n- no_locks: if set to true, then the implementation may assume that passive target synchronisation (that is, MPI_Win_lock, MPI_Win_lock_all) will not be used on the given window. This implies that this window is not used for 3-party communication, and RMA can be implemented with no (less) asynchronous agent activity at this process.\n- accumulate_ordering: controls the ordering of accumulate operations at the target. The default value is rar,raw,war,waw.\n- accumulate_ops: if set to same_op, the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation. If set to same_op_no_op, then the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation or MPI_NO_OP. This can eliminate the need to protect access for certain operation types where the hardware can guarantee atomicity. The default is same_op_no_op.\n- same_size: if set to true, then the implementation may assume that the argument size is identical on all processes, and that all processes have provided this info key with the same value.\n- same_disp_unit: if set to true, then the implementation may assume that the argument displacement_unit is identical on all processes, and that all processes have provided this info key with the same value.",
+                    "Type":"MPI_Info",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The intra-communicator containing all MPI processes involved in RMA communications. The various processes in the corresponding group may specify completely different target windows, in location, size, displacement units and info arguments. As long as all the get, put and accumulate accesses to a particular process fit their specific target window this should pose no problem. The same area in memory may appear in multiple windows, each associated with a different window object. However, concurrent communications to distinct, overlapping windows may lead to undefined results.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"A pointer on the variable in which store the window created.",
+                    "Type":"MPI_Win*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned during the window creation:\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"info",
+                    "Description":"The info argument provides optimisation hints to the runtime about the expected usage pattern of the window.\n- no_locks: if set to true, then the implementation may assume that passive target synchronisation (that is, MPI_Win_lock, MPI_Win_lock_all) will not be used on the given window. This implies that this window is not used for 3-party communication, and RMA can be implemented with no (less) asynchronous agent activity at this process.\n- accumulate_ordering: controls the ordering of accumulate operations at the target. The default value is rar,raw,war,waw.\n- accumulate_ops: if set to same_op, the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation. If set to same_op_no_op, then the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation or MPI_NO_OP. This can eliminate the need to protect access for certain operation types where the hardware can guarantee atomicity. The default is same_op_no_op.\n- same_size: if set to true, then the implementation may assume that the argument size is identical on all processes, and that all processes have provided this info key with the same value.\n- same_disp_unit: if set to true, then the implementation may assume that the argument displacement_unit is identical on all processes, and that all processes have provided this info key with the same value.",
+                    "Type":"TYPE(MPI_Info)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The intra-communicator containing all MPI processes involved in RMA communications. The various processes in the corresponding group may specify completely different target windows, in location, size, displacement units and info arguments. As long as all the get, put and accumulate accesses to a particular process fit their specific target window this should pose no problem. The same area in memory may appear in multiple windows, each associated with a different window object. However, concurrent communications to distinct, overlapping windows may lead to undefined results.",
+                    "Type":"TYPE(MPI_Comm)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"window",
+                    "Description":"The variable in which store the window created.",
+                    "Type":"TYPE(MPI_Win)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the window creation:\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"info",
+                    "Description":"The info argument provides optimisation hints to the runtime about the expected usage pattern of the window.\n- no_locks: if set to true, then the implementation may assume that passive target synchronisation (that is, MPI_Win_lock, MPI_Win_lock_all) will not be used on the given window. This implies that this window is not used for 3-party communication, and RMA can be implemented with no (less) asynchronous agent activity at this process.\n- accumulate_ordering: controls the ordering of accumulate operations at the target. The default value is rar,raw,war,waw.\n- accumulate_ops: if set to same_op, the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation. If set to same_op_no_op, then the implementation will assume that all concurrent accumulate calls to the same target address will use the same operation or MPI_NO_OP. This can eliminate the need to protect access for certain operation types where the hardware can guarantee atomicity. The default is same_op_no_op.\n- same_size: if set to true, then the implementation may assume that the argument size is identical on all processes, and that all processes have provided this info key with the same value.\n- same_disp_unit: if set to true, then the implementation may assume that the argument displacement_unit is identical on all processes, and that all processes have provided this info key with the same value.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description":"The intra-communicator containing all MPI processes involved in RMA communications. The various processes in the corresponding group may specify completely different target windows, in location, size, displacement units and info arguments. As long as all the get, put and accumulate accesses to a particular process fit their specific target window this should pose no problem. The same area in memory may appear in multiple windows, each associated with a different window object. However, concurrent communications to distinct, overlapping windows may lead to undefined results.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"window",
+                    "Description":"The variable in which store the window created.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the window creation:\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

@@ -870,6 +870,10 @@
             {
                 "Name":"MPI_Win_create",
                 "DirectoryName":"mpi_win_create"
+            },
+            {
+                "Name":"MPI_Win_create_dynamic",
+                "DirectoryName":"mpi_win_create_dynamic"
             }
         ]
     },
