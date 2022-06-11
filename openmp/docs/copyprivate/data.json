@@ -1,0 +1,35 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "copyprivate",
+    "DirectoryName": "copyprivate",
+    "SharedDescription": true,
+    "Description": "copyprivate is a clause that can be used in a single construct; it acts as a mechanism to broadcast the value of a variable private to an implicit task to those of other implicit tasks in the parallel region.",
+    "Categories": [
+        "Data copying"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"copyprivate(list)",
+            "Parameters": [
+                {
+                    "Name": "list",
+                    "Description": "The variables to pass as copyprivate, separated by commas.",
+                    "Type": ""
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"copyprivate(list)",
+            "Parameters": [
+                {
+                    "Name": "list",
+                    "Description": "The variables to pass as copyprivate, separated by commas.",
+                    "Type": ""
+                }
+            ]
+        }
+    ]
+}

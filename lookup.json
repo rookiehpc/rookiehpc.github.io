@@ -896,6 +896,10 @@
             {
                 "Name":"copyin",
                 "DirectoryName":"copyin"
+            },
+            {
+                "Name":"copyprivate",
+                "DirectoryName":"copyprivate"
             }
         ]
     }
