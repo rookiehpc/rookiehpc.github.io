@@ -862,6 +862,10 @@
             {
                 "Name":"MPI_Win_allocate_shared",
                 "DirectoryName":"mpi_win_allocate_shared"
+            },
+            {
+                "Name":"MPI_Win_attach",
+                "DirectoryName":"mpi_win_attach"
             }
         ]
     },

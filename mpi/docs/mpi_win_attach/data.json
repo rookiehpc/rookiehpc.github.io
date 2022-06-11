@@ -1,0 +1,103 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Win_attach",
+    "DirectoryName":"mpi_win_attach",
+    "SharedDescription":true,
+    "Description":"MPI_Win_attach attaches a local memory region for remote access within the given window. The window must have been created with MPI_Win_create_dynamic and the memory region specified must not contain any part that is already attached to that window. Multiple memory regions may be attached to the same window as long as they do not overlap. A memory region attached can then be detached with MPI_Win_detach.",
+    "Categories":[
+        "One-sided"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window to which attach the memory region.",
+                    "Type":"MPI_Win",
+                    "Optional":false
+                },
+                {
+                    "Name":"base",
+                    "Description":"The address of the first element in the memory region to be attached.",
+                    "Type":"void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the memory region to be attached, in bytes.",
+                    "Type":"MPI_Aint",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the window attachement:\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window to which attach the memory region.",
+                    "Type":"TYPE(MPI_Win)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"base",
+                    "Description":"The address of the first element in the memory region to be attached.",
+                    "Type":"TYPE(*), DIMENSION(..), ASYNCHRONOUS",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the memory region to be attached, in bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the window attachment:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"window",
+                    "Description":"The window to which attach the memory region.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"base",
+                    "Description":"The address of the first element in the memory region to be attached.",
+                    "Type":"<type>\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"size",
+                    "Description":"The size of the memory region to be attached, in bytes.",
+                    "Type":"INTEGER(KIND=MPI_ADDRESS_KIND)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the window attachment:\n- MPI_SUCCESS: the routine completed successfully.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
