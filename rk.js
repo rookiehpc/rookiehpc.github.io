@@ -162,26 +162,6 @@ const RK = {
         }
     },
 
-    HasReturn: (Language) => {
-        switch(Language) {
-            case RK.LANGUAGES.C:
-                return true;
-                break;
-            case RK.LANGUAGES.CPP:
-                return true;
-                break;
-            case RK.LANGUAGES.F90:
-                return false;
-                break;
-            case RK.LANGUAGES.F08:
-                return false;
-                break;
-            default:
-                throw 'Language ' + Language + ' is not covered';
-                break;
-        }
-    },
-
     ToOrdinal: (Number) => {
         var j = Number % 10,
             k = Number % 100;
@@ -330,9 +310,8 @@ const RK = {
                     }
                     ParameterCount++;
                 });
-                if(RK.HasReturn(Language[RK.LanguagePN])) {
+                if(Language.hasOwnProperty(RK.ReturnPN)) {
                     RK.SetLocation(RK.LocationRoot + RK.LocationSeparator + RK.LanguagesPN + RK.LocationSeparator + RK.ToOrdinal(LanguageCount) + " " + RK.LanguagePN + RK.LocationSeparator + RK.ReturnPN);
-                    RK.AssertMustHave(Language, RK.ReturnPN);
                     RK.AssertType(Language, RK.ReturnPN, "object");
                     let Return = Language[RK.ReturnPN];
                     if(RK.IsParameterTypeRequired(Language[RK.LanguagePN])) {
@@ -776,7 +755,7 @@ const RK = {
                     LanguageFileFormat = RK.LANGUAGE_FILE_EXTENSIONS.C;
                     if(LanguageEntry.hasOwnProperty(RK.ParametersPN) == true) {
                         let PrototypeString = "";
-                        PrototypeString += LanguageEntry[RK.ReturnPN][RK.TypePN] + " " + Entry[RK.NamePN] + "(";
+                        PrototypeString += (LanguageEntry.hasOwnProperty(RK.ReturnPN) ? LanguageEntry[RK.ReturnPN][RK.TypePN]  : "void") + " " + Entry[RK.NamePN] + "(";
                         const PrototypeStringLength = PrototypeString.length;
     
                         let DefinitionList = null;
@@ -843,25 +822,28 @@ const RK = {
                         }
     
                         // Create the return part if any
-                        const ReturnPage = document.createElement('article');
-                        ReturnPage.classList.add("PageArticle")
-                        LanguageDocs.appendChild(ReturnPage);
-    
-                        const ReturnPageHeader = document.createElement('div');
-                        ReturnPageHeader.classList.add("PageArticleHeader")
-                        ReturnPage.appendChild(ReturnPageHeader);
-    
-                        const ReturnPageHeaderTitle = document.createElement('h2');
-                        ReturnPageHeaderTitle.innerText = RK.ReturnPN;
-                        ReturnPageHeader.appendChild(ReturnPageHeaderTitle);
-    
-                        const ParametersPageBody = document.createElement('div');
-                        ParametersPageBody.classList.add("PageArticleBody")
-                        ReturnPage.appendChild(ParametersPageBody);
-    
-                        let ReturnDescription = document.createElement('p');
-                        ReturnDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.ReturnPN][RK.DescriptionPN]));
-                        ParametersPageBody.appendChild(ReturnDescription);
+                        if(LanguageEntry.hasOwnProperty(RK.ReturnPN))
+                        {
+                            const ReturnPage = document.createElement('article');
+                            ReturnPage.classList.add("PageArticle")
+                            LanguageDocs.appendChild(ReturnPage);
+        
+                            const ReturnPageHeader = document.createElement('div');
+                            ReturnPageHeader.classList.add("PageArticleHeader")
+                            ReturnPage.appendChild(ReturnPageHeader);
+        
+                            const ReturnPageHeaderTitle = document.createElement('h2');
+                            ReturnPageHeaderTitle.innerText = RK.ReturnPN;
+                            ReturnPageHeader.appendChild(ReturnPageHeaderTitle);
+        
+                            const ParametersPageBody = document.createElement('div');
+                            ParametersPageBody.classList.add("PageArticleBody")
+                            ReturnPage.appendChild(ParametersPageBody);
+        
+                            let ReturnDescription = document.createElement('p');
+                            ReturnDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.ReturnPN][RK.DescriptionPN]));
+                            ParametersPageBody.appendChild(ReturnDescription);
+                        }
                     }
                     break;
                 case RK.LANGUAGES.F90:
