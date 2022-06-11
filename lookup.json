@@ -838,6 +838,10 @@
             {
                 "Name":"MPI_Waitall",
                 "DirectoryName":"mpi_waitall"
+            },
+            {
+                "Name":"MPI_Waitany",
+                "DirectoryName":"mpi_waitany"
             }
         ]
     },

@@ -1,0 +1,124 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Waitany",
+    "DirectoryName":"mpi_waitany",
+    "SharedDescription":true,
+
+    "Description":"MPI_Waitany is a version of MPI_Wait that can be applied on an array of requests handlers, waiting until one of the non-blocking routines pointed completes. If more than one operation terminated, one is arbitrarily chosen. Other versions are MPI_Wait, MPI_Waitsome and MPI_Waitall.",
+    "Categories":[
+        "Synchronisation"
+    ],
+
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"Number of request handlers in the array of requests passed.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The array of request handlers corresponding to the non-blocking routines to wait on.",
+                    "Type":"MPI_Request\t[]",
+                    "Optional":false
+                },
+                {
+                    "Name":"index",
+                    "Description":"The variable in which store the index of the request handler corresponding to the non-blocking routine that completed.",
+                    "Type":"int*",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status returned by the non-blocking routine that completed. It can be MPI_STATUS_IGNORE if the status is unused.",
+                    "Type":"MPI_Status*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the waitings.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"Number of request handlers in the array of requests passed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The array of request handlers corresponding to the non-blocking routines to wait on.",
+                    "Type":"TYPE(MPI_Request)\t(count)",
+                    "Optional":false,
+                    "Intent":"INOUT"
+                },
+                {
+                    "Name":"index",
+                    "Description":"The variable in which store the index of the request handler corresponding to the non-blocking routine that completed.",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status returned by the non-blocking routine that completed. It can be MPI_STATUS_IGNORE if the status is unused.",
+                    "Type":"TYPE(MPI_Status)",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the waitings.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"count",
+                    "Description":"Number of request handlers in the array of requests passed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"requests",
+                    "Description":"The array of request handlers corresponding to the non-blocking routines to wait on.",
+                    "Type":"INTEGER\t(*)",
+                    "Optional":false
+                },
+                {
+                    "Name":"index",
+                    "Description":"The variable in which store the index of the request handler corresponding to the non-blocking routine that completed.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"status",
+                    "Description":"The variable in which store the status returned by the non-blocking routine that completed. It can be MPI_STATUS_IGNORE if the status is unused.",
+                    "Type":"INTEGER\t(MPI_STATUS_SIZE)",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the waitings.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
