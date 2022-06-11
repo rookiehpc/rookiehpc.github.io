@@ -814,6 +814,10 @@
             {
                 "Name":"MPI_UNSIGNED",
                 "DirectoryName":"mpi_unsigned"
+            },
+            {
+                "Name":"MPI_UNSIGNED_CHAR",
+                "DirectoryName":"mpi_unsigned_char"
             }
         ]
     },

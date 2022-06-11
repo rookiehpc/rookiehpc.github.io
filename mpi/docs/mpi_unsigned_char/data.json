@@ -1,0 +1,16 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_UNSIGNED_CHAR",
+    "DirectoryName":"mpi_unsigned_char",
+    "SharedDescription":true,
+    "Description":"MPI_UNSIGNED_CHAR is an MPI_Datatype that represents a unsigned character type in MPI, it corresponds to a unsigned char in C.",
+    "Categories":[
+        "Datatypes"
+    ],
+    "Languages": [
+        {
+            "Language":"C"
+        }
+    ]
+}
