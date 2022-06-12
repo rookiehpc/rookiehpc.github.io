@@ -970,6 +970,10 @@
                 "DirectoryName":"omp_sched_static"
             },
             {
+                "Name":"omp_sched_t",
+                "DirectoryName":"omp_sched_t"
+            },
+            {
                 "Name":"parallel",
                 "DirectoryName":"parallel"
             },
