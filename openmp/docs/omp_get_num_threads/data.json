@@ -1,0 +1,33 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_get_num_threads",
+    "DirectoryName": "omp_get_num_threads",
+    "SharedDescription": true,
+    "Description": "omp_get_num_threads returns the number of threads in the current OpenMP region. If this function is called outside a parallel region, only the master thread is present hence the value returned is 1. Although spellings are close, do not confuse this function with omp_get_thread_num.",
+    "Categories": [
+        "Teaming"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters": [
+            ],
+            "Return":
+            {
+                "Type":"int",
+                "Description":"The number of threads contained in the current region."
+            }
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+            ],
+            "Return":
+            {
+                "Type":"INTEGER",
+                "Description":"The number of threads contained in the current region."
+            }
+        }
+    ]
+}
