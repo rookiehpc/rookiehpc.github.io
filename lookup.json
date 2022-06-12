@@ -998,6 +998,10 @@
                 "DirectoryName":"runtime"
             },
             {
+                "Name":"schedule",
+                "DirectoryName":"schedule"
+            },
+            {
                 "Name":"shared",
                 "DirectoryName":"shared"
             },

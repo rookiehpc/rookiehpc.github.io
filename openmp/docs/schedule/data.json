@@ -1,0 +1,57 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "schedule",
+    "DirectoryName": "schedule",
+    "SharedDescription": true,
+    "Description": "The schedule clause tells OpenMP how to distribute the loop iterations to the threads.",
+    "Categories": [
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"schedule([modifier[, modifier]:] kind [, chunk_size])",
+            "Parameters": [
+                {
+                    "Name": "modifier",
+                    "Description": "The modifier to apply.\nPossible values:\n- monotonic: each thread executes the chunks that it is assigned in increasing logical iteration order.\n- non-monotonic: each thread may execute the chunks that it is assigned in any order. The behavior of an application that depends on any execution order of the chunks is unspecified.\n- simd: if the loop is associated with a simd construct, the chunk_size for all chunks except the first and last chunks is new_chunk_size = ⌈chunk_size/simd_width⌉ * simd_width, where simd_width is an implementation-defined value. The first chunk will have at least new_chunk_size iterations except if it is also the last chunk. The last chunk may have fewer iterations than new_chunk_size. If the simd modifier is specified and the loop is not associated with a simd construct, the modifier is ignored.",
+                    "Type": "",
+                    "Optional":true
+                }, {
+                    "Name": "kind",
+                    "Description": "The OpenMP scheduling kind to use.\nPossible values:\n- auto: the auto scheduling kind will apply.\n- dynamic: the dynamic scheduling kind will apply.\n- guided: the guided scheduling kind will apply.\n- runtime: the runtime scheduling kind will apply.\n- static: the static scheduling kind will apply.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "chunk_size",
+                    "Description": "Optional argument that specifies how many iterations make a chunk. OpenMP schedules distribute chunks of iterations, this parameter therefore defines the scheduling \"granularity\".",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"schedule([modifier[, modifier]:] kind [, chunk_size])",
+            "Parameters": [
+                {
+                    "Name": "modifier",
+                    "Description": "The modifier to apply.\nPossible values:\n- monotonic: each thread executes the chunks that it is assigned in increasing logical iteration order.\n- non-monotonic: each thread may execute the chunks that it is assigned in any order. The behavior of an application that depends on any execution order of the chunks is unspecified.\n- simd: if the loop is associated with a simd construct, the chunk_size for all chunks except the first and last chunks is new_chunk_size = ⌈chunk_size/simd_width⌉ * simd_width, where simd_width is an implementation-defined value. The first chunk will have at least new_chunk_size iterations except if it is also the last chunk. The last chunk may have fewer iterations than new_chunk_size. If the simd modifier is specified and the loop is not associated with a simd construct, the modifier is ignored.",
+                    "Type": "",
+                    "Optional":true
+                }, {
+                    "Name": "kind",
+                    "Description": "The OpenMP scheduling kind to use.\nPossible values:\n- auto: the auto scheduling kind will apply.\n- dynamic: the dynamic scheduling kind will apply.\n- guided: the guided scheduling kind will apply.\n- runtime: the runtime scheduling kind will apply.\n- static: the static scheduling kind will apply.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "chunk_size",
+                    "Description": "Optional argument that specifies how many iterations make a chunk. OpenMP schedules distribute chunks of iterations, this parameter therefore defines the scheduling \"granularity\".",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}
