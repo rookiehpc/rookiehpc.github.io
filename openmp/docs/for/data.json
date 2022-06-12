@@ -11,7 +11,7 @@
     "Languages": [
         {
             "Language": "C",
-            "Prototype":" #pragma omp for [clause[[,]clause]...] <new-line>\n    <for-loops>",
+            "Prototype":"#pragma omp for [clause[[,]clause]...] <new-line>\n    <for-loops>",
             "Parameters": [
                 {
                     "Name":"clause",
