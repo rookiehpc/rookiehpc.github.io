@@ -14,7 +14,7 @@
             "Prototype":"!$omp do [clause[[,]clause]...]\n    <do-loops>\n[!$omp end do [nowait]]",
             "Parameters": [
                 {
-                    "Name":"num",
+                    "Name":"clause",
                     "Description":"The clause to appear on the do construct:\n- private(list)\n- firstprivate(list)\n- lastprivate([modifier :] list)\n- linear(list[ : step])\n- reduction([modifier,]identifier : list) \n- schedule([modifier[,modifier ] : ]kind[,chunk_size])\n- collapse(n)\n- ordered[(n)]\n- allocate([allocator :]list)\n- order(concurrent)",
                     "Type":"",
                     "Optional":true
