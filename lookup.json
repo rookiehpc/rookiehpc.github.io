@@ -950,6 +950,10 @@
                 "DirectoryName":"omp_get_wtime"
             },
             {
+                "Name":"omp_sched_auto",
+                "DirectoryName":"omp_sched_auto"
+            },
+            {
                 "Name":"parallel",
                 "DirectoryName":"parallel"
             },
