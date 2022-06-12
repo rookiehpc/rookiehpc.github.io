@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "none",
+    "DirectoryName": "none",
+    "SharedDescription": true,
+    "Description": "none is the clause used as part of the default clause to specify that every variable passed to the parallel region must be explicitly referenced in a data-sharing policy clause: shared, private, firstprivate, lastprivate or linear.",
+    "Categories": [
+        "Data sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
