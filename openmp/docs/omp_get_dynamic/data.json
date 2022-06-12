@@ -26,7 +26,7 @@
             "Return":
             {
                 "Type":"int",
-                "Description":"The dynamic adjustement state.\n- 0: Dynamic adjustement is disabled.\n- <otherwise>: Dynamic adjustement is enabled."
+                "Description":"The dynamic adjustement state.\n- .FALSE.: Dynamic adjustement is disabled.\n- .TRUE.: Dynamic adjustement is enabled."
             }
         }
     ]
