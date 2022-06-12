@@ -1032,6 +1032,10 @@
             {
                 "Name":"task_reduction",
                 "DirectoryName":"task_reduction"
+            },
+            {
+                "Name":"taskgroup",
+                "DirectoryName":"taskgroup"
             }
         ]
     }

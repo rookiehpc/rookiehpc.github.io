@@ -1,0 +1,28 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "taskgroup",
+    "DirectoryName": "taskgroup",
+    "SharedDescription": true,
+    "Description": "The taskgroup construct specifies a wait on completion of child tasks of the current task and their descendent tasks. It contrasts with the taskwait construct which waits only on child tasks but not their descendents.",
+    "Categories": [
+        "Synchronisation",
+        "Tasking"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp taskgroup [clause[[,]clause]...] <new-line>\n    <structured-block>",
+            "Parameters": [
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp taskgroup [clause[[,]clause]...]\n    <structured-block>\n!$omp end taskgroup",
+            "Parameters": [
+                
+            ]
+        }
+    ]
+}
