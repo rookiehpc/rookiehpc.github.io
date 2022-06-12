@@ -894,6 +894,10 @@
         "PathRoot":"/openmp/docs",
         "Entries":[
             {
+                "Name":"atomic",
+                "DirectoryName":"atomic"
+            },
+            {
                 "Name":"auto",
                 "DirectoryName":"auto"
             },

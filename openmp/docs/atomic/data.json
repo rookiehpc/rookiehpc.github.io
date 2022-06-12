@@ -1,0 +1,47 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "atomic",
+    "DirectoryName": "atomic",
+    "SharedDescription": true,
+    "Description": "The reduction clause indicates that the variables passed are, as its name suggests, used in a reduction. Each implicit task or SIMD lane creates a private copy initialises it to the initialiser value of the reduction identifier, that is, 0 for a sum or 1 for a product to name a few. After the end of the region, the original list item is updated with the values of the private copies using the combiner associated with the reduction identifier.\nBy default, the reduction computation is complete at the end of the construct. However, if nowait is specified on the construct, this is no longer guaranteed. Indeed, accesses to the original list item will create a data race and, thus, have unspecified effect unless synchronisation ensures that they occur after all threads have executed all of their iterations or section constructs, and the reduction computation has completed and stored the computed value of that list item. This can most simply be ensured through a barrier synchronisation.",
+    "Categories": [
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp atomic [clause[[,]clause]...] <new-line>\n    <expression-stmt>\n\nor\n\n#pragma omp atomic [clause[[[,]clause]...][,]] atomic-clause [[,]clause[[[,]clause]...]] <new-line>\n    <expression-stmt>\n\nor\n\n#pragma omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]] <new-line>\n    <structured-block>",
+            "Parameters": [
+                {
+                    "Name": "atomic-clause",
+                    "Description": "The atomic-clause to appear on the atomic construct:\n- read\n- write\n- update\n- capture",
+                    "Type": "",
+                    "Optional":true
+                }, {
+                    "Name": "clause",
+                    "Description": "The clause to appear on the atomic construct:\n- seq_cst\n- acq_rel\n- release\n- acquire\n- relaxed\n- hint(hint-expression)",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp atomic [clause[[,]clause]...]\n    <update-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] read [[,]clause[[[,]clause]...]]\n    <capture-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] write [[,]clause[[[,]clause]...]]\n    <write-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] update [[,]clause[[[,]clause]...]]\n    <update-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <update-statement>\n    <capture-statement>\n!$omp end atomic\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <capture-statement>\n    <update-statement>\n!$omp end atomic\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <capture-statement>\n    <write-statement>\n!$omp end atomic",
+            "Parameters": [
+                {
+                    "Name": "atomic-clause",
+                    "Description": "The atomic-clause to appear on the atomic construct:\n- read\n- write\n- update\n- capture",
+                    "Type": "",
+                    "Optional":true
+                }, {
+                    "Name": "clause",
+                    "Description": "The clause to appear on the atomic construct:\n- seq_cst\n- acq_rel\n- release\n- acquire\n- relaxed\n- hint(hint-expression)",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}
