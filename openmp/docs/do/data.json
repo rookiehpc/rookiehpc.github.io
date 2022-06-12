@@ -1,0 +1,25 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "do",
+    "DirectoryName": "do",
+    "SharedDescription": true,
+    "Description": "The do construct tells OpenMP that the iteration set of the do loop that follows is to be distributed across the threads present in the team. Without the do construct, the entire iteration set of the do loop concerned will be executed by each thread in the team. From a syntactic point of view, note that the do construct must be immediately followed by the do loop; it does not allow curly brackets between it and the do loop.",
+    "Categories": [
+        "Work sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp do [clause[[,]clause]...]\n    <do-loops>\n[!$omp end do [nowait]]",
+            "Parameters": [
+                {
+                    "Name":"num",
+                    "Description":"The clause to appear on the do construct:\n- private(list)\n- firstprivate(list)\n- lastprivate([modifier :] list)\n- linear(list[ : step])\n- reduction([modifier,]identifier : list) \n- schedule([modifier[,modifier ] : ]kind[,chunk_size])\n- collapse(n)\n- ordered[(n)]\n- allocate([allocator :]list)\n- order(concurrent)",
+                    "Type":"",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}
