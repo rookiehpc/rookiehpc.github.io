@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "static",
+    "DirectoryName": "static",
+    "SharedDescription": true,
+    "Description": "static is an OpenMP schedule policy. It distributes the iteration chunks to the threads available following a round-robin distribution: first chunk to first thread, second chunk to second thread and so on. If no chunksize is passed by the user (see schedule), the chunk size is set so that every thread has at most 1 chunk. If the user passes a chunk size such that there are more chunks than threads, when the last thread receives a chunk, the distribution starts another dispatching round from the first thread. The distribution does as many rounds as needed to dispatch all chunks. Conversely, in the event that the user passes a chunk size such that there are more threads than chunks, only the first n threads will obtain a chunk, with n being the total number of chunks. Other OpenMP policies are dynamic, guided, auto and runtime.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
