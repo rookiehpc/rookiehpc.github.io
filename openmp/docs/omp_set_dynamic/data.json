@@ -1,0 +1,33 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_set_dynamic",
+    "DirectoryName": "omp_set_dynamic",
+    "SharedDescription": true,
+    "Description": "The function omp_set_dynamic is one of the two ways to enable / disable dynamic adjustment. The other one is the environment variable OMP_DYNAMIC. Dynamic adjustment is the feature that allows the runtime system to provide fewer threads than requested for a parallel region. In codes with recursively nested parallel regions for instance, the total number of threads to spawn may generate a high oversubscription, dynamic adjustement allows the runtime system to handle that growth. One can check if dynamic adjustment is enabled or disabled using the function omp_get_dynamic.",
+    "Categories": [
+        "Teaming"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters": [
+                {
+                    "Name":"state",
+                    "Description":"If it evaluates to true dynamic adjustement is allowed, not allowed where appropriate.",
+                    "Type":"int"
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"state",
+                    "Description":"If it evaluates to true dynamic adjustement is allowed, not allowed where appropriate.",
+                    "Type":"LOGICAL"
+                }
+            ]
+        }
+    ]
+}

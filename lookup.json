@@ -1014,6 +1014,10 @@
                 "DirectoryName":"omp_schedule"
             },
             {
+                "Name":"omp_set_dynamic",
+                "DirectoryName":"omp_set_dynamic"
+            },
+            {
                 "Name":"omp_set_schedule",
                 "DirectoryName":"omp_set_schedule"
             },
