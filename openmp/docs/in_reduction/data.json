@@ -1,0 +1,48 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "in_reduction",
+    "DirectoryName": "in_reduction",
+    "SharedDescription": true,
+    "Description": "The in_reduction clause specifies that a task participates in a reduction defined by an enclosing region for a matching list item that appears in a task_reduction clause or a reduction clause with the task modifier. If the construct in which the in_reduction clause appears is:\n- task: the generated task becomes the participating task. For each list item, a private copy may be created as if the private clause had been used.\n- target: the target task becomes the participating task. For each list item, a private copy will be created in the data environment of the target task as if the private clause had been used, and this private copy will be implicitly mapped into the device data environment of the target device.\nAt the end of the task region, if a private copy was created its value is combined with a copy created by a reduction scoping clause or with the original list item.",
+    "Categories": [
+        "Reduction",
+        "Tasking"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"in_reduction(identifier : list)",
+            "Parameters": [
+                {
+                    "Name": "identifier",
+                    "Description": "The identifier indicating the reduction operation to apply. It is either a user-defined operator or one of the following operators:\n- +: sum.\n- -: difference.\n- *: product.\n- &: bit-wise and.\n- |: bit-wise or.\n- ^: bit-wise exclusive or.\n- &&: logical and.\n- ||: logical or.\n- min: minimum.\n- max: maximum.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "list",
+                    "Description": "The list of reduction variables, separated with commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"in_reduction(identifier : list)",
+            "Parameters": [
+                {
+                    "Name": "identifier",
+                    "Description": "The identifier indicating the reduction operation to apply. It is either a user-defined operator, one of the following operators:\n- +: sum.\n- -: difference.\n- *: production.\n- .and.: logical and.\n- .or.: logical or.\n- .eqv.: logical equivalence.\n- .neqv.: logical non-equivalence.\nor one of the following intrinsic procedure names:\n- max: maximum.\n- min: minimum.\n- iand: bit-wise and.\n- ior: bit-wise or.\n- ieor: bit-wise exlusive or.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "list",
+                    "Description": "The list of reduction variables, separated with commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}

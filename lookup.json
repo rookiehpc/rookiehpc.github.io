@@ -910,6 +910,10 @@
                 "DirectoryName":"firstprivate"
             },
             {
+                "Name":"in_reduction",
+                "DirectoryName":"in_reduction"
+            },
+            {
                 "Name":"lastprivate",
                 "DirectoryName":"lastprivate"
             },
