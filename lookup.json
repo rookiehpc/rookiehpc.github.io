@@ -910,6 +910,10 @@
                 "DirectoryName":"default"
             },
             {
+                "Name":"dynamic",
+                "DirectoryName":"dynamic"
+            },
+            {
                 "Name":"firstprivate",
                 "DirectoryName":"firstprivate"
             },

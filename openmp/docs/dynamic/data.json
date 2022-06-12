@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "dynamic",
+    "DirectoryName": "dynamic",
+    "SharedDescription": true,
+    "Description": "dynamic is an OpenMP schedule policy. The set of iterations is split in blocks of consecutive iterations called chunks, which are distributed to the threads in the team. Each thread executes a chunk, then requests another chunk, until no chunks remain to be distributed. The singularity of dynamic is that threads will synchronise behind to determine which thread is to pick the next chunk to process. This feature improves load balancing, at the cost of a thread coordination overhead. The optional argument passed to schedule tells how many iterations make a chunk, except for the chunk that contains the sequentially last iteration, which may have fewer iterations. If this optional argument is not present, the chunk size defaults to 1. Other OpenMP policies are static, guided, auto and runtime.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
