@@ -1,0 +1,27 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "task",
+    "DirectoryName": "task",
+    "SharedDescription": true,
+    "Description": "The taskgroup construct specifies a wait on completion of child tasks of the current task and their descendent tasks. It contrasts with the taskwait construct which waits only on child tasks but not their descendents.",
+    "Categories": [
+        "Tasking"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp task [if([task:] scalar-expression)]\n                  [final(scalar-expression)]\n                  [untied]\n                  [default(policy)]\n                  [mergeable]\n                  [private(list)]\n                  [firstprivate(list)]\n                  [shared(list)]\n                  [in_reduction([modifier,] identifier: list)]\n                  [depend([modifier,] type: list)]\n                  [priority(priority-value)]\n                  [allocate([allocator:] list)]\n                  [affinity([modifier:] list)]\n                  [detach(event-handle)]",
+            "Parameters": [
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp task [if([task:] scalar-expression)]\n           [final(scalar-expression)]\n           [untied]\n           [default(policy)]\n           [mergeable]\n           [private(list)]\n           [firstprivate(list)]\n           [shared(list)]\n           [in_reduction([modifier,] identifier: list)]\n           [depend([modifier,] type: list)]\n           [priority(priority-value)]\n           [allocate([allocator:] list)]\n           [affinity([modifier:] list)]\n           [detach(event-handle)]\n!$omp end task",
+            "Parameters": [
+                
+            ]
+        }
+    ]
+}

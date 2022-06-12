@@ -1030,6 +1030,10 @@
                 "DirectoryName":"static"
             },
             {
+                "Name":"task",
+                "DirectoryName":"task"
+            },
+            {
                 "Name":"task_reduction",
                 "DirectoryName":"task_reduction"
             },
