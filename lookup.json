@@ -902,6 +902,10 @@
                 "DirectoryName":"auto"
             },
             {
+                "Name":"barrier",
+                "DirectoryName":"barrier"
+            },
+            {
                 "Name":"copyin",
                 "DirectoryName":"copyin"
             },

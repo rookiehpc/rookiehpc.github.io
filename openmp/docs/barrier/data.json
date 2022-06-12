@@ -1,0 +1,27 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "barrier",
+    "DirectoryName": "barrier",
+    "SharedDescription": true,
+    "Description": "The barrier construct, which is a stand-alone directive, specifies an explicit synchronisation barrier at the point at which the construct appears. The barrier applies to the innermost enclosing parallel region, forcing every thread that belong to the team of that parallel region to complete any pending explicit task. Only once all threads of that team satisfy this criterion will they be allowed to continue their execution beyond the barrier.",
+    "Categories": [
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp barrier <new-line>",
+            "Parameters": [
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp barrier",
+            "Parameters": [
+                
+            ]
+        }
+    ]
+}
