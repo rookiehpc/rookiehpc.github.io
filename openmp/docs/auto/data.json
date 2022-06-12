@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "auto",
+    "DirectoryName": "auto",
+    "SharedDescription": true,
+    "Description": "auto is an OpenMP schedule policy, where the programmer gives total freedom to the compiler to decide how to map iterations to threads. Other OpenMP schedule policies are static, dynamic, guided and runtime.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}

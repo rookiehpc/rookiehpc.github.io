@@ -894,6 +894,10 @@
         "PathRoot":"/openmp/docs",
         "Entries":[
             {
+                "Name":"auto",
+                "DirectoryName":"auto"
+            },
+            {
                 "Name":"copyin",
                 "DirectoryName":"copyin"
             },
