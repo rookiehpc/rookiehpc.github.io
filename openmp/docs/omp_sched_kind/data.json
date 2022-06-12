@@ -1,0 +1,16 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_sched_kind",
+    "DirectoryName": "omp_sched_kind",
+    "SharedDescription": true,
+    "Description": "omp_sched_kind is the kind of integer that can contain a schedule that can be passed to omp_set_schedule, or retrieved from omp_get_schedule, as well as the modifier that can be applied to that schedule. Its possible values are omp_sched_static, omp_sched_dynamic, omp_sched_auto, omp_sched_guided and omp_sched_monotonic. The first four correspond go the static, dynamic, auto and guided schedules respectively. The last one corresponds to the monotonic modifier.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+                {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
