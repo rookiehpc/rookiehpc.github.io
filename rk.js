@@ -956,7 +956,7 @@ const RK = {
                             ReturnPage.appendChild(ParametersPageBody);
     
                             let ReturnDescription = document.createElement('p');
-                            ReturnDescription.innerHTML = LanguageEntry[RK.ReturnPN][RK.DescriptionPN];
+                            ReturnDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.ReturnPN][RK.DescriptionPN]));
                             ParametersPageBody.appendChild(ReturnDescription);
                         }
                     }
@@ -1078,7 +1078,7 @@ const RK = {
                             ReturnPage.appendChild(ParametersPageBody);
     
                             let ReturnDescription = document.createElement('p');
-                            ReturnDescription.innerHTML = LanguageEntry[RK.ReturnPN][RK.DescriptionPN];
+                            ReturnDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(LanguageEntry[RK.ReturnPN][RK.DescriptionPN]));
                             ParametersPageBody.appendChild(ReturnDescription);
                         }
                     }
