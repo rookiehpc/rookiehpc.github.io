@@ -1,5 +1,6 @@
 from genericpath import isfile
 import os, sys
+from glob import glob
 import json
 
 # Open the lookup file
@@ -63,3 +64,32 @@ for Technology in Technologies:
 LookupFileString += "\n]"
 LookupFile.write(LookupFileString)
 LookupFile.close()
+
+# Build sitemap
+SitemapFile = open("sitemap/sitemap.xml", "w")
+SitemapFileString = "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
+AllIndexHtmlFiles = [y for x in os.walk(".") for y in glob(os.path.join(x[0], 'index.html'))]
+for AllIndexHtmlFile in AllIndexHtmlFiles:
+    SitemapFileString += "    <url>\n        <loc>" + AllIndexHtmlFile[1:] + "</loc>\n    </url>\n"
+SitemapFileString += "</urlset>"
+SitemapFile.write(SitemapFileString)
+SitemapFile.close()
+
+SitemapPageFile = open("sitemap/data.json", "w")
+SitemapPageFileString = "{\n"
+SitemapPageFileString += "    \"Type\":\"Text\",\n"
+SitemapPageFileString += "    \"DirectoryName\":\"sitemap\",\n"
+SitemapPageFileString += "    \"Name\":\"sitemap\",\n"
+SitemapPageFileString += "    \"Title\":\"Sitemap\",\n"
+SitemapPageFileString += "    \"Sections\":[\n"
+SitemapPageFileString += "        {\n"
+SitemapPageFileString += "            \"Title\":\"List of all pages\",\n"
+SitemapPageFileString += "            \"Content\":\"<ul>"
+for AllIndexHtmlFile in AllIndexHtmlFiles:
+    SitemapPageFileString += "<li><a href=\\\"" + AllIndexHtmlFile[1:] + "\\\">" + AllIndexHtmlFile[1:] + "</a></li>"
+SitemapPageFileString += "</ul>\"\n"
+SitemapPageFileString += "        }\n"
+SitemapPageFileString += "    ]\n"
+SitemapPageFileString += "}"
+SitemapPageFile.write(SitemapPageFileString)
+SitemapPageFile.close()
