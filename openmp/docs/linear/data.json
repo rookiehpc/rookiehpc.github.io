@@ -1,0 +1,49 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "linear",
+    "DirectoryName": "linear",
+    "SharedDescription": true,
+    "Description": "The linear clause is a superset of the private clause; in addition to declaring as private the list item(s) provided, it also indicates that the list item(s) given have a linear relationship with respect to the iteration space of a loop associated with the construct on which the clause appears. The other possible data-sharing policies are shared, private, firstprivate and lastprivate.",
+    "Categories": [
+        "Data sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"linear(linear-list [: step])",
+            "Parameters": [
+                {
+                    "Name": "linear-list",
+                    "Description": "If the linear clause is specified on a construct (do, distribute), the value of the new list item on each iteration of the associated loop(s) corresponds to the value of the original list item before entering the construct plus the logical number of the iteration times the step. The value corresponding to the sequentially last iteration of the associated loop(s) is assigned to the original list item.\nIf the linear clause is specified on a declarative directive (simd), all list items must be dummy arguments of a function that will be invoked concurrently on each simd lane. If no modifier is specified or the val or uval modifier is specified, the value of each list item on each lane corresponds to the value of the list item upon entry to the function plus the logical number of the lane times step.\nPossible values:\n- list: the variables, separated by commas, to pass as linear.\n- val(list): equivalent to passing the variables directly; it declares the list item(s) passed as linear.",
+                    "Type": "",
+                    "Optional":false
+                },
+                {
+                    "Name": "step",
+                    "Description": "The value that the linear variables are increased by at every iteration. If the step is not given, its value is 1.",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"linear(linear-list [: step])",
+            "Parameters": [
+                {
+                    "Name": "linear-list",
+                    "Description": "If the linear clause is specified on a construct (do, distribute), the value of the new list item on each iteration of the associated loop(s) corresponds to the value of the original list item before entering the construct plus the logical number of the iteration times the step. The value corresponding to the sequentially last iteration of the associated loop(s) is assigned to the original list item.\nIf the linear clause is specified on a declarative directive (simd), all list items must be dummy arguments of a function that will be invoked concurrently on each simd lane. If no modifier is specified or the val or uval modifier is specified, the value of each list item on each lane corresponds to the value of the list item upon entry to the function plus the logical number of the lane times step.\nPossible values:\n- list: the variables, separated by commas, to pass as linear.\n- val(list): equivalent to passing the variables directly; it declares the list item(s) passed as linear.\n- uval(list): each invocation uses the same storage location for each simd lane; this storage location is updated with the final value of the logically last simd lane.\n- ref(list): the storage location of each list item on each lane corresponds to an array at the storage location upon entry to the function indexed by the logical number of the lane times step.",
+                    "Type": "",
+                    "Optional":false
+                },
+                {
+                    "Name": "step",
+                    "Description": "The value that the linear variables are increased by at every iteration. If the step is not given, its value is 1.",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}
