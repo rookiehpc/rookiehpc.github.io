@@ -1604,7 +1604,7 @@ const RK = {
         	<p id="FooterLogo"><a href = "` + RK.BASE_URL + `/index.html"><img src="` + RK.BASE_URL + `/images/logoAndTitleBlack.svg" alt="Logo of the Rookie HPC website."></a></p>
         	<ul>
                 <li><a href = "` + RK.BASE_URL + `/editor.html?src=` + RK.FolderPath + `" title="Edit the page using the RookieHPC editor.">Edit this page</a></li>
-        		<li><a href = "` + RK.BASE_URL + `/sitemap.html">Site Map</a></li>
+        		<li><a href = "` + RK.BASE_URL + `/sitemap/index.html">Site Map</a></li>
         		<li><a href = "` + RK.BASE_URL + `/privacy_policy/index.html">Privacy Policy</a></li>
         		<li><a href = "https://github.com/rookiehpc">Contact</a></li>
         		<li><a href = "https://www.twitter.com/RookieHPC"><img class="SocialNetworks" src="` + RK.BASE_URL + `/images/twitter.svg" alt="Logo of the Twitter account for Rookie HPC."></a></li>
