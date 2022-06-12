@@ -926,6 +926,10 @@
                 "DirectoryName":"private"
             },
             {
+                "Name":"shared",
+                "DirectoryName":"shared"
+            },
+            {
                 "Name":"single",
                 "DirectoryName":"single"
             }
