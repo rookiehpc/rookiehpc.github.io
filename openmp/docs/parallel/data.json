@@ -1,0 +1,37 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "parallel",
+    "DirectoryName": "parallel",
+    "SharedDescription": true,
+    "Description": "parallel is the clause that tells OpenMP to create a parallel region, in which threads are spawned. The number of threads spawned in parallel regions is specified by the environment variable OMP_NUM_THREADS. It can be overriden during program execution via the OpenMP routine omp_set_num_threads.",
+    "Categories": [
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp parallel [clause[[,]clause]...] <new-line>\n    <structured-block>",
+            "Parameters": [
+                {
+                    "Name": "clause",
+                    "Description": "The clause to appear on the parallel construct, which is one of the following:\n- if([parallel :]scalar-expression)\n- num_threads(integer-expression)\n- default(shared | none) private(list)\n- firstprivate(list)\n- shared(list)\n- copyin(list)\n- reduction([modifier, ]identifier : list)\n- proc_bind(master | close | spread)\n- allocate([allocator :] list)",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp parallel [clause[[,]clause]...]\n    <structured-block>\n!$omp end parallel",
+            "Parameters": [
+                {
+                    "Name": "clause",
+                    "Description": "The clause to appear on the parallel construct, which is one of the following:\n- if([parallel :]scalar-logical-expression)\n- num_threads(scalar-integer-expression)\n- default(private | firstprivate | shared | none)\n- private(list)\n- firstprivate(list)\n- shared(list)\n- copyin(list)\n- reduction([modifier, ]identifier : list)\n- proc_bind(master | close | spread)\n- allocate([allocator :] list)",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}

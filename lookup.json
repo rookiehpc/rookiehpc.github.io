@@ -930,6 +930,10 @@
                 "DirectoryName":"omp_get_wtime"
             },
             {
+                "Name":"parallel",
+                "DirectoryName":"parallel"
+            },
+            {
                 "Name":"private",
                 "DirectoryName":"private"
             },
