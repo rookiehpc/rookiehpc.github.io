@@ -1,0 +1,33 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_set_num_threads",
+    "DirectoryName": "omp_set_num_threads",
+    "SharedDescription": true,
+    "Description": "The function omp_set_num_threads is one of the three ways to specify the number of threads to use when creating parallel regions. The other two are the environment variable OMP_NUM_THREADS and the num_threads clause. The function omp_set_num_threads specifies, during execution, the number of threads to use from now when creating parallel regions. It overwrites, for upcoming parallel regions only, the value that the environment variables OMP_NUM_THREADS defined. It can be overwritten, for a specific parallel region only, by the num_threads clause. If none of the environment variable OMP_NUM_THREADS, the function omp_set_num_threads or the num_threads clause is used, the number of threads used when creating parallel regions is implementation defined. To see the number of threads used when creating a parallel region, one can call omp_get_num_threads inside the parallel region created.",
+    "Categories": [
+        "Teaming"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters": [
+                {
+                    "Name":"num",
+                    "Description":"The number of threads to use from now on when creating a parallel region.",
+                    "Type":"int"
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"num",
+                    "Description":"The number of threads to use from now on when creating a parallel region.",
+                    "Type":"INTEGER"
+                }
+            ]
+        }
+    ]
+}

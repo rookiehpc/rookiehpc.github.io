@@ -1018,6 +1018,10 @@
                 "DirectoryName":"omp_set_dynamic"
             },
             {
+                "Name":"omp_set_num_threads",
+                "DirectoryName":"omp_set_num_threads"
+            },
+            {
                 "Name":"omp_set_schedule",
                 "DirectoryName":"omp_set_schedule"
             },
