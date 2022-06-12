@@ -974,6 +974,10 @@
                 "DirectoryName":"omp_sched_t"
             },
             {
+                "Name":"OMP_SCHEDULE",
+                "DirectoryName":"omp_schedule"
+            },
+            {
                 "Name":"parallel",
                 "DirectoryName":"parallel"
             },

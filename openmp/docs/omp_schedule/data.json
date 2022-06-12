@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "OMP_SCHEDULE",
+    "DirectoryName": "omp_schedule",
+    "SharedDescription": true,
+    "Description": "The environment variable OMP_SCHEDULE is one of the two ways to specify the schedule to apply when a runtime clause is encountered during execution. The other one is the function omp_set_schedule. The expected format for the schedule is: the kind of scheduling (static, dynamic, auto or guided). Optionally, the kind can be preceded by the modifier (monotonic or nonmonotonic) and a colon. If the modifier is not present, it defaults to monotonic for static scheduling, and nonmonotonic for all other schedules. Optionally, the kind can also be succeeded by a comma and the chunk size. To summarise, it can be represented as follows: \"[modifier:]kind[,chunksize]\". Please note that if this format is not respected, the behaviour is implementation defined. It is also worth mentioning that implementation specific schedules cannot be used in the environment variable OMP_SCHEDULE, but they can be used in the omp_set_schedule function. The environment variable OMP_SCHEDULE is read before the OpenMP program is executed, and its value is used as the schedule to apply when a runtime clause is encountered during execution, unless specified otherwise by the omp_set_schedule function or schedule clause. The environment variable OMP_SCHEDULE is never read again once the OpenMP program started to execute; therefore, changing its value during execution has no effect. If none of the environment variable OMP_SCHEDULE or the function omp_set_schedule is used, the schedule to apply when a runtime clause is encountered during execution is implementation defined. To see the schedule to apply when the runtime clause is encountered, one can call omp_get_schedule.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
