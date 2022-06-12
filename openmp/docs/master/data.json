@@ -1,0 +1,27 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "master",
+    "DirectoryName": "master",
+    "SharedDescription": true,
+    "Description": "master is a clause that must be used in a parallel region; it tells OpenMP that the associated block must be executed by the master thread only. The other threads do not wait at the end of the associated block as if there was an implicit barrier. The master clause must not be confused with the single of critical clauses.",
+    "Categories": [
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp master <new-line>\n    <structured-block>",
+            "Parameters":[
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp master\n    <structured-block>\n!$omp end master",
+            "Parameters":[
+                
+            ]
+        }
+    ]
+}
