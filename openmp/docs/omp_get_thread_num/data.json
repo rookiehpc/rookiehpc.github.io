@@ -1,0 +1,33 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_get_thread_num",
+    "DirectoryName": "omp_get_thread_num",
+    "SharedDescription": true,
+    "Description": "omp_get_thread_num returns the identifier of the calling thread. Although spellings are close, do not confuse this function with omp_get_num_threads.",
+    "Categories": [
+        "Teaming"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters": [
+            ],
+            "Return":
+            {
+                "Type":"int",
+                "Description":"The identifier of the calling thread."
+            }
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters": [
+            ],
+            "Return":
+            {
+                "Type":"INTEGER",
+                "Description":"The identifier of the calling thread."
+            }
+        }
+    ]
+}

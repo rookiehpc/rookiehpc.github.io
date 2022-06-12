@@ -974,6 +974,10 @@
                 "DirectoryName":"omp_get_schedule"
             },
             {
+                "Name":"omp_get_thread_num",
+                "DirectoryName":"omp_get_thread_num"
+            },
+            {
                 "Name":"omp_get_wtime",
                 "DirectoryName":"omp_get_wtime"
             },
