@@ -1,0 +1,27 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "section",
+    "DirectoryName": "section",
+    "SharedDescription": true,
+    "Description": "The section clause contains a structured block, which makes for a job to be executed by a thread of the team. The section clause must be inside a sections clause.",
+    "Categories": [
+        "Work sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp section <new-line>\n    <for-loops>",
+            "Parameters": [
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp section\n    <for-loops>",
+            "Parameters": [
+                
+            ]
+        }
+    ]
+}
