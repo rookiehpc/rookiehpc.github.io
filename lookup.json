@@ -918,6 +918,10 @@
                 "DirectoryName":"firstprivate"
             },
             {
+                "Name":"guided",
+                "DirectoryName":"guided"
+            },
+            {
                 "Name":"in_reduction",
                 "DirectoryName":"in_reduction"
             },

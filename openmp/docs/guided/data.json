@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "guided",
+    "DirectoryName": "guided",
+    "SharedDescription": true,
+    "Description": "guided is an OpenMP schedule policy. The set of iterations is split in blocks of consecutive iterations called chunks, which are distributed to the threads in the team. Each thread executes a chunk, then requests another chunk, until no chunks remain to be distributed. The singularity of guided is that the chunk size starts as large and gradually decreases, in order to progressively improve load balancing. These decreasing chunk sizes will eventually fall to 1 by default, unless a minimum chunk size is passed via the optional argument (except the last chunk to assign, which may have fewer iterations that asked). Other OpenMP schedule policies are static, dynamic, auto and runtime.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
