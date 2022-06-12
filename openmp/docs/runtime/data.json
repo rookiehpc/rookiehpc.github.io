@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "runtime",
+    "DirectoryName": "runtime",
+    "SharedDescription": true,
+    "Description": "When a runtime schedule is encountered, OpenMP applies the schedule specified by omp_set_schedule, or contained in the environment variable OMP_SCHEDULE where appropriate. If none of these have been specified, it defaults to an implementation defined schedule. Other OpenMP schedules are static, dynamic, auto and guided.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}

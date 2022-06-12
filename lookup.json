@@ -994,6 +994,10 @@
                 "DirectoryName":"reduction"
             },
             {
+                "Name":"runtime",
+                "DirectoryName":"runtime"
+            },
+            {
                 "Name":"shared",
                 "DirectoryName":"shared"
             },
