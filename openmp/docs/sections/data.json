@@ -1,0 +1,37 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "sections",
+    "DirectoryName": "sections",
+    "SharedDescription": true,
+    "Description": "The sections clause is a worksharing construct; the section clauses that are contained in it will be picked and executed by the threads in the team. If the sections clause is not associated with a nowait clause, an implicit barrier takes place at the end; waiting for all section directives contained to complete.",
+    "Categories": [
+        "Work sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp sections [clause[[,]clause]...] <new-line>\n{\n    [#pragma omp section <new-line>]\n       <structured-block>\n    [#pragma omp section <new-line>\n       <structured-block>]\n    ...\n}",
+            "Parameters": [
+                {
+                    "Name":"clause",
+                    "Description":"The clause to appear on the sections construct, which is one of the following:\n- private(list)\n- firstprivate(list)\n- lastprivate([modifier :] list)\n- reduction([modifier,] identifier : list)\n- allocate([allocator :] list)\n- nowait",
+                    "Type":"",
+                    "Optional":true
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp sections [clause[[,]clause]...]\n    [!$omp section]\n        <structured-block>\n    [!$omp section\n        <structured-block>]\n!$omp end sections [nowait]",
+            "Parameters": [
+                {
+                    "Name":"clause",
+                    "Description":"The clause to appear on the sections construct, which is one of the following:\n- private(list)\n- firstprivate(list)\n- lastprivate([modifier :] list)\n- reduction([modifier ,] identifier : list)\n- allocate([allocator :] list)",
+                    "Type":"",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}

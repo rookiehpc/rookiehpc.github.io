@@ -1058,6 +1058,10 @@
                 "DirectoryName":"section"
             },
             {
+                "Name":"sections",
+                "DirectoryName":"sections"
+            },
+            {
                 "Name":"shared",
                 "DirectoryName":"shared"
             },
