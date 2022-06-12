@@ -982,6 +982,10 @@
                 "DirectoryName":"omp_get_wtime"
             },
             {
+                "Name":"OMP_NUM_THREADS",
+                "DirectoryName":"omp_num_threads"
+            },
+            {
                 "Name":"omp_sched_auto",
                 "DirectoryName":"omp_sched_auto"
             },

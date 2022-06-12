@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "OMP_NUM_THREADS",
+    "DirectoryName": "omp_num_threads",
+    "SharedDescription": true,
+    "Description": "The environment variable OMP_NUM_THREADS is one of the three ways to specify the number of threads to use when creating parallel regions. The other two are the function omp_set_num_threads and the num_threads clause. The environment variable OMP_NUM_THREADS is read before the OpenMP program is executed, and its value is used as the number of threads to use for all OpenMP parallel regions, unless specified otherwise by the omp_set_num_threads function or num_threads clause. The environment variable OMP_NUM_THREADS is never read again once the OpenMP program started to execute; therefore, changing its value during execution has no effect. If none of the environment variable OMP_NUM_THREADS, the function omp_set_num_threads or the num_threads clause is used, the number of threads used when creating parallel regions is implementation defined. To see the number of threads used when creating a parallel region, one can call omp_get_num_threads inside the parallel region created.",
+    "Categories": [
+        "Teaming"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
