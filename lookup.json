@@ -978,6 +978,10 @@
                 "DirectoryName":"omp_schedule"
             },
             {
+                "Name":"omp_set_schedule",
+                "DirectoryName":"omp_set_schedule"
+            },
+            {
                 "Name":"parallel",
                 "DirectoryName":"parallel"
             },

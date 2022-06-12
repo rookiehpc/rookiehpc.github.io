@@ -1,0 +1,41 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_set_schedule",
+    "DirectoryName": "omp_set_schedule",
+    "SharedDescription": true,
+    "Description": "The function omp_set_schedule is one of the two ways to specify the schedule to apply when a runtime clause is encountered during execution. The other one is the environment variable OMP_SCHEDULE. The expected format for the schedule is: the kind of scheduling (static, dynamic, auto or guided). Optionally, the kind can also be succeeded by a comma and the chunk size. To summarise, it can be represented as follows: \"[modifier:]kind[,chunksize]\". Please note that if this format is not respected, the behaviour is implementation defined. It is also worth mentioning that implementation specific schedules can be used in the omp_set_schedule function, but they cannot be used in the environment variable OMP_SCHEDULE. If none of the environment variable OMP_SCHEDULE or the function omp_set_schedule is used, the schedule to apply when a runtime clause is encountered during execution is implementation defined. To see the schedule to apply when the runtime clause is encountered, one can call omp_get_schedule.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters":[
+                {
+                    "Name":"kind",
+                    "Description":"The OpenMP scheduling kind to use, possible values are omp_sched_static, omp_sched_dynamic, omp_sched_guided and omp_sched_auto.",
+                    "Type":"omp_sched_t"
+                }, {
+                    "Name":"chunk_size",
+                    "Description":"The number of iterations that make a chunk. If this number is less than 1, the defaulted chunk size is used. For the auto schedule, this argument has no meaning.",
+                    "Type":"int"
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters":[
+                {
+                    "Name":"kind",
+                    "Description":"The OpenMP scheduling kind to use, possible values are omp_sched_static, omp_sched_dynamic, omp_sched_guided and omp_sched_auto.",
+                    "Type":"INTEGER(KIND=omp_sched_kind)"
+                }, {
+                    "Name":"chunk_size",
+                    "Description":"The number of iterations that make a chunk. If this number is less than 1, the defaulted chunk size is used. For the auto schedule, this argument has no meaning.",
+                    "Type":"INTEGER"
+                }
+            ]
+        }
+    ]
+}
