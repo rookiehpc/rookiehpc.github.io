@@ -1,0 +1,35 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "num_threads",
+    "DirectoryName": "num_threads",
+    "SharedDescription": true,
+    "Description": "The num_threads clause is one of the three ways to specify the number of threads to use when creating parallel regions. The other two are the environment variable OMP_NUM_THREADS and the function omp_set_num_threads. The num_threads clause specifies, during execution, the number of threads to use when creating the parallel region from the directive it is part of. It overwrites, for that specific parallel region only, any value that could have been specified by the environment variable OMP_NUM_THREADS and the function omp_set_num_threads. If none of the environment variable OMP_NUM_THREADS, the function omp_set_num_threads or the num_threads clause is used, the number of threads used when creating parallel regions is implementation defined. To see the number of threads used when creating a parallel region, one can call omp_get_num_threads inside the parallel region created.",
+    "Categories": [
+        "Tasking"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"num_threads(n)",
+            "Parameters": [
+                {
+                    "Name":"n",
+                    "Description":"The number of threads to use from now when a parallel region is encountered.",
+                    "Type":""
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"num_threads(n)",
+            "Parameters": [
+                {
+                    "Name":"n",
+                    "Description":"The number of threads to use from now when a parallel region is encountered.",
+                    "Type":""
+                }
+            ]
+        }
+    ]
+}

@@ -958,6 +958,10 @@
                 "DirectoryName":"nowait"
             },
             {
+                "Name":"num_threads",
+                "DirectoryName":"num_threads"
+            },
+            {
                 "Name":"omp_get_schedule",
                 "DirectoryName":"omp_get_schedule"
             },
