@@ -11,7 +11,33 @@
  **/
 int main(int argc, char* argv[])
 {
-	// Use 4 threads when creating OpenMP parallel regions
+	// Use 4 threads when c{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "critical",
+    "DirectoryName": "critical",
+    "SharedDescription": true,
+    "Description": "The critical construct, which is used inside parallel regions, tells OpenMP that the associated block is to be executed by every thread but no more than one thread at a time. The critical construct must not be confused with the single or master constructs.",
+    "Categories": [
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp critical [(name) [[,] hint(hint-expression)]] <new-line>\n    <structured-block>",
+            "Parameters": [
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp critical [(name) [[,] hint(hint-expression)]]\n    <structured-block>\n!$omp end critical [(name)]",
+            "Parameters": [
+                
+            ]
+        }
+    ]
+}reating OpenMP parallel regions
 	omp_set_num_threads(2);
 
 	// This semaphore is used to sequentialise printfs.

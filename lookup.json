@@ -954,6 +954,10 @@
                 "DirectoryName":"none"
             },
             {
+                "Name":"nowait",
+                "DirectoryName":"nowait"
+            },
+            {
                 "Name":"omp_get_schedule",
                 "DirectoryName":"omp_get_schedule"
             },

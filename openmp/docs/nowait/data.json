@@ -1,0 +1,27 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "nowait",
+    "DirectoryName": "nowait",
+    "SharedDescription": true,
+    "Description": "The nowait clause removes the implicit barrier that is present at the end of worksharing (sections, single, workshare) and target constructs.\nIf nowait is specified on a construct where a reduction clause is, accesses to the original list item after the end of the construct will create a data race and, thus, have unspecified effect unless synchronisation ensures that they occur after all threads have executed all of their iterations or section constructs, and the reduction computation has completed and stored the computed value of that list item. This can most simply be ensured through a barrier synchronisation.",
+    "Categories": [
+        "Synchronisation"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"nowait",
+            "Parameters": [
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"nowait",
+            "Parameters": [
+                
+            ]
+        }
+    ]
+}
