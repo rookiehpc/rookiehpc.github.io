@@ -920,6 +920,10 @@
             {
                 "Name":"none",
                 "DirectoryName":"none"
+            },
+            {
+                "Name":"single",
+                "DirectoryName":"single"
             }
         ]
     }

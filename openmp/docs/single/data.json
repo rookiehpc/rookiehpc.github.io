@@ -1,0 +1,43 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "single",
+    "DirectoryName": "single",
+    "SharedDescription": true,
+    "Description": "single is a clause that must be used in a parallel region; it tells OpenMP that the associated block must be executed by one thread only, albeit not specifying which one. The other threads will wait at the end of the associated block, at an implicit barrier, unless the single clause is accompanied with a nowait clause. The single clause must not be confused with the master or critical clause.",
+    "Categories": [
+        "Work sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp single [clause[[,]clause]...] <new-line>\n    <structured-block>",
+            "Parameters": [
+                {
+                    "Name": "clause",
+                    "Description": "The clause to appear on the single construct, which is one of the following:\n- private(list)\n- firstprivate(list)\n- copyprivate(list)\n- allocate([allocator :] list)\n- nowait",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp single [clause[[,]clause]...]\n    <structured-block>\n!$omp end single [end_clause[[,]end_clause]...]",
+            "Parameters": [
+                {
+                    "Name": "clause",
+                    "Description": "The clause to appear on the single construct, which is one of the following:\n- private(list)\n- firstprivate(list)\n- allocate([allocator :] list)",
+                    "Type": "",
+                    "Optional":true
+                },
+                {
+                    "Name": "end_clause",
+                    "Description": "The clause to appear on the single construct, which is one of the following:\n- copyprivate(list)\n- nowait",
+                    "Type": "",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}
