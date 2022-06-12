@@ -922,6 +922,10 @@
                 "DirectoryName":"none"
             },
             {
+                "Name":"private",
+                "DirectoryName":"private"
+            },
+            {
                 "Name":"single",
                 "DirectoryName":"single"
             }

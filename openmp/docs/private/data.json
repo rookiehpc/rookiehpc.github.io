@@ -1,0 +1,37 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "private",
+    "DirectoryName": "private",
+    "SharedDescription": true,
+    "Description": "private is the clause that contains the variables that each thread in the OpenMP parallel region will have a copy of. These copies are not initialised, specifically, they do not have the value that the original variable had at the time it was passed in the private clause. By contrast, firstprivate variables are initialised with the value of the original variable. The other possible data-sharing policies are shared, lastprivate and linear.",
+    "Categories": [
+        "Work sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"private(list)",
+            "Parameters": [
+                {
+                    "Name": "list",
+                    "Description": "The variables to pass as private, separated by commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"private(list)",
+            "Parameters": [
+                {
+                    "Name": "list",
+                    "Description": "The variables to pass as private, separated by commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
