@@ -954,6 +954,10 @@
                 "DirectoryName":"omp_sched_auto"
             },
             {
+                "Name":"omp_sched_dynamic",
+                "DirectoryName":"omp_sched_dynamic"
+            },
+            {
                 "Name":"parallel",
                 "DirectoryName":"parallel"
             },

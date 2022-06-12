@@ -1,0 +1,19 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_sched_dynamic",
+    "DirectoryName": "omp_sched_dynamic",
+    "SharedDescription": true,
+    "Description": "The constant omp_sched_dynamic represents the dynamic schedule in the omp_sched_t structure that can be passed to omp_set_schedule or retrieved from omp_get_schedule. The other schedules are omp_sched_static, omp_sched_auto and omp_sched_guided.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C"
+        },
+        {
+            "Language": "FORTRAN-90"
+        }
+    ]
+}
