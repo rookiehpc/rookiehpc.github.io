@@ -1,0 +1,57 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "reduction",
+    "DirectoryName": "reduction",
+    "SharedDescription": true,
+    "Description": "The reduction clause indicates that the variables passed are, as its name suggests, used in a reduction. Each implicit task or SIMD lane creates a private copy initialises it to the initialiser value of the reduction identifier, that is, 0 for a sum or 1 for a product to name a few. After the end of the region, the original list item is updated with the values of the private copies using the combiner associated with the reduction identifier.\nBy default, the reduction computation is complete at the end of the construct. However, if nowait is specified on the construct, this is no longer guaranteed. Indeed, accesses to the original list item will create a data race and, thus, have unspecified effect unless synchronisation ensures that they occur after all threads have executed all of their iterations or section constructs, and the reduction computation has completed and stored the computed value of that list item. This can most simply be ensured through a barrier synchronisation.",
+    "Categories": [
+        "Reduction"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"reduction([modifier, ]identifier: list)",
+            "Parameters": [
+                {
+                    "Name": "modifier",
+                    "Description": "- default: this is equivalent to passing no modifier. For parallel and worksharing constructs, one or more private copies of each list item are created for each implicit task, as if the private clause had been used. For the simd construct, one or more private copies of each list item are created for each SIMD lane, as if the private clause had been used. For the taskloop construct, private copies are created according to the rules of the reduction scoping clauses. For the teams construct, one or more private copies of each list item are created for the initial task of each team in the league, as if the private clause had been used. For the loop construct, private copies are created and used in the construct according to the description and restrictions in Section 2.19.3 on page 279. At the end of a region that corresponds to a construct for which the reduction clause was specified, the original list item is updated by combining its original value with the final value of each of the private copies, using the combiner of the specified reduction identifier.\n- inscan: a scan computation is performed over updates to the list item performed in each logical iteration of the loop associated with the worksharing-loop, worksharing-loop SIMD, or simd construct. The list items are privatised in the construct according to the description and restrictions in Section 2.19.3 on page 279. At the end of the region, each original list item is assigned the value of the private copy from the last logical iteration of the loops associated with the construct.\n- task: in a parallel or worksharing construct, each list item is privatised according to the description and restrictions in Section 2.19.3 on page 279, and an unspecified number of additional private copies are created to support task reductions. Any copies associated with the reduction are initialised before they are accessed by the tasks that participate in the reduction, which include all implicit tasks in the corresponding region and all participating explicit tasks that specify an in_reduction clause. After the end of the region, the original list item contains the result of the reduction.",
+                    "Type": "",
+                    "Optional":true
+                }, {
+                    "Name": "identifier",
+                    "Description": "The identifier indicating the reduction operation to apply. It is either a user-defined operator or one of the following operators:\n- +: sum.\n- -: difference.\n- *: product.\n- &: bit-wise and.\n- |: bit-wise or.\n- ^: bit-wise exclusive or.\n- &&: logical and.\n- ||: logical or.\n- min: minimum.\n- max: maximum.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "list",
+                    "Description": "The list of reduction variables, separated with commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"reduction([modifier, ]identifier: list)",
+            "Parameters": [
+                {
+                    "Name": "modifier",
+                    "Description": "- default: this is equivalent to passing no modifier. For parallel and worksharing constructs, one or more private copies of each list item are created for each implicit task, as if the private clause had been used. For the simd construct, one or more private copies of each list item are created for each SIMD lane, as if the private clause had been used. For the taskloop construct, private copies are created according to the rules of the reduction scoping clauses. For the teams construct, one or more private copies of each list item are created for the initial task of each team in the league, as if the private clause had been used. For the loop construct, private copies are created and used in the construct according to the description and restrictions in Section 2.19.3 on page 279. At the end of a region that corresponds to a construct for which the reduction clause was specified, the original list item is updated by combining its original value with the final value of each of the private copies, using the combiner of the specified reduction identifier.\n- inscan: a scan computation is performed over updates to the list item performed in each logical iteration of the loop associated with the worksharing-loop, worksharing-loop SIMD, or simd construct. The list items are privatised in the construct according to the description and restrictions in Section 2.19.3 on page 279. At the end of the region, each original list item is assigned the value of the private copy from the last logical iteration of the loops associated with the construct.\n- task: in a parallel or worksharing construct, each list item is privatised according to the description and restrictions in Section 2.19.3 on page 279, and an unspecified number of additional private copies are created to support task reductions. Any copies associated with the reduction are initialised before they are accessed by the tasks that participate in the reduction, which include all implicit tasks in the corresponding region and all participating explicit tasks that specify an in_reduction clause. After the end of the region, the original list item contains the result of the reduction.",
+                    "Type": "",
+                    "Optional":true
+                }, {
+                    "Name": "identifier",
+                    "Description": "The identifier indicating the reduction operation to apply. It is either a user-defined operator, one of the following operators:\n- +: sum.\n- -: difference.\n- *: production.\n- .and.: logical and.\n- .or.: logical or.\n- .eqv.: logical equivalence.\n- .neqv.: logical non-equivalence.\nor one of the following intrinsic procedure names:\n- max: maximum.\n- min: minimum.\n- iand: bit-wise and.\n- ior: bit-wise or.\n- ieor: bit-wise exlusive or.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "list",
+                    "Description": "The list of reduction variables, separated with commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
