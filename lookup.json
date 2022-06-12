@@ -914,6 +914,10 @@
                 "DirectoryName":"copyprivate"
             },
             {
+                "Name":"critical",
+                "DirectoryName":"critical"
+            },
+            {
                 "Name":"default",
                 "DirectoryName":"default"
             },
