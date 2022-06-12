@@ -966,6 +966,10 @@
                 "DirectoryName":"omp_sched_kind"
             },
             {
+                "Name":"omp_sched_static",
+                "DirectoryName":"omp_sched_static"
+            },
+            {
                 "Name":"parallel",
                 "DirectoryName":"parallel"
             },
