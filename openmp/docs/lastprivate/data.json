@@ -16,7 +16,8 @@
                 {
                     "Name": "modifier",
                     "Description": "The modifier to apply on the list of lastprivate variables passed.\nPossible values:\n\n- conditional: when a lastprivate clause without the conditional modifier appears on a directive, the value of each new list item from the sequentially last iteration of the associated loops, or the lexically last section construct, is assigned to the original list item. When the conditional modifier appears on the clause, if an assignment to a list item is encountered in the construct then the original list item is assigned the value that is assigned to the new list item in the sequentially last iteration or lexically last section in which such an assignment is encountered. In other words, without the conditional clause, it is assumed that the lastprivate variables are assigned a value at every iteration or in every section. Therefore, the last iteration or last section executed will be selected to determine the value of the lastprivate variable. However, there may be a parallelised loop with only certain iterations assigning a value to the lastprivate variable, similary for sections where not all section may assign a value to the lastprivate variable. In which case, the conditional modifier indicates this particularity and the value of the lastprivate variable will be set to the last iteration or last section that did assign a value to it.",
-                    "Type": ""
+                    "Type": "",
+                    "Optional":true
                 },
                 {
                     "Name": "list",
@@ -32,7 +33,8 @@
                 {
                     "Name": "modifier",
                     "Description": "The modifier to apply on the list of lastprivate variables passed.\nPossible values:\n\n- conditional: when a lastprivate clause without the conditional modifier appears on a directive, the value of each new list item from the sequentially last iteration of the associated loops, or the lexically last section construct, is assigned to the original list item. When the conditional modifier appears on the clause, if an assignment to a list item is encountered in the construct then the original list item is assigned the value that is assigned to the new list item in the sequentially last iteration or lexically last section in which such an assignment is encountered. In other words, without the conditional clause, it is assumed that the lastprivate variables are assigned a value at every iteration or in every section. Therefore, the last iteration or last section executed will be selected to determine the value of the lastprivate variable. However, there may be a parallelised loop with only certain iterations assigning a value to the lastprivate variable, similary for sections where not all section may assign a value to the lastprivate variable. In which case, the conditional modifier indicates this particularity and the value of the lastprivate variable will be set to the last iteration or last section that did assign a value to it.",
-                    "Type": ""
+                    "Type": "",
+                    "Optional":true
                 },
                 {
                     "Name": "list",
