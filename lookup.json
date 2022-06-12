@@ -952,6 +952,10 @@
             {
                 "Name":"single",
                 "DirectoryName":"single"
+            },
+            {
+                "Name":"task_reduction",
+                "DirectoryName":"task_reduction"
             }
         ]
     }

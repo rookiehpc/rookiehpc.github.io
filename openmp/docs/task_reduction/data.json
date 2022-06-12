@@ -1,0 +1,48 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "task_reduction",
+    "DirectoryName": "task_reduction",
+    "SharedDescription": true,
+    "Description": "task_reduction is reduction scoping clause that specifies a reduction among tasks.\nFor each list item, the number of copies is unspecified. Any copies associated with the reduction are initialised before they are accessed by the tasks participating in the reduction. After the end of the region, the original list item contains the result of the reduction.",
+    "Categories": [
+        "Reduction",
+        "Tasking"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"in_reduction(identifier : list)",
+            "Parameters": [
+                {
+                    "Name": "identifier",
+                    "Description": "The identifier indicating the reduction operation to apply. It is either a user-defined operator or one of the following operators:\n- +: sum.\n- -: difference.\n- *: product.\n- &: bit-wise and.\n- |: bit-wise or.\n- ^: bit-wise exclusive or.\n- &&: logical and.\n- ||: logical or.\n- min: minimum.\n- max: maximum.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "list",
+                    "Description": "The list of reduction variables, separated with commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"in_reduction(identifier : list)",
+            "Parameters": [
+                {
+                    "Name": "identifier",
+                    "Description": "The identifier indicating the reduction operation to apply. It is either a user-defined operator, one of the following operators:\n- +: sum.\n- -: difference.\n- *: production.\n- .and.: logical and.\n- .or.: logical or.\n- .eqv.: logical equivalence.\n- .neqv.: logical non-equivalence.\nor one of the following intrinsic procedure names:\n- max: maximum.\n- min: minimum.\n- iand: bit-wise and.\n- ior: bit-wise or.\n- ieor: bit-wise exlusive or.",
+                    "Type": "",
+                    "Optional":false
+                }, {
+                    "Name": "list",
+                    "Description": "The list of reduction variables, separated with commas.",
+                    "Type": "",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
