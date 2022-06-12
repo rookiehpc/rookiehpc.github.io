@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 640 640" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" xmlns="http://www.w3.org/2000/svg">
+  <path d="M639.988 253.503L490.872 110.139v92.269h-118.23v102.19h118.23v92.292l149.116-143.388zM.012 386.485L149.14 529.861v-92.28h118.218V335.39H149.14v-92.293L.012 386.486zm285.594 51.095h70.607V335.39h-70.607v102.19zm87.509 0h40.11V335.39h-40.11v102.19zm-106.23-235.172h-40.11v102.19h40.11v-102.19zm87.509 0h-70.607v102.19h70.607v-102.19z" style="fill: rgb(45, 45, 45);"/>
+</svg>
