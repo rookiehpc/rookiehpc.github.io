@@ -958,6 +958,10 @@
                 "DirectoryName":"omp_sched_dynamic"
             },
             {
+                "Name":"omp_sched_guided",
+                "DirectoryName":"omp_sched_guided"
+            },
+            {
                 "Name":"parallel",
                 "DirectoryName":"parallel"
             },
