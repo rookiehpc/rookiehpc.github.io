@@ -942,6 +942,10 @@
                 "DirectoryName":"none"
             },
             {
+                "Name":"omp_get_schedule",
+                "DirectoryName":"omp_get_schedule"
+            },
+            {
                 "Name":"omp_get_wtime",
                 "DirectoryName":"omp_get_wtime"
             },

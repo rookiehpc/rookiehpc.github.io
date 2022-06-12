@@ -1,0 +1,41 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_get_schedule",
+    "DirectoryName": "omp_get_schedule",
+    "SharedDescription": true,
+    "Description": "The function omp_get_schedule returns the kind of scheduling and the chunk size used when a runtime schedule is encountered. Conversely, the schedule to apply when a runtime schedule is encountered can be set with OMP_SCHEDULE and omp_set_schedule.",
+    "Categories": [
+        "Scheduling"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters":[
+                {
+                    "Name":"kind",
+                    "Description":"The variable in which store the OpenMP scheduling kind to use when a runtime schedule is encountered.",
+                    "Type":"omp_sched_t"
+                }, {
+                    "Name":"chunk_size",
+                    "Description":"The variable in which store the number of iterations that make a chunk.",
+                    "Type":"int"
+                }
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters":[
+                {
+                    "Name":"kind",
+                    "Description":"The variable in which store the OpenMP scheduling kind to use when a runtime schedule is encountered.",
+                    "Type":"INTEGER(KIND=omp_sched_kind)"
+                }, {
+                    "Name":"chunk_size",
+                    "Description":"The variable in which store the number of iterations that make a chunk.",
+                    "Type":"INTEGER"
+                } 
+            ]
+        }
+    ]
+}
