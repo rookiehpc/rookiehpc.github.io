@@ -1,0 +1,25 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "for",
+    "DirectoryName": "for",
+    "SharedDescription": true,
+    "Description": "The for construct tells OpenMP that the iteration set of the for loop that follows is to be distributed across the threads present in the team. Without the for construct, the entire iteration set of the for loop concerned will be executed by each thread in the team. From a syntactic point of view, note that the for construct must be immediately followed by the for loop; it does not allow curly brackets between it and the for loop.",
+    "Categories": [
+        "Work sharing"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":" #pragma omp for [clause[[,]clause]...] <new-line>\n    <for-loops>",
+            "Parameters": [
+                {
+                    "Name":"clause",
+                    "Description":"The clause to appear on the for construct:\n- private(list)\n- firstprivate(list)\n- lastprivate([modifier :] list)\n- linear(list[ : step])\n- reduction([modifier,]identifier : list)\n- schedule([modifier[, modifier] :]kind[,chunk_size])\n- collapse(n)\n- ordered[(n)]\n- nowait\n- allocate([allocator :]list)\n- order(concurrent)",
+                    "Type":"",
+                    "Optional":true
+                }
+            ]
+        }
+    ]
+}
