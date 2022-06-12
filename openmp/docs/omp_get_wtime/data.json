@@ -1,0 +1,33 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "omp_get_wtime",
+    "DirectoryName": "omp_get_wtime",
+    "SharedDescription": true,
+    "Description": "omp_get_wtime returns the elapsed wall clock time in seconds.",
+    "Categories": [
+        "Miscellaneous"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Parameters":[
+                
+            ],
+            "Return": {
+                "Type":"double",
+                "Description":"The time elapsed, in seconds."
+            }
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Parameters":[
+                
+            ],
+            "Return": {
+                "Type":"DOUBLE PRECISION",
+                "Description":"The time elapsed, in seconds."
+            }
+        }
+    ]
+}

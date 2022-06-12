@@ -1,1 +1,1 @@
-{"Categories": {"Data copying": ["copyin", "copyprivate"], "Data sharing": ["default", "firstprivate", "lastprivate", "linear", "none", "private", "shared"], "Miscellaneous": ["master"], "Work sharing": ["single"]}, "Technology": "OpenMP", "Type": "DocumentationHomepage"}
+{"Categories": {"Data copying": ["copyin", "copyprivate"], "Data sharing": ["default", "firstprivate", "lastprivate", "linear", "none", "private", "shared"], "Miscellaneous": ["master", "omp_get_wtime"], "Work sharing": ["single"]}, "Technology": "OpenMP", "Type": "DocumentationHomepage"}

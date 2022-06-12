@@ -926,6 +926,10 @@
                 "DirectoryName":"none"
             },
             {
+                "Name":"omp_get_wtime",
+                "DirectoryName":"omp_get_wtime"
+            },
+            {
                 "Name":"private",
                 "DirectoryName":"private"
             },
