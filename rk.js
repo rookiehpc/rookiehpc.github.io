@@ -797,6 +797,11 @@ const RK = {
                                 }
                                 let DefinitionTerm = document.createElement('dt');
                                 DefinitionTerm.innerText = ParameterEntry[RK.NamePN];
+                                if(ParameterEntry.hasOwnProperty(RK.OptionalPN) == true) {
+                                    if(ParameterEntry[RK.OptionalPN] === true) {
+                                        DefinitionTerm.innerHTML += " <span class='OptionalFlag'>[Optional]</span>";
+                                    }
+                                }
                                 DefinitionList.appendChild(DefinitionTerm);
                                 let DefinitionDescription = document.createElement('dd');
                                 DefinitionDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(ParameterEntry[RK.DescriptionPN]));
@@ -892,6 +897,11 @@ const RK = {
                                 PrototypeString += ParameterEntry[RK.NamePN];
                                 let DefinitionTerm = document.createElement('dt');
                                 DefinitionTerm.innerText = ParameterEntry[RK.NamePN];
+                                if(ParameterEntry.hasOwnProperty(RK.OptionalPN) == true) {
+                                    if(ParameterEntry[RK.OptionalPN] === true) {
+                                        DefinitionTerm.innerHTML += " <span class='OptionalFlag'>[Optional]</span>";
+                                    }
+                                }
                                 DefinitionList.appendChild(DefinitionTerm);
                                 let DefinitionDescription = document.createElement('dd');
                                 DefinitionDescription.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(ParameterEntry[RK.DescriptionPN]));
@@ -994,7 +1004,7 @@ const RK = {
                                 PrototypeString += ParameterEntry[RK.NamePN];
                                 let DefinitionTerm = document.createElement('dt');
                                 DefinitionTerm.innerText = ParameterEntry[RK.NamePN];
-                                if(RK.CanParameterBeOptional(LanguageEntry[RK.LanguagePN]) == true) {
+                                if(ParameterEntry.hasOwnProperty(RK.OptionalPN) == true) {
                                     if(ParameterEntry[RK.OptionalPN] === true) {
                                         DefinitionTerm.innerHTML += " <span class='OptionalFlag'>[Optional]</span>";
                                     }
