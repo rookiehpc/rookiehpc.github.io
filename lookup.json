@@ -962,6 +962,10 @@
                 "DirectoryName":"num_threads"
             },
             {
+                "Name":"omp_get_dynamic",
+                "DirectoryName":"omp_get_dynamic"
+            },
+            {
                 "Name":"omp_get_schedule",
                 "DirectoryName":"omp_get_schedule"
             },
