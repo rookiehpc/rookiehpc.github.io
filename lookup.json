@@ -1084,6 +1084,10 @@
             {
                 "Name":"taskgroup",
                 "DirectoryName":"taskgroup"
+            },
+            {
+                "Name":"taskwait",
+                "DirectoryName":"taskwait"
             }
         ]
     }

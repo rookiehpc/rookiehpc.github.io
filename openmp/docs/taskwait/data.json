@@ -1,0 +1,28 @@
+{
+    "Type": "Documentation",
+    "Technology": "OpenMP",
+    "Name": "taskwait",
+    "DirectoryName": "taskwait",
+    "SharedDescription": true,
+    "Description": "The taskwait construct, which is a stand-alone directive, specifies a wait on the completion of child tasks of the current task. Note: remember that even in a parallel region, each thread is executing an implicit task. Do not confuse the taskwait and taskgroup constructs, they may be similar but remain different. Indeed, the taskwait construct does not wait for the tasks that these child tasks could spawn, while the taskgroup does.",
+    "Categories": [
+        "Synchronisation",
+        "Tasking"
+    ],
+    "Languages": [
+        {
+            "Language": "C",
+            "Prototype":"#pragma omp taskwait [depend([modifier,] type: list)]",
+            "Parameters": [
+                
+            ]
+        },
+        {
+            "Language": "FORTRAN-90",
+            "Prototype":"!$omp taskwait [depend([modifier,] type: list)]\n!$omp end taskwait",
+            "Parameters": [
+                
+            ]
+        }
+    ]
+}
