@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Hello world",
+    "DirectoryName":"exercise_1",
+    "Introduction":"Producing a hello world is the first test in any language / library / framework you learn. The MPI version of the good old hello world is an application where each MPI process prints its MPI rank and the total number of MPI processes in the global communicator.",
+    "Hints":"- MPI_Init\n- MPI_Comm_rank\n- MPI_Comm_size\n- MPI_COMM_WORLD\n- MPI_Finalize",
+    "Difficulty":0
+}

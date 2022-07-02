@@ -675,6 +675,12 @@
         <loc>/mpi/docs/mpi_win/index.html</loc>
     </url>
     <url>
+        <loc>/mpi/exercises/index.html</loc>
+    </url>
+    <url>
+        <loc>/mpi/exercises/exercise_1/index.html</loc>
+    </url>
+    <url>
         <loc>/sitemap/index.html</loc>
     </url>
     <url>
@@ -832,5 +838,8 @@
     </url>
     <url>
         <loc>/openmp/docs/taskgroup/index.html</loc>
+    </url>
+    <url>
+        <loc>/openmp/exercises/index.html</loc>
     </url>
 </urlset>

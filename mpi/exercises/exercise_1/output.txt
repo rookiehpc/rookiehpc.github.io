@@ -1,0 +1,5 @@
+(Lines below may print in any order)
+"Hello World!" from MPI process 0. We are 4 MPI processes.
+"Hello World!" from MPI process 1. We are 4 MPI processes.
+"Hello World!" from MPI process 2. We are 4 MPI processes.
+"Hello World!" from MPI process 3. We are 4 MPI processes.

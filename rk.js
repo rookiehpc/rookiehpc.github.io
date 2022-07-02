@@ -40,6 +40,12 @@ const RK = {
         OUT: "OUT",
         INOUT: "INOUT"
     },
+    DIFFICULTY: {
+        0: "Rookie",
+        1: "Easy",
+        2: "Medium",
+        3: "Hard"
+    },
 
     ParametersPN: "Parameters",
     ParameterPN: "Parameter",
@@ -48,6 +54,8 @@ const RK = {
     NamePN: "Name",
     DescriptionPN: "Description",
     SharedDescriptionPN: "SharedDescription",
+    IntroductionPN: "Introduction",
+    HintsPN: "Hints",
     TypePN: "Type",
     LanguagesPN: "Languages",
     LanguagePN: "Language",
@@ -65,6 +73,10 @@ const RK = {
     ToolsPN: "Tools",
     UrlPN: "Url",
     ImageUrlPN: "ImageUrl",
+    DifficultyPN: "Difficulty",
+    ExercisesPN: "Exercises",
+    SolutionPN: "Solution",
+    ProvidedPN: "Provided",
 
     ParameterTypeSplitter: '\t',
     LocationRoot: "Root",
@@ -357,6 +369,57 @@ const RK = {
         });
     },
 
+    VerifyExerciseHomepage: (Entry) => {
+        // Check technology
+        RK.AssertMustHave(Entry, RK.TechnologyPN);
+        RK.AssertType(Entry, RK.TechnologyPN, "string");
+        RK.AssertInRange(Entry, RK.TechnologyPN, Object.values(RK.TECHNOLOGIES));
+
+        // Check exercises array
+        RK.AssertMustHave(Entry, RK.ExercisesPN);
+        RK.AssertType(Entry, RK.ExercisesPN, "array");
+
+        Entry[RK.ExercisesPN].forEach((Exercise) => {
+            RK.AssertTypeSelf(Exercise, "exercise", "object");
+            
+            // Check name
+            RK.AssertMustHave(Exercise, RK.NamePN);
+            RK.AssertType(Exercise, RK.NamePN, "string");
+            
+            // Check description
+            RK.AssertMustHave(Exercise, RK.DescriptionPN);
+            RK.AssertType(Exercise, RK.DescriptionPN, "string");
+            
+            // Check difficulty
+            RK.AssertMustHave(Exercise, RK.DifficultyPN);
+            RK.AssertType(Exercise, RK.DifficultyPN, "number");
+        });
+    },
+
+    VerifyExercise: (Entry) => {
+        // Check technology
+        RK.AssertMustHave(Entry, RK.TechnologyPN);
+        RK.AssertType(Entry, RK.TechnologyPN, "string");
+        RK.AssertInRange(Entry, RK.TechnologyPN, Object.values(RK.TECHNOLOGIES));
+
+        // Check title
+        RK.AssertMustHave(Entry, RK.TitlePN);
+        RK.AssertType(Entry, RK.TitlePN, "string");
+        
+        // Check introduction
+        RK.AssertMustHave(Entry, RK.IntroductionPN);
+        RK.AssertType(Entry, RK.IntroductionPN, "string");
+        
+        // Check difficulty
+        RK.AssertMustHave(Entry, RK.DifficultyPN);
+        RK.AssertType(Entry, RK.DifficultyPN, "number");
+        
+        // Check hints
+        if(Entry.hasOwnProperty(RK.HintsPN)) {
+            RK.AssertType(Entry, RK.HintsPN, "string");
+        }
+    },
+
     VerifyDocumentationHomepage: (Entry) => {
         // Check technology
         RK.AssertMustHave(Entry, RK.TechnologyPN);
@@ -460,8 +523,11 @@ const RK = {
                 case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
                     RK.VerifyToolHomepage(Entry);
                     break;
+                case RK.ENTRY_TYPES.EXERCISE_HOMEPAGE:
+                    RK.VerifyExerciseHomepage(Entry);
+                    break;
                 case RK.ENTRY_TYPES.EXERCISE:
-                    throw "Exercise entry found; however it has not been implemented just yet."
+                    RK.VerifyExercise(Entry);
                     break;
                 case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
                     RK.VerifyDocumentationHomepage(Entry);
@@ -482,20 +548,23 @@ const RK = {
     /**************
      * GENERATION *
      **************/
-    ShowVersion: (Language) => {
+    ShowVersion: (Event, Language) => {
         const Versions = document.getElementsByClassName('Version');
         [].forEach.call(Versions, (Version) => {
             Version.style.display = "none";
         });
-        document.getElementById(Language).style.display = "";
+        
+        [].forEach.call(document.getElementsByClassName(Language), (L) => {
+            L.style.display = "";
+        });
     
         const VersionTabs = document.getElementsByClassName('VersionTab');
         [].forEach.call(VersionTabs, (VersionTab) => {
-            VersionTab.classList.remove("active");
+            VersionTab.classList.remove("Active");
         });
         [].forEach.call(VersionTabs, (VersionTab) => {
             if(VersionTab.innerText === Language) {
-                VersionTab.classList.add("active");
+                VersionTab.classList.add("Active");
             }
         });
     },
@@ -639,7 +708,7 @@ const RK = {
         return TextGenerated;
     },
     
-    GenerateDocumentation: (Entry) => {
+    GenerateDocumentation: async (Entry) => {
         // Build the technology header containing the about / docs / tools / exercises tabs
         RK.BuildTechnologyNav(Entry);
 
@@ -1108,7 +1177,7 @@ const RK = {
         });
     },
 
-    GenerateDocumentationHomepage: (Entry) => {
+    GenerateDocumentationHomepage: async (Entry) => {
         RK.BuildTechnologyNav(Entry);
         var IndexHTML = '<section id="MainSection"><div><header><h1>' + Entry[RK.TechnologyPN] + ' Documentation</h1></header></div><div style="display:flex; flex-wrap: wrap; align-items: stretch; column-gap:20px;">';
         Object.keys(Entry[RK.CategoriesPN]).forEach((Category) => {
@@ -1132,7 +1201,7 @@ const RK = {
         RK.GetOutput().innerHTML += IndexHTML;
     },
 
-    GenerateHomepage: (Entry) => {
+    GenerateHomepage: async (Entry) => {
         let InnerHTML = `
         <div id="SubHeader">
 			<p>You are looking to learn about High-Performance Computing? <a href = "` + RK.BASE_URL + `/">RookieHPC</a> is a great place to be! If you have any question, please contact us either using the <a href = "mailto:` + RK.CONTACT_EMAIL + `">contact form</a>, or follow us on <a href = "https://twitter.com/RookieHPC">Twitter</a>.</p>
@@ -1199,7 +1268,7 @@ const RK = {
         TwitterScript.src = "https://platform.twitter.com/widgets.js";
     },
 
-    GenerateAbout: (Entry) => {
+    GenerateAbout: async (Entry) => {
         RK.BuildTechnologyNav(Entry);
         let InnerHTML = `
         <section id="MainSection">
@@ -1226,7 +1295,7 @@ const RK = {
         RK.GetOutput().innerHTML += InnerHTML;
     },
 
-    GenerateToolHomepage: (Entry) => {
+    GenerateToolHomepage: async (Entry) => {
         RK.BuildTechnologyNav(Entry);
 
         const MainSection = document.createElement('section');
@@ -1289,7 +1358,390 @@ const RK = {
         });
     },
 
-    GenerateText: (Entry) => {
+    GenerateExerciseHomepage: async (Entry) => {
+        RK.BuildTechnologyNav(Entry);
+
+        const MainSection = document.createElement('section');
+        MainSection.id = "MainSection";
+        RK.GetOutput().appendChild(MainSection);
+
+        const MainSectionDiv = document.createElement('div');
+        MainSection.appendChild(MainSectionDiv);
+
+        const MainSectionDivHeader = document.createElement('header');
+        MainSectionDiv.appendChild(MainSectionDivHeader);
+
+        const ExerciseHomepageTitle = document.createElement('h1');
+        ExerciseHomepageTitle.innerText = Entry[RK.TechnologyPN] + ' Exercises';
+
+        const ToolsDiv = document.createElement('div');
+        MainSection.appendChild(ToolsDiv);
+
+        MainSectionDivHeader.appendChild(ExerciseHomepageTitle);
+
+        const DefinitionPage = document.createElement('article');
+        DefinitionPage.classList.add("PageArticle")
+        MainSection.appendChild(DefinitionPage);
+
+        const DefinitionPageHeader = document.createElement('div');
+        DefinitionPageHeader.classList.add("PageArticleHeader")
+        DefinitionPage.appendChild(DefinitionPageHeader);
+
+        const DefinitionPageHeaderTitle = document.createElement('h2');
+        DefinitionPageHeaderTitle.innerText = 'List of exercises';
+        DefinitionPageHeader.appendChild(DefinitionPageHeaderTitle);
+
+        const DefinitionPageBody = document.createElement('div');
+        DefinitionPageBody.classList.add("PageArticleBody")
+        DefinitionPage.appendChild(DefinitionPageBody);
+
+        const DefinitionPageBodyContent = document.createElement('p');
+        DefinitionPageBodyContent.innerHTML = "You want to practice your " + Entry[RK.TechnologyPN] + " skills? This page is made for you. Here is a list of exercises, help yourself and have fun! You would like to suggest a new exercise? Please, contact us (anonymously)!";
+        DefinitionPageBody.appendChild(DefinitionPageBodyContent);
+
+        const Table = document.createElement("table");
+        Table.id = "ExerciseTable";
+        Entry[RK.ExercisesPN].forEach((Exercise) => {
+            const Row = document.createElement("tr");
+            Row.classList.add("FakeButton");
+            Row.onclick = () => {
+                window.location.href = "/" + Entry[RK.TechnologyPN] + "/exercises/" + Exercise[RK.DirectoryNamePN] + "/index.html";
+            };
+            let RowInnerHTML = "<td><span class=\"DifficultyStars\">";
+            let I = 0;
+            while(I < Entry[RK.DifficultyPN]) {
+                RowInnerHTML += "<span class=\"DifficultyStar DifficultyStarFilled\"></span>";
+                I++;
+            }
+            while(I < 3) {
+                RowInnerHTML += "<span class=\"DifficultyStar DifficultyStarEmpty\"></span>";
+                I++;
+            }
+            RowInnerHTML += "</span>" + Exercise[RK.NamePN] + "</td>"
+            RowInnerHTML += "<td class=\"EllipseableCell\">" + Exercise[RK.DescriptionPN] + "</td>"
+            Row.innerHTML = RowInnerHTML;
+            Table.appendChild(Row);
+        });
+        DefinitionPageBody.appendChild(Table);
+    },
+
+    GenerateExercise: async (Entry) => {
+        return new Promise(async (Resolve, Reject) => {
+            await RK.FetchExerciseFilesAndDetectLanguages(Entry);
+            Resolve();
+        });
+    },
+
+    /**
+     * @details
+     * [
+     *     {
+     *         "language":"<lang>",
+     *         "solution":"<content>",
+     *         "provided":"<content>"
+     *     }
+     * ] 
+     * @param {*} Entry 
+     *
+     */
+    FetchExerciseFilesAndDetectLanguages: async (Entry) => {
+        return new Promise(async (Resolve, Reject) => {
+            Collected = {};
+            await RK.FetchExerciseSolutionForLanguage(Entry, Collected, Object.keys(RK.LANGUAGES)[0]);
+            Object.keys(Collected).forEach((CollectedLanguage) => {
+                RK.CreateCode(Collected[CollectedLanguage][RK.SolutionPN], CollectedLanguage, RK.LANGUAGE_HLJS_CLASS[CollectedLanguage]);
+            });
+            Resolve();
+        });
+    },
+
+    FetchExerciseSolutionForLanguage: async (Entry, Collected, LanguageToTry) => {
+        return new Promise(async (Resolve, Reject) => {
+            const SolutionFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN] + "/exercises/" + Entry[RK.DirectoryNamePN] + "/solution." + RK.LANGUAGE_FILE_EXTENSIONS[LanguageToTry];
+            const XHR = new XMLHttpRequest();
+            XHR.open("GET", SolutionFilePath);
+            XHR.onload = async () => {
+                switch(XHR.status) {
+                    case 0:
+                    case 200:
+                        Collected[LanguageToTry] = {
+                            "Solution":XHR.responseText,
+                            "Provided":""
+                        };
+                        await RK.FetchExerciseSourceCodeProvidedIfAny(Entry, Collected, LanguageToTry);
+                        break;
+                    case 404:
+                        const LanguageToTryIndex = Object.keys(RK.LANGUAGES).indexOf(LanguageToTry);
+                        if((LanguageToTryIndex+1) < Object.keys(RK.LANGUAGES).length) {
+                            const LanguageToTryNext = Object.keys(RK.LANGUAGES)[LanguageToTryIndex+1];
+                            await RK.FetchExerciseSolutionForLanguage(Entry, Collected, LanguageToTryNext);
+                        }
+                        else {
+                            RK.GenerateExerciseEnd(Entry, Collected);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                Resolve();
+            };
+            XHR.send();
+        });
+    },
+
+    FetchExerciseSourceCodeProvidedIfAny: async (Entry, Collected, LanguageToTry) => {
+        return new Promise(async (Resolve, Reject) => {
+            const SolutionFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN] + "/exercises/" + Entry[RK.DirectoryNamePN] + "/provided." + RK.LANGUAGE_FILE_EXTENSIONS[LanguageToTry];
+            const XHR = new XMLHttpRequest();
+            XHR.open("GET", SolutionFilePath);
+            XHR.onload = async () => {
+                switch(XHR.status) {
+                    case 0:
+                    case 200:
+                        Collected[LanguageToTry][RK.ProvidedPN] = XHR.responseText;
+                        break;
+                    case 404:
+                        break;
+                    default:
+                        break;
+                }
+                const LanguageToTryIndex = Object.keys(RK.LANGUAGES).indexOf(LanguageToTry);
+                if((LanguageToTryIndex+1) < Object.keys(RK.LANGUAGES).length) {
+                    const LanguageToTryNext = Object.keys(RK.LANGUAGES)[LanguageToTryIndex+1];
+                    await RK.FetchExerciseSolutionForLanguage(Entry, Collected, LanguageToTryNext);
+                }
+                else {
+                    RK.GenerateExerciseEnd(Entry, Collected);
+                }
+                Resolve();
+            };
+            XHR.send();
+        });
+    },
+
+    GenerateExerciseEnd: (Entry, Collected) => {
+        RK.BuildTechnologyNav(Entry);
+
+        const MainSection = document.createElement('section');
+        MainSection.id = "MainSection";
+        RK.GetOutput().appendChild(MainSection);
+
+        const MainSectionDiv = document.createElement('div');
+        MainSection.appendChild(MainSectionDiv);
+
+        ////////////////////
+        // Difficulty div //
+        ////////////////////
+        const DifficultyDiv = document.createElement('div');
+        DifficultyDiv.classList.add("DifficultyWidget");
+        MainSectionDiv.appendChild(DifficultyDiv);
+
+        const DifficultyLabel = document.createElement('p');
+        DifficultyDiv.appendChild(DifficultyLabel);
+
+        const DifficultyLabelTopLevelSpan = document.createElement('span');
+        DifficultyLabelTopLevelSpan.classList.add("DifficultyStars");
+        DifficultyLabel.appendChild(DifficultyLabelTopLevelSpan);
+
+        const DifficultyLabelSecondTopLevelSpan = document.createElement('span');
+        DifficultyLabelSecondTopLevelSpan.classList.add("DifficultyStars");
+        DifficultyLabelTopLevelSpan.appendChild(DifficultyLabelSecondTopLevelSpan);
+
+        for(let i = 0; i < parseInt(Entry[RK.DifficultyPN]); i++) {
+            const DifficultyStarSpan = document.createElement("span");
+            DifficultyStarSpan.classList.add("DifficultyStar", "DifficultyStarFilled");
+            DifficultyLabelSecondTopLevelSpan.appendChild(DifficultyStarSpan);
+        }
+        for(let i = parseInt(Entry[RK.DifficultyPN]); i < 3; i++) {
+            const DifficultyStarSpan = document.createElement("span");
+            DifficultyStarSpan.classList.add("DifficultyStar", "DifficultyStarEmpty");
+            DifficultyLabelSecondTopLevelSpan.appendChild(DifficultyStarSpan);
+        }
+        DifficultyLabelTopLevelSpan.appendChild(document.createTextNode(RK.DIFFICULTY[Entry[RK.DifficultyPN]] + " difficulty"));
+
+        //////////////////
+        // Version tabs //
+        //////////////////
+        const VersionTabsDiv = document.createElement('div');
+        VersionTabsDiv.id = "VersionTabs";
+        MainSectionDiv.appendChild(VersionTabsDiv);
+
+        const VersionTabsP = document.createElement('p');
+        VersionTabsDiv.appendChild(VersionTabsP);
+
+        let FirstVersionTab = true;
+        Object.keys(Collected).forEach((CollectedLanguage) => {
+            if(FirstVersionTab === false) {
+                VersionTabsP.appendChild(document.createTextNode(" | "));
+            }
+            else {
+                FirstVersionTab = false;
+            }
+            const VersionTabSpan = document.createElement('span');
+            VersionTabSpan.classList.add("VersionTab", "FakeButton");
+            VersionTabSpan.onclick = () => {
+                RK.ShowVersion(Event, CollectedLanguage);
+            }
+            VersionTabSpan.textContent = CollectedLanguage;
+            VersionTabsP.appendChild(VersionTabSpan);
+        });
+
+        ////////////
+        // Header //
+        ////////////
+        const MainSectionDivHeader = document.createElement('header');
+        MainSectionDiv.appendChild(MainSectionDivHeader);
+
+        const ExerciseHomepageTitle = document.createElement('h1');
+        ExerciseHomepageTitle.innerText = Entry[RK.TitlePN];
+
+        const ToolsDiv = document.createElement('div');
+        MainSection.appendChild(ToolsDiv);
+
+        MainSectionDivHeader.appendChild(ExerciseHomepageTitle);
+
+        const DefinitionPage = document.createElement('article');
+        DefinitionPage.classList.add("PageArticle")
+        MainSection.appendChild(DefinitionPage);
+
+        const DefinitionPageHeader = document.createElement('div');
+        DefinitionPageHeader.classList.add("PageArticleHeader")
+        DefinitionPage.appendChild(DefinitionPageHeader);
+
+        const DefinitionPageHeaderTitle = document.createElement('h2');
+        DefinitionPageHeaderTitle.innerText = 'Introduction';
+        DefinitionPageHeader.appendChild(DefinitionPageHeaderTitle);
+
+        const DefinitionPageBody = document.createElement('div');
+        DefinitionPageBody.classList.add("PageArticleBody")
+        DefinitionPage.appendChild(DefinitionPageBody);
+
+        const DefinitionPageBodyContent = document.createElement('p');
+        DefinitionPageBodyContent.innerHTML = Entry[RK.IntroductionPN];
+        DefinitionPageBody.appendChild(DefinitionPageBodyContent);
+
+        const HintPage = document.createElement('article');
+        HintPage.classList.add("PageArticle")
+        MainSection.appendChild(HintPage);
+
+        const OutputPageHeader = document.createElement('div');
+        OutputPageHeader.classList.add("PageArticleHeader")
+        HintPage.appendChild(OutputPageHeader);
+
+        const OutputPageHeaderTitle = document.createElement('h2');
+        OutputPageHeaderTitle.innerText = 'Hints';
+        OutputPageHeader.appendChild(OutputPageHeaderTitle);
+
+        const OutputPageBody = document.createElement('div');
+        OutputPageBody.classList.add("PageArticleBody")
+        HintPage.appendChild(OutputPageBody);
+
+        const OutputPageBodyContent = document.createElement('p');
+        OutputPageBodyContent.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(Entry[RK.HintsPN])) || "None: you are on your own on this one.";
+        OutputPageBody.appendChild(OutputPageBodyContent);
+
+        // Get output
+        const XHR = new XMLHttpRequest();
+        const OutputFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN] + "/exercises/" + Entry[RK.DirectoryNamePN] + "/output.txt";
+        XHR.open("GET", OutputFilePath);
+        XHR.onload = () => {
+            switch(XHR.status) {
+                case 0:
+                case 200:
+                    const OutputFilePage = document.createElement('article');
+                    OutputFilePage.classList.add("PageArticle")
+                    MainSection.appendChild(OutputFilePage);
+
+                    const OutputPageHeader = document.createElement('div');
+                    OutputPageHeader.classList.add("PageArticleHeader")
+                    OutputFilePage.appendChild(OutputPageHeader);
+
+                    const OutputPageHeaderTitle = document.createElement('h2');
+                    OutputPageHeaderTitle.innerText = 'Expected output';
+                    OutputPageHeader.appendChild(OutputPageHeaderTitle);
+
+                    const OutputPageBody = document.createElement('div');
+                    OutputPageBody.classList.add("PageArticleBody")
+                    OutputFilePage.appendChild(OutputPageBody);
+
+                    const ConsoleOutput = document.createElement('div');
+                    ConsoleOutput.classList.add("ConsoleOutput");
+                    OutputPageBody.appendChild(ConsoleOutput);
+
+                    const OutputText = XHR.responseText;
+                    const OutputTextLines = OutputText.split('\n');
+                    OutputTextLines.forEach((OutputTextLine) => {
+                        // TODO Do something with that line
+                        const ConsoleOutputLine = document.createElement('pre');
+                        ConsoleOutputLine.classList.add("ConsoleOutputLine");
+                        ConsoleOutputLine.textContent = OutputTextLine;
+                        ConsoleOutput.appendChild(ConsoleOutputLine);
+                    });
+                    break;
+                case 404:
+                    alert("Output file not found at \"" + ManifestPath + "\"");
+                    break;
+                default:
+                    alert("Output file loading: unexpected XHR code " + XHR.status);
+            }
+
+            // Create source code sections
+            Object.keys(RK.LANGUAGES).forEach((Language) => {
+                if(Collected.hasOwnProperty(Language)) {
+                    const CollectedEntry = Collected[Language];
+
+                    // Source code provided
+                    const OutputPage = document.createElement('article');
+                    OutputPage.classList.add("PageArticle", Language, "Version");
+                    MainSection.appendChild(OutputPage);
+
+                    const OutputPageHeader = document.createElement('div');
+                    OutputPageHeader.classList.add("PageArticleHeader");
+                    OutputPage.appendChild(OutputPageHeader);
+
+                    const OutputPageHeaderTitle = document.createElement('h2');
+                    OutputPageHeaderTitle.innerText = 'Source code provided';
+                    OutputPageHeader.appendChild(OutputPageHeaderTitle);
+
+                    const OutputPageBody = document.createElement('div');
+                    OutputPageBody.classList.add("PageArticleBody")
+                    OutputPage.appendChild(OutputPageBody);
+                    if(CollectedEntry[RK.ProvidedPN] === "") {
+                        const NoSourceCodeProvidedLabel = document.createElement('p');
+                        NoSourceCodeProvidedLabel.textContent = "None: you have to write it from scratch.";
+                        OutputPageBody.appendChild(NoSourceCodeProvidedLabel);
+                    } else {
+                        RK.CreateCode(CollectedEntry[RK.ProvidedPN], OutputPageBody, Language);
+                    }
+
+                    // Solution
+                    const SolutionPage = document.createElement('article');
+                    SolutionPage.classList.add("PageArticle", Language, "Version");
+                    MainSection.appendChild(SolutionPage);
+
+                    const SolutionPageHeader = document.createElement('div');
+                    SolutionPageHeader.classList.add("PageArticleHeader");
+                    SolutionPage.appendChild(SolutionPageHeader);
+
+                    const SolutionPageHeaderTitle = document.createElement('h2');
+                    SolutionPageHeaderTitle.innerText = 'Solution';
+                    SolutionPageHeader.appendChild(SolutionPageHeaderTitle);
+
+                    const SolutionPageBody = document.createElement('div');
+                    SolutionPageBody.classList.add("PageArticleBody")
+                    SolutionPage.appendChild(SolutionPageBody);
+                    RK.CreateCode(CollectedEntry[RK.SolutionPN], SolutionPageBody, Language);
+                }
+            });
+            
+            // Trigger first language show
+            // TODO Use some cookie
+            document.getElementsByClassName("VersionTab")[0].click();
+        };
+        XHR.send(null);
+    },
+
+    GenerateText: async (Entry) => {
         let InnerHTML = `
         <section id="MainSection">
             <div>
@@ -1315,43 +1767,45 @@ const RK = {
         RK.GetOutput().innerHTML += InnerHTML;
     },
 
-    Generate: (Entry, SelectedOutput) => {
-        try {
-            RK.Verify(Entry);
-            const Root = document.documentElement;
-            Root.style.setProperty('--FeedbackImagePath', "url(" + RK.BASE_URL + "/images/bubbleBlack.svg)");
-            Root.style.setProperty('--CopyImagePath', "url(" + RK.BASE_URL + "/images/copyBlack.svg)");
+    Generate: async (Entry, SelectedOutput) => {
+        return new Promise(async (Resolve, Reject) =>{
+            try {
+                RK.Verify(Entry);
+                const Root = document.documentElement;
+                Root.style.setProperty('--FeedbackImagePath', "url(" + RK.BASE_URL + "/images/bubbleBlack.svg)");
+                Root.style.setProperty('--CopyImagePath', "url(" + RK.BASE_URL + "/images/copyBlack.svg)");
 
-            RK.SetOutput(SelectedOutput);
-            RK.GetOutput().innerText = "";
-            // Will automatically call for generation of body, then footer etc...
-            RK.BuildHeader(Entry)
-            .then(() =>
-            {
+                RK.SetOutput(SelectedOutput);
+                RK.GetOutput().innerText = "";
+                // Will automatically call for generation of body, then footer etc...
+                await RK.BuildHeader(Entry);
                 switch(Entry[RK.TypePN]) {
                     case RK.ENTRY_TYPES.TEXT:
-                        RK.GenerateText(Entry);
+                        await RK.GenerateText(Entry);
                         break;
                     case RK.ENTRY_TYPES.ABOUT:
-                        RK.GenerateAbout(Entry);
+                        await RK.GenerateAbout(Entry);
                         break;
                     case RK.ENTRY_TYPES.DOCUMENTATION:
-                        RK.GenerateDocumentation(Entry);
+                        await RK.GenerateDocumentation(Entry);
                         break;
                     case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
-                        RK.GenerateToolHomepage(Entry);
+                        await RK.GenerateToolHomepage(Entry);
                         break;
                     case RK.ENTRY_TYPES.TOOL:
                         throw 'Unimplemented yet';
                         break;
+                    case RK.ENTRY_TYPES.EXERCISE_HOMEPAGE:
+                        await RK.GenerateExerciseHomepage(Entry);
+                        break;
                     case RK.ENTRY_TYPES.EXERCISE:
-                        throw 'Unimplemented yet';
+                        await RK.GenerateExercise(Entry);
                         break;
                     case RK.ENTRY_TYPES.DOCUMENTATION_HOMEPAGE:
-                        RK.GenerateDocumentationHomepage(Entry);
+                        await RK.GenerateDocumentationHomepage(Entry);
                         break;
                     case RK.ENTRY_TYPES.HOMEPAGE:
-                        RK.GenerateHomepage(Entry);
+                        await RK.GenerateHomepage(Entry);
                         break;
                     default:
                         throw 'Unsupported entry type: "' + Entry[RK.TypePN] + '".';
@@ -1359,11 +1813,12 @@ const RK = {
                 }
                 RK.BuildFooter(Entry);
                 RK.LoadingFinished();
-            });
-        }
-        catch(e) {
-            throw RK.LocationOpener + "Error at " + RK.GetLocation() + RK.LocationCloser + e;
-        }
+                Resolve();
+            }
+            catch(e) {
+                throw RK.LocationOpener + "Error at " + RK.GetLocation() + RK.LocationCloser + e;
+            }
+        });
     },
 
     CreateCode: (SourceCode, Element, LanguageClass) => {
@@ -1558,9 +2013,12 @@ const RK = {
                         break;
                     case 404:
                         alert("Manifest not found at \"" + ManifestPath + "\"");
+                        Reject();
                         break;
                     default:
                         alert("Manifest loading: unexpected XHR code " + XHR.status);
+                        Reject();
+                        break;
                 }
             };
             XHR.send(null);
@@ -1761,7 +2219,7 @@ const RK = {
     },
 
     CommonDocsCssLoaded: () => {
-        // Load the fonts script
+        // Load the common tools CSS
         const PathToCommonToolsCss = RK.BASE_URL + "/common_tools.css";
         const CommonToolsCss = document.createElement('link');
         document.head.appendChild(CommonToolsCss);
@@ -1771,6 +2229,16 @@ const RK = {
     },
 
     CommonToolsCssLoaded: () => {
+        // Load the common exercises CSS
+        const PathToCommonExercisesCss = RK.BASE_URL + "/common_exercises.css";
+        const CommonExercisesCss = document.createElement('link');
+        document.head.appendChild(CommonExercisesCss);
+        CommonExercisesCss.onload = RK.CommonExercisesCssLoaded;
+        CommonExercisesCss.rel = "stylesheet";
+        CommonExercisesCss.href = PathToCommonExercisesCss;
+    },
+
+    CommonExercisesCssLoaded: () => {
         // Load the fonts script
         const PathToLoadFontsScript = RK.BASE_URL + "/load_fonts.js";
         const LoadFontsScript = document.createElement('script');
@@ -1829,8 +2297,42 @@ const RK = {
         document.getElementById('SearchBar').addEventListener('keyup', RK.LaunchSearch);
     },
 
+    UpdateDescriptionLength: () => {	
+        let Table = document.getElementById('ExerciseTable');
+        if(Table) {
+            var MainSection = document.getElementById('MainSection');
+            let CompStylesMainSection = window.getComputedStyle(MainSection);
+
+            var ParentArticle = Table.parentNode;
+            let CompStylesParentArticle = window.getComputedStyle(ParentArticle);
+
+            // Find the table, for now the table is not fixed, so column widths are set as needed. We'll use that to get the "natural" width of the first column so we can resize the second one accordingly.
+            Table.style.tableLayout = "inherit";
+
+            // Calculate the 2nd column width
+            var FirstTD = Table.getElementsByTagName('td')[0];
+            let CompStyles = window.getComputedStyle(FirstTD);
+            var ColumnWidth = parseInt(MainSection.offsetWidth)
+                            - parseInt(CompStylesMainSection.getPropertyValue('padding-left').split("px")[0])
+                            - parseInt(CompStylesMainSection.getPropertyValue('padding-right').split("px")[0])
+                            - parseInt(CompStylesParentArticle.getPropertyValue('padding-left').split("px")[0])
+                            - parseInt(CompStylesParentArticle.getPropertyValue('padding-right').split("px")[0])
+                            - parseInt(CompStyles.getPropertyValue('width').split("px")[0])
+                            - parseInt(CompStyles.getPropertyValue('padding-left').split("px")[0])
+                            - parseInt(CompStyles.getPropertyValue('padding-right').split("px")[0]);
+            var AllRightTDs = Table.getElementsByClassName('EllipseableCell');
+
+            // Now we can put the table layout as fixed so that we clearly give the width of cells.
+            Table.style.tableLayout = "fixed";
+            for(let I = AllRightTDs.length - 1; I >= 0; I--) {
+                AllRightTDs[I].style.width = ColumnWidth + "px";
+            }
+        }
+	},
+
     WhenThePageIsResized: () => {
         RK.ResizeSearchResultList();
+        RK.UpdateDescriptionLength();
     },
 
     EnableDarkMode: () => {

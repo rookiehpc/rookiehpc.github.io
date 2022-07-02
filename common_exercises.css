@@ -1,0 +1,85 @@
+/****************
+ * MAIN SECTION * 
+ ****************/
+#ExerciseTable
+{
+	border-collapse: collapse;
+	overflow: hidden;
+	width: 100%;
+}
+
+#ExerciseTable tr:hover
+{
+	background-color: var(--BackgroundColour);
+}
+
+#ExerciseTable td
+{
+	padding: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	white-space: nowrap;
+	border: 1px solid var(--WeakBackgroundColour);
+}
+
+@media only screen and (max-width: 768px)
+{
+	#ExerciseTable td
+	{
+		padding-bottom: 15px;
+		padding-top: 15px;
+	}
+}
+
+#ExerciseTable tr td:first-child
+{
+	border-right: none;
+}
+
+#ExerciseTable tr td:last-child
+{
+	border-left: none;
+	font-style: italic;
+	color: var(--WeakColour);
+}
+
+#ExerciseTable .EllipseableCell
+{
+    overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.DifficultyWidget
+{
+	float: right;
+	padding-top: 25px;
+}
+
+.DifficultyWidget p
+{
+	margin: 0px;
+}
+
+.DifficultyStarEmpty
+{
+	background-image: url('/images/star_empty.svg');
+}
+
+.DifficultyStarFilled
+{
+	background-image: url('/images/star_filled.svg');
+}
+
+.DifficultyStar
+{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+}
+
+.DifficultyStars
+{
+	position: relative;
+	top: 2px;
+	margin-right: 10px;
+}

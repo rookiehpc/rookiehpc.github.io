@@ -65,6 +65,39 @@ LookupFileString += "\n]"
 LookupFile.write(LookupFileString)
 LookupFile.close()
 
+# Build exercise homepages
+for Technology in Technologies:
+    HomepageFilePath = Technology.lower() + "/exercises/data.json"
+    HomepageFile = open(HomepageFilePath, "w")
+    HomepageFileContent = "{\n"
+    HomepageFileContent += "    \"Type\":\"ExerciseHomepage\",\n"
+    HomepageFileContent += "    \"Technology\":\"" + Technology + "\",\n"
+    HomepageFileContent += "    \"Exercises\":["
+    ExerciseIndex = 1
+    ExerciseFilePath = Technology.lower() + "/exercises/exercise_" + str(ExerciseIndex) + "/data.json"
+    FirstExercise = True
+    while(os.path.exists(ExerciseFilePath)):
+        ExerciseFile = open(ExerciseFilePath, "r")
+        if(FirstExercise):
+            FirstExercise = False
+        else:
+            HomepageFileContent += ","
+        HomepageFileContent += "\n        {\n"
+        JSONObject = json.load(ExerciseFile)
+        HomepageFileContent += "            \"Name\":\"" + JSONObject["Title"] + "\",\n"
+        HomepageFileContent += "            \"Description\":\"" + JSONObject["Introduction"] + "\",\n"
+        HomepageFileContent += "            \"DirectoryName\":\"" + JSONObject["DirectoryName"] + "\",\n"
+        HomepageFileContent += "            \"Difficulty\":" + str(JSONObject["Difficulty"]) + "\n"
+        HomepageFileContent += "        }"
+        ExerciseFile.close()
+        ExerciseIndex = ExerciseIndex + 1
+        ExerciseFilePath = Technology.lower() + "/exercises/exercise_" + str(ExerciseIndex) + "/data.json"
+    HomepageFileContent += "\n"
+    HomepageFileContent += "    ]\n"
+    HomepageFileContent += "}"
+    HomepageFile.write(HomepageFileContent)
+    HomepageFile.close()
+
 # Build sitemap
 SitemapFile = open("sitemap/sitemap.xml", "w")
 SitemapFileString = "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"

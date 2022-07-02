@@ -477,6 +477,7 @@
 	 {
 	 	float: left;
 	 	font-size: 12px;
+		padding-top: 30px;
 	 }
 
 	 .VersionTab
@@ -486,7 +487,7 @@
 		color: var(--Colour);
 	 }
 
-	#VersionTabs .active::before
+	#VersionTabs .Active::before
 	{ 
 		content: "✓ ";
 		color: var(--SpecialColour);
@@ -629,7 +630,7 @@
 	/******************
 	 * CONSOLE OUTPUT *
 	 ******************/
-	.consoleOutput
+	.ConsoleOutput
 	{
 		padding: 15px;
 		background-color: rgb(35, 40, 45);
@@ -641,13 +642,13 @@
 		border-radius: 2px;
 	}
 
-	.consoleOutput .consoleOutputLine
+	.ConsoleOutput .ConsoleOutputLine
 	{
 		padding: 0px;
 		margin: 0px;
 	}
 
-	.consoleOutput .consoleOutputLine:hover
+	.ConsoleOutput .ConsoleOutputLine:hover
 	{
 		background-color: rgb(3, 169, 252);
 	}
