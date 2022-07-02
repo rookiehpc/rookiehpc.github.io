@@ -1602,7 +1602,7 @@ const RK = {
 
         const DefinitionPage = document.createElement('article');
         DefinitionPage.classList.add("PageArticle")
-        MainSection.appendChild(DefinitionPage);
+        MainSectionDiv.appendChild(DefinitionPage);
 
         const DefinitionPageHeader = document.createElement('div');
         DefinitionPageHeader.classList.add("PageArticleHeader")
@@ -1620,26 +1620,6 @@ const RK = {
         DefinitionPageBodyContent.innerHTML = Entry[RK.IntroductionPN];
         DefinitionPageBody.appendChild(DefinitionPageBodyContent);
 
-        const HintPage = document.createElement('article');
-        HintPage.classList.add("PageArticle")
-        MainSection.appendChild(HintPage);
-
-        const OutputPageHeader = document.createElement('div');
-        OutputPageHeader.classList.add("PageArticleHeader")
-        HintPage.appendChild(OutputPageHeader);
-
-        const OutputPageHeaderTitle = document.createElement('h2');
-        OutputPageHeaderTitle.innerText = 'Hints';
-        OutputPageHeader.appendChild(OutputPageHeaderTitle);
-
-        const OutputPageBody = document.createElement('div');
-        OutputPageBody.classList.add("PageArticleBody")
-        HintPage.appendChild(OutputPageBody);
-
-        const OutputPageBodyContent = document.createElement('p');
-        OutputPageBodyContent.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(Entry[RK.HintsPN])) || "None: you are on your own on this one.";
-        OutputPageBody.appendChild(OutputPageBodyContent);
-
         // Get output
         const XHR = new XMLHttpRequest();
         const OutputFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN] + "/exercises/" + Entry[RK.DirectoryNamePN] + "/output.txt";
@@ -1650,7 +1630,7 @@ const RK = {
                 case 200:
                     const OutputFilePage = document.createElement('article');
                     OutputFilePage.classList.add("PageArticle")
-                    MainSection.appendChild(OutputFilePage);
+                    MainSectionDiv.appendChild(OutputFilePage);
 
                     const OutputPageHeader = document.createElement('div');
                     OutputPageHeader.classList.add("PageArticleHeader")
@@ -1685,6 +1665,27 @@ const RK = {
                     alert("Output file loading: unexpected XHR code " + XHR.status);
             }
 
+            // Hints
+            const HintPage = document.createElement('article');
+            HintPage.classList.add("PageArticle")
+            MainSectionDiv.appendChild(HintPage);
+
+            const OutputPageHeader = document.createElement('div');
+            OutputPageHeader.classList.add("PageArticleHeader")
+            HintPage.appendChild(OutputPageHeader);
+
+            const OutputPageHeaderTitle = document.createElement('h2');
+            OutputPageHeaderTitle.innerText = 'Hints';
+            OutputPageHeader.appendChild(OutputPageHeaderTitle);
+
+            const OutputPageBody = document.createElement('div');
+            OutputPageBody.classList.add("PageArticleBody")
+            HintPage.appendChild(OutputPageBody);
+
+            const OutputPageBodyContent = document.createElement('p');
+            OutputPageBodyContent.innerHTML = RK.InterpretMarkdown(RK.InsertCrossReferencesFromTechnology(Entry[RK.HintsPN])) || "None: you are on your own on this one.";
+            OutputPageBody.appendChild(OutputPageBodyContent);
+
             // Create source code sections
             Object.keys(RK.LANGUAGES).forEach((Language) => {
                 if(Collected.hasOwnProperty(Language)) {
@@ -1693,7 +1694,7 @@ const RK = {
                     // Source code provided
                     const OutputPage = document.createElement('article');
                     OutputPage.classList.add("PageArticle", "Version", RK.LANGUAGES[Language]);
-                    MainSection.appendChild(OutputPage);
+                    MainSectionDiv.appendChild(OutputPage);
 
                     const OutputPageHeader = document.createElement('div');
                     OutputPageHeader.classList.add("PageArticleHeader");
@@ -1717,7 +1718,7 @@ const RK = {
                     // Solution
                     const SolutionPage = document.createElement('article');
                     SolutionPage.classList.add("PageArticle", "Version", RK.LANGUAGES[Language]);
-                    MainSection.appendChild(SolutionPage);
+                    MainSectionDiv.appendChild(SolutionPage);
 
                     const SolutionPageHeader = document.createElement('div');
                     SolutionPageHeader.classList.add("PageArticleHeader");
