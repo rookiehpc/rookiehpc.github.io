@@ -31,6 +31,12 @@
             "Description":"A classic collective: the reduction. This exercise consists in writing an application where each process declares a variable containing a value equal to its MPI rank times 100. Then, all processes participate to a collective operation calculating the sum of all these variables and store the sum in a variable held on MPI process 0, which then prints it.",
             "DirectoryName":"exercise_5",
             "Difficulty":1
+        },
+        {
+            "Name":"Switch to non-blocking",
+            "Description":"In this test, you are provided with a working code: 2 MPI processes, one sends a message and the other receives it. The objective is simple: make this program use non-blocking operations instead of blocking ones.",
+            "DirectoryName":"exercise_6",
+            "Difficulty":2
         }
     ]
 }

@@ -1,0 +1,2 @@
+Value sent from MPI process 0: 12345
+Value received on MPI process 1: 12345

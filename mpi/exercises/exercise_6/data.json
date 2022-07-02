@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Switch to non-blocking",
+    "DirectoryName":"exercise_6",
+    "Introduction":"In this test, you are provided with a working code: 2 MPI processes, one sends a message and the other receives it. The objective is simple: make this program use non-blocking operations instead of blocking ones.",
+    "Hints":"- MPI_Isend\n- MPI_Irecv\n- MPI_Wait\n- MPI_Request\n- MPI_Status\n- MPI_STATUS_IGNORE",
+    "Difficulty":2
+}
