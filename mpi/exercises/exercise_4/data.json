@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"An incorrect hello world",
+    "DirectoryName":"exercise_4",
+    "Introduction":"Even a hello world can be incorrect; this code demonstrates it. Find the bug and fix it.",
+    "Hints":"",
+    "Difficulty":1
+}

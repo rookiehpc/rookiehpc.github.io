@@ -19,6 +19,12 @@
             "Description":"This test is an easy way to use a collective operation. This application is made of 4 MPI processes and consists of the MPI process 1 sending the value 12345 to all other MPI processes. To achieve this, you are not allowed to use individual sends, instead you must use a collective operation.",
             "DirectoryName":"exercise_3",
             "Difficulty":0
+        },
+        {
+            "Name":"An incorrect hello world",
+            "Description":"Even a hello world can be incorrect; this code demonstrates it. Find the bug and fix it.",
+            "DirectoryName":"exercise_4",
+            "Difficulty":1
         }
     ]
 }
