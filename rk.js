@@ -1457,7 +1457,7 @@ const RK = {
 
     FetchExerciseSolutionForLanguage: async (Entry, Collected, LanguageToTry) => {
         return new Promise(async (Resolve, Reject) => {
-            const SolutionFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN] + "/exercises/" + Entry[RK.DirectoryNamePN] + "/solution." + RK.LANGUAGE_FILE_EXTENSIONS[LanguageToTry];
+            const SolutionFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN].toLowerCase() + "/exercises/" + Entry[RK.DirectoryNamePN] + "/solution." + RK.LANGUAGE_FILE_EXTENSIONS[LanguageToTry];
             const XHR = new XMLHttpRequest();
             XHR.open("GET", SolutionFilePath);
             XHR.onload = async () => {
@@ -1491,7 +1491,7 @@ const RK = {
 
     FetchExerciseSourceCodeProvidedIfAny: async (Entry, Collected, LanguageToTry) => {
         return new Promise(async (Resolve, Reject) => {
-            const SolutionFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN] + "/exercises/" + Entry[RK.DirectoryNamePN] + "/provided." + RK.LANGUAGE_FILE_EXTENSIONS[LanguageToTry];
+            const SolutionFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN].toLowerCase() + "/exercises/" + Entry[RK.DirectoryNamePN] + "/provided." + RK.LANGUAGE_FILE_EXTENSIONS[LanguageToTry];
             const XHR = new XMLHttpRequest();
             XHR.open("GET", SolutionFilePath);
             XHR.onload = async () => {
@@ -1622,7 +1622,7 @@ const RK = {
 
         // Get output
         const XHR = new XMLHttpRequest();
-        const OutputFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN] + "/exercises/" + Entry[RK.DirectoryNamePN] + "/output.txt";
+        const OutputFilePath = RK.BASE_URL + "/" + Entry[RK.TechnologyPN].toLowerCase() + "/exercises/" + Entry[RK.DirectoryNamePN] + "/output.txt";
         XHR.open("GET", OutputFilePath);
         XHR.onload = () => {
             switch(XHR.status) {
