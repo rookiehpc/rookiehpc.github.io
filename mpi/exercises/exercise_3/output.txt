@@ -1,0 +1,5 @@
+I am process 1 and I broadcast value 12345
+(The following lines may print in any order)
+I am process 0 and I received value 12345 via broadcast
+I am process 2 and I received value 12345 via broadcast
+I am process 3 and I received value 12345 via broadcast

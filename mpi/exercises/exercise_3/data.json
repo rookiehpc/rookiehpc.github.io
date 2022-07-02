@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Shout it to the whole world",
+    "DirectoryName":"exercise_3",
+    "Introduction":"This test is an easy way to use a collective operation. This application is made of 4 MPI processes and consists of the MPI process 1 sending the value 12345 to all other MPI processes. To achieve this, you are not allowed to use individual sends, instead you must use a collective operation.",
+    "Hints":"- MPI_Init\n- MPI_Comm_rank\n- MPI_Bcast\n- MPI_INT or MPI_INTEGER\n- MPI_COMM_WORLD\n- MPI_Finalize",
+    "Difficulty":0
+}
