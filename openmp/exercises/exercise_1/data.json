@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"OpenMP",
+    "Title":"Hello world",
+    "DirectoryName":"exercise_1",
+    "Introduction":"Producing a hello world is the first exercise in any language / library / framework / API you learn. OpenMP is no exception, so, first things first: a hello world. In OpenMP, it consists in creating a parallel region where each thread prints the world wide known message followed by their thread number and the total number of threads present.",
+    "Hints":"- parallel\n- default\n- private\n- omp_get_thread_num\n- omp_get_num_threads",
+    "Difficulty":0
+}

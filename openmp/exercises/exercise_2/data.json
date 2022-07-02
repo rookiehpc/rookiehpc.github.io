@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"OpenMP",
+    "Title":"Calculate squares in parallel",
+    "DirectoryName":"exercise_2",
+    "Introduction":"This exercise is simple; writing an application that calculates for each array element the square of their index and stores it as the element value. Of course, these calculations must be done in parallel.",
+    "Hints":"- parallel\n- do or for\n- default\n- shared",
+    "Difficulty":0
+}

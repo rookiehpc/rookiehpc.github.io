@@ -1,0 +1,5 @@
+(The lines below may print in any order)
+"Hello world!" from thread 3, we are 4 threads.
+"Hello world!" from thread 0, we are 4 threads.
+"Hello world!" from thread 1, we are 4 threads.
+"Hello world!" from thread 2, we are 4 threads.

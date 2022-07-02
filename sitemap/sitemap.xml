@@ -866,4 +866,10 @@
     <url>
         <loc>/openmp/exercises/index.html</loc>
     </url>
+    <url>
+        <loc>/openmp/exercises/exercise_2/index.html</loc>
+    </url>
+    <url>
+        <loc>/openmp/exercises/exercise_1/index.html</loc>
+    </url>
 </urlset>
