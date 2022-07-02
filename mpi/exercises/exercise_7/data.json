@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Take as much as you need",
+    "DirectoryName":"exercise_7",
+    "Introduction":"This code makes for a simple application; 2 MPI processes, one sends a message, the other receives it. However, it is an incorrect code and should crash. There might be MPI implementations where this code may not crash, but it does not make it less any incorrect. Find the incorrect statement and fix it.",
+    "Hints":"",
+    "Difficulty":2
+}
