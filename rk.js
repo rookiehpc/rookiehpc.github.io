@@ -554,9 +554,8 @@ const RK = {
             Version.style.display = "none";
         });
         
-        [].forEach.call(document.getElementsByClassName(Language), (L) => {
-            L.style.display = "";
-        });
+        console.log(Language);
+        document.getElementById(Language).style.display = "";
     
         const VersionTabs = document.getElementsByClassName('VersionTab');
         [].forEach.call(VersionTabs, (VersionTab) => {
@@ -1580,9 +1579,9 @@ const RK = {
             const VersionTabSpan = document.createElement('span');
             VersionTabSpan.classList.add("VersionTab", "FakeButton");
             VersionTabSpan.onclick = () => {
-                RK.ShowVersion(Event, CollectedLanguage);
+                RK.ShowVersion(Event, RK.LANGUAGES[CollectedLanguage]);
             }
-            VersionTabSpan.textContent = CollectedLanguage;
+            VersionTabSpan.textContent = RK.LANGUAGES[CollectedLanguage];
             VersionTabsP.appendChild(VersionTabSpan);
         });
 
@@ -1692,7 +1691,8 @@ const RK = {
 
                     // Source code provided
                     const OutputPage = document.createElement('article');
-                    OutputPage.classList.add("PageArticle", Language, "Version");
+                    OutputPage.id = RK.LANGUAGES[Language];
+                    OutputPage.classList.add("PageArticle", "Version");
                     MainSection.appendChild(OutputPage);
 
                     const OutputPageHeader = document.createElement('div');
@@ -1711,7 +1711,7 @@ const RK = {
                         NoSourceCodeProvidedLabel.textContent = "None: you have to write it from scratch.";
                         OutputPageBody.appendChild(NoSourceCodeProvidedLabel);
                     } else {
-                        RK.CreateCode(CollectedEntry[RK.ProvidedPN], OutputPageBody, Language);
+                        RK.CreateCode(CollectedEntry[RK.ProvidedPN], OutputPageBody, RK.LANGUAGE_HLJS_CLASS[Language]);
                     }
 
                     // Solution
@@ -1730,7 +1730,7 @@ const RK = {
                     const SolutionPageBody = document.createElement('div');
                     SolutionPageBody.classList.add("PageArticleBody")
                     SolutionPage.appendChild(SolutionPageBody);
-                    RK.CreateCode(CollectedEntry[RK.SolutionPN], SolutionPageBody, Language);
+                    RK.CreateCode(CollectedEntry[RK.SolutionPN], SolutionPageBody, RK.LANGUAGE_HLJS_CLASS[Language]);
                 }
             });
             
