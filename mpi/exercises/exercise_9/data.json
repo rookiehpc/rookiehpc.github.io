@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Ordered hello world",
+    "DirectoryName":"exercise_9",
+    "Introduction":"This application is made of 3 MPI processes: MPI process 0 holds a 2D array that contains an even number of consecutive integers starting from 0. You must write a program that scatters this array, with a collective operation, such that MPI process 0 receives nothing, MPI process 1 receives all odd numbers and MPI process 2 all even ones.",
+    "Hints":"",
+    "Difficulty":3
+}
