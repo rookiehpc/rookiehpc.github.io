@@ -7,6 +7,12 @@
             "Description":"Producing a hello world is the first test in any language / library / framework you learn. The MPI version of the good old hello world is an application where each MPI process prints its MPI rank and the total number of MPI processes in the global communicator.",
             "DirectoryName":"exercise_1",
             "Difficulty":0
+        },
+        {
+            "Name":"Send a message",
+            "Description":"This test is for you to practice the fundamental feature of MPI: sending a message. The application you must develop is made of 2 MPI processes, the first one sends a message and the second one receives it. The message to send is just an integer with the value 12345. The receiver must print the value received. You are free to pick the tag value you want.",
+            "DirectoryName":"exercise_2",
+            "Difficulty":0
         }
     ]
 }

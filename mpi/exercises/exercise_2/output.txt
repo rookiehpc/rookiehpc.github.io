@@ -1,0 +1,2 @@
+I am process 0, I send value 12345
+I am process 1, I received value 12345

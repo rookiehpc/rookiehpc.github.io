@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Send a message",
+    "DirectoryName":"exercise_2",
+    "Introduction":"This test is for you to practice the fundamental feature of MPI: sending a message. The application you must develop is made of 2 MPI processes, the first one sends a message and the second one receives it. The message to send is just an integer with the value 12345. The receiver must print the value received. You are free to pick the tag value you want.",
+    "Hints":"- MPI_Init\n- MPI_Comm_rank\n- MPI_Comm_size\n- MPI_COMM_WORLD\n- MPI_Send\n- MPI_Recv\n- MPI_INT\n- MPI_Status\n- MPI_STATUS_IGNORE\n- MPI_Finalize",
+    "Difficulty":0
+}
