@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Ordered hello world",
+    "DirectoryName":"exercise_8",
+    "Introduction":"The Hello World is the easiest program you can write in MPI. However, one cannot know in which order MPI processes will print their message. The objective here is to write a program that does guarantee that MPI process 0 will write the hello world first, then MPI process 1, then MPI process 2 and so on, for any number of MPI processes.",
+    "Hints":"",
+    "Difficulty":2
+}

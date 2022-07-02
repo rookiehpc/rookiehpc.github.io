@@ -1,0 +1,9 @@
+(The following is for 8 MPI processes. Lines must appear in that order.)
+Process 0: Hello World!
+Process 1: Hello World!
+Process 2: Hello World!
+Process 3: Hello World!
+Process 4: Hello World!
+Process 5: Hello World!
+Process 6: Hello World!
+Process 7: Hello World!
