@@ -1659,7 +1659,6 @@ const RK = {
                     });
                     break;
                 case 404:
-                    alert("Output file not found at \"" + ManifestPath + "\"");
                     break;
                 default:
                     alert("Output file loading: unexpected XHR code " + XHR.status);
