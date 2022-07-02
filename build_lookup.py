@@ -65,8 +65,17 @@ LookupFileString += "\n]"
 LookupFile.write(LookupFileString)
 LookupFile.close()
 
+ROOKIE_DIFFICULTY = 0
+EASY_DIFFICULTY = 1
+MEDIUM_DIFFICULTY = 2
+HARD_DIFFICULTY = 3
+AtLeastOneExercise = False
 # Build exercise homepages
 for Technology in Technologies:
+    RookieExercises = ""
+    EasyExercises = ""
+    MediumExercises = ""
+    HardExercises = ""
     HomepageFilePath = Technology.lower() + "/exercises/data.json"
     HomepageFile = open(HomepageFilePath, "w")
     HomepageFileContent = "{\n"
@@ -75,26 +84,39 @@ for Technology in Technologies:
     HomepageFileContent += "    \"Exercises\":["
     ExerciseIndex = 1
     ExerciseFilePath = Technology.lower() + "/exercises/exercise_" + str(ExerciseIndex) + "/data.json"
-    FirstExercise = True
+    AtLeastOneExercise = False
     while(os.path.exists(ExerciseFilePath)):
+        AtLeastOneExercise = True
         ExerciseFile = open(ExerciseFilePath, "r")
-        if(FirstExercise):
-            FirstExercise = False
-        else:
-            HomepageFileContent += ","
-        HomepageFileContent += "\n        {\n"
+        AdditionalRecord = ""
+        AdditionalRecord += "\n        {\n"
         JSONObject = json.load(ExerciseFile)
-        HomepageFileContent += "            \"Name\":\"" + JSONObject["Title"] + "\",\n"
-        HomepageFileContent += "            \"Description\":\"" + JSONObject["Introduction"] + "\",\n"
-        HomepageFileContent += "            \"DirectoryName\":\"" + JSONObject["DirectoryName"] + "\",\n"
-        HomepageFileContent += "            \"Difficulty\":" + str(JSONObject["Difficulty"]) + "\n"
-        HomepageFileContent += "        }"
+        AdditionalRecord += "            \"Name\":\"" + JSONObject["Title"] + "\",\n"
+        AdditionalRecord += "            \"Description\":\"" + JSONObject["Introduction"] + "\",\n"
+        AdditionalRecord += "            \"DirectoryName\":\"" + JSONObject["DirectoryName"] + "\",\n"
+        AdditionalRecord += "            \"Difficulty\":" + str(JSONObject["Difficulty"]) + "\n"
+        AdditionalRecord += "        },"
+        if(JSONObject["Difficulty"] == 0):
+            RookieExercises += AdditionalRecord
+        elif(JSONObject["Difficulty"] == 1):
+            EasyExercises += AdditionalRecord
+        elif(JSONObject["Difficulty"] == 2):
+            MediumExercises += AdditionalRecord
+        else:
+            HardExercises += AdditionalRecord
         ExerciseFile.close()
         ExerciseIndex = ExerciseIndex + 1
         ExerciseFilePath = Technology.lower() + "/exercises/exercise_" + str(ExerciseIndex) + "/data.json"
+    HomepageFileContent += RookieExercises
+    HomepageFileContent += EasyExercises
+    HomepageFileContent += MediumExercises
+    HomepageFileContent += HardExercises
+    if(AtLeastOneExercise):
+        HomepageFileContent = HomepageFileContent[:-1]
     HomepageFileContent += "\n"
     HomepageFileContent += "    ]\n"
     HomepageFileContent += "}"
+    ExerciseIndex = json.loads(HomepageFileContent)
     HomepageFile.write(HomepageFileContent)
     HomepageFile.close()
 
