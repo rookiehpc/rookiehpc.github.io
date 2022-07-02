@@ -1405,7 +1405,7 @@ const RK = {
             const Row = document.createElement("tr");
             Row.classList.add("FakeButton");
             Row.onclick = () => {
-                window.location.href = "/" + Entry[RK.TechnologyPN] + "/exercises/" + Exercise[RK.DirectoryNamePN] + "/index.html";
+                window.location.href = "/" + Entry[RK.TechnologyPN].toLowerCase() + "/exercises/" + Exercise[RK.DirectoryNamePN] + "/index.html";
             };
             let RowInnerHTML = "<td><span class=\"DifficultyStars\">";
             let I = 0;
