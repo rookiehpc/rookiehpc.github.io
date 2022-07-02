@@ -1,0 +1,6 @@
+Value held by MPI process 0: 0.
+Value held by MPI process 1: 100.
+Value held by MPI process 3: 300.
+Value held by MPI process 4: 400.
+Value held by MPI process 2: 200.
+Total sum reduced at MPI process 0: 1000.

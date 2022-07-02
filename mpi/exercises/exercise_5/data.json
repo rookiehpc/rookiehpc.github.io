@@ -1,0 +1,9 @@
+{
+    "Type":"Exercise",
+    "Technology":"MPI",
+    "Title":"Distributed sum",
+    "DirectoryName":"exercise_5",
+    "Introduction":"A classic collective: the reduction. This exercise consists in writing an application where each process declares a variable containing a value equal to its MPI rank times 100. Then, all processes participate to a collective operation calculating the sum of all these variables and store the sum in a variable held on MPI process 0, which then prints it.",
+    "Hints":"- MPI_Init\n- MPI_Comm_rank\n- MPI_COMM_WORLD\n- MPI_Reduce\n- MPI_INT or MPI_INTEGER\n- MPI_SUM\n- MPI_Finalize",
+    "Difficulty":1
+}

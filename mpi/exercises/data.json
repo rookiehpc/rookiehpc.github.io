@@ -25,6 +25,12 @@
             "Description":"Even a hello world can be incorrect; this code demonstrates it. Find the bug and fix it.",
             "DirectoryName":"exercise_4",
             "Difficulty":1
+        },
+        {
+            "Name":"Distributed sum",
+            "Description":"A classic collective: the reduction. This exercise consists in writing an application where each process declares a variable containing a value equal to its MPI rank times 100. Then, all processes participate to a collective operation calculating the sum of all these variables and store the sum in a variable held on MPI process 0, which then prints it.",
+            "DirectoryName":"exercise_5",
+            "Difficulty":1
         }
     ]
 }
