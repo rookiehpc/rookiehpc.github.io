@@ -554,8 +554,9 @@ const RK = {
             Version.style.display = "none";
         });
         
-        console.log(Language);
-        document.getElementById(Language).style.display = "";
+        [].forEach.call(document.getElementsByClassName(Language), (L) => {
+            L.style.display = "";
+        });
     
         const VersionTabs = document.getElementsByClassName('VersionTab');
         [].forEach.call(VersionTabs, (VersionTab) => {
@@ -777,8 +778,7 @@ const RK = {
     
             // Create the language documentation
             const LanguageDocs = document.createElement('div');
-            LanguageDocs.id = LanguageEntry[RK.LanguagePN];
-            LanguageDocs.classList.add("Version");
+            LanguageDocs.classList.add("Version", LanguageEntry[RK.LanguagePN]);
             MainSection.appendChild(LanguageDocs);
             if(Index === 0) {
                 LanguageDocs.style.display = "block";
@@ -1171,9 +1171,10 @@ const RK = {
     
         [].forEach.call(document.getElementsByClassName('VersionTab'), (VersionTab) => {
             VersionTab.onclick = () => {
-                RK.ShowVersion(VersionTab.innerText);
+                RK.ShowVersion(Event, VersionTab.innerText);
             };
         });
+        document.getElementsByClassName('VersionTab')[0].click();
     },
 
     GenerateDocumentationHomepage: async (Entry) => {
@@ -1408,7 +1409,7 @@ const RK = {
             };
             let RowInnerHTML = "<td><span class=\"DifficultyStars\">";
             let I = 0;
-            while(I < Entry[RK.DifficultyPN]) {
+            while(I < parseInt(Exercise[RK.DifficultyPN])) {
                 RowInnerHTML += "<span class=\"DifficultyStar DifficultyStarFilled\"></span>";
                 I++;
             }
@@ -1691,8 +1692,7 @@ const RK = {
 
                     // Source code provided
                     const OutputPage = document.createElement('article');
-                    OutputPage.id = RK.LANGUAGES[Language];
-                    OutputPage.classList.add("PageArticle", "Version");
+                    OutputPage.classList.add("PageArticle", "Version", RK.LANGUAGES[Language]);
                     MainSection.appendChild(OutputPage);
 
                     const OutputPageHeader = document.createElement('div');
@@ -1716,7 +1716,7 @@ const RK = {
 
                     // Solution
                     const SolutionPage = document.createElement('article');
-                    SolutionPage.classList.add("PageArticle", Language, "Version");
+                    SolutionPage.classList.add("PageArticle", "Version", RK.LANGUAGES[Language]);
                     MainSection.appendChild(SolutionPage);
 
                     const SolutionPageHeader = document.createElement('div');
