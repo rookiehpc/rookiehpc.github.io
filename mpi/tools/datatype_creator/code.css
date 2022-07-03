@@ -1,0 +1,92 @@
+/**
+ *
+ **/
+ #MainSection #SelectorForm
+ {
+     margin-bottom: 10px;
+ }
+ 
+ /*********
+  * LISTS *
+  *********/
+ #MainSection form li
+ {
+     margin-top: 0px;
+ }
+ 
+ #MainSection form li:first-child
+ {
+     margin-top: 0px;
+ }
+ 
+ #MainSection form
+ {
+     display: block;
+     margin-left: 0px;
+     margin-right: auto;
+ }
+ 
+ #MainSection .RoutineForm input
+ {
+     margin-right: 5px;
+ }
+ 
+ #MainSection input[type=number]
+ {
+     text-align: left;
+     width: 40px;
+ }
+ 
+ /****************
+  * TABLE LEGEND *
+  ****************/
+ .RoutineLegend
+ {
+     display: none;
+ }
+ 
+ /*********
+  * TABLE *
+  *********/
+ #MainSection #Visualisation
+ {
+     margin-top: 20px;
+     font-size: 0px;
+ }
+ 
+ #MainSection .Cell
+ {
+     display: inline-block;
+     width: 30px;
+     height: 30px;
+     border: 2px solid rgb(180, 180, 180);
+     border-radius: 5px;
+     margin-right: 2px;
+     background-color: white;
+     transition: background-color 200ms;
+     animation: fadeIn 200ms;
+ }
+ 
+ #MainSection .Cell:last-child
+ {
+     margin-right: 10px;
+ }
+ 
+ #MainSection .LegendCell
+ {
+     width: 20px;
+     height: 20px;
+ }
+ 
+ @keyframes fadeIn
+ {
+     0%
+     {
+         opacity: 0;
+     }
+ 
+     100%
+     {
+         opacity: 1;
+     }
+ }

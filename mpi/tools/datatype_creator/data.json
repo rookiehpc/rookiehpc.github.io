@@ -1,0 +1,10 @@
+{
+    "Type": "Tool",
+    "Technology":"MPI",
+    "DirectoryName":"datatype_creator",
+    "Files": [
+        "code.html",
+        "code.js",
+        "code.css"
+    ]
+}

@@ -1,0 +1,192 @@
+<div>
+    <div id='VersionTabs'>
+    </div>
+    <header>
+        <h1>MPI datatype creator</h1>
+    </header>
+    <div>
+        <article class="PageArticle">
+            <div class="PageArticleHeader">
+                <h2>Configuration</h2>
+            </div>
+            <div class="PageArticleBody">
+                <form id="SelectorForm">
+                    <select id="routine" name="routine">
+                        <option value="MPI_Type_contiguous">MPI_Type_contiguous</option>
+                        <option value="MPI_Type_vector" selected>MPI_Type_vector</option>
+                        <option value="MPI_Type_create_hvector">MPI_Type_create_hvector</option>
+                        <option value="MPI_Type_indexed">MPI_Type_indexed</option>
+                        <option value="MPI_Type_create_indexed_block">MPI_Type_create_indexed_block</option>
+                        <option value="MPI_Type_create_hindexed">MPI_Type_create_hindexed</option>
+                        <option value="MPI_Type_create_hindexed_block">MPI_Type_create_hindexed_block</option>
+                        <option value="MPI_Type_create_struct" disabled>MPI_Type_create_struct (not supported)</option>
+                        <option value="MPI_Type_create_subarray" disabled>MPI_Type_create_subarray (not supported)</option>
+                    </select>
+                </form>
+                <form id="MPI_Type_contiguousForm" class="RoutineForm">
+                    <ul>
+                        <li><label for="MPI_Type_contiguousOldDatatype">What is the datatype to replicate?</label>
+                        <input id="MPI_Type_contiguousOldDatatype" name="old_datatype" type="text" placeholder="MPI_INT" value="MPI_INT"></li>
+                        <li><label for="MPI_Type_contiguousCount">How many replications?</label>
+                        <input id="MPI_Type_contiguousCount" name="count" type="number" value="6" min="1"></li>
+                        <li><label for="MPI_Type_contiguousNewDatatype">What is the name of the new datatype?</label>
+                        <input id="MPI_Type_contiguousNewDatatype" name="new_datatype" type="text" placeholder="my_own_datatype" value="my_own_datatype"></li>
+                    </ul>
+                </form>
+                <form id="MPI_Type_vectorForm" class="RoutineForm">
+                    <ul>
+                        <li><label for="MPI_Type_vectorOldDatatype">What is the type of a block element?</label>
+                        <input id="MPI_Type_vectorOldDatatype" name="old_datatype" type="text" placeholder="MPI_INT" value="MPI_INT"></li>
+                        <li><label for="MPI_Type_vectorBlockLength">How many <span class="oldDatatypeName"></span> per block?</label>
+                        <input id="MPI_Type_vectorBlockLength" name="block_length" type="number" value="3" min="1"></li>
+                        <li><label for="MPI_Type_vectorBlockCount">How many blocks?</label>
+                        <input id="MPI_Type_vectorBlockCount" name="block_count" type="number" value="2" min="1"></li>
+                        <li><label for="MPI_Type_vectorStride">How many <span class="oldDatatypeName"></span> between the starts of two consecutive blocks (a.k.a stride)?</label>
+                        <input id="MPI_Type_vectorStride" name="stride" type="number" value="4" min="0"></li>
+                        <li><label for="MPI_Type_vectorNewDatatype">What is the name of the new datatype?</label>
+                        <input id="MPI_Type_vectorNewDatatype" name="new_datatype" type="text" placeholder="my_own_datatype" value="my_own_datatype"></li>
+                    </ul>
+                </form>
+                <form id="MPI_Type_create_hvectorForm" class="RoutineForm">
+                    <ul>
+                        <li><label for="MPI_Type_create_hvectorOldDatatype">What is the type of a block element?</label>
+                        <input id="MPI_Type_create_hvectorOldDatatype" name="old_datatype" type="text" placeholder="MPI_INT" value="MPI_INT"></li>
+                        <li><label for="MPI_Type_create_hvectorOldDatatypeLength">How many bytes in an <span class="oldDatatypeName"></span>?</label>
+                        <input id="MPI_Type_create_hvectorOldDatatypeLength" name="block_count" type="number" value="4" min="1"></li>
+                        <li><label for="MPI_Type_create_hvectorBlockLength">How many <span class="oldDatatypeName"></span> per block?</label>
+                        <input id="MPI_Type_create_hvectorBlockLength" name="block_length" type="number" value="1" min="1"></li>
+                        <li><label for="MPI_Type_create_hvectorBlockCount">How many blocks?</label>
+                        <input id="MPI_Type_create_hvectorBlockCount" name="block_count" type="number" value="2" min="1"></li>
+                        <li><label for="MPI_Type_create_hvectorStride">How many bytes between the starts of two consecutive blocks (a.k.a stride)?</label>
+                        <input id="MPI_Type_create_hvectorStride" name="stride" type="number" value="5" min="0"></li>
+                        <li><label for="MPI_Type_create_hvectorNewDatatype">What is the name of the new datatype?</label>
+                        <input id="MPI_Type_create_hvectorNewDatatype" name="new_datatype" type="text" placeholder="my_own_datatype" value="my_own_datatype"></li>
+                    </ul>
+                </form>
+                <form id="MPI_Type_indexedForm" class="RoutineForm">
+                    <ul>
+                        <li><label for="MPI_Type_indexedOldDatatype">What is the type of a block element?</label>
+                        <input id="MPI_Type_indexedOldDatatype" name="old_datatype" type="text" placeholder="MPI_INT" value="MPI_INT"></li>
+                        <li><label for="MPI_Type_indexedBlockCount">How many blocks?</label>
+                        <input id="MPI_Type_indexedBlockCount" name="block_count" type="number" value="3" min="1"></li>
+                        <li><label for="MPI_Type_indexedBlockLength0">How many <span class="oldDatatypeName"></span> in each block?</label>
+                        <input id="MPI_Type_indexedBlockLength0" name="block_length" type="number" value="3" min="1"><!--
+                        --><input id="MPI_Type_indexedBlockLength1" name="block_length" type="number" value="5" min="1"><!--
+                        --><input id="MPI_Type_indexedBlockLength2" name="block_length" type="number" value="1" min="1"></li>
+                        <li><label for="MPI_Type_indexedBlockOffset0">How many <span class="oldDatatypeName"></span> until the start of each blocks?</label>
+                        <input id="MPI_Type_indexedBlockOffset0" name="offset" type="number" value="1" min="0"><!--
+                        --><input id="MPI_Type_indexedBlockOffset1" name="offset" type="number" value="6" min="0"><!--
+                        --><input id="MPI_Type_indexedBlockOffset2" name="offset" type="number" value="12" min="0"></li>
+                        <li><label for="MPI_Type_indexedNewDatatype">What is the name of the new datatype?</label>
+                        <input id="MPI_Type_indexedNewDatatype" name="new_datatype" type="text" placeholder="my_own_datatype" value="my_own_datatype"></li>
+                    </ul>
+                </form>
+                <form id="MPI_Type_create_hindexedForm" class="RoutineForm">
+                    <ul>
+                        <li><label for="MPI_Type_create_hindexedOldDatatype">What is the type of a block element?</label>
+                        <input id="MPI_Type_create_hindexedOldDatatype" name="old_datatype" type="text" placeholder="MPI_INT" value="MPI_INT"></li>
+                        <li><label for="MPI_Type_create_hindexedOldDatatypeLength">How many bytes in an <span class="oldDatatypeName"></span>?</label>
+                        <input id="MPI_Type_create_hindexedOldDatatypeLength" name="block_count" type="number" value="4" min="1"></li>
+                        <li><label for="MPI_Type_create_hindexedBlockCount">How many blocks?</label>
+                        <input id="MPI_Type_create_hindexedBlockCount" name="block_count" type="number" value="3" min="1"></li>
+                        <li><label for="MPI_Type_create_hindexedBlockLength0">How many <span class="oldDatatypeName"></span> in each block?</label>
+                        <input id="MPI_Type_create_hindexedBlockLength0" name="block_length" type="number" value="1" min="1"><!--
+                        --><input id="MPI_Type_create_hindexedBlockLength1" name="block_length" type="number" value="2" min="1"><!--
+                        --><input id="MPI_Type_create_hindexedBlockLength2" name="block_length" type="number" value="1" min="1"></li>
+                        <li><label for="MPI_Type_create_hindexedBlockOffset0">How many bytes until the start of each blocks?</label>
+                        <input id="MPI_Type_create_hindexedBlockOffset0" name="offset" type="number" value="1" min="0"><!--
+                        --><input id="MPI_Type_create_hindexedBlockOffset1" name="offset" type="number" value="6" min="0"><!--
+                        --><input id="MPI_Type_create_hindexedBlockOffset2" name="offset" type="number" value="17" min="0"></li>
+                        <li><label for="MPI_Type_create_hindexedNewDatatype">What is the name of the new datatype?</label>
+                        <input id="MPI_Type_create_hindexedNewDatatype" name="new_datatype" type="text" placeholder="my_own_datatype" value="my_own_datatype"></li>
+                    </ul>
+                </form>
+                <form id="MPI_Type_create_indexed_blockForm" class="RoutineForm">
+                    <ul>
+                        <li><label for="MPI_Type_create_indexed_blockOldDatatype">What is the type of a block element?</label>
+                        <input id="MPI_Type_create_indexed_blockOldDatatype" name="old_datatype" type="text" placeholder="MPI_INT" value="MPI_INT"></li>
+                        <li><label for="MPI_Type_create_indexed_blockBlockCount">How many blocks?</label>
+                        <input id="MPI_Type_create_indexed_blockBlockCount" name="block_count" type="number" value="3" min="1"></li>
+                        <li><label for="MPI_Type_create_indexed_blockBlockLength">How many <span class="oldDatatypeName"></span> in each block?</label>
+                        <input id="MPI_Type_create_indexed_blockBlockLength" name="block_length" type="number" value="3" min="1"></li>
+                        <li><label for="MPI_Type_create_indexed_blockBlockOffset0">How many <span class="oldDatatypeName"></span> until the start of each blocks?</label>
+                        <input id="MPI_Type_create_indexed_blockBlockOffset0" name="offset" type="number" value="1" min="0"><!--
+                        --><input id="MPI_Type_create_indexed_blockBlockOffset1" name="offset" type="number" value="6" min="0"><!--
+                        --><input id="MPI_Type_create_indexed_blockBlockOffset2" name="offset" type="number" value="12" min="0"></li>
+                        <li><label for="MPI_Type_create_indexed_blockNewDatatype">What is the name of the new datatype?</label>
+                        <input id="MPI_Type_create_indexed_blockNewDatatype" name="new_datatype" type="text" placeholder="my_own_datatype" value="my_own_datatype"></li>
+                    </ul>
+                </form>
+                <form id="MPI_Type_create_hindexed_blockForm" class="RoutineForm">
+                    <ul>
+                        <li><label for="MPI_Type_create_hindexed_blockOldDatatype">What is the type of a block element?</label>
+                        <input id="MPI_Type_create_hindexed_blockOldDatatype" name="old_datatype" type="text" placeholder="MPI_INT" value="MPI_INT"></li>
+                        <li><label for="MPI_Type_create_hindexed_blockOldDatatypeLength">How many bytes in an <span class="oldDatatypeName"></span>?</label>
+                        <input id="MPI_Type_create_hindexed_blockOldDatatypeLength" name="block_count" type="number" value="4" min="1"></li>
+                        <li><label for="MPI_Type_create_hindexed_blockBlockCount">How many blocks?</label>
+                        <input id="MPI_Type_create_hindexed_blockBlockCount" name="block_count" type="number" value="3" min="1"></li>
+                        <li><label for="MPI_Type_create_hindexed_blockBlockLength">How many <span class="oldDatatypeName"></span> in a block?</label>
+                        <input id="MPI_Type_create_hindexed_blockBlockLength" name="block_length" type="number" value="1" min="1"></li>
+                        <li><label for="MPI_Type_create_hindexed_blockBlockOffset0">How many bytes until the start of each blocks?</label>
+                        <input id="MPI_Type_create_hindexed_blockBlockOffset0" name="offset" type="number" value="1" min="0"><!--
+                        --><input id="MPI_Type_create_hindexed_blockBlockOffset1" name="offset" type="number" value="6" min="0"><!--
+                        --><input id="MPI_Type_create_hindexed_blockBlockOffset2" name="offset" type="number" value="17" min="0"></li>
+                        <li><label for="MPI_Type_create_hindexed_blockNewDatatype">What is the name of the new datatype?</label>
+                        <input id="MPI_Type_create_hindexed_blockNewDatatype" name="new_datatype" type="text" placeholder="my_own_datatype" value="my_own_datatype"></li>
+                    </ul>
+                </form>
+            </div>
+        </article>
+
+        <article class="PageArticle">
+            <div class="PageArticleHeader">
+                <h2>Visualisation</h2>
+            </div>
+            <div class="PageArticleBody">
+                <div id="MPI_Type_contiguousLegend" class="RoutineLegend">
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(200, 200, 200); border-width: 2px;"></span>An <span class="oldDatatypeName"></span> element</p>
+                </div>
+                <div id="MPI_Type_indexedLegend" class="RoutineLegend">
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(150, 150, 150); border-width: 2px;"></span>An element where at least two blocks overlap</p>
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(200, 200, 200); border-width: 2px;"></span>An <span class="oldDatatypeName"></span> element</p>
+                    <p><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; border-width: 2px;"></span>An empty space (size of an <span class="oldDatatypeName"></span> element)</p>
+                </div>
+                <div id="MPI_Type_create_hindexedLegend" class="RoutineLegend">
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(150, 150, 150); border-width: 2px;"></span>A byte where at least two blocks overlap</p>
+                    <p style="margin-bottom: 0px;"><span class='MPI_Type_create_hindexedOldDatatypeByte Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(200, 200, 200); border-width: 2px;"></span>An <span class="oldDatatypeName"></span> element (<span class="oldDatatypeLength"></span> bytes)</p>
+                    <p><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; border-width: 2px;"></span>An empty space (1 byte)</p>
+                </div>
+                <div id="MPI_Type_vectorLegend" class="RoutineLegend">
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(150, 150, 150); border-width: 2px;"></span>An element where at least two blocks overlap</p>
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(200, 200, 200); border-width: 2px;"></span>An <span class="oldDatatypeName"></span> element</p>
+                    <p><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; border-width: 2px;"></span>An empty space (size of an <span class="oldDatatypeName"></span> element)</p>
+                </div>
+                <div id="MPI_Type_create_hvectorLegend" class="RoutineLegend">
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(150, 150, 150); border-width: 2px;"></span>A byte where at least two blocks overlap</p>
+                    <p style="margin-bottom: 0px;"><span class='MPI_Type_create_hvectorOldDatatypeByte Cell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(200, 200, 200); border-width: 2px;"></span>An <span class="oldDatatypeName"></span> element (<span class="oldDatatypeLength"></span> bytes)</p>
+                    <p><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; border-width: 2px;"></span>An empty space (1 byte)</p>
+                </div>
+                <div id="MPI_Type_create_indexed_blockLegend" class="RoutineLegend">
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(150, 150, 150); border-width: 2px;"></span>An element where at least two blocks overlap</p>
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(200, 200, 200); border-width: 2px;"></span>An <span class="oldDatatypeName"></span> element</p>
+                    <p><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; border-width: 2px;"></span>An empty space (size of an <span class="oldDatatypeName"></span> element)</p>
+                </div>
+                <div id="MPI_Type_create_hindexed_blockLegend" class="RoutineLegend">
+                    <p style="margin-bottom: 0px;"><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(150, 150, 150); border-width: 2px;"></span>A byte where at least two blocks overlap</p>
+                    <p style="margin-bottom: 0px;"><span class='MPI_Type_create_hindexed_blockOldDatatypeByte Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; background-color: rgb(200, 200, 200); border-width: 2px;"></span>An <span class="oldDatatypeName"></span> element (<span class="oldDatatypeLength"></span> bytes)</p>
+                    <p><span class='Cell LegendCell' style="position: relative; top: 5px; margin-right: 10px; border-width: 2px;"></span>An empty space (1 byte)</p>
+                </div>
+                <div id="Visualisation">
+                </div>
+            </div>
+        </article>
+
+        <article id="SourceCodes" class="PageArticle">
+            <div class="PageArticleHeader">
+                <h2>Source code</h2>
+            </div>
+            <div class="PageArticleBody">
+            </div>
+        </article>
+    </div>
+</div>
