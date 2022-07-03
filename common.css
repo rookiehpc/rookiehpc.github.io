@@ -930,13 +930,13 @@
 
 	#MainFooter a, #MainFooter a:visited
 	{
-		color: gray;
+		color: var(--WeakColour);
 		text-decoration: none;
 	}
 
 	#MainFooter a:hover
 	{
-		color: rgb(35, 40, 45);
+		color: var(--SpecialColour);
 	}
 
 	#MainFooter .SocialNetworks
