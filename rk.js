@@ -1221,51 +1221,34 @@ const RK = {
         <section id="MainSection">
             <h1>Pick your technology</h1>
                 <div id="TechnologyArticles">`;
-        const XHR = new XMLHttpRequest();
-        XHR.open('GET', RK.BASE_URL + '/data.json', false);
-        XHR.onload = () => {
-            switch(XHR.status) {
-                case 0:
-                case 200:
-                    JsonData = JSON.parse(XHR.responseText);
-                    JsonData[RK.TechnologiesPN].forEach((Technology) => {
-                        InnerHTML += `
-                        <article class="TechnologyArticle">
-                            <header>
-                                <div class="Tab DocsTab" onclick="location.href='` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/docs/index.html'">
-                                    <div class="Logo"></div>
-                                    <p class="Label">Docs</p>
-                                </div>
-                                <div class="Tab ToolsTab" onclick="location.href='` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/tools/index.html'">
-                                    <div class="Logo"></div>
-                                    <p class="Label">Tools</p>
-                                </div>
-                                <div class="Tab ExercisesTab" onclick="location.href='` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/exercises/index.html'">
-                                    <div class="Logo"></div>
-                                    <p class="Label">Exercises</p>
-                                </div>
-                            </header>
-                            <div class="TechnologyCard">
-                                <div class="ArticleType" style="mask-image: url('` + RK.BASE_URL + `/images/` + Technology[RK.TechnologyPN].toLowerCase() + `.svg'); -webkit-mask-image: url('` + RK.BASE_URL + `/images/` + Technology[RK.TechnologyPN].toLowerCase() + `.svg');"></div>
-                                <h2>` + Technology[RK.TechnologyPN] + `</h2>
-                                <div class="Separator"></div>
-                                <p class="ArticleDescription">` + Technology[RK.DescriptionPN] + `</p>
-                            </div>
-                            <footer>
-                                <p><a href = "` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/index.html">Read more</a></p>
-                            </footer>
-                        </article>`;
-                    });
-                    break;
-                case 404:
-                    throw 'Data.json not found';
-                    break;
-                default:
-                    throw 'Unexpected HTTP code ' + XHR.status;
-                    break;
-            }
-        };
-        XHR.send(null);
+        Entry[RK.TechnologiesPN].forEach((Technology) => {
+            InnerHTML += `
+            <article class="TechnologyArticle">
+                <header>
+                    <div class="Tab DocsTab" onclick="location.href='` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/docs/index.html'">
+                        <div class="Logo"></div>
+                        <p class="Label">Docs</p>
+                    </div>
+                    <div class="Tab ToolsTab" onclick="location.href='` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/tools/index.html'">
+                        <div class="Logo"></div>
+                        <p class="Label">Tools</p>
+                    </div>
+                    <div class="Tab ExercisesTab" onclick="location.href='` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/exercises/index.html'">
+                        <div class="Logo"></div>
+                        <p class="Label">Exercises</p>
+                    </div>
+                </header>
+                <div class="TechnologyCard">
+                    <div class="ArticleType" style="mask-image: url('` + RK.BASE_URL + `/images/` + Technology[RK.TechnologyPN].toLowerCase() + `.svg'); -webkit-mask-image: url('` + RK.BASE_URL + `/images/` + Technology[RK.TechnologyPN].toLowerCase() + `.svg');"></div>
+                    <h2>` + Technology[RK.TechnologyPN] + `</h2>
+                    <div class="Separator"></div>
+                    <p class="ArticleDescription">` + Technology[RK.DescriptionPN] + `</p>
+                </div>
+                <footer>
+                    <p><a href = "` + RK.BASE_URL + `/` + Technology[RK.TechnologyPN].toLowerCase() + `/index.html">Read more</a></p>
+                </footer>
+            </article>`;
+        });
         InnerHTML += `
             </div>
             <h1>Latest news</h1>
