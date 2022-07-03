@@ -77,6 +77,7 @@ const RK = {
     ExercisesPN: "Exercises",
     SolutionPN: "Solution",
     ProvidedPN: "Provided",
+    FilesPN: "Files",
 
     ParameterTypeSplitter: '\t',
     LocationRoot: "Root",
@@ -338,6 +339,17 @@ const RK = {
         });
     },
 
+    VerifyTool: (Entry) => {
+        // Check technology
+        RK.AssertMustHave(Entry, RK.TechnologyPN);
+        RK.AssertType(Entry, RK.TechnologyPN, "string");
+        RK.AssertInRange(Entry, RK.TechnologyPN, Object.values(RK.TECHNOLOGIES));
+
+        // Check tools array
+        RK.AssertMustHave(Entry, RK.FilesPN);
+        RK.AssertType(Entry, RK.FilesPN, "array");
+    },
+
     VerifyToolHomepage: (Entry) => {
         // Check technology
         RK.AssertMustHave(Entry, RK.TechnologyPN);
@@ -518,7 +530,7 @@ const RK = {
                     RK.VerifyDocumentation(Entry);
                     break;
                 case RK.ENTRY_TYPES.TOOL:
-                    throw "Tool entry found; however it has not been implemented just yet."
+                    RK.VerifyTool(Entry);
                     break;
                 case RK.ENTRY_TYPES.TOOL_HOMEPAGE:
                     RK.VerifyToolHomepage(Entry);
@@ -1358,6 +1370,94 @@ const RK = {
         });
     },
 
+    GenerateTool: async (Entry) => {
+        return new Promise(async (Resolve, Reject) => {
+            RK.BuildTechnologyNav(Entry);
+
+            // Go get the files
+            let Files = [];
+            Entry[RK.FilesPN].forEach((File) => {
+                // Get extension
+                const FileTokens = File.split('.');
+                Files.push({
+                    "Name": File,
+                    "Content": ""
+                });
+            });
+
+            await RK.FetchToolFiles(Entry, Files, 0);
+            Resolve();
+        });
+    },
+
+    FetchToolFiles: async (Entry, Files, IndexOfFileToFetch) => {
+        return new Promise(async (Resolve, Reject) => {
+            if(IndexOfFileToFetch === Files.length) {
+                RK.FetchToolFilesEnd(Entry, Files);
+                Resolve();
+            }
+            else {
+                const XHR = new XMLHttpRequest();
+                const Path = "/" + Entry[RK.TechnologyPN].toLowerCase() + "/tools/" + Entry[RK.DirectoryNamePN] + "/" + Entry[RK.FilesPN][IndexOfFileToFetch]
+                XHR.open("GET", Path);
+                XHR.onload = async () => {
+                    switch(XHR.status) {
+                        case 0:
+                        case 200:
+                            Files[IndexOfFileToFetch][RK.ContentPN] = XHR.responseText;
+                            await RK.FetchToolFiles(Entry, Files, IndexOfFileToFetch + 1);
+                            break;
+                        case 404:
+                        default:
+                            break;
+                    }
+                    Resolve();
+                };
+                XHR.send();
+            }
+        });
+    },
+
+    FetchToolFilesEnd: (Entry, Files) => {
+        const MainSection = document.createElement('section');
+        MainSection.id = "MainSection";
+        RK.GetOutput().appendChild(MainSection);
+
+        HTMLCodes = [];
+        CSSCodes = [];
+        JSCodes = [];
+
+        Files.forEach((FileEntry) => {
+            const FileTokens = FileEntry[RK.NamePN].split('.');
+            const FileExtensions = FileTokens[FileTokens.length - 1];
+            if(FileExtensions === "html") {
+                HTMLCodes.push(FileEntry[RK.ContentPN]);
+            }
+            else if(FileExtensions === "js") {
+                JSCodes.push(FileEntry[RK.ContentPN]);
+            }
+            else if(FileExtensions === "css") {
+                CSSCodes.push(FileEntry[RK.ContentPN]);
+            }
+        });
+
+        HTMLCodes.forEach((HTMLCode) => {
+            MainSection.insertAdjacentHTML("beforeend", HTMLCode);
+        });
+
+        CSSCodes.forEach((CSSCode) => {
+            let Style = document.createElement("style");
+            Style.innerHTML = CSSCode;
+            document.head.appendChild(Style);
+        });
+
+        JSCodes.forEach((JSCode) => {
+            const Script = document.createElement("script");
+            Script.innerHTML = JSCode;
+            MainSection.appendChild(Script);
+        });
+    },
+
     GenerateExerciseHomepage: async (Entry) => {
         RK.BuildTechnologyNav(Entry);
 
@@ -1793,7 +1893,7 @@ const RK = {
                         await RK.GenerateToolHomepage(Entry);
                         break;
                     case RK.ENTRY_TYPES.TOOL:
-                        throw 'Unimplemented yet';
+                        await RK.GenerateTool(Entry);
                         break;
                     case RK.ENTRY_TYPES.EXERCISE_HOMEPAGE:
                         await RK.GenerateExerciseHomepage(Entry);
@@ -1821,19 +1921,39 @@ const RK = {
         });
     },
 
+    HighlighCode: (SourceCode, LanguageClass) => {
+        return hljs.lineNumbersValue(RK.InsertCrossReferencesFromTechnology(hljs.highlight(SourceCode, {language: LanguageClass}).value))
+    },
+
     CreateCode: (SourceCode, Element, LanguageClass) => {
-        Element.innerHTML += `
-        <div class="SourceCodeViewer">
-            <div class="SourceCodeToolbar">
-                <div class="FakeButton NonUserSelectable SourceCodeToolbarButton">
-                    <div class="SourceCodeToolbarButtonIcon SourceCodeToolbarButtonIconFeedback SourceCodeToolbarButton">
-                    </div>
-                    <p class="SourceCodeToolbarButtonText">Feedback</p>
-                </div>
-            </div>
-            <pre class="SourceCode"><code>` + hljs.lineNumbersValue(RK.InsertCrossReferencesFromTechnology(hljs.highlight(SourceCode, {language: LanguageClass}).value)) + `</code>
-            </pre>
-        </div>`;
+        const SourceCodeViewer = document.createElement('div');
+        SourceCodeViewer.classList.add('SourceCodeViewer');
+        Element.appendChild(SourceCodeViewer);
+
+        const SourceCodeToolbar = document.createElement('div');
+        SourceCodeToolbar.classList.add('SourceCodeToolbar');
+        SourceCodeViewer.appendChild(SourceCodeToolbar);
+
+        const SourceCodeToolbarButton = document.createElement('div');
+        SourceCodeToolbarButton.classList.add('SourceCodeToolbarButton', 'FakeButton', 'NonUserSelectable');
+        SourceCodeToolbar.appendChild(SourceCodeToolbarButton);
+
+        const SourceCodeToolbarButtonIcon = document.createElement('div');
+        SourceCodeToolbarButtonIcon.classList.add('SourceCodeToolbarButtonIcon', 'SourceCodeToolbarButtonIconFeedback', 'SourceCodeToolbarButton');
+        SourceCodeToolbarButton.appendChild(SourceCodeToolbarButtonIcon);
+
+        const SourceCodeToolbarButtonText = document.createElement('p');
+        SourceCodeToolbarButtonText.classList.add('SourceCodeToolbarButtonText');
+        SourceCodeToolbarButtonText.textContent = "Feedback";
+        SourceCodeToolbarButton.appendChild(SourceCodeToolbarButtonText);
+
+        const SourceCodePre = document.createElement('pre');
+        SourceCodePre.classList.add('SourceCode');
+        SourceCodeViewer.appendChild(SourceCodePre);
+
+        const SourceCodeElement = document.createElement('code');
+        SourceCodeElement.innerHTML = RK.HighlighCode(SourceCode, LanguageClass);
+        SourceCodePre.appendChild(SourceCodeElement);
     },
 
     EscapeCode: (UnsafeString) => {
