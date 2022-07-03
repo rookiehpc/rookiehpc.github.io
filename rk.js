@@ -2061,7 +2061,7 @@ const RK = {
 
     BuildHeader: (Entry) => {
         return new Promise((Resolve, Reject) => {
-            const MainHeader = document.createElement("div");
+            const MainHeader = document.createElement("header");
             MainHeader.id = "MainHeader";
             RK.GetOutput().appendChild(MainHeader);
 
