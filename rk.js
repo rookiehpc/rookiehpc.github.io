@@ -2034,7 +2034,7 @@ const RK = {
 
         if(AtLeastOneResult == false) {
             NoResultFound.style.display = "block";
-            NoResultFound.innerHTML = "<a href='mailto:" + RK.CONTACT_EMAIL + "?subject=Missing documentation&body=Hi, I found that the documentation may be missing \"" + selectionString + "\". Could you please have a look?'><span class='ArticleLinkTechnology'>Unknown</span><span class='ArticleLinkName'>No result found. Is <b>\"" + selectionString + "\"</b> missing? Tell us (anonymously) just by clicking on this text.</span></a>";
+            NoResultFound.innerHTML = "<a href='https://github.com/rookiehpc/rookiehpc.github.io/issues/new?title=Missing+" + selectionString + "&labels=missing&body=-+Please+check+that+this+is+not+a+duplicate+of+another+existing+issue+then+delete+this+message'><span class='ArticleLinkTechnology'>Unknown</span><span class='ArticleLinkName'>No result found. Is <b>\"" + selectionString + "\"</b> missing? Create an issue simply by clicking on this text.</span></a>";
             RK.ResizeSearchResultList();
         }
         else {
