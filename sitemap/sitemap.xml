@@ -711,6 +711,9 @@
         <loc>/sitemap/index.html</loc>
     </url>
     <url>
+        <loc>/404/index.html</loc>
+    </url>
+    <url>
         <loc>/privacy_policy/index.html</loc>
     </url>
     <url>
