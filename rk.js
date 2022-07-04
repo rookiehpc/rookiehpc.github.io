@@ -1531,9 +1531,6 @@ const RK = {
         return new Promise(async (Resolve, Reject) => {
             Collected = {};
             await RK.FetchExerciseSolutionForLanguage(Entry, Collected, Object.keys(RK.LANGUAGES)[0]);
-            Object.keys(Collected).forEach((CollectedLanguage) => {
-                RK.CreateCode(Collected[CollectedLanguage][RK.SolutionPN], CollectedLanguage, RK.LANGUAGE_HLJS_CLASS[CollectedLanguage]);
-            });
             Resolve();
         });
     },
