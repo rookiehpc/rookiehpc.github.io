@@ -2046,7 +2046,7 @@ const RK = {
             RK.GetOutput().appendChild(MainHeader);
 
             InnerHTML = `
-                <p id="GithubRepoLabel" class="FakeButton" onclick="window.location.href='https://github.com/rookiehpc/rookiehpc.github.io'"><img src="/images/github_white.png">Go to the website repository</p>
+                <p id="GithubRepoLabel" class="FakeButton"><a href='https://github.com/rookiehpc/rookiehpc.github.io'"><img src="/images/github_white.png">Go to the website repository</a></p>
                 <img id="MainLogo" src="` + RK.BASE_URL + `/images/logoWhite.svg" width="40" onclick="window.location='` + RK.BASE_URL + `/index.html'" alt="Logo of RookieHPC">
                 <div id="SearchArea">
                     <div id="SearchForm">
