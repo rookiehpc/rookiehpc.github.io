@@ -603,7 +603,7 @@ const RK = {
                 ExamplePageBody.classList.add("PageArticleBody")
                 ExamplePage.appendChild(ExamplePageBody);
 
-                RK.CreateCode(XHR.responseText, ExamplePageBody, LanguageClass);
+                RK.CreateCode(XHR.responseText, ExamplePageBody, LanguageClass, true);
                 const NewXHR = new XMLHttpRequest();
                 const PathToExample = RK.FolderPath + "/example_2" + "." + LanguageFileFormat;
                 NewXHR.open("GET", PathToExample, true);
@@ -626,7 +626,7 @@ const RK = {
             case 0:
             case 200:
                 // Add the example to the already generated page
-                RK.CreateCode(XHR.responseText, ExamplePageBody, LanguageClass);
+                RK.CreateCode(XHR.responseText, ExamplePageBody, LanguageClass, true);
                 const NewXHR = new XMLHttpRequest();
                 const PathToExample = RK.FolderPath + "/example_" + parseInt(ExampleCounter + 1) + "." + LanguageFileFormat;
                 NewXHR.open("GET", PathToExample, true);
@@ -899,7 +899,7 @@ const RK = {
                         {
                             PrototypeString = LanguageEntry[RK.PrototypePN];
                         }
-                        RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.C);
+                        RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.C, false);
     
                         // If there was at least one parameter, add the parameters section
                         if(ParametersPage != null) {
@@ -1010,7 +1010,7 @@ const RK = {
                         {
                             PrototypeString = LanguageEntry[RK.PrototypePN];
                         }
-                        RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.F90);
+                        RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.F90, false);
     
                         // If there was at least one parameter, add the parameters section
                         if(ParametersPage != null) {
@@ -1132,7 +1132,7 @@ const RK = {
                         {
                             PrototypeString = LanguageEntry[RK.PrototypePN];
                         }
-                        RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.F08);
+                        RK.CreateCode(PrototypeString, DefinitionPageBody, RK.LANGUAGE_HLJS_CLASS.F08, false);
     
                         // If there was at least one parameter, add the parameters section
                         if(ParametersPage != null) {
@@ -1791,7 +1791,7 @@ const RK = {
                         NoSourceCodeProvidedLabel.textContent = "None: you have to write it from scratch.";
                         OutputPageBody.appendChild(NoSourceCodeProvidedLabel);
                     } else {
-                        RK.CreateCode(CollectedEntry[RK.ProvidedPN], OutputPageBody, RK.LANGUAGE_HLJS_CLASS[Language]);
+                        RK.CreateCode(CollectedEntry[RK.ProvidedPN], OutputPageBody, RK.LANGUAGE_HLJS_CLASS[Language], true);
                     }
 
                     // Solution
@@ -1905,7 +1905,7 @@ const RK = {
         return hljs.lineNumbersValue(RK.InsertCrossReferencesFromTechnology(hljs.highlight(SourceCode, {language: LanguageClass}).value))
     },
 
-    CreateCode: (SourceCode, Element, LanguageClass) => {
+    CreateCode: (SourceCode, Element, LanguageClass, InsertRookieHPCAttribution) => {
         const SourceCodeViewer = document.createElement('div');
         SourceCodeViewer.classList.add('SourceCodeViewer');
         Element.appendChild(SourceCodeViewer);
@@ -1916,15 +1916,18 @@ const RK = {
 
         const SourceCodeToolbarButton = document.createElement('div');
         SourceCodeToolbarButton.classList.add('SourceCodeToolbarButton', 'FakeButton', 'NonUserSelectable');
+        SourceCodeToolbarButton.onclick = () => {
+            RK.CopyCodeToClipboard(InsertRookieHPCAttribution, SourceCode);
+        };
         SourceCodeToolbar.appendChild(SourceCodeToolbarButton);
 
         const SourceCodeToolbarButtonIcon = document.createElement('div');
-        SourceCodeToolbarButtonIcon.classList.add('SourceCodeToolbarButtonIcon', 'SourceCodeToolbarButtonIconFeedback', 'SourceCodeToolbarButton');
+        SourceCodeToolbarButtonIcon.classList.add('SourceCodeToolbarButtonIcon', 'SourceCodeToolbarButtonIconCopy', 'SourceCodeToolbarButton');
         SourceCodeToolbarButton.appendChild(SourceCodeToolbarButtonIcon);
 
         const SourceCodeToolbarButtonText = document.createElement('p');
         SourceCodeToolbarButtonText.classList.add('SourceCodeToolbarButtonText');
-        SourceCodeToolbarButtonText.textContent = "Feedback";
+        SourceCodeToolbarButtonText.textContent = "Copy";
         SourceCodeToolbarButton.appendChild(SourceCodeToolbarButtonText);
 
         const SourceCodePre = document.createElement('pre');
@@ -1936,12 +1939,61 @@ const RK = {
         SourceCodePre.appendChild(SourceCodeElement);
     },
 
+    CopyCodeToClipboard: (InsertRookieHPCAttribution, PlainSourceCode) => {
+        // Create new element
+        var TempElement = document.createElement('textarea');
+        
+        // Set value (string to be copied)
+        if(InsertRookieHPCAttribution == false) {
+            TempElement.value = PlainSourceCode;
+        }
+        else {
+            // Get the version tabs
+            const VersionTabs = document.getElementById('VersionTabs');
+            // Get the active tab
+            const ActiveVersionTab = VersionTabs.getElementsByClassName('Active')[0];
+            // Create the corresponding comment format
+            let Attribution = "";
+            if(ActiveVersionTab.innerHTML == RK.LANGUAGES.C) {
+                Attribution = "/**\n * @author RookieHPC\n * @brief Original source code at " + window.location.href + "\n **/\n\n";
+            }
+            else if(ActiveVersionTab.innerHTML == RK.LANGUAGES.F90 || ActiveVersionTab.innerHTML == RK.LANGUAGES.F08) {
+                Attribution = "!> @author RookieHPC\n!> @brief Original source code at " + window.location.href + "\n\n";
+            }
+            TempElement.value = Attribution + PlainSourceCode;
+        }
+        
+        // Set non-editable to avoid focus and move outside of view
+        TempElement.setAttribute('readonly', '');
+        TempElement.style = {display: 'none'};
+        document.body.appendChild(TempElement);
+        
+        // Select text inside element
+        TempElement.select();
+        
+        // Copy text to clipboard
+        document.execCommand('copy');
+        alert("Source code copied to your clipboard ✓");
+        
+        // Remove temporary element
+        document.body.removeChild(TempElement);
+    },
+
     EscapeCode: (UnsafeString) => {
         return UnsafeString.replace(/&/g, "&amp;")
                             .replace(/</g, "&lt;")
                             .replace(/>/g, "&gt;")
                             .replace(/"/g, "&quot;")
                             .replace(/'/g, "&#039;");
+    },
+
+    DescapeCode: (UnsafeString) => {
+        return UnsafeString.replace(/&amp;/g, '&')
+                           .replace(/&nbsp;/g, ' ')
+                           .replace(/&lt;/g, '<')
+                           .replace(/&gt;/g, '>')
+                           .replace(/&quot;/g, "\"")
+                           .replace(/&#039;/g, "'");
     },
 
     ChangeSearchState: () => {
