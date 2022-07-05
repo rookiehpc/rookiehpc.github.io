@@ -1,884 +1,884 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>/index.html</loc>
+        <loc>https://rookiehpc.github.io/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/tools/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/tools/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/tools/datatype_creator/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/tools/datatype_creator/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_intersection/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_intersection/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_create_hindexed/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_create_hindexed/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_bxor/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_bxor/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_status_ignore/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_status_ignore/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_any_tag/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_any_tag/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_lor/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_lor/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_double/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_double/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_unsigned_short/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_unsigned_short/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_allgatherv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_allgatherv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ssend_init/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ssend_init/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_rsend_init/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_rsend_init/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win_free/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win_free/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_rdonly/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_rdonly/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_request_null/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_request_null/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_undefined/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_undefined/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_cart_get/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_cart_get/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_spawn/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_spawn/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_sequential/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_sequential/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_allgather/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_allgather/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_create_hvector/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_create_hvector/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ibcast/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ibcast/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_accumulate/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_accumulate/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_thread_multiple/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_thread_multiple/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_finalize/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_finalize/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_uint64_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_uint64_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_bor/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_bor/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_iallgatherv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_iallgatherv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_bsend_overhead/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_bsend_overhead/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_commit/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_commit/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_wtime/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_wtime/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_get_count/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_get_count/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_send/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_send/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_sum/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_sum/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win_allocate_shared/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win_allocate_shared/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_uint8_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_uint8_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_abort/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_abort/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_create/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_create/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ireduce_scatter_block/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ireduce_scatter_block/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win_detach/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win_detach/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_c_bool/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_c_bool/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_signed_char/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_signed_char/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_max/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_max/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_send_init/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_send_init/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_unsigned_char/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_unsigned_char/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_sendrecv_replace/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_sendrecv_replace/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_delete_on_close/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_delete_on_close/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_statuses_ignore/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_statuses_ignore/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_int/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_int/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_iprobe/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_iprobe/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_op_null/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_op_null/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_start/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_start/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_request/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_request/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_graphdims_get/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_graphdims_get/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_union/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_union/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_waitany/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_waitany/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_integer/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_integer/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_alltoall/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_alltoall/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win_create_dynamic/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win_create_dynamic/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_short/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_short/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_allreduce/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_allreduce/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ialltoallv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ialltoallv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_get_extent/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_get_extent/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_long_long/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_long_long/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_reduce_scatter/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_reduce_scatter/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_gatherv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_gatherv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_reduce_scatter_block/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_reduce_scatter_block/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_test_cancelled/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_test_cancelled/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_dup/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_dup/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_logical/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_logical/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_lxor/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_lxor/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_int32_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_int32_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_long/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_long/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_long_double/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_long_double/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_buffer_detach/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_buffer_detach/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_thread_funneled/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_thread_funneled/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_tag/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_tag/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_min/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_min/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_bsend/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_bsend/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_count_kind/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_count_kind/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_scatter/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_scatter/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_proc_null/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_proc_null/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_get_address/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_get_address/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_int8_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_int8_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_aint/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_aint/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_uint16_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_uint16_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_iscatterv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_iscatterv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_order_fortran/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_order_fortran/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_minloc/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_minloc/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_testany/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_testany/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_address_kind/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_address_kind/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_aint_diff/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_aint_diff/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_rsend/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_rsend/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_graph_neighbors/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_graph_neighbors/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_graph_neighbors_count/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_graph_neighbors_count/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_range_incl/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_range_incl/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_count/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_count/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_op/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_op/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_barrier/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_barrier/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_recv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_recv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ireduce_scatter/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ireduce_scatter/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ssend/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ssend/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_float/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_float/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_isend/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_isend/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_waitsome/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_waitsome/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_append/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_append/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_cart_create/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_cart_create/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_testall/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_testall/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_alltoallw/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_alltoallw/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_wchar/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_wchar/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_c_complex/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_c_complex/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_unsigned/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_unsigned/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_world/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_world/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_file_null/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_file_null/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_status_size/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_status_size/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_unsigned_long/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_unsigned_long/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_iallreduce/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_iallreduce/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_create/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_create/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_alltoallv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_alltoallv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_unique_open/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_unique_open/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_int16_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_int16_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_issend/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_issend/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_irsend/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_irsend/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_create_hindexed_block/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_create_hindexed_block/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_igather/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_igather/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_op_free/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_op_free/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_band/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_band/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_cart_coords/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_cart_coords/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_datatype/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_datatype/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_group/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_group/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_long_long_int/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_long_long_int/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_gather/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_gather/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_wronly/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_wronly/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_size/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_size/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_graph_create/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_graph_create/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_rdwr/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_rdwr/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_uint32_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_uint32_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_rank/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_rank/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_waitall/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_waitall/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_init_thread/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_init_thread/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_aint_add/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_aint_add/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_c_float_complex/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_c_float_complex/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win_attach/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win_attach/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_cancel/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_cancel/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_rank/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_rank/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_c_double_complex/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_c_double_complex/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ibsend/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ibsend/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_size/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_size/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_contiguous/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_contiguous/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_scan/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_scan/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_startall/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_startall/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_vector/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_vector/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_sendrecv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_sendrecv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_init/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_init/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ireduce/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ireduce/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_recv_init/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_recv_init/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_create_resized/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_create_resized/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_scatterv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_scatterv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_error/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_error/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win_create/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win_create/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_iallgather/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_iallgather/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_land/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_land/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_mode_excl/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_mode_excl/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_status/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_status/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_dims_create/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_dims_create/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_prod/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_prod/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_graph_get/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_graph_get/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_exscan/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_exscan/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_c_long_double_complex/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_c_long_double_complex/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_wait/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_wait/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_empty/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_empty/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_difference/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_difference/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_success/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_success/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_thread_single/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_thread_single/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_any_source/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_any_source/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_irecv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_irecv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_in_place/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_in_place/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_probe/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_probe/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win_allocate/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win_allocate/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_parent/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_parent/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_order_c/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_order_c/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_buffer_attach/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_buffer_attach/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_create_indexed_block/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_create_indexed_block/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_igatherv/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_igatherv/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_free/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_free/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_get/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_get/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_op_create/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_op_create/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_set_name/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_set_name/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_split/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_split/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_file_open/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_file_open/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_get_parent/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_get_parent/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ialltoall/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ialltoall/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_character/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_character/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_cart_shift/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_cart_shift/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_indexed/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_indexed/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_source/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_source/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_int64_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_int64_t/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_cart_sub/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_cart_sub/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_file_close/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_file_close/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_get_name/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_get_name/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_create_struct/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_create_struct/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_char/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_char/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_ibarrier/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_ibarrier/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_null/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_null/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_file/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_file/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_maxloc/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_maxloc/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_iscatter/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_iscatter/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_comm_self/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_self/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_put/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_put/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_type_create_subarray/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_create_subarray/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_group_incl/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_group_incl/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_bsend_init/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_bsend_init/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_testsome/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_testsome/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_test/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_test/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_bcast/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_bcast/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_reduce/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_reduce/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_max_object_name/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_max_object_name/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_thread_serialized/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_thread_serialized/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_unsigned_long_long/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_unsigned_long_long/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/docs/mpi_win/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_win/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_2/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_2/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_5/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_5/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_4/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_4/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_3/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_3/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_8/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_8/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_6/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_6/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_1/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_1/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_7/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_7/index.html</loc>
     </url>
     <url>
-        <loc>/mpi/exercises/exercise_9/index.html</loc>
+        <loc>https://rookiehpc.github.io/mpi/exercises/exercise_9/index.html</loc>
     </url>
     <url>
-        <loc>/sitemap/index.html</loc>
+        <loc>https://rookiehpc.github.io/sitemap/index.html</loc>
     </url>
     <url>
-        <loc>/404/index.html</loc>
+        <loc>https://rookiehpc.github.io/404/index.html</loc>
     </url>
     <url>
-        <loc>/privacy_policy/index.html</loc>
+        <loc>https://rookiehpc.github.io/privacy_policy/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/tools/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/tools/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_get_wtime/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_get_wtime/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_get_num_threads/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_get_num_threads/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_get_thread_num/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_get_thread_num/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/sections/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/sections/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/parallel/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/parallel/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/schedule/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/schedule/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/dynamic/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/dynamic/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/section/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/section/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/guided/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/guided/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/do/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/do/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_schedule/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_schedule/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/taskwait/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/taskwait/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/auto/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/auto/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/copyprivate/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/copyprivate/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/in_reduction/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/in_reduction/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/critical/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/critical/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/linear/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/linear/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/runtime/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/runtime/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/nowait/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/nowait/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_sched_dynamic/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_sched_dynamic/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/firstprivate/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/firstprivate/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/default/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/default/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/single/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/single/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/shared/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/shared/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_sched_static/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_sched_static/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/atomic/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/atomic/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_get_dynamic/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_get_dynamic/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/barrier/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/barrier/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_sched_t/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_sched_t/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/copyin/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/copyin/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_num_threads/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_num_threads/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/private/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/private/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/reduction/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/reduction/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/master/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/master/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/static/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/static/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/task/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/task/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/for/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/for/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/num_threads/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/num_threads/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_get_schedule/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_get_schedule/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_set_dynamic/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_set_dynamic/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_sched_kind/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_sched_kind/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_set_schedule/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_set_schedule/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/none/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/none/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/lastprivate/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/lastprivate/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/task_reduction/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/task_reduction/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_set_num_threads/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_set_num_threads/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_sched_guided/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_sched_guided/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/omp_sched_auto/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/omp_sched_auto/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/docs/taskgroup/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/docs/taskgroup/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/exercises/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/exercises/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/exercises/exercise_2/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/exercises/exercise_2/index.html</loc>
     </url>
     <url>
-        <loc>/openmp/exercises/exercise_1/index.html</loc>
+        <loc>https://rookiehpc.github.io/openmp/exercises/exercise_1/index.html</loc>
     </url>
 </urlset>

@@ -125,7 +125,7 @@ SitemapFile = open("sitemap/sitemap.xml", "w")
 SitemapFileString = "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
 AllIndexHtmlFiles = [y for x in os.walk(".") for y in glob(os.path.join(x[0], 'index.html'))]
 for AllIndexHtmlFile in AllIndexHtmlFiles:
-    SitemapFileString += "    <url>\n        <loc>" + AllIndexHtmlFile[1:] + "</loc>\n    </url>\n"
+    SitemapFileString += "    <url>\n        <loc>https://rookiehpc.github.io" + AllIndexHtmlFile[1:] + "</loc>\n    </url>\n"
 SitemapFileString += "</urlset>"
 SitemapFile.write(SitemapFileString)
 SitemapFile.close()
