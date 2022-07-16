@@ -4,7 +4,7 @@
     "Name":"MPI_Type_get_extent",
     "DirectoryName":"mpi_type_get_extent",
     "SharedDescription":true,
-    "Description":"MPI_Type_get_extent retrieves the extent (as well as the lower bound) of the MPI_datatype passed.",
+    "Description":"MPI_Type_get_extent retrieves the extent (as well as the lower bound) of the MPI_datatype passed. Unlike the more recent MPI_Type_get_extent_x introduced in MPI version 3.0 that relies on the MPI_Count datatype to encode the lower bound and extent values, MPI_Type_get_extent uses the MPI_Aint datatype.",
     "Categories":[
         "User datatypes"
     ],
