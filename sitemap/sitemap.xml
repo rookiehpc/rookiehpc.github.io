@@ -402,6 +402,9 @@
         <loc>https://rookiehpc.github.io/mpi/docs/mpi_cart_coords/index.html</loc>
     </url>
     <url>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_type_get_extent_x/index.html</loc>
+    </url>
+    <url>
         <loc>https://rookiehpc.github.io/mpi/docs/mpi_datatype/index.html</loc>
     </url>
     <url>
