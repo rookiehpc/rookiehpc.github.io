@@ -2217,7 +2217,7 @@ const RK = {
                 <li><a href = "` + RK.BASE_URL + `/editor.html?src=` + RK.FolderPath + `" title="Edit the page using the RookieHPC editor.">Edit this page</a></li>
         		<li><a href = "` + RK.BASE_URL + `/sitemap/index.html">Site Map</a></li>
         		<li><a href = "` + RK.BASE_URL + `/privacy_policy/index.html">Privacy Policy</a></li>
-        		<li><a href = "https://github.com/rookiehpc">Contact</a></li>
+        		<li><a href = "mailto:rookiehpc@outlook.com">Contact</a></li>
         		<li><a href = "https://www.twitter.com/RookieHPC"><img class="SocialNetworks" src="` + RK.BASE_URL + `/images/twitter.svg" alt="Logo of the Twitter account for Rookie HPC."></a></li>
         	</ul>
         	<p id='Copyright'>2019-` + new Date().getFullYear() + ` RookieHPC</p>`;
