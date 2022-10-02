@@ -23,7 +23,6 @@
                 <button id="GenerateMPITemplate">Generate MPI template</button>
                 <button id="Revert" disabled>Revert to last functional</button>
                 <button id="IndentButton">Indent</button>
-                <button id="CompactButton">Compact</button>
             </div>
             <textarea id="Input">
             </textarea>
@@ -63,17 +62,6 @@
                 try {
                     let Entry = JSON.parse(Input.value);
                     Input.value = JSON.stringify(Entry, null, IndentationWidth);
-                }
-                catch(e) {
-
-                }
-            };
-
-            const CompactButton = document.getElementById('CompactButton');
-            CompactButton.onclick = (event) => {
-                try {
-                    let Entry = JSON.parse(Input.value);
-                    Input.value = JSON.stringify(Entry);
                 }
                 catch(e) {
 
