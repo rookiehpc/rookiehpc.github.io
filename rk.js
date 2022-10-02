@@ -2148,33 +2148,42 @@ const RK = {
             }
             InnerHTML += `</p>`;
             MainHeader.innerHTML = InnerHTML;
-            const XHR = new XMLHttpRequest();
-            const ManifestPath = RK.BASE_URL + "/" + RK.LOOKUP_NAME;
-            XHR.open("GET", ManifestPath);
-            XHR.onload = () => {
-                switch(XHR.status) {
-                    case 0:
-                    case 200:
-                        const ArticleLinks = document.getElementById("ArticleLinks");
-                        window.Manifest = JSON.parse(XHR.responseText);
-                        window.Manifest.forEach((TechnologyEntry) => {
-                            TechnologyEntry[RK.EntriesPN].forEach((DocumentationEntry) => {
-                                ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `/index.html"><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
-                            })
-                        });
-                        Resolve();
-                        break;
-                    case 404:
-                        alert("Manifest not found at \"" + ManifestPath + "\"");
-                        Reject();
-                        break;
-                    default:
-                        alert("Manifest loading: unexpected XHR code " + XHR.status);
-                        Reject();
-                        break;
-                }
-            };
-            XHR.send(null);
+            if(!RK.IsEditorMode()) {
+                const XHR = new XMLHttpRequest();
+                const ManifestPath = RK.BASE_URL + "/" + RK.LOOKUP_NAME;
+                XHR.open("GET", ManifestPath);
+                XHR.onload = () => {
+                    switch(XHR.status) {
+                        case 0:
+                        case 200:
+                            const ArticleLinks = document.getElementById("ArticleLinks");
+                            window.Manifest = JSON.parse(XHR.responseText);
+                            window.Manifest.forEach((TechnologyEntry) => {
+                                TechnologyEntry[RK.EntriesPN].forEach((DocumentationEntry) => {
+                                    ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + TechnologyEntry['PathRoot'] + `/` + DocumentationEntry['DirectoryName'] + `/index.html"><span class="ArticleLinkTechnology">` + TechnologyEntry[RK.TechnologyPN] + `</span><span class="ArticleLinkName">` + DocumentationEntry['Name'] + `</span></a></li>`
+                                })
+                            });
+                            Resolve();
+                            break;
+                        case 404:
+                            alert("Manifest not found at \"" + ManifestPath + "\"");
+                            Reject();
+                            break;
+                        default:
+                            alert("Manifest loading: unexpected XHR code " + XHR.status);
+                            Reject();
+                            break;
+                    }
+                };
+                XHR.send(null);
+            }
+            else
+            {
+                const ArticleLinks = document.getElementById("ArticleLinks");
+                ArticleLinks.innerHTML += `<li class="ArticleLink NonUserSelectable FakeButton"><a href = "` + RK.BASE_URL + `"><span class="ArticleLinkTechnology">Editor</span><span class="ArticleLinkName">Feature disabled in edition mode</span></a></li>`
+                window.Manifest = [];
+                Resolve();
+            }
         });
     },
 
