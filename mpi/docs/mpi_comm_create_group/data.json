@@ -1,0 +1,122 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Comm_create_group",
+    "DirectoryName":"mpi_comm_create_group",
+    "SharedDescription":true,
+    "Description":"MPI_Comm_create_group is similar to MPI_Comm_create but MPI_Comm_create_group requires only to be called by all processes in group, which is a subgroup of the group of the old communicator. On the other hand, MPI_Comm_create is a collective operation within the communicator comm because all processes of comm must call it. MPI_Comm_Create_Group returns a new communicator for which the group argument defines the communication group. Each process must provide a group when calling MPI_Comm_create_group, this can be MPI_GROUP_EMPTY, if all the groups are MPI_GROUP_EMPTY, then the call is erroneous. For a successful call, at least one group must be non-empty, all the processes of that group must call MPI_Comm_create_group with the same arguments and their groups must have the same ordering. The tag argument cannot be MPI_ANY_TAG.",
+    "Categories":[
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Type":"MPI_Comm",
+                    "Optional":false
+                },
+                {
+                    "Name":"group",
+                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup or MPI_GROUP_EMPTY.",
+                    "Type":"MPI_Group",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The variable in which store the communicator created. If the group of the calling process is MPI_GROUP_EMPTY, MPI_COMM_NULL is stored instead.",
+                    "Type":"MPI_Comm*",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the communicator creation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        },
+        {
+            "Language":"FORTRAN-2008",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Type":"MPI_Comm",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"group",
+                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup or MPI_GROUP_EMPTY.",
+                    "Type":"MPI_Group",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"tag",
+                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments",
+                    "Type":"INTEGER",
+                    "Optional":false,
+                    "Intent":"IN"
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The variable in which store the communicator created. If the group of the calling process is MPI_GROUP_EMPTY, MPI_COMM_NULL is stored instead.",
+                    "Type":"MPI_Comm*",
+                    "Optional":false,
+                    "Intent":"OUT"
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator creation.",
+                    "Type":"INTEGER",
+                    "Optional":true,
+                    "Intent":"OUT"
+                }
+            ]
+        },
+        {
+            "Language":"FORTRAN-90",
+            "Parameters": [
+                {
+                    "Name":"old_communicator",
+                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"group",
+                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup or MPI_GROUP_EMPTY.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"tag",
+                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"new_communicator",
+                    "Description":"The variable in which store the communicator created. If the calling process is not part of the communicator created, MPI_COMM_NULL is stored instead.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                },
+                {
+                    "Name":"ierror",
+                    "Description":"The error code returned from the communicator creation.",
+                    "Type":"INTEGER",
+                    "Optional":false
+                }
+            ]
+        }
+    ]
+}
