@@ -4,7 +4,7 @@
     "Name":"MPI_Comm_create_group",
     "DirectoryName":"mpi_comm_create_group",
     "SharedDescription":true,
-    "Description":"MPI_Comm_create_group is similar to MPI_Comm_create but MPI_Comm_create_group requires only to be called by all processes in group, which is a subgroup of the group of the old communicator. On the other hand, MPI_Comm_create is a collective operation within the communicator comm because all processes of comm must call it. MPI_Comm_Create_Group returns a new communicator for which the group argument defines the communication group. Each process must provide a group when calling MPI_Comm_create_group, this can be MPI_GROUP_EMPTY, if all the groups are MPI_GROUP_EMPTY, then the call is erroneous. For a successful call, at least one group must be non-empty, all the processes of that group must call MPI_Comm_create_group with the same arguments and their groups must have the same ordering. The tag argument cannot be MPI_ANY_TAG.",
+    "Description":"MPI_Comm_create_group allows MPI processes from a group (or subgroup of a group of) of a given communicator to create a new communicator. All MPI processes in the group specified must take part to the call. This contrasts with MPI_Comm_create for instance where all MPI processes in the entire communicator considered must participate. In addition, MPI_Comm_create accepts both intra and inter-communicators whereas MPI_Comm_create_group only accepts intra-communicators.",
     "Categories":[
         "Topology"
     ],
@@ -14,25 +14,25 @@
             "Parameters": [
                 {
                     "Name":"old_communicator",
-                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Description":"The communicator from which the group of processes is extracted. The communicator passed must be an intra-communicator.",
                     "Type":"MPI_Comm",
                     "Optional":false
                 },
                 {
                     "Name":"group",
-                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup or MPI_GROUP_EMPTY.",
+                    "Description":"The group containing the processes from the old communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or a subgroup or MPI_GROUP_EMPTY.",
                     "Type":"MPI_Group",
                     "Optional":false
                 },
                 {
                     "Name":"tag",
-                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments",
+                    "Description":"In a multithreading context, multiple threads from a given MPI process may issue concurrent calls to MPI_Comm_create_group. Each MPI process may end up being calling MPI_Comm_create_group several times. In order for an MPI process to distinguish between multiple MPI_Comm_create_group calls, the tag is used, acting as an identifier. The tag passed cannot be a wildcard, such as MPI_ANY_TAG.",
                     "Type":"int",
                     "Optional":false
                 },
                 {
                     "Name":"new_communicator",
-                    "Description":"The variable in which store the communicator created. If the group of the calling process is MPI_GROUP_EMPTY, MPI_COMM_NULL is stored instead.",
+                    "Description":"The variable in which the created communicator is stored. If the group of the calling process is MPI_GROUP_EMPTY, MPI_COMM_NULL is stored instead.",
                     "Type":"MPI_Comm*",
                     "Optional":false
                 }
@@ -48,29 +48,29 @@
             "Parameters": [
                 {
                     "Name":"old_communicator",
-                    "Description":"The communicator from which the group of processes is extracted.",
-                    "Type":"MPI_Comm",
+                    "Description":"The communicator from which the group of processes is extracted.The communicator passed must be an intra-communicator.",
+                    "Type":"TYPE(MPI_Comm)",
                     "Optional":false,
                     "Intent":"IN"
                 },
                 {
                     "Name":"group",
-                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup or MPI_GROUP_EMPTY.",
-                    "Type":"MPI_Group",
+                    "Description":"The group containing the processes from the old communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or a subgroup or MPI_GROUP_EMPTY.",
+                    "Type":"TYPE(MPI_Group)",
                     "Optional":false,
                     "Intent":"IN"
                 },
                 {
                     "Name":"tag",
-                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments",
+                    "Description":"In a multithreading context, multiple threads from a given MPI process may issue concurrent calls to MPI_Comm_create_group. Each MPI process may end up being calling MPI_Comm_create_group several times. In order for an MPI process to distinguish between multiple MPI_Comm_create_group calls, the tag is used, acting as an identifier. The tag passed cannot be a wildcard, such as MPI_ANY_TAG.",
                     "Type":"INTEGER",
                     "Optional":false,
                     "Intent":"IN"
                 },
                 {
                     "Name":"new_communicator",
-                    "Description":"The variable in which store the communicator created. If the group of the calling process is MPI_GROUP_EMPTY, MPI_COMM_NULL is stored instead.",
-                    "Type":"MPI_Comm*",
+                    "Description":"The variable in which the created communicator is stored. If the group of the calling process is MPI_GROUP_EMPTY, MPI_COMM_NULL is stored instead.",
+                    "Type":"TYPE(MPI_Comm)",
                     "Optional":false,
                     "Intent":"OUT"
                 },
@@ -88,25 +88,25 @@
             "Parameters": [
                 {
                     "Name":"old_communicator",
-                    "Description":"The communicator from which the group of processes is extracted.",
+                    "Description":"The communicator from which the group of processes is extracted.The communicator passed must be an intra-communicator.",
                     "Type":"INTEGER",
                     "Optional":false
                 },
                 {
                     "Name":"group",
-                    "Description":"The group containing the processes from the old_communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or just a subgroup or MPI_GROUP_EMPTY.",
+                    "Description":"The group containing the processes from the old communicator to include in the new communicator. It can contain the entire group of processes of the old communicator, or a subgroup or MPI_GROUP_EMPTY.",
                     "Type":"INTEGER",
                     "Optional":false
                 },
                 {
                     "Name":"tag",
-                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments",
+                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments. Tag cannot be MPI_ANY_TAG.",
                     "Type":"INTEGER",
                     "Optional":false
                 },
                 {
                     "Name":"new_communicator",
-                    "Description":"The variable in which store the communicator created. If the calling process is not part of the communicator created, MPI_COMM_NULL is stored instead.",
+                    "Description":"The variable in which the created communicator is stored. If the calling process is not part of the communicator created, MPI_COMM_NULL is stored instead.",
                     "Type":"INTEGER",
                     "Optional":false
                 },

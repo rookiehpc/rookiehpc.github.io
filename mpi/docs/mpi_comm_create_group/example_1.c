@@ -3,8 +3,13 @@
 #include <mpi.h>
 
 /**
- * @brief Illustrates how to create communicators with MPI_Comm_create_group
- * @details This code is the same example given for MPI_Comm_create but with
+ * @brief Illustrates how to create communicators with MPI_Comm_create_group.
+ * @details This code extracts the group of processes in the default
+ * communicator, then only two processes call MPI_Comm_create_group to create
+ * a new communicator that contains only them. Finally, it makes two broadcast
+ * calls: one in the global communicator and one in the new communicator and
+ * each process reports if it participated in any of these broadcasts.
+ * Note: this is the same as the example given for MPI_Comm_create but with
  * using MPI_Comm_create_group instead of MPI_Comm_create.
  * This application is meant to be run with 3 processes.
  **/
@@ -33,15 +38,9 @@ int main(int argc, char* argv[])
     // Create the new communicator from that group of processes.
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm new_communicator = MPI_COMM_NULL;
-    if ( my_rank < 2 ){
+    if (my_rank < 2){
         // Only processes 0 and 1 call MPI_Comm_create_group
         MPI_Comm_create_group(MPI_COMM_WORLD, new_group, 0, &new_communicator);
-        // The commented call below is INCORRECT - not called by all processes
-        // MPI_Comm_create(MPI_COMM_WORLD, new_group, &new_communicator);
-    }
-    // There is no actual need for this else statement
-    else{
-        MPI_Comm_create_group(MPI_COMM_WORLD, MPI_GROUP_EMPTY, 0, &new_communicator);
     }
 
     // Do a broadcast between all processes
