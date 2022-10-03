@@ -100,7 +100,7 @@
                 },
                 {
                     "Name":"tag",
-                    "Description":"If multiple threads at a given process perform concurrent MPI_Comm_Create_Group operations, the user must distinguish these operations by providing different tag or comm arguments. Tag cannot be MPI_ANY_TAG.",
+                    "Description":"In a multithreading context, multiple threads from a given MPI process may issue concurrent calls to MPI_Comm_create_group. Each MPI process may end up being calling MPI_Comm_create_group several times. In order for an MPI process to distinguish between multiple MPI_Comm_create_group calls, the tag is used, acting as an identifier. The tag passed cannot be a wildcard, such as MPI_ANY_TAG.",
                     "Type":"INTEGER",
                     "Optional":false
                 },
