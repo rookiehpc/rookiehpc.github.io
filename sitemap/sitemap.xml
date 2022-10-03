@@ -378,6 +378,9 @@
         <loc>https://rookiehpc.github.io/mpi/docs/mpi_int16_t/index.html</loc>
     </url>
     <url>
+        <loc>https://rookiehpc.github.io/mpi/docs/mpi_comm_create_group/index.html</loc>
+    </url>
+    <url>
         <loc>https://rookiehpc.github.io/mpi/docs/mpi_issend/index.html</loc>
     </url>
     <url>
