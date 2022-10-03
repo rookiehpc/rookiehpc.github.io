@@ -160,6 +160,10 @@
                 "DirectoryName":"mpi_comm_create"
             },
             {
+                "Name":"MPI_Comm_create_group",
+                "DirectoryName":"mpi_comm_create_group"
+            },
+            {
                 "Name":"MPI_Comm_dup",
                 "DirectoryName":"mpi_comm_dup"
             },
