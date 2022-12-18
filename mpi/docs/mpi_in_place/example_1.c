@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
     if(my_rank == root_rank)
     {
         int buffer[4];
-        buffer[my_rank] = my_value * 100;
+        buffer[my_rank] = my_value;
         MPI_Gather(MPI_IN_PLACE, 1, MPI_INT, buffer, 1, MPI_INT, root_rank, MPI_COMM_WORLD);
         printf("Values collected on process %d: %d, %d, %d, %d.\n", my_rank, buffer[0], buffer[1], buffer[2], buffer[3]);
     }
