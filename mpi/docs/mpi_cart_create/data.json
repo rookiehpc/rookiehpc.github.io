@@ -4,7 +4,7 @@
     "Name": "MPI_Cart_create",
     "DirectoryName": "mpi_cart_create",
     "SharedDescription": true,
-    "Description": "MPI_Cart_create creates a communicator from the cartesian topology information passed.",
+    "Description": "MPI_Cart_create creates a communicator from the cartesian topology information passed. Note: there is a convenience function, MPI_Dims_create, that helps to arrange MPI processes across a given number of dimensions.",
     "Categories": [
         "Cartesian",
         "Topology"
