@@ -26,7 +26,7 @@
  *         - nothing to itself
  *         - 3 integers to process 2
  *     - has 2 integers to receive, as follows, it receives:
- *         - 2 integers rom process 0
+ *         - 2 integers from process 0
  *         - nothing from itself
  *         - nothing from process 2
  * - Process 2:
