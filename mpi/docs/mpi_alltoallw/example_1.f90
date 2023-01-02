@@ -197,7 +197,7 @@ PROGRAM main
             break
     }
 
-    ! Define my counts for receiving (how many integers do I receive from each process?)
+    ! Define my counts for receiving (how many elements do I receive from each process?)
     int counts_recv(3)
     switch(my_rank)
     {
