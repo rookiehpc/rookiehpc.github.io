@@ -1,160 +1,159 @@
 {
-    "Type":"Documentation",
-    "Technology":"MPI",
-    "Name":"MPI_Graph_create",
-    "DirectoryName":"mpi_graph_create",
-    "SharedDescription":true,
-    "Description":"MPI_Graph_create creates a communicator from the graph topology information passed. MPI_Graph_create is a collective operation; it must be called by all MPI processes in the original communicator, even by MPI processes which maybe will not be in the final graph communicator created.",
-    "Categories":[
+    "Type": "Documentation",
+    "Technology": "MPI",
+    "Name": "MPI_Graph_create",
+    "DirectoryName": "mpi_graph_create",
+    "SharedDescription": true,
+    "Description": "MPI_Graph_create is a collective operation which constructs a communicator from the graph topology information passed. When using this approach, every MPI process must provide the entirety of graph virtual topology information, which may hinder scalability. For distributed variants, where MPI processes can provide subsets of the graph each, see MPI_Dist_graph_create and MPI_Dist_graph_create_adjacent.",
+    "Categories": [
         "Collectives",
         "Graph",
         "Topology"
     ],
     "Languages": [
         {
-            "Language":"C",
+            "Language": "C",
             "Parameters": [
                 {
-                    "Name":"old_comm",
-                    "Description":"Communicator containing the processes to use in the creation of the new communicator.",
-                    "Type":"MPI_Comm",
-                    "Optional":false
+                    "Name": "old_comm",
+                    "Description": "Communicator containing the processes to use in the creation of the new communicator.",
+                    "Type": "MPI_Comm",
+                    "Optional": false
                 },
                 {
-                    "Name":"number_of_nodes",
-                    "Description":"Contains the number of nodes in the graph.\n- If the number of nodes is 0: the graph is empty and MPI_COMM_NULL is returned to all MPI processes.\n- If the number of nodes is strictly smaller than the size of group of old communicator: some MPI processes will not be part of the new communicator and will therefore be returned MPI_COMM_NULL.\n- If the number of nodes is strictly greater than the size of the group of the old communicator, the call is erroneous.\n\nThe nodes created will be 0-indexed; numbered from 0 to the number of nodes - 1.",
-                    "Type":"int",
-                    "Optional":false
+                    "Name": "number_of_nodes",
+                    "Description": "Contains the number of nodes in the graph.\n- If the number of nodes is 0: the graph is empty and MPI_COMM_NULL is returned to all MPI processes.\n- If the number of nodes is strictly smaller than the size of group of old communicator: some MPI processes will not be part of the new communicator and will therefore be returned MPI_COMM_NULL.\n- If the number of nodes is strictly greater than the size of the group of the old communicator, the call is erroneous.\n\nThe nodes created will be 0-indexed; numbered from 0 to the number of nodes - 1.",
+                    "Type": "int",
+                    "Optional": false
                 },
                 {
-                    "Name":"index",
-                    "Description":"Array containing the accumulating number of neighbours; the ith entry will contain the total number of neighbours of the first i nodes in the graph. This array must therefore contain as many entries as there are nodes in the graph.",
-                    "Type":"const int\t[]",
-                    "Optional":false
+                    "Name": "index",
+                    "Description": "Array containing the accumulating number of neighbours; the ith entry will contain the total number of neighbours of the first i nodes in the graph. This array must therefore contain as many entries as there are nodes in the graph.",
+                    "Type": "const int\t[]",
+                    "Optional": false
                 },
                 {
-                    "Name":"edges",
-                    "Description":"Array containing the list of all neighbours. It is made of all neighbours of the first node, followed with all the neighbours of the second node and so on.",
-                    "Type":"const int\t[]",
-                    "Optional":false
+                    "Name": "edges",
+                    "Description": "The list of edges in the graph, beginning with neighbours of node 0, followed with neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
+                    "Type": "const int\t[]",
+                    "Optional": false
                 },
                 {
-                    "Name":"reorder",
-                    "Description":"Informs MPI whether MPI processes must preserve their rank in the new communicator. Allowing MPI to reorder ranks can trigger certain optimisations based on topology information.",
-                    "Type":"int",
-                    "Optional":false
+                    "Name": "reorder",
+                    "Description": "Informs MPI whether MPI processes must preserve their rank in the new communicator. Allowing MPI to reorder ranks can trigger certain optimisations based on topology information.",
+                    "Type": "int",
+                    "Optional": false
                 },
                 {
-                    "Name":"new_comm",
-                    "Description":"The new communicator built with the graph topology given.",
-                    "Type":"MPI_Comm*",
-                    "Optional":false
+                    "Name": "new_comm",
+                    "Description": "The new communicator built with the graph topology given.",
+                    "Type": "MPI_Comm*",
+                    "Optional": false
                 }
             ],
-            "Return":
-                {
-                    "Type":"int",
-                    "Description":"The error code returned from the graph topology creation.\n- MPI_SUCCESS: the routine successfully completed."
-                }
+            "Return": {
+                "Type": "int",
+                "Description": "The error code returned from the graph topology creation.\n- MPI_SUCCESS: the routine successfully completed."
+            }
         },
         {
-            "Language":"FORTRAN-2008",
+            "Language": "FORTRAN-2008",
             "Parameters": [
                 {
-                    "Name":"old_comm",
-                    "Description":"Communicator containing the processes to use in the creation of the new communicator.",
-                    "Type":"TYPE(MPI_Comm)",
-                    "Optional":false,
-                    "Intent":"IN"
+                    "Name": "old_comm",
+                    "Description": "Communicator containing the processes to use in the creation of the new communicator.",
+                    "Type": "TYPE(MPI_Comm)",
+                    "Optional": false,
+                    "Intent": "IN"
                 },
                 {
-                    "Name":"number_of_nodes",
-                    "Description":"Contains the number of nodes in the graph.\n- If the number of nodes is 0: the graph is empty and MPI_COMM_NULL is returned to all MPI processes.\n- If the number of nodes is strictly smaller than the size of group of old communicator: some MPI processes will not be part of the new communicator and will therefore be returned MPI_COMM_NULL.\n- If the number of nodes is strictly greater than the size of the group of the old communicator, the call is erroneous.\n\nThe nodes created will be 0-indexed; numbered from 0 to the number of nodes - 1.",
-                    "Type":"INTEGER",
-                    "Optional":false,
-                    "Intent":"IN"
+                    "Name": "number_of_nodes",
+                    "Description": "Contains the number of nodes in the graph.\n- If the number of nodes is 0: the graph is empty and MPI_COMM_NULL is returned to all MPI processes.\n- If the number of nodes is strictly smaller than the size of group of old communicator: some MPI processes will not be part of the new communicator and will therefore be returned MPI_COMM_NULL.\n- If the number of nodes is strictly greater than the size of the group of the old communicator, the call is erroneous.\n\nThe nodes created will be 0-indexed; numbered from 0 to the number of nodes - 1.",
+                    "Type": "INTEGER",
+                    "Optional": false,
+                    "Intent": "IN"
                 },
                 {
-                    "Name":"index",
-                    "Description":"Array containing the accumulating number of neighbours; the ith entry will contain the total number of neighbours of the first i nodes in the graph. This array must therefore contain as many entries as there are nodes in the graph.",
-                    "Type":"INTEGER\t(number_of_nodes)",
-                    "Optional":false,
-                    "Intent":"IN"
+                    "Name": "index",
+                    "Description": "Array containing the accumulating number of neighbours; the ith entry will contain the total number of neighbours of the first i nodes in the graph. This array must therefore contain as many entries as there are nodes in the graph.",
+                    "Type": "INTEGER\t(number_of_nodes)",
+                    "Optional": false,
+                    "Intent": "IN"
                 },
                 {
-                    "Name":"edges",
-                    "Description":"Array containing the list of all neighbours. It is made of all neighbours of the first node, followed with all the neighbours of the second node and so on.",
-                    "Type":"INTEGER\t(*)",
-                    "Optional":false,
-                    "Intent":"IN"
+                    "Name": "edges",
+                    "Description": "The list of edges in the graph, beginning with neighbours of node 0, followed with neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
+                    "Type": "INTEGER\t(*)",
+                    "Optional": false,
+                    "Intent": "IN"
                 },
                 {
-                    "Name":"reorder",
-                    "Description":"Informs MPI whether MPI processes must preserve their rank in the new communicator. Allowing MPI to reorder ranks can trigger certain optimisations based on topology information.",
-                    "Type":"LOGICAL",
-                    "Optional":false,
-                    "Intent":"IN"
+                    "Name": "reorder",
+                    "Description": "Informs MPI whether MPI processes must preserve their rank in the new communicator. Allowing MPI to reorder ranks can trigger certain optimisations based on topology information.",
+                    "Type": "LOGICAL",
+                    "Optional": false,
+                    "Intent": "IN"
                 },
                 {
-                    "Name":"new_comm",
-                    "Description":"The new communicator built with the graph topology given.",
-                    "Type":"TYPE(MPI_Comm)",
-                    "Optional":false,
-                    "Intent":"OUT"
+                    "Name": "new_comm",
+                    "Description": "The new communicator built with the graph topology given.",
+                    "Type": "TYPE(MPI_Comm)",
+                    "Optional": false,
+                    "Intent": "OUT"
                 },
                 {
-                    "Name":"ierror",
-                    "Description":"The error code returned from the graph topology creation.\n- MPI_SUCCESS: the routine successfully completed.",
-                    "Type":"INTEGER",
-                    "Optional":true,
-                    "Intent":"OUT"
+                    "Name": "ierror",
+                    "Description": "The error code returned from the graph topology creation.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type": "INTEGER",
+                    "Optional": true,
+                    "Intent": "OUT"
                 }
             ]
         },
         {
-            "Language":"FORTRAN-90",
+            "Language": "FORTRAN-90",
             "Parameters": [
                 {
-                    "Name":"old_comm",
-                    "Description":"Communicator containing the processes to use in the creation of the new communicator.",
-                    "Type":"INTEGER",
-                    "Optional":false
+                    "Name": "old_comm",
+                    "Description": "Communicator containing the processes to use in the creation of the new communicator.",
+                    "Type": "INTEGER",
+                    "Optional": false
                 },
                 {
-                    "Name":"number_of_nodes",
-                    "Description":"Contains the number of nodes in the graph.\n- If the number of nodes is 0: the graph is empty and MPI_COMM_NULL is returned to all MPI processes.\n- If the number of nodes is strictly smaller than the size of group of old communicator: some MPI processes will not be part of the new communicator and will therefore be returned MPI_COMM_NULL.\n- If the number of nodes is strictly greater than the size of the group of the old communicator, the call is erroneous.\n\nThe nodes created will be 0-indexed; numbered from 0 to the number of nodes - 1.",
-                    "Type":"INTEGER",
-                    "Optional":false
+                    "Name": "number_of_nodes",
+                    "Description": "Contains the number of nodes in the graph.\n- If the number of nodes is 0: the graph is empty and MPI_COMM_NULL is returned to all MPI processes.\n- If the number of nodes is strictly smaller than the size of group of old communicator: some MPI processes will not be part of the new communicator and will therefore be returned MPI_COMM_NULL.\n- If the number of nodes is strictly greater than the size of the group of the old communicator, the call is erroneous.\n\nThe nodes created will be 0-indexed; numbered from 0 to the number of nodes - 1.",
+                    "Type": "INTEGER",
+                    "Optional": false
                 },
                 {
-                    "Name":"index",
-                    "Description":"Array containing the accumulating number of neighbours; the ith entry will contain the total number of neighbours of the first i nodes in the graph. This array must therefore contain as many entries as there are nodes in the graph.",
-                    "Type":"INTEGER\t(*)",
-                    "Optional":false
+                    "Name": "index",
+                    "Description": "Array containing the accumulating number of neighbours; the ith entry will contain the total number of neighbours of the first i nodes in the graph. This array must therefore contain as many entries as there are nodes in the graph.",
+                    "Type": "INTEGER\t(*)",
+                    "Optional": false
                 },
                 {
-                    "Name":"edges",
-                    "Description":"Array containing the list of all neighbours. It is made of all neighbours of the first node, followed with all the neighbours of the second node and so on.",
-                    "Type":"INTEGER\t(*)",
-                    "Optional":false
+                    "Name": "edges",
+                    "Description": "The list of edges in the graph, beginning with neighbours of node 0, followed with neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
+                    "Type": "INTEGER\t(*)",
+                    "Optional": false
                 },
                 {
-                    "Name":"reorder",
-                    "Description":"Informs MPI whether MPI processes must preserve their rank in the new communicator. Allowing MPI to reorder ranks can trigger certain optimisations based on topology information.",
-                    "Type":"LOGICAL",
-                    "Optional":false
+                    "Name": "reorder",
+                    "Description": "Informs MPI whether MPI processes must preserve their rank in the new communicator. Allowing MPI to reorder ranks can trigger certain optimisations based on topology information.",
+                    "Type": "LOGICAL",
+                    "Optional": false
                 },
                 {
-                    "Name":"new_comm",
-                    "Description":"The new communicator built with the graph topology given.",
-                    "Type":"INTEGER",
-                    "Optional":false
+                    "Name": "new_comm",
+                    "Description": "The new communicator built with the graph topology given.",
+                    "Type": "INTEGER",
+                    "Optional": false
                 },
                 {
-                    "Name":"ierror",
-                    "Description":"The error code returned from the graph topology creation.\n- MPI_SUCCESS: the routine successfully completed.",
-                    "Type":"INTEGER",
-                    "Optional":false
+                    "Name": "ierror",
+                    "Description": "The error code returned from the graph topology creation.\n- MPI_SUCCESS: the routine successfully completed.",
+                    "Type": "INTEGER",
+                    "Optional": false
                 }
             ]
         }
