@@ -34,7 +34,7 @@
                 },
                 {
                     "Name": "edges",
-                    "Description": "The list of edges in the graph, beginning with neighbours of node 0, followed with neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
+                    "Description": "The list of edges in the graph, beginning with outgoing neighbours of node 0, followed with outgoing neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
                     "Type": "const int\t[]",
                     "Optional": false
                 },
@@ -82,7 +82,7 @@
                 },
                 {
                     "Name": "edges",
-                    "Description": "The list of edges in the graph, beginning with neighbours of node 0, followed with neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
+                    "Description": "The list of edges in the graph, beginning with outgoing neighbours of node 0, followed with outgoing neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
                     "Type": "INTEGER\t(*)",
                     "Optional": false,
                     "Intent": "IN"
@@ -133,7 +133,7 @@
                 },
                 {
                     "Name": "edges",
-                    "Description": "The list of edges in the graph, beginning with neighbours of node 0, followed with neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
+                    "Description": "The list of edges in the graph, beginning with outgoing neighbours of node 0, followed with outgoing neighbours of node 1, etc... All edges provided are directed, in other words, edges are not implicitly symmetrized during the communicator creation. Note: redundant and self edges are allowed.",
                     "Type": "INTEGER\t(*)",
                     "Optional": false
                 },

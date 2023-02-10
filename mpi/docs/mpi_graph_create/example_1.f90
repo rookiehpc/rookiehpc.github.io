@@ -1,10 +1,10 @@
 !> @brief Illustrates how to create a communicator representing a graph
 !> topology.
 !> @details This application consists of 7 MPI processes that will be rearranged
-!> into an undirected graph (i.e: non-symmetric), before they check if they 
-!> belong to this graph, and if so, print their number of neighbours. To
-!> simplify, the ranks of the MPI processes in the default communicator
-!> MPI_COMM_WORLD are preserved in the graph.
+!> into a directed graph (i.e: non-symmetric), before they check if they belong
+!> to this graph, and if so, print their number of neighbours. To simplify, the
+!> ranks of the MPI processes in the default communicator MPI_COMM_WORLD are
+!> preserved in the graph.
 !>
 !> The topology created can be visualised as follows:
 !>
