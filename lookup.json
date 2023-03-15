@@ -232,6 +232,10 @@
                 "DirectoryName":"mpi_dims_create"
             },
             {
+                "Name":"MPI_Dist_graph_create",
+                "DirectoryName":"mpi_dist_graph_create"
+            },
+            {
                 "Name":"MPI_DOUBLE",
                 "DirectoryName":"mpi_double"
             },
