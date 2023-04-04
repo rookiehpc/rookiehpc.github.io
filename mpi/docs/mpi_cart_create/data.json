@@ -41,7 +41,7 @@
                 {
                     "Name": "new_communicator",
                     "Description": "Contains the new communicator created. Certain processes may obtain MPI_COMM_NULL in the event that the cartesian grid passed needs fewer processes than that contained in the old communicator.",
-                    "Type": "MPI_Comm"
+                    "Type": "MPI_Comm*"
                 }
             ],
             "Return": {
