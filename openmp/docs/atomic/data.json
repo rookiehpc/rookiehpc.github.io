@@ -4,44 +4,42 @@
     "Name": "atomic",
     "DirectoryName": "atomic",
     "SharedDescription": true,
-    "Description": "The atomic construct ensures that actions performed on a memory location are only done by a single thread. It prevents the possibility of multiple, simultaneous read / write actions.  It primarily protects a single update to a shared variable and only applies to a single statement. \n  An important distinction of atomic is that it protects the memory locations for which actions are performed; multiple atomic statements can be run together as long as they do not work on the same memory.",
+    "Description": "The atomic construct ensures that a given action performed on a memory location cannot be interleaved with other operations. It prevents the possibility of multiple, simultaneous read / write actions to the same memory location.  It primarily protects a single update to a shared variable and only applies to a single statement. \n  An important distinction of atomic from single is that it protects the memory locations for which actions are performed rather than ensuring the code must be run by a single thread; multiple atomic statements can be run together as long as they do not work on the same memory.",
     "Categories": [
         "Synchronisation"
     ],
     "Languages": [
         {
             "Language": "C",
-            "Prototype": "#pragma omp atomic [clause[[,]clause]...] <new-line>\n    <expression-stmt>\n\nor\n\n#pragma omp atomic [clause[[[,]clause]...][,]] atomic-clause [[,]clause[[[,]clause]...]] <new-line>\n    <expression-stmt>\n\nor\n\n#pragma omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]] <new-line>\n    <structured-block>",
+            "Prototype":"#pragma omp atomic [clause[[,]clause]...] <new-line>\n    <expression-stmt>\n\nor\n\n#pragma omp atomic [clause[[[,]clause]...][,]] atomic-clause [[,]clause[[[,]clause]...]] <new-line>\n    <expression-stmt>\n\nor\n\n#pragma omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]] <new-line>\n    <structured-block>",
             "Parameters": [
                 {
                     "Name": "atomic-clause",
                     "Description": "The atomic-clause to appear on the atomic construct:\n- read\n- write\n- update\n- capture",
                     "Type": "",
-                    "Optional": true
-                },
-                {
+                    "Optional":true
+                }, {
                     "Name": "clause",
                     "Description": "The clause to appear on the atomic construct:\n- seq_cst\n- acq_rel\n- release\n- acquire\n- relaxed\n- hint(hint-expression)",
                     "Type": "",
-                    "Optional": true
+                    "Optional":true
                 }
             ]
         },
         {
             "Language": "FORTRAN-90",
-            "Prototype": "!$omp atomic [clause[[,]clause]...]\n    <update-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] read [[,]clause[[[,]clause]...]]\n    <capture-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] write [[,]clause[[[,]clause]...]]\n    <write-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] update [[,]clause[[[,]clause]...]]\n    <update-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <update-statement>\n    <capture-statement>\n!$omp end atomic\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <capture-statement>\n    <update-statement>\n!$omp end atomic\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <capture-statement>\n    <write-statement>\n!$omp end atomic",
+            "Prototype":"!$omp atomic [clause[[,]clause]...]\n    <update-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] read [[,]clause[[[,]clause]...]]\n    <capture-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] write [[,]clause[[[,]clause]...]]\n    <write-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] update [[,]clause[[[,]clause]...]]\n    <update-statement>\n[!$omp end atomic]\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <update-statement>\n    <capture-statement>\n!$omp end atomic\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <capture-statement>\n    <update-statement>\n!$omp end atomic\n\nor\n\n!$omp atomic [clause[[[,]clause]...][,]] capture [[,]clause[[[,]clause]...]]\n    <capture-statement>\n    <write-statement>\n!$omp end atomic",
             "Parameters": [
                 {
                     "Name": "atomic-clause",
                     "Description": "The atomic-clause to appear on the atomic construct:\n- read\n- write\n- update\n- capture",
                     "Type": "",
-                    "Optional": true
-                },
-                {
+                    "Optional":true
+                }, {
                     "Name": "clause",
                     "Description": "The clause to appear on the atomic construct:\n- seq_cst\n- acq_rel\n- release\n- acquire\n- relaxed\n- hint(hint-expression)",
                     "Type": "",
-                    "Optional": true
+                    "Optional":true
                 }
             ]
         }
