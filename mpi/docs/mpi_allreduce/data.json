@@ -5,7 +5,7 @@
     "DirectoryName":"mpi_allreduce",
     "SharedDescription":true,
 
-    "Description":"MPI_Allreduce is the means by which MPI process can apply a reduction calculation and make the reduction result available to all MPI processes involved. It can be seen as a combination of an MPI_Reduce and MPI_Broadcast. MPI_Allreduce is a collective operation; it must be called by every MPI process in the communicator given. Predefined operations are: MPI_MIN, MPI_MAX, MPI_BOR, MPI_BXOR, MPI_LOR, MPI_LXOR, MPI_BAND, MPI_LAND, MPI_SUM and MPI_PROD. Other variants of MPI_Allreduce are MPI_Iallreduce, MPI_Reduce, MPI_Ireduce. Refer to MPI_Iallreduce to see the blocking counterpart of MPI_Allreduce.",
+    "Description":"MPI_Allreduce is the means by which MPI process can apply a reduction calculation and make the reduction result available to all MPI processes involved. It can be seen as a combination of an MPI_Reduce and MPI_Broadcast. MPI_Allreduce is a collective operation; it must be called by every MPI process in the communicator given. Predefined operations are: MPI_MIN, MPI_MAX, MPI_BOR, MPI_BXOR, MPI_LOR, MPI_LXOR, MPI_BAND, MPI_LAND, MPI_SUM and MPI_PROD. Other variants of MPI_Allreduce are MPI_Iallreduce, MPI_Reduce, MPI_Ireduce. Refer to MPI_Iallreduce to see the non-blocking counterpart of MPI_Allreduce.",
     "Categories":[
         "Collectives",
         "Reduction"
