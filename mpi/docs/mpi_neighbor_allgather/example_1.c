@@ -42,7 +42,7 @@
  *  +--------+------+---------+
  **/
 
-int main()
+int main(int argc, char* argv[])
 {
     // MPI variables init
     MPI_Init(NULL, NULL);
