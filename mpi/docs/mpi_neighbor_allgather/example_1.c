@@ -8,9 +8,9 @@
  * @details An application where each MPI process creates a MPI_Graph topology and sends its neighbor a single element of type MPI_INT,
  * with the value being the rank of the MPI process in the graph communicator.
  * The rank is sent to every neighbour using MPI_Neighbor_allgather collective operator.
- **/
-
-/**
+ * 
+ * 
+ * 
  * The following is a undirected graph.
  *  0 --- 2
  *  | +
