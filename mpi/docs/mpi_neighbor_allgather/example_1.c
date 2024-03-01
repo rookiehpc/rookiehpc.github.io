@@ -18,7 +18,7 @@
  *  1 --- 3
  *
  * +---------+-----------+---------+------------+
- * |  Node   |   Edges   | Degree  | Degree sum |
+ * |  Node   |   Neighbours   | Degree  | Degree sum |
  * +---------+-----------+---------+------------+
  * |    0    | 1, 2, 3   |    3    |      3     |
  * |    1    | 0, 3      |    2    |      5     |
@@ -46,10 +46,13 @@ int main()
 {
     // MPI variables init
     MPI_Init(NULL, NULL);
-    int rank, size, nneighbors;
-
+    int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    int size;
     MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    int count_neighbors;
 
     /**
      * Graph Creation
