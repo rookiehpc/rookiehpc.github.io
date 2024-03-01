@@ -1,0 +1,66 @@
+{
+    "Type":"Documentation",
+    "Technology":"MPI",
+    "Name":"MPI_Neighbor_allgather",
+    "DirectoryName":"mpi_neighbor_allgather",
+    "SharedDescription":true,
+    "Description":"MPI_Neighbor_allgather is a collective representing an operation that can be used on the topologies MPI_DIST_GRAPH_CREATE, MPI_GRAPH_CREATE, and MPI_CART_CREATE. ",
+    "Categories":[
+        "Collectives",
+        "Graph",
+        "Topology"
+    ],
+    "Languages": [
+        {
+            "Language":"C",
+            "Parameters": [
+                {
+                    "Name":"send buffer",
+                    "Description":"A pointer to the starting address of the send buffer. The send buffer is sent to each neighboring process.",
+                    "Type":"const void*",
+                    "Optional":false
+                },
+                {
+                    "Name":"send count",
+                    "Description":"Number of elements sent to each neighbor.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"send type",
+                    "Description": "The type of one send buffer element.",
+                    "Type": "MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name": "receive buffer",
+                    "Description": "The buffer in which store the gathered data. The buffer stores the l-th block which is received from the l-th neighbor.",
+                    "Type": "void*"
+                },
+                {
+                    "Name":"receive count",
+                    "Description":"Number of elements received from each neighbor.",
+                    "Type":"int",
+                    "Optional":false
+                },
+                {
+                    "Name":"send type",
+                    "Description": "The type of one receive buffer element.",
+                    "Type": "MPI_Datatype",
+                    "Optional":false
+                },
+                {
+                    "Name":"communicator",
+                    "Description": "The topology communicator in which the variable all to all takes place.",
+                    "Type": "MPI_Comm",
+                    "Optional":false
+                }
+            ],
+            "Return":
+                {
+                    "Type":"int",
+                    "Description":"The error code returned from the operation.\n- MPI_SUCCESS: the routine successfully completed."
+                }
+        }
+    ]
+}
