@@ -54,18 +54,18 @@ int main()
 
     int count_neighbors;
 
-    const int nnodes = 4;                         // Numbers of nodes
-    const int nedges = 8;                         // Number of edges
-    int indexes[nnodes] = {3, 5, 6, 8};           // Degree sum
-    int edges[nedges] = {1, 2, 3, 0, 3, 0, 0, 1}; // Flattened edges
+    const int count_nodes = 4;                         // Numbers of nodes
+    const int count_edges = 8;                         // Number of edges
+    int indexes[count_nodes] = {3, 5, 6, 8};           // Degree sum
+    int edges[count_edges] = {1, 2, 3, 0, 3, 0, 0, 1}; // Flattened edges
 
     MPI_Comm graph;
-    MPI_Graph_create(MPI_COMM_WORLD, nnodes, indexes, edges, 0, &graph);
+    MPI_Graph_create(MPI_COMM_WORLD, count_nodes, indexes, edges, 0, &graph);
     MPI_Comm_rank(graph, &rank);
 
-    MPI_Graph_neighbors_count(graph, rank, &nneighbors); // Get how many neighbors this node has.
+    MPI_Graph_neighbors_count(graph, rank, &count_neighbors); // Get how many neighbors this node has.
 
-    int nelements = nneighbors * 1;               // neighbors * elements per neighbor
+    int nelements = count_neighbors * 1;               // neighbors * elements per neighbor
     size_t buffer_size = nelements * sizeof(int); // number of elements elements * size of datatype
     int *buffer = (int *)malloc(buffer_size);     // create buffer
 
