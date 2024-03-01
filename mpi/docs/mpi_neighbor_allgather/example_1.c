@@ -66,13 +66,13 @@ int main()
     MPI_Graph_neighbors_count(graph, rank, &count_neighbors); // Get how many neighbors this node has.
 
     int count_elements = count_neighbors * 1;               // neighbors * elements per neighbor
-    size_t buffer_size = nelements * sizeof(int); // number of elements elements * size of datatype
+    size_t buffer_size = count_elements * sizeof(int); // number of elements elements * size of datatype
     int* buffer = (int*)malloc(buffer_size);     // create buffer
 
     MPI_Neighbor_allgather(&rank, 1, MPI_INT, buffer, 1, MPI_INT, graph); // send rank and gather to buffer
 
     // Print gathered elements
-    for (int i = 0; i < nelements; i++)
+    for (int i = 0; i < count_elements; i++)
     {
         printf("rank %d, buffer [%d] = %d\n", rank, i, buffer[i]);
     }
