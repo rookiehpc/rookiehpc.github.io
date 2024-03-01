@@ -67,7 +67,7 @@ int main()
 
     int nelements = count_neighbors * 1;               // neighbors * elements per neighbor
     size_t buffer_size = nelements * sizeof(int); // number of elements elements * size of datatype
-    int *buffer = (int *)malloc(buffer_size);     // create buffer
+    int* buffer = (int*)malloc(buffer_size);     // create buffer
 
     MPI_Neighbor_allgather(&rank, 1, MPI_INT, buffer, 1, MPI_INT, graph); // send rank and gather to buffer
 
