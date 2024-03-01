@@ -54,17 +54,6 @@ int main()
 
     int count_neighbors;
 
-    /**
-     * Graph Creation
-     *
-     * "The array index stores the total number of neighbors of the first i graph nodes"
-     * "The array edges is a flattened representation of the edge lists"
-     *
-     * "The total number of entries in index is nnodes and
-     * the total number of entries in edges is equal to the number of graph edges."
-     *
-     **/
-
     const int nnodes = 4;                         // Numbers of nodes
     const int nedges = 8;                         // Number of edges
     int indexes[nnodes] = {3, 5, 6, 8};           // Degree sum
