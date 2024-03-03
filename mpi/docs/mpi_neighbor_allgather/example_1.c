@@ -46,6 +46,7 @@ int main(int argc, char* argv[])
 {
     // MPI variables init
     MPI_Init(NULL, NULL);
+
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
@@ -63,7 +64,7 @@ int main(int argc, char* argv[])
     MPI_Graph_neighbors_count(graph, rank, &count_neighbors); // Get how many neighbors this node has.
 
     int count_elements = count_neighbors * 1;               // neighbors * elements per neighbor
-    size_t buffer_size = count_elements * sizeof(int); // number of elements elements * size of datatype
+    size_t buffer_size = count_elements * sizeof(int); // number of elements * size of datatype
     int* buffer = (int*)malloc(buffer_size);     // create buffer
 
     MPI_Neighbor_allgather(&rank, 1, MPI_INT, buffer, 1, MPI_INT, graph); // send rank and gather to buffer
