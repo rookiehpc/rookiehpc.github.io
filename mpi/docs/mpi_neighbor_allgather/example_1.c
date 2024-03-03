@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
 
     MPI_Comm graph;
     MPI_Graph_create(MPI_COMM_WORLD, count_nodes, indexes, edges, 0, &graph);
-    MPI_Comm_rank(graph, &rank);
+    MPI_Comm_rank(graph, &rank); // Sync rank with new communicator
 
     MPI_Graph_neighbors_count(graph, rank, &count_neighbors); // Get how many neighbors this node has.
 
