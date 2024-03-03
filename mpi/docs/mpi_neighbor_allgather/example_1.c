@@ -74,7 +74,7 @@ int main(int argc, char* argv[])
     // Print gathered elements
     for (int i = 0; i < count_elements; i++)
     {
-        printf("rank %d, buffer [%d] = %d\n", rank, i, buffer[i]);
+        printf("[MPI process %d] buffer[%d] = %d.\n", rank, i, buffer[i]);
     }
 
     MPI_Comm_free(&graph);
